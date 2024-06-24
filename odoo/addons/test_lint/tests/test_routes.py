@@ -1,11 +1,11 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import logging
 from pprint import pformat
 from unittest.mock import patch
 
-from odoo import http
-from odoo.tests import tagged, TransactionCase
+from crossnow import http
+from crossnow.tests import tagged, TransactionCase
 
 _logger = logging.getLogger(__name__)
 
@@ -43,6 +43,6 @@ class RoutesLinter(TransactionCase):
         installed_modules = set(self.env['ir.module.module'].search([
             ('state', '=', 'installed'),
         ]).mapped('name'))
-        with patch('odoo.http._check_and_complete_route_definition', extended_check):
+        with patch('crossnow.http._check_and_complete_route_definition', extended_check):
             for _ in http._generate_routing_rules(installed_modules, nodb_only=False):
                 pass

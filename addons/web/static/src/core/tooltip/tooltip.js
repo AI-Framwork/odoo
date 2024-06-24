@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class Tooltip extends Component {}
 Tooltip.template = "web.Tooltip";

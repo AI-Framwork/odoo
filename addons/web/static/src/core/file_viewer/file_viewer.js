@@ -1,6 +1,6 @@
-/* @odoo-module */
+/* @crossnow-module */
 
-import { Component, useRef, useState } from "@odoo/owl";
+import { Component, useRef, useState } from "@crossnow/owl";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 
 /**

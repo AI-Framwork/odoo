@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 const formatters = registry.category("formatters");
 
 export class BadgeField extends Component {

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import HttpCase, tagged, ChromeBrowser
-from odoo.tools import config, logging
+from crossnow.tests.common import HttpCase, tagged, ChromeBrowser
+from crossnow.tools import config, logging
 from unittest.mock import patch
 
 @tagged('-at_install', 'post_install')
@@ -12,7 +12,7 @@ class TestHttpCase(HttpCase):
         with self.assertLogs(level='ERROR') as log_catcher:
             with self.assertRaises(AssertionError) as error_catcher:
                 code = "console.error('test error','message')"
-                with patch('odoo.tests.common.ChromeBrowser.take_screenshot', return_value=None):
+                with patch('crossnow.tests.common.ChromeBrowser.take_screenshot', return_value=None):
                     self.browser_js(url_path='about:blank', code=code)
             # second line must contains error message
             self.assertEqual(error_catcher.exception.args[0].splitlines()[-1], "test error message")
@@ -23,7 +23,7 @@ class TestHttpCase(HttpCase):
         with self.assertLogs(level='ERROR') as log_catcher:
             with self.assertRaises(AssertionError) as error_catcher:
                 code = "console.error(TypeError('test error message'))"
-                with patch('odoo.tests.common.ChromeBrowser.take_screenshot', return_value=None):
+                with patch('crossnow.tests.common.ChromeBrowser.take_screenshot', return_value=None):
                     self.browser_js(url_path='about:blank', code=code)
             # second line must contains error message
             self.assertEqual(error_catcher.exception.args[0].splitlines()[-2:],
@@ -32,7 +32,7 @@ class TestHttpCase(HttpCase):
         self.assertIn('TypeError: test error message\n    at <anonymous>:1:15', log_catcher.output[0])
 
     def test_console_log_object(self):
-        logger = logging.getLogger('odoo')
+        logger = logging.getLogger('crossnow')
         level = logger.level
         logger.setLevel(logging.INFO)
         self.addCleanup(logger.setLevel, level)

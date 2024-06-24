@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @crossnow-module */
 
 import { Domain } from "@web/core/domain";
 import { DataPoint } from "./datapoint";

@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useBus, useService } from "@web/core/utils/hooks";
 
-import { Component, EventBus } from "@odoo/owl";
+import { Component, EventBus } from "@crossnow/owl";
 
 export class ProfilingItem extends Component {
     setup() {

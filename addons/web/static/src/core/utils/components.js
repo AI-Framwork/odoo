@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, onError, xml, useSubEnv } from "@odoo/owl";
+import { Component, onError, xml, useSubEnv } from "@crossnow/owl";
 
 export class ErrorHandler extends Component {
     setup() {

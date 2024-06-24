@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { CalendarYearPopover } from "@web/views/calendar/calendar_year/calendar_year_popover";
 import { click, getFixture } from "../../helpers/utils";

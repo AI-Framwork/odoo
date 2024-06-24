@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import {
     BUTTON_HANDLER_SELECTOR,

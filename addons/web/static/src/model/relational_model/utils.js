@@ -1,6 +1,6 @@
-/* @odoo-module */
+/* @crossnow-module */
 
-import { markup, onWillDestroy, onWillStart, onWillUpdateProps, useComponent } from "@odoo/owl";
+import { markup, onWillDestroy, onWillStart, onWillUpdateProps, useComponent } from "@crossnow/owl";
 import { evalPartialContext, makeContext } from "@web/core/context";
 import {
     deserializeDate,

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { delay } from "@web/core/utils/concurrency";
 

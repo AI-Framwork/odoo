@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import json
 
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.tests import tagged
-from odoo.tools import mute_logger
+from crossnow.addons.base.tests.common import HttpCaseWithUserDemo
+from crossnow.tests import tagged
+from crossnow.tools import mute_logger
 
 
 @tagged('post_install', '-at_install')
@@ -14,7 +14,7 @@ class DomainTest(HttpCaseWithUserDemo):
     def test_domain_validate(self):
         self.authenticate("demo", "demo")
 
-        with mute_logger('odoo.http'):
+        with mute_logger('crossnow.http'):
             resp = self.url_open(
                 '/web/domain/validate',
                 headers={'Content-Type': 'application/json'},

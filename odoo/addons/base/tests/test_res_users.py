@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from odoo import SUPERUSER_ID
-from odoo.addons.base.models.res_users import is_selection_groups, get_selection_groups, name_selection_groups
-from odoo.exceptions import UserError
-from odoo.tests.common import Form, TransactionCase, new_test_user, tagged
-from odoo.tools import mute_logger
+from crossnow import SUPERUSER_ID
+from crossnow.addons.base.models.res_users import is_selection_groups, get_selection_groups, name_selection_groups
+from crossnow.exceptions import UserError
+from crossnow.tests.common import Form, TransactionCase, new_test_user, tagged
+from crossnow.tools import mute_logger
 
 
 class TestUsers(TransactionCase):
@@ -122,7 +122,7 @@ class TestUsers(TransactionCase):
             "the company_id of the partner_id shall be updated"
         )
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('crossnow.sql_db')
     def test_deactivate_portal_users_access(self):
         """Test that only a portal users can deactivate his account."""
         user_internal = self.env['res.users'].create({
@@ -135,7 +135,7 @@ class TestUsers(TransactionCase):
         with self.assertRaises(UserError, msg='Internal users should not be able to deactivate their account'):
             user_internal._deactivate_portal_user()
 
-    @mute_logger('odoo.sql_db', 'odoo.addons.base.models.res_users_deletion')
+    @mute_logger('crossnow.sql_db', 'crossnow.addons.base.models.res_users_deletion')
     def test_deactivate_portal_users_archive_and_remove(self):
         """Test that if the account can not be removed, it's archived instead
         and sensitive information are removed.
@@ -206,7 +206,7 @@ class TestUsers(TransactionCase):
 
         request = SimpleNamespace()
         request.best_lang = 'es_ES'
-        request_patch = patch('odoo.addons.base.models.res_users.request', request)
+        request_patch = patch('crossnow.addons.base.models.res_users.request', request)
         self.addCleanup(request_patch.stop)
         request_patch.start()
 

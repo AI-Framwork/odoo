@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 """
 ================
 IrQWeb / ir.qweb
@@ -12,7 +12,7 @@ Technical documentation of the python operation of the rendering QWeb engine.
 Templating
 ==========
 
-QWeb is the primary templating engine used by Odoo. It is an XML templating
+QWeb is the primary templating engine used by CrossNow. It is an XML templating
 engine and used mostly to generate XML, HTML fragments and pages.
 
 Template directives are specified as XML attributes prefixed with ``t-``,
@@ -24,7 +24,7 @@ which executes its directive but doesn't generate any output in and of
 itself.
 
 To create new XML template, please see :doc:`QWeb Templates documentation
-<https://www.odoo.com/documentation/17.0/developer/reference/frontend/qweb.html>`
+<https://www.crossnow.com/documentation/17.0/developer/reference/frontend/qweb.html>`
 
 Rendering process
 =================
@@ -65,7 +65,7 @@ in the IrQweb class.
 
 .. code-block:: rst
 
-    Odoo
+    CrossNow
      ┗━► _render (returns MarkupSafe)
         ┗━► _compile (returns function)                                        ◄━━━━━━━━━━┓
            ┗━► _compile_node (returns code string array)                       ◄━━━━━━━━┓ ┃
@@ -187,10 +187,10 @@ Only validate the **input**, the compilation if inside the ``t-if`` directive.
 
 ``t-groups`` (``groups`` is an alias)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Values**: name of the allowed odoo user group, or preceded by ``!`` for
+**Values**: name of the allowed crossnow user group, or preceded by ``!`` for
 prohibited groups
 
-The generated code uses ``user_has_groups`` Odoo method.
+The generated code uses ``user_has_groups`` CrossNow method.
 
 ``t-foreach``
 ~~~~~~~~~~~~~
@@ -387,21 +387,21 @@ from lxml import etree
 from dateutil.relativedelta import relativedelta
 from psycopg2.extensions import TransactionRollbackError
 
-from odoo import api, models, tools
-from odoo.modules import registry
-from odoo.tools import config, safe_eval, pycompat
-from odoo.tools.constants import SUPPORTED_DEBUGGER, EXTERNAL_ASSET
-from odoo.tools.safe_eval import assert_valid_codeobj, _BUILTINS, to_opcodes, _EXPR_OPCODES, _BLACKLIST
-from odoo.tools.json import scriptsafe
-from odoo.tools.lru import LRU
-from odoo.tools.misc import str2bool
-from odoo.tools.image import image_data_uri, FILETYPE_BASE64_MAGICWORD
-from odoo.http import request
-from odoo.tools.profiler import QwebTracker
-from odoo.exceptions import UserError, AccessDenied, AccessError, MissingError, ValidationError
+from crossnow import api, models, tools
+from crossnow.modules import registry
+from crossnow.tools import config, safe_eval, pycompat
+from crossnow.tools.constants import SUPPORTED_DEBUGGER, EXTERNAL_ASSET
+from crossnow.tools.safe_eval import assert_valid_codeobj, _BUILTINS, to_opcodes, _EXPR_OPCODES, _BLACKLIST
+from crossnow.tools.json import scriptsafe
+from crossnow.tools.lru import LRU
+from crossnow.tools.misc import str2bool
+from crossnow.tools.image import image_data_uri, FILETYPE_BASE64_MAGICWORD
+from crossnow.http import request
+from crossnow.tools.profiler import QwebTracker
+from crossnow.exceptions import UserError, AccessDenied, AccessError, MissingError, ValidationError
 
-from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.tools.constants import SCRIPT_EXTENSIONS, STYLE_EXTENSIONS, TEMPLATE_EXTENSIONS
+from crossnow.addons.base.models.assetsbundle import AssetsBundle
+from crossnow.tools.constants import SCRIPT_EXTENSIONS, STYLE_EXTENSIONS, TEMPLATE_EXTENSIONS
 
 _logger = logging.getLogger(__name__)
 
@@ -2381,7 +2381,7 @@ class IrQWeb(models.AbstractModel):
         elif debugger in SUPPORTED_DEBUGGER:
             warnings.warn(
                 "Using t-debug with an explicit debugger is deprecated "
-                "since Odoo 17.0, keep the value empty and configure the "
+                "since CrossNow 17.0, keep the value empty and configure the "
                 "``breakpoint`` builtin instead.",
                 category=DeprecationWarning,
                 stacklevel=2,

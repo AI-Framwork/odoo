@@ -1,19 +1,19 @@
-# Translation of Odoo Server.
+# Translation of CrossNow Server.
 # This file contains the translation of the following modules:
 # 	* transifex
 # 
 # Translators:
-# Wil Odoo, 2023
+# Wil CrossNow, 2023
 # Thi Huong Nguyen, 2024
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: CrossNow Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-26 21:56+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
 "Last-Translator: Thi Huong Nguyen, 2024\n"
-"Language-Team: Vietnamese (https://app.transifex.com/odoo/teams/41243/vi/)\n"
+"Language-Team: Vietnamese (https://app.transifex.com/crossnow/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -36,7 +36,7 @@ msgid "Code Translation"
 msgstr "Bản dịch mã"
 
 #. module: transifex
-#. odoo-javascript
+#. crossnow-javascript
 #: code:addons/transifex/static/src/views/fields/translation_dialog.xml:0
 #: model_terms:ir.ui.view,arch_db:transifex.transifex_code_translation_tree_view
 #, python-format
@@ -81,11 +81,11 @@ msgstr "Chưa dịch"
 
 #. module: transifex
 #: model:ir.model.fields,help:transifex.field_transifex_code_translation__transifex_url
-msgid "Propose a modification in the official version of Odoo"
-msgstr "Đề xuất sửa đổi trong phiên bản chính thức của Odoo"
+msgid "Propose a modification in the official version of CrossNow"
+msgstr "Đề xuất sửa đổi trong phiên bản chính thức của CrossNow"
 
 #. module: transifex
-#. odoo-javascript
+#. crossnow-javascript
 #: code:addons/transifex/static/src/views/reload_code_translations_views.xml:0
 #, python-format
 msgid "Reload"

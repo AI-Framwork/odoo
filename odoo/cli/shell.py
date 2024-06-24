@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import code
 import logging
 import os
@@ -6,8 +6,8 @@ import signal
 import sys
 from pathlib import Path
 
-import odoo
-from odoo.tools import config
+import crossnow
+from crossnow.tools import config
 from . import Command
 
 _logger = logging.getLogger(__name__)
@@ -50,14 +50,14 @@ class Console(code.InteractiveConsole):
 
 
 class Shell(Command):
-    """Start odoo in an interactive shell"""
+    """Start crossnow in an interactive shell"""
     supported_shells = ['ipython', 'ptpython', 'bpython', 'python']
 
     def init(self, args):
         config.parser.prog = f'{Path(sys.argv[0]).name} {self.name}'
         config.parse_config(args)
-        odoo.cli.server.report_configuration()
-        odoo.service.server.start(preload=[], stop=True)
+        crossnow.cli.server.report_configuration()
+        crossnow.service.server.start(preload=[], stop=True)
         signal.signal(signal.SIGINT, raise_keyboard_interrupt)
 
     def console(self, local_vars):
@@ -102,15 +102,15 @@ class Shell(Command):
 
     def shell(self, dbname):
         local_vars = {
-            'openerp': odoo,
-            'odoo': odoo,
+            'crossnow': crossnow,
+            'crossnow': crossnow,
         }
         if dbname:
-            registry = odoo.registry(dbname)
+            registry = crossnow.registry(dbname)
             with registry.cursor() as cr:
-                uid = odoo.SUPERUSER_ID
-                ctx = odoo.api.Environment(cr, uid, {})['res.users'].context_get()
-                env = odoo.api.Environment(cr, uid, ctx)
+                uid = crossnow.SUPERUSER_ID
+                ctx = crossnow.api.Environment(cr, uid, {})['res.users'].context_get()
+                env = crossnow.api.Environment(cr, uid, ctx)
                 local_vars['env'] = env
                 local_vars['self'] = env.user
                 self.console(local_vars)

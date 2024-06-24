@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { pick } from "@web/core/utils/objects";
 import {getAffineApproximation, getProjective} from "@web_editor/js/editor/perspective_utils";
@@ -499,7 +499,7 @@ export async function loadImageInfo(img, rpc, attachmentSrc = '') {
     // check if the image is local or not here as a previous bug converted some
     // local (relative src) images to absolute URL... and that before users had
     // setup their website domain. That means they can have an absolute URL that
-    // looks like "https://mycompany.odoo.com/web/image/123" that leads to a
+    // looks like "https://mycompany.crossnow.com/web/image/123" that leads to a
     // "local" image even if the domain name is now "mycompany.be".
     //
     // The "redirect" check is for when it is a redirect image attachment due to
@@ -566,7 +566,7 @@ export async function isImageCorsProtected(img) {
         // CORS protected. We check upfront if it's the case.
         // Two possible cases:
         // 1. the `src` is an absolute URL from another domain.
-        //    For instance, abc.odoo.com vs abc.com which are actually the
+        //    For instance, abc.crossnow.com vs abc.com which are actually the
         //    same database behind.
         // 2. A "attachment-url" which is just a redirect to the real image
         //    which could be hosted on another website.

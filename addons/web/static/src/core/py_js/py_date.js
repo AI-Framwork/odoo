@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { parseArgs } from "./py_parser";
 

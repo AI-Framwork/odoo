@@ -19,15 +19,15 @@ from decorator import decorator
 
 import psycopg2
 
-import odoo
-from odoo import SUPERUSER_ID
-from odoo.exceptions import AccessDenied
-import odoo.release
-import odoo.sql_db
-import odoo.tools
-from odoo.sql_db import db_connect
-from odoo.release import version_info
-from odoo.tools import find_pg_tool, exec_pg_environ
+import crossnow
+from crossnow import SUPERUSER_ID
+from crossnow.exceptions import AccessDenied
+import crossnow.release
+import crossnow.sql_db
+import crossnow.tools
+from crossnow.sql_db import db_connect
+from crossnow.release import version_info
+from crossnow.tools import find_pg_tool, exec_pg_environ
 
 _logger = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ class DatabaseExists(Warning):
 
 def check_db_management_enabled(method):
     def if_db_mgt_enabled(method, self, *args, **kwargs):
-        if not odoo.tools.config['list_db']:
+        if not crossnow.tools.config['list_db']:
             _logger.error('Database management functions blocked, admin disabled database listing')
             raise AccessDenied()
         return method(self, *args, **kwargs)
@@ -48,24 +48,24 @@ def check_db_management_enabled(method):
 #----------------------------------------------------------
 
 def check_super(passwd):
-    if passwd and odoo.tools.config.verify_admin_password(passwd):
+    if passwd and crossnow.tools.config.verify_admin_password(passwd):
         return True
-    raise odoo.exceptions.AccessDenied()
+    raise crossnow.exceptions.AccessDenied()
 
-# This should be moved to odoo.modules.db, along side initialize().
+# This should be moved to crossnow.modules.db, along side initialize().
 def _initialize_db(id, db_name, demo, lang, user_password, login='admin', country_code=None, phone=None):
     try:
-        db = odoo.sql_db.db_connect(db_name)
+        db = crossnow.sql_db.db_connect(db_name)
         with closing(db.cursor()) as cr:
             # TODO this should be removed as it is done by Registry.new().
-            odoo.modules.db.initialize(cr)
-            odoo.tools.config['load_language'] = lang
+            crossnow.modules.db.initialize(cr)
+            crossnow.tools.config['load_language'] = lang
             cr.commit()
 
-        registry = odoo.modules.registry.Registry.new(db_name, demo, None, update_module=True)
+        registry = crossnow.modules.registry.Registry.new(db_name, demo, None, update_module=True)
 
         with closing(registry.cursor()) as cr:
-            env = odoo.api.Environment(cr, SUPERUSER_ID, {})
+            env = crossnow.api.Environment(cr, SUPERUSER_ID, {})
 
             if lang:
                 modules = env['ir.module.module'].search([('state', '=', 'installed')])
@@ -86,7 +86,7 @@ def _initialize_db(id, db_name, demo, lang, user_password, login='admin', countr
             values = {'password': user_password, 'lang': lang}
             if login:
                 values['login'] = login
-                emails = odoo.tools.email_split(login)
+                emails = crossnow.tools.email_split(login)
                 if emails:
                     values['email'] = emails[0]
             env.ref('base.user_admin').write(values)
@@ -97,9 +97,9 @@ def _initialize_db(id, db_name, demo, lang, user_password, login='admin', countr
         _logger.exception('CREATE DATABASE failed:')
 
 def _create_empty_database(name):
-    db = odoo.sql_db.db_connect('postgres')
+    db = crossnow.sql_db.db_connect('postgres')
     with closing(db.cursor()) as cr:
-        chosen_template = odoo.tools.config['db_template']
+        chosen_template = crossnow.tools.config['db_template']
         cr.execute("SELECT datname FROM pg_database WHERE datname = %s",
                    (name,), log_exceptions=False)
         if cr.fetchall():
@@ -118,15 +118,15 @@ def _create_empty_database(name):
 
     # TODO: add --extension=trigram,unaccent
     try:
-        db = odoo.sql_db.db_connect(name)
+        db = crossnow.sql_db.db_connect(name)
         with db.cursor() as cr:
             cr.execute("CREATE EXTENSION IF NOT EXISTS pg_trgm")
-            if odoo.tools.config['unaccent']:
+            if crossnow.tools.config['unaccent']:
                 cr.execute("CREATE EXTENSION IF NOT EXISTS unaccent")
                 # From PostgreSQL's point of view, making 'unaccent' immutable is incorrect
                 # because it depends on external data - see
                 # https://www.postgresql.org/message-id/flat/201012021544.oB2FiTn1041521@wwwmaster.postgresql.org#201012021544.oB2FiTn1041521@wwwmaster.postgresql.org
-                # But in the case of Odoo, we consider that those data don't
+                # But in the case of CrossNow, we consider that those data don't
                 # change in the lifetime of a database. If they do change, all
                 # indexes created with this function become corrupted!
                 cr.execute("ALTER FUNCTION unaccent(text) IMMUTABLE")
@@ -135,7 +135,7 @@ def _create_empty_database(name):
 
     # restore legacy behaviour on pg15+
     try:
-        db = odoo.sql_db.db_connect(name)
+        db = crossnow.sql_db.db_connect(name)
         with db.cursor() as cr:
             cr.execute("GRANT CREATE ON SCHEMA PUBLIC TO PUBLIC")
     except psycopg2.Error as e:
@@ -152,8 +152,8 @@ def exp_create_database(db_name, demo, lang, user_password='admin', login='admin
 @check_db_management_enabled
 def exp_duplicate_database(db_original_name, db_name, neutralize_database=False):
     _logger.info('Duplicate database `%s` to `%s`.', db_original_name, db_name)
-    odoo.sql_db.close_db(db_original_name)
-    db = odoo.sql_db.db_connect('postgres')
+    crossnow.sql_db.close_db(db_original_name)
+    db = crossnow.sql_db.db_connect('postgres')
     with closing(db.cursor()) as cr:
         # database-altering operations cannot be executed inside a transaction
         cr._cnx.autocommit = True
@@ -163,16 +163,16 @@ def exp_duplicate_database(db_original_name, db_name, neutralize_database=False)
             sql.Identifier(db_original_name)
         ))
 
-    registry = odoo.modules.registry.Registry.new(db_name)
+    registry = crossnow.modules.registry.Registry.new(db_name)
     with registry.cursor() as cr:
         # if it's a copy of a database, force generation of a new dbuuid
-        env = odoo.api.Environment(cr, SUPERUSER_ID, {})
+        env = crossnow.api.Environment(cr, SUPERUSER_ID, {})
         env['ir.config_parameter'].init(force=True)
         if neutralize_database:
-            odoo.modules.neutralize.neutralize_database(cr)
+            crossnow.modules.neutralize.neutralize_database(cr)
 
-    from_fs = odoo.tools.config.filestore(db_original_name)
-    to_fs = odoo.tools.config.filestore(db_name)
+    from_fs = crossnow.tools.config.filestore(db_original_name)
+    to_fs = crossnow.tools.config.filestore(db_name)
     if os.path.exists(from_fs) and not os.path.exists(to_fs):
         shutil.copytree(from_fs, to_fs)
     return True
@@ -197,10 +197,10 @@ def _drop_conn(cr, db_name):
 def exp_drop(db_name):
     if db_name not in list_dbs(True):
         return False
-    odoo.modules.registry.Registry.delete(db_name)
-    odoo.sql_db.close_db(db_name)
+    crossnow.modules.registry.Registry.delete(db_name)
+    crossnow.sql_db.close_db(db_name)
 
-    db = odoo.sql_db.db_connect('postgres')
+    db = crossnow.sql_db.db_connect('postgres')
     with closing(db.cursor()) as cr:
         # database-altering operations cannot be executed inside a transaction
         cr._cnx.autocommit = True
@@ -214,7 +214,7 @@ def exp_drop(db_name):
         else:
             _logger.info('DROP DB: %s', db_name)
 
-    fs = odoo.tools.config.filestore(db_name)
+    fs = crossnow.tools.config.filestore(db_name)
     if os.path.exists(fs):
         shutil.rmtree(fs)
     return True
@@ -234,9 +234,9 @@ def dump_db_manifest(cr):
     manifest = {
         'odoo_dump': '1',
         'db_name': cr.dbname,
-        'version': odoo.release.version,
-        'version_info': odoo.release.version_info,
-        'major_version': odoo.release.major_version,
+        'version': crossnow.release.version,
+        'version_info': crossnow.release.version_info,
+        'major_version': crossnow.release.major_version,
         'pg_version': pg_version,
         'modules': modules,
     }
@@ -254,20 +254,20 @@ def dump_db(db_name, stream, backup_format='zip'):
 
     if backup_format == 'zip':
         with tempfile.TemporaryDirectory() as dump_dir:
-            filestore = odoo.tools.config.filestore(db_name)
+            filestore = crossnow.tools.config.filestore(db_name)
             if os.path.exists(filestore):
                 shutil.copytree(filestore, os.path.join(dump_dir, 'filestore'))
             with open(os.path.join(dump_dir, 'manifest.json'), 'w') as fh:
-                db = odoo.sql_db.db_connect(db_name)
+                db = crossnow.sql_db.db_connect(db_name)
                 with db.cursor() as cr:
                     json.dump(dump_db_manifest(cr), fh, indent=4)
             cmd.insert(-1, '--file=' + os.path.join(dump_dir, 'dump.sql'))
             subprocess.run(cmd, env=env, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT, check=True)
             if stream:
-                odoo.tools.osutil.zip_dir(dump_dir, stream, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                crossnow.tools.osutil.zip_dir(dump_dir, stream, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
             else:
                 t=tempfile.TemporaryFile()
-                odoo.tools.osutil.zip_dir(dump_dir, t, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
+                crossnow.tools.osutil.zip_dir(dump_dir, t, include_dir=False, fnct_sort=lambda file_name: file_name != 'dump.sql')
                 t.seek(0)
                 return t
     else:
@@ -332,14 +332,14 @@ def restore_db(db, dump_file, copy=False, neutralize_database=False):
         if r.returncode != 0:
             raise Exception("Couldn't restore database")
 
-        registry = odoo.modules.registry.Registry.new(db)
+        registry = crossnow.modules.registry.Registry.new(db)
         with registry.cursor() as cr:
-            env = odoo.api.Environment(cr, SUPERUSER_ID, {})
+            env = crossnow.api.Environment(cr, SUPERUSER_ID, {})
             if copy:
                 # if it's a copy of a database, force generation of a new dbuuid
                 env['ir.config_parameter'].init(force=True)
             if neutralize_database:
-                odoo.modules.neutralize.neutralize_database(cr)
+                crossnow.modules.neutralize.neutralize_database(cr)
 
             if filestore_path:
                 filestore_dest = env['ir.attachment']._filestore()
@@ -349,10 +349,10 @@ def restore_db(db, dump_file, copy=False, neutralize_database=False):
 
 @check_db_management_enabled
 def exp_rename(old_name, new_name):
-    odoo.modules.registry.Registry.delete(old_name)
-    odoo.sql_db.close_db(old_name)
+    crossnow.modules.registry.Registry.delete(old_name)
+    crossnow.sql_db.close_db(old_name)
 
-    db = odoo.sql_db.db_connect('postgres')
+    db = crossnow.sql_db.db_connect('postgres')
     with closing(db.cursor()) as cr:
         # database-altering operations cannot be executed inside a transaction
         cr._cnx.autocommit = True
@@ -364,65 +364,65 @@ def exp_rename(old_name, new_name):
             _logger.info('RENAME DB: %s -> %s failed:\n%s', old_name, new_name, e)
             raise Exception("Couldn't rename database %s to %s: %s" % (old_name, new_name, e))
 
-    old_fs = odoo.tools.config.filestore(old_name)
-    new_fs = odoo.tools.config.filestore(new_name)
+    old_fs = crossnow.tools.config.filestore(old_name)
+    new_fs = crossnow.tools.config.filestore(new_name)
     if os.path.exists(old_fs) and not os.path.exists(new_fs):
         shutil.move(old_fs, new_fs)
     return True
 
 @check_db_management_enabled
 def exp_change_admin_password(new_password):
-    odoo.tools.config.set_admin_password(new_password)
-    odoo.tools.config.save(['admin_passwd'])
+    crossnow.tools.config.set_admin_password(new_password)
+    crossnow.tools.config.save(['admin_passwd'])
     return True
 
 @check_db_management_enabled
 def exp_migrate_databases(databases):
     for db in databases:
         _logger.info('migrate database %s', db)
-        odoo.tools.config['update']['base'] = True
-        odoo.modules.registry.Registry.new(db, force_demo=False, update_module=True)
+        crossnow.tools.config['update']['base'] = True
+        crossnow.modules.registry.Registry.new(db, force_demo=False, update_module=True)
     return True
 
 #----------------------------------------------------------
 # No master password required
 #----------------------------------------------------------
 
-@odoo.tools.mute_logger('odoo.sql_db')
+@crossnow.tools.mute_logger('crossnow.sql_db')
 def exp_db_exist(db_name):
     ## Not True: in fact, check if connection to database is possible. The database may exists
     try:
-        db = odoo.sql_db.db_connect(db_name)
+        db = crossnow.sql_db.db_connect(db_name)
         with db.cursor():
             return True
     except Exception:
         return False
 
 def list_dbs(force=False):
-    if not odoo.tools.config['list_db'] and not force:
-        raise odoo.exceptions.AccessDenied()
+    if not crossnow.tools.config['list_db'] and not force:
+        raise crossnow.exceptions.AccessDenied()
 
-    if not odoo.tools.config['dbfilter'] and odoo.tools.config['db_name']:
-        # In case --db-filter is not provided and --database is passed, Odoo will not
+    if not crossnow.tools.config['dbfilter'] and crossnow.tools.config['db_name']:
+        # In case --db-filter is not provided and --database is passed, CrossNow will not
         # fetch the list of databases available on the postgres server and instead will
         # use the value of --database as comma seperated list of exposed databases.
-        res = sorted(db.strip() for db in odoo.tools.config['db_name'].split(','))
+        res = sorted(db.strip() for db in crossnow.tools.config['db_name'].split(','))
         return res
 
-    chosen_template = odoo.tools.config['db_template']
+    chosen_template = crossnow.tools.config['db_template']
     templates_list = tuple(set(['postgres', chosen_template]))
-    db = odoo.sql_db.db_connect('postgres')
+    db = crossnow.sql_db.db_connect('postgres')
     with closing(db.cursor()) as cr:
         try:
             cr.execute("select datname from pg_database where datdba=(select usesysid from pg_user where usename=current_user) and not datistemplate and datallowconn and datname not in %s order by datname", (templates_list,))
-            res = [odoo.tools.ustr(name) for (name,) in cr.fetchall()]
+            res = [crossnow.tools.ustr(name) for (name,) in cr.fetchall()]
         except Exception:
             _logger.exception('Listing databases failed:')
             res = []
     return res
 
 def list_db_incompatible(databases):
-    """"Check a list of databases if they are compatible with this version of Odoo
+    """"Check a list of databases if they are compatible with this version of CrossNow
 
         :param databases: A list of existing Postgresql databases
         :return: A list of databases that are incompatible
@@ -431,7 +431,7 @@ def list_db_incompatible(databases):
     server_version = '.'.join(str(v) for v in version_info[:2])
     for database_name in databases:
         with closing(db_connect(database_name).cursor()) as cr:
-            if odoo.tools.table_exists(cr, 'ir_module_module'):
+            if crossnow.tools.table_exists(cr, 'ir_module_module'):
                 cr.execute("SELECT latest_version FROM ir_module_module WHERE name=%s", ('base',))
                 base_version = cr.fetchone()
                 if not base_version or not base_version[0]:
@@ -445,21 +445,21 @@ def list_db_incompatible(databases):
                 incompatible_databases.append(database_name)
     for database_name in incompatible_databases:
         # release connection
-        odoo.sql_db.close_db(database_name)
+        crossnow.sql_db.close_db(database_name)
     return incompatible_databases
 
 
 def exp_list(document=False):
-    if not odoo.tools.config['list_db']:
-        raise odoo.exceptions.AccessDenied()
+    if not crossnow.tools.config['list_db']:
+        raise crossnow.exceptions.AccessDenied()
     return list_dbs()
 
 def exp_list_lang():
-    return odoo.tools.scan_languages()
+    return crossnow.tools.scan_languages()
 
 def exp_list_countries():
     list_countries = []
-    root = ET.parse(os.path.join(odoo.tools.config['root_path'], 'addons/base/data/res_country_data.xml')).getroot()
+    root = ET.parse(os.path.join(crossnow.tools.config['root_path'], 'addons/base/data/res_country_data.xml')).getroot()
     for country in root.find('data').findall('record[@model="res.country"]'):
         name = country.find('field[@name="name"]').text
         code = country.find('field[@name="code"]').text
@@ -470,7 +470,7 @@ def exp_server_version():
     """ Return the version of the server
         Used by the client to verify the compatibility with its own version
     """
-    return odoo.release.version
+    return crossnow.release.version
 
 #----------------------------------------------------------
 # db service dispatch

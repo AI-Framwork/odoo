@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { WebsocketWorker } from "@bus/workers/websocket_worker";
 import { browser } from "@web/core/browser/browser";

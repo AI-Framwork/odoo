@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import inspect
 import logging
 import warnings
 import traceback
 
-from odoo import api, models
-from odoo.exceptions import AccessDenied
+from crossnow import api, models
+from crossnow.exceptions import AccessDenied
 
 _logger = logging.getLogger(__name__)
 

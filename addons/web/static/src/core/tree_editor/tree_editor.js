@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import {
     leafToString,
@@ -7,7 +7,7 @@ import {
     getPathsInTree,
     getResModel,
 } from "@web/core/tree_editor/utils";
-import { Component, onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps } from "@crossnow/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import {

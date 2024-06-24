@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import models
-from odoo.http import request
+from crossnow import models
+from crossnow.http import request
 
 
 CONTEXT_KEYS = ['editable', 'edit_translations', 'translatable']

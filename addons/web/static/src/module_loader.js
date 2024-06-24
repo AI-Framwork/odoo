@@ -1,6 +1,6 @@
 /**
  *------------------------------------------------------------------------------
- * Odoo Web Boostrap Code
+ * CrossNow Web Boostrap Code
  *------------------------------------------------------------------------------
  */
 (function () {
@@ -210,17 +210,17 @@
         }
     }
 
-    if (!globalThis.odoo) {
-        globalThis.odoo = {};
+    if (!globalThis.crossnow) {
+        globalThis.crossnow = {};
     }
-    const odoo = globalThis.odoo;
-    if (odoo.debug && !new URLSearchParams(location.search).has("debug")) {
+    const crossnow = globalThis.crossnow;
+    if (crossnow.debug && !new URLSearchParams(location.search).has("debug")) {
         // remove debug mode if not explicitely set in url
-        odoo.debug = "";
+        crossnow.debug = "";
     }
 
     const loader = new ModuleLoader();
-    odoo.define = loader.define.bind(loader);
+    crossnow.define = loader.define.bind(loader);
 
-    odoo.loader = loader;
+    crossnow.loader = loader;
 })();

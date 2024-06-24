@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { formatX2many } from "../formatters";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class ListX2ManyField extends Component {
     static template = "web.ListX2ManyField";

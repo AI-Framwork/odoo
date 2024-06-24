@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, markup } from "@odoo/owl";
+import { Component, markup } from "@crossnow/owl";
 import { isMacOS } from "@web/core/browser/feature_detection";
 import { _t } from "@web/core/l10n/translation";
 import { escape } from "@web/core/utils/strings";
@@ -9,7 +9,7 @@ import { browser } from "../../core/browser/browser";
 import { registry } from "../../core/registry";
 
 function documentationItem(env) {
-    const documentationURL = "https://www.odoo.com/documentation/17.0";
+    const documentationURL = "https://www.crossnow.com/documentation/17.0";
     return {
         type: "item",
         id: "documentation",
@@ -89,7 +89,7 @@ function odooAccountItem(env) {
     return {
         type: "item",
         id: "account",
-        description: _t("My Odoo.com account"),
+        description: _t("My CrossNow.com account"),
         callback: () => {
             env.services
                 .rpc("/web/session/account")
@@ -97,7 +97,7 @@ function odooAccountItem(env) {
                     browser.open(url, "_blank");
                 })
                 .catch(() => {
-                    browser.open("https://accounts.odoo.com/account", "_blank");
+                    browser.open("https://accounts.crossnow.com/account", "_blank");
                 });
         },
         sequence: 60,

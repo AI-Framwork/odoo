@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 
-from odoo.tests import tagged
-from odoo.tests.common import new_test_user
+from crossnow.tests import tagged
+from crossnow.tests.common import new_test_user
 
 from .test_common import TestHttpBase
 

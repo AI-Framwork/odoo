@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import {
     Component,
@@ -9,7 +9,7 @@ import {
     useExternalListener,
     useRef,
     useComponent,
-} from "@odoo/owl";
+} from "@crossnow/owl";
 
 function useResizable({
     containerRef,

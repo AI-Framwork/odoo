@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
-from odoo.osv.expression import TERM_OPERATORS_NEGATION
-from odoo.tools import ormcache
+from crossnow import api, fields, models, _
+from crossnow.exceptions import UserError
+from crossnow.osv.expression import TERM_OPERATORS_NEGATION
+from crossnow.tools import ormcache
 
 TYPE2FIELD = {
     'char': 'value_text',

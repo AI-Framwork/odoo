@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase
-from odoo.tools import pdf
-from odoo.tools.misc import file_open
+from crossnow.tests.common import TransactionCase
+from crossnow.tools import pdf
+from crossnow.tools.misc import file_open
 import io
 
 
@@ -84,8 +84,8 @@ class TestPdf(TransactionCase):
         reader_buffer = io.BytesIO(branded_content)
         pdf_reader = pdf.PdfFileReader(reader_buffer)
         pdf_info = pdf_reader.getDocumentInfo()
-        self.assertEqual(pdf_info['/Producer'], 'Odoo')
-        self.assertEqual(pdf_info['/Creator'], 'Odoo')
+        self.assertEqual(pdf_info['/Producer'], 'CrossNow')
+        self.assertEqual(pdf_info['/Creator'], 'CrossNow')
         reader_buffer.close()
 
     def tearDown(self):

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 /**
  * Improved John Resig's inheritance, based on:
  *

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * The bootstrap library extensions and fixes should be done here to avoid

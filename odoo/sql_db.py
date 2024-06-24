@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 
 """
-The PostgreSQL connector is a connectivity layer between the OpenERP code and
+The PostgreSQL connector is a connectivity layer between the CrossNow code and
 the database, *not* a database abstraction toolkit. Database abstraction is what
 the ORM does, in fact.
 """
@@ -26,7 +26,7 @@ from psycopg2.pool import PoolError
 from psycopg2.sql import Composable
 from werkzeug import urls
 
-import odoo
+import crossnow
 from . import tools
 from .tools import SQL
 from .tools.func import frame_codeinfo, locked
@@ -187,7 +187,7 @@ class Cursor(BaseCursor):
        ``cursor`` objects.
 
         ``Cursor`` is the object behind the ``cr`` variable used all
-        over the OpenERP code.
+        over the CrossNow code.
 
         .. rubric:: Transaction Isolation
 
@@ -199,7 +199,7 @@ class Cursor(BaseCursor):
         terms of the phenomena that must not occur between concurrent
         transactions, such as *dirty read*, etc.
         In the context of a generic business data management software
-        such as OpenERP, we need the best guarantees that no data
+        such as CrossNow, we need the best guarantees that no data
         corruption can ever be cause by simply running multiple
         transactions in parallel. Therefore, the preferred level would
         be the *serializable* level, which ensures that a set of
@@ -220,7 +220,7 @@ class Cursor(BaseCursor):
         detect a concurrent update by parallel transactions, and forcing
         one of them to rollback.
 
-        OpenERP implements its own level of locking protection
+        CrossNow implements its own level of locking protection
         for transactions that are highly likely to provoke concurrent
         updates, such as stock reservations or document sequences updates.
         Therefore we mostly care about the properties of snapshot isolation,
@@ -230,7 +230,7 @@ class Cursor(BaseCursor):
         hit of these heuristics).
 
         As a result of the above, we have selected ``REPEATABLE READ`` as
-        the default transaction isolation level for OpenERP cursors, as
+        the default transaction isolation level for CrossNow cursors, as
         it will be mapped to the desired ``snapshot isolation`` level for
         all supported PostgreSQL version (>10).
 
@@ -377,7 +377,7 @@ class Cursor(BaseCursor):
         A proxy for psycopg2.extras.execute_values which can log all queries like execute.
         But this method cannot set log_exceptions=False like execute
         """
-        # Odoo Cursor only proxies all methods of psycopg2 Cursor. This is a patch for problems caused by passing
+        # CrossNow Cursor only proxies all methods of psycopg2 Cursor. This is a patch for problems caused by passing
         # self instead of self._obj to the first parameter of psycopg2.extras.execute_values.
         if isinstance(query, Composable):
             query = query.as_string(self._obj)
@@ -770,7 +770,7 @@ def connection_info_for(db_or_uri):
         # Using manual string interpolation for security reason and trimming at default NAMEDATALEN=63
         app_name = os.environ['ODOO_PGAPPNAME'].replace('{pid}', str(os.getpid()))[0:63]
     else:
-        app_name = "odoo-%d" % os.getpid()
+        app_name = "crossnow-%d" % os.getpid()
     if db_or_uri.startswith(('postgresql://', 'postgres://')):
         # extract db from uri
         us = urls.url_parse(db_or_uri)
@@ -796,7 +796,7 @@ def db_connect(to, allow_uri=False):
     global _Pool
     if _Pool is None:
         _Pool = ConnectionPool(int(
-            odoo.evented and tools.config['db_maxconn_gevent']
+            crossnow.evented and tools.config['db_maxconn_gevent']
             or tools.config['db_maxconn']
         ))
 
@@ -806,7 +806,7 @@ def db_connect(to, allow_uri=False):
     return Connection(_Pool, db, info)
 
 def close_db(db_name):
-    """ You might want to call odoo.modules.registry.Registry.delete(db_name) along this function."""
+    """ You might want to call crossnow.modules.registry.Registry.delete(db_name) along this function."""
     global _Pool
     if _Pool:
         _Pool.close_all(connection_info_for(db_name)[1])

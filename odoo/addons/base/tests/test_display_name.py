@@ -1,7 +1,7 @@
 import contextlib
 
-from odoo.exceptions import UserError
-from odoo.tests.common import TransactionCase, tagged
+from crossnow.exceptions import UserError
+from crossnow.tests.common import TransactionCase, tagged
 
 
 IGNORE_MODEL_NAMES = {

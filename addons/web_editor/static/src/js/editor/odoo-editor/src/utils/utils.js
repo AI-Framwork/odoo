@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 export const DIRECTIONS = {
     LEFT: false,
@@ -329,7 +329,7 @@ export function closestElement(node, predicate = "*") {
         element = element?.closest(predicate);
     }
 
-    return element?.closest('.odoo-editor-editable') && element;
+    return element?.closest('.crossnow-editor-editable') && element;
 }
 
 /**
@@ -504,7 +504,7 @@ export function hasValidSelection(editable) {
  *     positions which are not possible, like the cursor inside an image).
  */
 export function getNormalizedCursorPosition(node, offset, full = true) {
-    const editable = closestElement(node, '.odoo-editor-editable');
+    const editable = closestElement(node, '.crossnow-editor-editable');
     let closest = closestElement(node);
     while (
         closest &&
@@ -1638,7 +1638,7 @@ export function containsUnbreakable(node) {
     }
     return isUnbreakable(node) || containsUnbreakable(node.firstChild);
 }
-// TODO rename this function in master: it also handles Odoo icons, not only
+// TODO rename this function in master: it also handles CrossNow icons, not only
 // font awesome ones. Also maybe just use the ICON_SELECTOR and `matches`?
 const iconTags = ['I', 'SPAN'];
 const iconClasses = ['fa', 'fab', 'fad', 'far', 'oi'];
@@ -2091,7 +2091,7 @@ export function isColorGradient(value) {
  *
  * @private
  * @todo probably move `getCSSVariableValue` and `convertNumericToUnit` as
- *       odoo-editor utils.
+ *       crossnow-editor utils.
  * @param {Selection} sel The current selection.
  * @returns {Float} The font size to display.
  */
@@ -2544,7 +2544,7 @@ export function prepareUpdate(...args) {
         const left = getState(el, offset, DIRECTIONS.LEFT);
         const right = getState(el, offset, DIRECTIONS.RIGHT, left.cType);
         if (options.debug) {
-            const editable = el && closestElement(el, '.odoo-editor-editable');
+            const editable = el && closestElement(el, '.crossnow-editor-editable');
             const oldEditableHTML = editable && makeZeroWidthCharactersVisible(editable.innerHTML).replaceAll(' ', '_') || '';
             left.oldEditableHTML = oldEditableHTML;
             right.oldEditableHTML = oldEditableHTML;
@@ -2837,7 +2837,7 @@ export function restoreState(prevStateData, debug=false) {
     const ruleHashCode = restoreStateRuleHashCode(direction, cType1, cType2);
     const rule = allRestoreStateRules.get(ruleHashCode);
     if (debug) {
-        const editable = closestElement(node, '.odoo-editor-editable');
+        const editable = closestElement(node, '.crossnow-editor-editable');
         console.log(
             '%c' + makeZeroWidthCharactersVisible(node.textContent).replaceAll(' ', '_') + '\n' +
             '%c' + (direction === DIRECTIONS.LEFT ? 'left' : 'right') + '\n' +

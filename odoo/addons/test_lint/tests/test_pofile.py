@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from collections import Counter
 
-from odoo.modules import get_modules
-from odoo.tests.common import TransactionCase
-from odoo.tools.translate import TranslationFileReader
-from odoo.tools.misc import file_path
+from crossnow.modules import get_modules
+from crossnow.tests.common import TransactionCase
+from crossnow.tools.translate import TranslationFileReader
+from crossnow.tools.misc import file_path
 
 
 class PotLinter(TransactionCase):

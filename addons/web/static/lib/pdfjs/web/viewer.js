@@ -16863,7 +16863,7 @@ class BasePreferences {
         "enablePrintAutoRotate": true,
         // don't support scripting (#115302)
         "enableScripting": false,
-        // open links in new tabs to keep odoo document (#84594)
+        // open links in new tabs to keep crossnow document (#84594)
         "externalLinkTarget": 2,
         "historyUpdateUrl": false,
         "ignoreDestinationZoom": false,

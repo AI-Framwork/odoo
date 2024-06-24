@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields
+from crossnow import models, fields
 
 
 class Course(models.Model):

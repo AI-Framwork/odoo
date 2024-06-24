@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-export const session = odoo.__session_info__ || {};
-delete odoo.__session_info__;
+export const session = crossnow.__session_info__ || {};
+delete crossnow.__session_info__;

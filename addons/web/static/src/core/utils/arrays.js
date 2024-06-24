@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { shallowEqual as _shallowEqual } from "./objects";
 

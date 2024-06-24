@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @crossnow-module */
 
 import { DynamicList } from "./dynamic_list";
 

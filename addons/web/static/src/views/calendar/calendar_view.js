@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { CalendarRenderer } from "./calendar_renderer";

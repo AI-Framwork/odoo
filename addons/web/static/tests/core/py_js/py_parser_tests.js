@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { parseExpr } from "@web/core/py_js/py";
 

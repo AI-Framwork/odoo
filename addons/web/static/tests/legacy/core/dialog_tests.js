@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import Dialog from "@web/legacy/js/core/dialog";
 import testUtils from "@web/../tests/legacy/helpers/test_utils";

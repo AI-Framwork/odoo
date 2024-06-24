@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @crossnow-module */
 
-import { onWillUnmount, reactive, useEffect, useExternalListener } from "@odoo/owl";
+import { onWillUnmount, reactive, useEffect, useExternalListener } from "@crossnow/owl";
 import { useThrottleForAnimation } from "./timing";
 import { makeDraggableHook as nativeMakeDraggableHook } from "./draggable_hook_builder";
 

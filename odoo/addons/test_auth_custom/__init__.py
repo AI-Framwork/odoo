@@ -1,6 +1,6 @@
-from odoo import models
-from odoo.exceptions import AccessDenied
-from odoo.http import Controller, route
+from crossnow import models
+from crossnow.exceptions import AccessDenied
+from crossnow.http import Controller, route
 
 
 class IrHttp(models.AbstractModel):

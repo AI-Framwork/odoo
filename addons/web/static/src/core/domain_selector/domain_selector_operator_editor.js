@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 export function getDomainDisplayedOperators(fieldDef) {
     if (!fieldDef) {

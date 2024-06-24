@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 /* global ZXing */
 
 import { browser } from "@web/core/browser/browser";
@@ -26,7 +26,7 @@ QUnit.test("Barcode scanner crop overlay", async (assert) => {
     registry.category("services").add("overlay", overlayService);
 
     const { env } = await createWebClient({});
-    const firstBarcodeValue = "Odoo";
+    const firstBarcodeValue = "CrossNow";
     const secondBarcodeValue = "O-CMD-TEST";
 
     let barcodeToGenerate = firstBarcodeValue;

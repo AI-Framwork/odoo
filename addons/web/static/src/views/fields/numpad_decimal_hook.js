@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { localization } from "@web/core/l10n/localization";
 import { isIOS } from "@web/core/browser/feature_detection";
 
-import { useRef, useEffect } from "@odoo/owl";
+import { useRef, useEffect } from "@crossnow/owl";
 
 function onKeydown(ev) {
     const decimalPoint = localization.decimalPoint;

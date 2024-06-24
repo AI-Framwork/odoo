@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo import fields
-from odoo.tests import common
-from odoo import Command
+from crossnow import fields
+from crossnow.tests import common
+from crossnow import Command
 
 
 class TestPrivateReadGroup(common.TransactionCase):

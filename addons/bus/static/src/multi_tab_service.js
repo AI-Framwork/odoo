@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { browser } from "@web/core/browser/browser";
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@crossnow/owl";
 
 let multiTabId = 0;
 /**

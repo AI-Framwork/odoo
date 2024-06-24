@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import geoip2.errors
 import geoip2.models
 from html.parser import HTMLParser
-from odoo.http import FilesystemSessionStore
-from odoo.tools._vendor.sessions import SessionStore
+from crossnow.http import FilesystemSessionStore
+from crossnow.tools._vendor.sessions import SessionStore
 
 
 TEST_IP = '192.0.2.42'  # 192.0.2.0/24 are reserved for documentation,

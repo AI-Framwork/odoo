@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
     /**
      * Test Utils

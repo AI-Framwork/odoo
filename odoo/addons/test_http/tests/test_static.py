@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import base64
 from datetime import datetime, timedelta
@@ -8,9 +8,9 @@ from unittest.mock import patch
 from freezegun import freeze_time
 from urllib3.util import parse_url
 
-import odoo
-from odoo.tests import new_test_user, tagged, RecordCapturer
-from odoo.tools import config, file_open, image_process
+import crossnow
+from crossnow.tests import new_test_user, tagged, RecordCapturer
+from crossnow.tools import config, file_open, image_process
 
 from .test_common import TestHttpBase
 
@@ -359,7 +359,7 @@ class TestHttpStaticLogo(TestHttpStaticCommon):
             'Content-Type': 'image/png',
             'Content-Disposition': 'inline; filename=nologo.png'
         }
-        super_user = cls.env['res.users'].browse([odoo.SUPERUSER_ID])
+        super_user = cls.env['res.users'].browse([crossnow.SUPERUSER_ID])
         companies = ResCompany.browse([super_user.company_id.id]) | ResCompany.create(
             {
                 'name': 'Company 2',
@@ -553,7 +553,7 @@ class TestHttpStaticUpload(TestHttpStaticCommon):
                 f'{self.base_url()}/web/binary/upload_attachment',
                 files={'ufile': file},
                 data={
-                    'csrf_token': odoo.http.Request.csrf_token(self),
+                    'csrf_token': crossnow.http.Request.csrf_token(self),
                     'model': 'test_http.stargate',
                     'id': self.env.ref('test_http.earth').id,
                 },
@@ -599,7 +599,7 @@ class TestHttpStaticUpload(TestHttpStaticCommon):
                 f'{self.base_url()}/web/binary/upload_attachment',
                 files={'ufile': file},
                 data={
-                    'csrf_token': odoo.http.Request.csrf_token(self),
+                    'csrf_token': crossnow.http.Request.csrf_token(self),
                     'model': 'test_http.stargate',
                     'id': self.env.ref('test_http.earth').id,
                     'callback': 'callmemaybe',

@@ -1,4 +1,4 @@
-<odoo>
+<crossnow>
 
 <template id="contact_name">
     <div t-if="'name' in fields">
@@ -66,4 +66,4 @@
     </address>
 </template>
 
-</odoo>
+</crossnow>

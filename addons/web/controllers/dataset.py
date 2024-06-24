@@ -1,12 +1,12 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import logging
 import warnings
 
-from odoo import http
-from odoo.api import call_kw
-from odoo.http import request
-from odoo.models import check_method_name
+from crossnow import http
+from crossnow.api import call_kw
+from crossnow.http import request
+from crossnow.models import check_method_name
 from .utils import clean_action
 
 

@@ -1,6 +1,6 @@
-/* @odoo-module */
+/* @crossnow-module */
 
-import { onWillDestroy } from "@odoo/owl";
+import { onWillDestroy } from "@crossnow/owl";
 import { registry } from "@web/core/registry";
 import { FileViewer } from "./file_viewer";
 

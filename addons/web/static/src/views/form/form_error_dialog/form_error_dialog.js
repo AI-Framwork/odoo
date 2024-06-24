@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Dialog } from "@web/core/dialog/dialog";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class FormErrorDialog extends Component {
     async discard() {

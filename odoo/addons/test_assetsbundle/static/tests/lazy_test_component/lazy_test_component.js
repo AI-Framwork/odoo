@@ -1,7 +1,7 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { registry } from "@web/core/registry";
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class LazyTestComponent extends Component {
     setup() {

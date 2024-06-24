@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from crossnow import api, fields, models
 
 
 class DemoFailure(models.TransientModel):

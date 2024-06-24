@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { useEnv, useSubEnv, useState, onWillRender } from "@odoo/owl";
+import { useEnv, useSubEnv, useState, onWillRender } from "@crossnow/owl";
 
 /**
  * @typedef PagerUpdateParams

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from odoo.exceptions import UserError, AccessError
-from odoo.tests import common
-from odoo.tools import frozendict
+from crossnow.exceptions import UserError, AccessError
+from crossnow.tests import common
+from crossnow.tools import frozendict
 
 
 class TestCompanyCheck(common.TransactionCase):

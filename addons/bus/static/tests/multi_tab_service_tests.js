@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { addBusServicesToRegistry } from "@bus/../tests/helpers/test_utils";
 

@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests.common import TransactionCase
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
+from crossnow.tests.common import TransactionCase
 
-from odoo.addons.base.tests.test_mimetypes import SVG, JPG
+from crossnow.addons.base.tests.test_mimetypes import SVG, JPG
 
 
 class TestWebSave(TransactionCase):

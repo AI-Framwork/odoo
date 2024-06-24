@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 /* global BarcodeDetector */
 
 import { browser } from "@web/core/browser/browser";
@@ -8,7 +8,7 @@ import { loadJS } from "@web/core/assets";
 import { isVideoElementReady, buildZXingBarcodeDetector } from "./ZXingBarcodeDetector";
 import { CropOverlay } from "./crop_overlay";
 
-import { Component, onMounted, onWillStart, onWillUnmount, useRef, useState } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUnmount, useRef, useState } from "@crossnow/owl";
 import { _t } from "@web/core/l10n/translation";
 
 export class BarcodeDialog extends Component {
@@ -52,7 +52,7 @@ export class BarcodeDialog extends Component {
             } catch (err) {
                 const errors = {
                     NotFoundError: _t("No device can be found."),
-                    NotAllowedError: _t("Odoo needs your authorization first."),
+                    NotAllowedError: _t("CrossNow needs your authorization first."),
                 };
                 const errorMessage =
                     _t("Could not start scanning. ") + (errors[err.name] || err.message);

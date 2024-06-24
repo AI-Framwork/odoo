@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 import { DROPDOWN } from "./dropdown";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 /**
  * @enum {string}

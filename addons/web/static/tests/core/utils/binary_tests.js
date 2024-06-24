@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { humanSize } from "@web/core/utils/binary";
 

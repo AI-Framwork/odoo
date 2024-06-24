@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { OdooEditor } from '../src/OdooEditor.js';
 import { sanitize } from '../src/utils/sanitize.js';
@@ -663,7 +663,7 @@ async function pasteData (editor, text, type) {
 
 export const pasteText = async (editor, text) => pasteData(editor, text, 'text/plain');
 export const pasteHtml = async (editor, html) => pasteData(editor, html, 'text/html');
-export const pasteOdooEditorHtml = async (editor, html) => pasteData(editor, html, 'text/odoo-editor');
+export const pasteOdooEditorHtml = async (editor, html) => pasteData(editor, html, 'text/crossnow-editor');
 const overridenDomClass = [
     'HTMLBRElement',
     'HTMLHeadingElement',

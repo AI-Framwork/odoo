@@ -1,7 +1,7 @@
 import ast
 import os
 import logging
-from odoo import MIN_PY_VERSION
+from crossnow import MIN_PY_VERSION
 from shutil import copyfileobj
 from types import CodeType
 

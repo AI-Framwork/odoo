@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from email.message import EmailMessage
 from email.utils import make_msgid
@@ -21,13 +21,13 @@ from OpenSSL.crypto import Error as SSLCryptoError, FILETYPE_PEM
 from OpenSSL.SSL import Error as SSLError
 from urllib3.contrib.pyopenssl import PyOpenSSLContext
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError
-from odoo.tools import ustr, pycompat, formataddr, email_normalize, encapsulate_email, email_domain_extract, email_domain_normalize
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import UserError
+from crossnow.tools import ustr, pycompat, formataddr, email_normalize, encapsulate_email, email_domain_extract, email_domain_normalize
 
 
 _logger = logging.getLogger(__name__)
-_test_logger = logging.getLogger('odoo.tests')
+_test_logger = logging.getLogger('crossnow.tests')
 
 SMTP_TIMEOUT = 60
 
@@ -129,7 +129,7 @@ class IrMailServer(models.Model):
     from_filter = fields.Char(
         "FROM Filtering",
         help='Comma-separated list of addresses or domains for which this server can be used.\n'
-             'e.g.: "notification@odoo.com" or "odoo.com"')
+             'e.g.: "notification@crossnow.com" or "crossnow.com"')
     smtp_host = fields.Char(string='SMTP Server', help="Hostname or IP of SMTP server")
     smtp_port = fields.Integer(string='SMTP Port', default=25, help="SMTP Port. Usually 465 for SSL, and 25 or 587 for other cases.")
     smtp_authentication = fields.Selection([
@@ -250,7 +250,7 @@ class IrMailServer(models.Model):
         return email_from
 
     def _get_test_email_to(self):
-        return "noreply@odoo.com"
+        return "noreply@crossnow.com"
 
     def test_smtp_connection(self):
         for server in self:
@@ -325,9 +325,9 @@ class IrMailServer(models.Model):
            :param string encryption: optional, ``'ssl'`` | ``'starttls'``
            :param smtp_from: FROM SMTP envelop, used to find the best mail server
            :param ssl_certificate: filename of the SSL certificate used for authentication
-               Used when no mail server is given and overwrite  the odoo-bin argument "smtp_ssl_certificate"
+               Used when no mail server is given and overwrite  the crossnow-bin argument "smtp_ssl_certificate"
            :param ssl_private_key: filename of the SSL private key used for authentication
-               Used when no mail server is given and overwrite  the odoo-bin argument "smtp_ssl_private_key"
+               Used when no mail server is given and overwrite  the crossnow-bin argument "smtp_ssl_private_key"
            :param bool smtp_debug: toggle debugging of SMTP sessions (all i/o
                               will be output in logs)
            :param mail_server_id: ID of specific mail server to use (overrides other parameters)
@@ -416,7 +416,7 @@ class IrMailServer(models.Model):
         if smtp_encryption == 'ssl':
             if 'SMTP_SSL' not in smtplib.__all__:
                 raise UserError(
-                    _("Your Odoo Server does not support SMTP-over-SSL. "
+                    _("Your CrossNow Server does not support SMTP-over-SSL. "
                       "You could use STARTTLS instead. "
                        "If SSL is needed, an upgrade to Python 2.6 on the server-side "
                        "should do the trick."))
@@ -442,7 +442,7 @@ class IrMailServer(models.Model):
         # Anyway, as it may have been sent by login(), all subsequent usages should consider this command as sent.
         connection.ehlo_or_helo_if_needed()
 
-        # Store the "from_filter" of the mail server / odoo-bin argument to  know if we
+        # Store the "from_filter" of the mail server / crossnow-bin argument to  know if we
         # need to change the FROM headers or not when we will prepare the mail message
         connection.from_filter = from_filter
         connection.smtp_from = smtp_from
@@ -730,7 +730,7 @@ class IrMailServer(models.Model):
         """Find the appropriate mail server for the given email address.
 
         Returns: Record<ir.mail_server>, email_from
-        - Mail server to use to send the email (None if we use the odoo-bin arguments)
+        - Mail server to use to send the email (None if we use the crossnow-bin arguments)
         - Email FROM to use to send the email (in some case, it might be impossible
           to use the given email address directly if no mail server is configured for)
         """
@@ -781,7 +781,7 @@ class IrMailServer(models.Model):
                 notifications_email or email_from)
             return mail_servers[0], notifications_email or email_from
 
-        # 5: SMTP config in odoo-bin arguments
+        # 5: SMTP config in crossnow-bin arguments
         from_filter = self.env['ir.mail_server']._get_default_from_filter()
 
         if self._match_from_filter(email_from, from_filter):

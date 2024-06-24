@@ -4,11 +4,11 @@ import base64
 import io
 from markupsafe import Markup
 
-from odoo.tests import common, tagged
-from odoo.tools.misc import file_open, mute_logger, file_path
-from odoo.tools.translate import TranslationModuleReader, TranslationRecordReader, code_translations, CodeTranslations, PYTHON_TRANSLATION_COMMENT, JAVASCRIPT_TRANSLATION_COMMENT, WEB_TRANSLATION_COMMENT, TranslationFileReader
-from odoo import Command
-from odoo.addons.base.models.ir_fields import BOOLEAN_TRANSLATIONS
+from crossnow.tests import common, tagged
+from crossnow.tools.misc import file_open, mute_logger, file_path
+from crossnow.tools.translate import TranslationModuleReader, TranslationRecordReader, code_translations, CodeTranslations, PYTHON_TRANSLATION_COMMENT, JAVASCRIPT_TRANSLATION_COMMENT, WEB_TRANSLATION_COMMENT, TranslationFileReader
+from crossnow import Command
+from crossnow.addons.base.models.ir_fields import BOOLEAN_TRANSLATIONS
 
 
 class TestImport(common.TransactionCase):
@@ -105,7 +105,7 @@ class TestImport(common.TransactionCase):
             'data': po_file,
             'filename': 'tlh.po',
         })
-        with mute_logger('odoo.addons.base.models.res_lang'):
+        with mute_logger('crossnow.addons.base.models.res_lang'):
             import_tlh.import_lang()
 
         tlh_lang = self.env['res.lang']._lang_get('tlh')
@@ -132,7 +132,7 @@ class TestImport(common.TransactionCase):
             'data': po_file,
             'filename': 'tlh.po',
         })
-        with mute_logger('odoo.addons.base.models.res_lang'):
+        with mute_logger('crossnow.addons.base.models.res_lang'):
             import_tlh.import_lang()
 
         model = self.env['test.translation.import.model1']
@@ -175,7 +175,7 @@ class TestImport(common.TransactionCase):
             'data': po_file,
             'filename': 'dot.csv',
         })
-        with mute_logger('odoo.addons.base.models.res_lang'):
+        with mute_logger('crossnow.addons.base.models.res_lang'):
             import_tlh.import_lang()
 
         dot_lang = self.env['res.lang']._lang_get('dot')
@@ -338,7 +338,7 @@ class TestTranslationFlow(common.TransactionCase):
             'filename': export.name,
             'overwrite': False,
         })
-        with mute_logger('odoo.addons.base.models.res_lang'):
+        with mute_logger('crossnow.addons.base.models.res_lang'):
             import_fr.import_lang()
 
         self.assertEqual(
@@ -371,7 +371,7 @@ class TestTranslationFlow(common.TransactionCase):
             'filename': export.name,
             'overwrite': False,
         })
-        with mute_logger('odoo.addons.base.models.res_lang'):
+        with mute_logger('crossnow.addons.base.models.res_lang'):
             import_fr.with_context().import_lang()
 
     def test_export_static_templates(self):

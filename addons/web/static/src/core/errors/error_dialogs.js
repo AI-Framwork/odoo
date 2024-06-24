@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { browser } from "../browser/browser";
 import { Dialog } from "../dialog/dialog";
@@ -7,7 +7,7 @@ import { registry } from "../registry";
 import { useService } from "@web/core/utils/hooks";
 import { capitalize } from "../utils/strings";
 
-import { Component, useState, markup } from "@odoo/owl";
+import { Component, useState, markup } from "@crossnow/owl";
 
 // This props are added by the error handler
 export const standardErrorDialogProps = {
@@ -24,13 +24,13 @@ export const standardErrorDialogProps = {
 
 export const odooExceptionTitleMap = new Map(
     Object.entries({
-        "odoo.addons.base.models.ir_mail_server.MailDeliveryException": _t("MailDeliveryException"),
-        "odoo.exceptions.AccessDenied": _t("Access Denied"),
-        "odoo.exceptions.MissingError": _t("Missing Record"),
-        "odoo.exceptions.UserError": _t("Invalid Operation"),
-        "odoo.exceptions.ValidationError": _t("Validation Error"),
-        "odoo.exceptions.AccessError": _t("Access Error"),
-        "odoo.exceptions.Warning": _t("Warning"),
+        "crossnow.addons.base.models.ir_mail_server.MailDeliveryException": _t("MailDeliveryException"),
+        "crossnow.exceptions.AccessDenied": _t("Access Denied"),
+        "crossnow.exceptions.MissingError": _t("Missing Record"),
+        "crossnow.exceptions.UserError": _t("Invalid Operation"),
+        "crossnow.exceptions.ValidationError": _t("Validation Error"),
+        "crossnow.exceptions.AccessError": _t("Access Error"),
+        "crossnow.exceptions.Warning": _t("Warning"),
     })
 );
 
@@ -51,20 +51,20 @@ export class ErrorDialog extends Component {
 }
 ErrorDialog.template = "web.ErrorDialog";
 ErrorDialog.components = { Dialog };
-ErrorDialog.title = _t("Odoo Error");
+ErrorDialog.title = _t("CrossNow Error");
 ErrorDialog.props = { ...standardErrorDialogProps };
 
 // -----------------------------------------------------------------------------
 // Client Error Dialog
 // -----------------------------------------------------------------------------
 export class ClientErrorDialog extends ErrorDialog {}
-ClientErrorDialog.title = _t("Odoo Client Error");
+ClientErrorDialog.title = _t("CrossNow Client Error");
 
 // -----------------------------------------------------------------------------
 // Network Error Dialog
 // -----------------------------------------------------------------------------
 export class NetworkErrorDialog extends ErrorDialog {}
-NetworkErrorDialog.title = _t("Odoo Network Error");
+NetworkErrorDialog.title = _t("CrossNow Network Error");
 
 // -----------------------------------------------------------------------------
 // RPC Error Dialog
@@ -90,13 +90,13 @@ export class RPCErrorDialog extends ErrorDialog {
         }
         switch (this.props.type) {
             case "server":
-                this.title = _t("Odoo Server Error");
+                this.title = _t("CrossNow Server Error");
                 break;
             case "script":
-                this.title = _t("Odoo Client Error");
+                this.title = _t("CrossNow Client Error");
                 break;
             case "network":
-                this.title = _t("Odoo Network Error");
+                this.title = _t("CrossNow Network Error");
                 break;
         }
     }
@@ -125,7 +125,7 @@ export class WarningDialog extends Component {
         if (this.props.exceptionName && odooExceptionTitleMap.has(this.props.exceptionName)) {
             return odooExceptionTitleMap.get(this.props.exceptionName).toString();
         }
-        return this.props.title || _t("Odoo Warning");
+        return this.props.title || _t("CrossNow Warning");
     }
 }
 WarningDialog.template = "web.WarningDialog";
@@ -143,7 +143,7 @@ export class RedirectWarningDialog extends Component {
         this.actionService = useService("action");
         const { data, subType } = this.props;
         const [message, actionId, buttonText, additionalContext] = data.arguments;
-        this.title = capitalize(subType) || _t("Odoo Warning");
+        this.title = capitalize(subType) || _t("CrossNow Warning");
         this.message = message;
         this.actionId = actionId;
         this.buttonText = buttonText;
@@ -184,17 +184,17 @@ export class SessionExpiredDialog extends Component {
 }
 SessionExpiredDialog.template = "web.SessionExpiredDialog";
 SessionExpiredDialog.components = { Dialog };
-SessionExpiredDialog.title = _t("Odoo Session Expired");
+SessionExpiredDialog.title = _t("CrossNow Session Expired");
 SessionExpiredDialog.props = { ...standardErrorDialogProps };
 
 registry
     .category("error_dialogs")
-    .add("odoo.exceptions.AccessDenied", WarningDialog)
-    .add("odoo.exceptions.AccessError", WarningDialog)
-    .add("odoo.exceptions.MissingError", WarningDialog)
-    .add("odoo.exceptions.UserError", WarningDialog)
-    .add("odoo.exceptions.ValidationError", WarningDialog)
-    .add("odoo.exceptions.RedirectWarning", RedirectWarningDialog)
-    .add("odoo.http.SessionExpiredException", SessionExpiredDialog)
+    .add("crossnow.exceptions.AccessDenied", WarningDialog)
+    .add("crossnow.exceptions.AccessError", WarningDialog)
+    .add("crossnow.exceptions.MissingError", WarningDialog)
+    .add("crossnow.exceptions.UserError", WarningDialog)
+    .add("crossnow.exceptions.ValidationError", WarningDialog)
+    .add("crossnow.exceptions.RedirectWarning", RedirectWarningDialog)
+    .add("crossnow.http.SessionExpiredException", SessionExpiredDialog)
     .add("werkzeug.exceptions.Forbidden", SessionExpiredDialog)
     .add("504", Error504Dialog);

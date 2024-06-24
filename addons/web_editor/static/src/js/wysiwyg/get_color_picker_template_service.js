@@ -1,5 +1,5 @@
 
-/** @odoo-module **/
+/** @crossnow-module **/
 import { registry } from "@web/core/registry";
 
 let colorPickerTemplatePromise;

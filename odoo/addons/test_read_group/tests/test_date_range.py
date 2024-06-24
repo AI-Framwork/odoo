@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Test for date ranges."""
 
-from odoo.tests import common
+from crossnow.tests import common
 
 
 class TestDateRange(common.TransactionCase):

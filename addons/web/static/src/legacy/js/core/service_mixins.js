@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { SERVICES_METADATA } from "@web/env";
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 function protectMethod(widget, fn) {
     return function (...args) {

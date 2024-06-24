@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError
-from odoo.tools.safe_eval import safe_eval, datetime
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import UserError
+from crossnow.tools.safe_eval import safe_eval, datetime
 
 
 class IrFilters(models.Model):
@@ -93,7 +93,7 @@ class IrFilters(models.Model):
         This method should only be called if ``vals`` is trying to set
         ``is_default``
 
-        :raises odoo.exceptions.UserError: if there is an existing default and
+        :raises crossnow.exceptions.UserError: if there is an existing default and
                                             we're not updating it
         """
         domain = self._get_action_domain(vals.get('action_id'))

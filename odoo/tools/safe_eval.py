@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 """
 safe_eval module - methods intended to provide more restricted alternatives to
                    evaluate simple and/or untrusted code.
 
 Methods in this module are typically used as alternatives to eval() to parse
-OpenERP domain strings, conditions and expressions, mostly based on locals
+CrossNow domain strings, conditions and expressions, mostly based on locals
 condition/math builtins.
 """
 
@@ -27,7 +27,7 @@ from psycopg2 import OperationalError
 
 from .misc import ustr
 
-import odoo
+import crossnow
 
 unsafe_eval = eval
 
@@ -347,7 +347,7 @@ def safe_eval(expr, globals_dict=None, locals_dict=None, mode="eval", nocopy=Fal
     objects directly provided in context.
 
     This can be used to e.g. evaluate
-    an OpenERP domain expression from an untrusted source.
+    an CrossNow domain expression from an untrusted source.
 
     :param filename: optional pseudo-filename for the compiled expression,
                      displayed for example in traceback frames
@@ -388,9 +388,9 @@ def safe_eval(expr, globals_dict=None, locals_dict=None, mode="eval", nocopy=Fal
     c = test_expr(expr, _SAFE_OPCODES, mode=mode, filename=filename)
     try:
         return unsafe_eval(c, globals_dict, locals_dict)
-    except odoo.exceptions.UserError:
+    except crossnow.exceptions.UserError:
         raise
-    except odoo.exceptions.RedirectWarning:
+    except crossnow.exceptions.RedirectWarning:
         raise
     except werkzeug.exceptions.HTTPException:
         raise
@@ -431,10 +431,10 @@ def check_values(d):
 Prefer providing only the items necessary for your intended use.
 
 If a "module" is necessary for backwards compatibility, use
-`odoo.tools.safe_eval.wrap_module` to generate a wrapper recursively
+`crossnow.tools.safe_eval.wrap_module` to generate a wrapper recursively
 whitelisting allowed attributes.
 
-Pre-wrapped modules are provided as attributes of `odoo.tools.safe_eval`.
+Pre-wrapped modules are provided as attributes of `crossnow.tools.safe_eval`.
 """)
     return d
 

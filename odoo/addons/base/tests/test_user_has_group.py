@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import TransactionCase
-from odoo.exceptions import ValidationError
-from odoo import Command
+from crossnow.tests.common import TransactionCase
+from crossnow.exceptions import ValidationError
+from crossnow import Command
 
 
 class TestHasGroup(TransactionCase):
@@ -266,7 +266,7 @@ class TestHasGroup(TransactionCase):
 
         populate_cache()
         # call_cache_clearing_methods is called in res.groups.write to invalidate
-        # cache before calling its parent class method (`odoo.models.Model.write`)
+        # cache before calling its parent class method (`crossnow.models.Model.write`)
         # as explain in the `res.group.write` comment.
         # This verifies that calling `call_cache_clearing_methods()` invalidates
         # the ormcache of method `user.has_group()`

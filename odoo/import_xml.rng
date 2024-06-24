@@ -309,8 +309,8 @@
     <rng:define name="odoo_openerp_data">
         <rng:element>
             <rng:choice>
-                <rng:name>odoo</rng:name>
-                <rng:name>openerp</rng:name>
+                <rng:name>crossnow</rng:name>
+                <rng:name>crossnow</rng:name>
                 <rng:name>data</rng:name>
             </rng:choice>
             <rng:optional><rng:attribute name="noupdate" /></rng:optional>

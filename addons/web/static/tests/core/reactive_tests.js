@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @crossnow-module */
 
-import { EventBus, reactive } from "@odoo/owl";
+import { EventBus, reactive } from "@crossnow/owl";
 import { Reactive, effect, withComputedProperties } from "@web/core/utils/reactive";
 
 QUnit.module("Reactive utils", () => {

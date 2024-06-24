@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { useCommand } from "@web/core/commands/command_hook";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";

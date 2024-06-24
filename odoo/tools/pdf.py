@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import io
 import re
 
@@ -12,7 +12,7 @@ from reportlab.lib import colors
 from reportlab.lib.units import cm
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
-from odoo.tools.parse_version import parse_version
+from crossnow.tools.parse_version import parse_version
 
 try:
     # class were renamed in PyPDF2 > 2.0
@@ -43,7 +43,7 @@ try:
 except ImportError:
     TTFont = None
 
-from odoo.tools.misc import file_open
+from crossnow.tools.misc import file_open
 
 _logger = getLogger(__name__)
 DEFAULT_PDF_DATETIME_FORMAT = "D:%Y%m%d%H%M%S+00'00'"
@@ -69,8 +69,8 @@ class BrandedFileWriter(PdfFileWriter):
     def __init__(self):
         super().__init__()
         self.addMetadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "CrossNow",
+            '/Producer': "CrossNow",
         })
 
 
@@ -171,11 +171,11 @@ def to_pdf_stream(attachment) -> io.BytesIO:
 
 
 def add_banner(pdf_stream, text=None, logo=False, thickness=2 * cm):
-    """ Add a banner on a PDF in the upper right corner, with Odoo's logo (optionally).
+    """ Add a banner on a PDF in the upper right corner, with CrossNow's logo (optionally).
 
     :param pdf_stream (BytesIO):    The PDF stream where the banner will be applied.
     :param text (str):              The text to be displayed.
-    :param logo (bool):             Whether to display Odoo's logo in the banner.
+    :param logo (bool):             Whether to display CrossNow's logo in the banner.
     :param thickness (float):       The thickness of the banner in pixels.
     :return (BytesIO):              The modified PDF stream.
     """
@@ -437,10 +437,10 @@ class OdooPdfFileWriter(PdfFileWriter):
         outlines = self._root_object['/Outlines'].getObject()
         outlines[NameObject('/Count')] = NumberObject(1)
 
-        # Set odoo as producer
+        # Set crossnow as producer
         self.addMetadata({
-            '/Creator': "Odoo",
-            '/Producer': "Odoo",
+            '/Creator': "CrossNow",
+            '/Producer': "CrossNow",
         })
         self.is_pdfa = True
 

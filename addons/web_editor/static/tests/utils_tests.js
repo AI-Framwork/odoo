@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 import weUtils from '@web_editor/js/common/utils';
 
 QUnit.module('web_editor', {}, function () {

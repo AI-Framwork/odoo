@@ -7,13 +7,13 @@ import time
 
 sys.path.append(os.path.abspath(os.path.join(__file__,'../../../')))
 
-import odoo
-from odoo.tools import config, topological_sort, unique
-from odoo.netsvc import init_logger
-from odoo.tests import standalone_tests
-import odoo.tests.loader
+import crossnow
+from crossnow.tools import config, topological_sort, unique
+from crossnow.netsvc import init_logger
+from crossnow.tests import standalone_tests
+import crossnow.tests.loader
 
-_logger = logging.getLogger('odoo.tests.test_module_operations')
+_logger = logging.getLogger('crossnow.tests.test_module_operations')
 
 BLACKLIST = {
     'auth_ldap',
@@ -26,16 +26,16 @@ INSTALL_BLACKLIST = {
 }  # deprecated modules (cannot be installed manually through button_install anymore)
 
 def install(db_name, module_id, module_name):
-    with odoo.registry(db_name).cursor() as cr:
-        env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+    with crossnow.registry(db_name).cursor() as cr:
+        env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
         module = env['ir.module.module'].browse(module_id)
         module.button_immediate_install()
     _logger.info('%s installed', module_name)
 
 
 def uninstall(db_name, module_id, module_name):
-    with odoo.registry(db_name).cursor() as cr:
-        env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+    with crossnow.registry(db_name).cursor() as cr:
+        env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
         module = env['ir.module.module'].browse(module_id)
         module.button_immediate_uninstall()
     _logger.info('%s uninstalled', module_name)
@@ -56,7 +56,7 @@ class CheckAddons(argparse.Action):
 def parse_args():
     parser = argparse.ArgumentParser(
         description="Script for testing the install / uninstall / reinstall"
-                    " cycle of Odoo modules. Prefer the 'cycle' subcommand to"
+                    " cycle of CrossNow modules. Prefer the 'cycle' subcommand to"
                     " running this without anything specified (this is the"
                     " default behaviour).")
     parser.set_defaults(
@@ -68,14 +68,14 @@ def parse_args():
     parser.add_argument("--database", "-d", type=str, required=True,
         help="The database to test (/ run the command on)")
     parser.add_argument("--data-dir", "-D", dest="data_dir", type=str,
-        help="Directory where to store Odoo data"
+        help="Directory where to store CrossNow data"
     )
     parser.add_argument("--skip", "-s", type=str,
         help="Comma-separated list of modules to skip (they will only be installed)")
     parser.add_argument("--resume-at", "-r", type=str,
         help="Skip modules (only install) up to the specified one in topological order")
     parser.add_argument("--addons-path", "-p", type=str, action=CheckAddons,
-        help="Comma-separated list of paths to directories containing extra Odoo modules")
+        help="Comma-separated list of paths to directories containing extra CrossNow modules")
 
     cmds = parser.add_subparsers(title="subcommands", metavar='')
     cycle = cmds.add_parser(
@@ -123,8 +123,8 @@ class StandaloneAction(argparse.Action):
 
 def test_cycle(args):
     """ Test full install/uninstall/reinstall cycle for all modules """
-    with odoo.registry(args.database).cursor() as cr:
-        env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+    with crossnow.registry(args.database).cursor() as cr:
+        env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
 
         def valid(module):
             return not (
@@ -158,8 +158,8 @@ def test_cycle(args):
 def test_uninstall(args):
     """ Tries to uninstall/reinstall one ore more modules"""
     for module_name in args.uninstall.split(','):
-        with odoo.registry(args.database).cursor() as cr:
-            env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+        with crossnow.registry(args.database).cursor() as cr:
+            env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
             module = env['ir.module.module'].search([('name', '=', module_name)])
             module_id, module_state = module.id, module.state
 
@@ -176,10 +176,10 @@ def test_uninstall(args):
 def test_standalone(args):
     """ Tries to launch standalone scripts tagged with @post_testing """
     # load the registry once for script discovery
-    registry = odoo.registry(args.database)
+    registry = crossnow.registry(args.database)
     for module_name in registry._init_modules:
         # import tests for loaded modules
-        odoo.tests.loader.get_test_modules(module_name)
+        crossnow.tests.loader.get_test_modules(module_name)
 
     # fetch and filter scripts to test
     funcs = list(unique(
@@ -190,8 +190,8 @@ def test_standalone(args):
 
     start_time = time.time()
     for index, func in enumerate(funcs, start=1):
-        with odoo.registry(args.database).cursor() as cr:
-            env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+        with crossnow.registry(args.database).cursor() as cr:
+            env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
             _logger.info("Executing standalone script: %s (%d / %d)",
                          func.__name__, index, len(funcs))
             try:
@@ -207,10 +207,10 @@ if __name__ == '__main__':
 
     # handle paths option
     if args.addons_path:
-        odoo.tools.config['addons_path'] = ','.join([args.addons_path, odoo.tools.config['addons_path']])
+        crossnow.tools.config['addons_path'] = ','.join([args.addons_path, crossnow.tools.config['addons_path']])
         if args.data_dir:
-            odoo.tools.config['data_dir'] = args.data_dir
-        odoo.modules.module.initialize_sys_path()
+            crossnow.tools.config['data_dir'] = args.data_dir
+        crossnow.modules.module.initialize_sys_path()
 
     init_logger()
     logging.config.dictConfig({
@@ -218,10 +218,10 @@ if __name__ == '__main__':
         'incremental': True,
         'disable_existing_loggers': False,
         'loggers': {
-            'odoo.modules.loading': {'level': 'CRITICAL'},
-            'odoo.sql_db': {'level': 'CRITICAL'},
-            'odoo.models.unlink': {'level': 'WARNING'},
-            'odoo.addons.base.models.ir_model': {'level': "WARNING"},
+            'crossnow.modules.loading': {'level': 'CRITICAL'},
+            'crossnow.sql_db': {'level': 'CRITICAL'},
+            'crossnow.models.unlink': {'level': 'WARNING'},
+            'crossnow.addons.base.models.ir_model': {'level': "WARNING"},
         }
     })
 

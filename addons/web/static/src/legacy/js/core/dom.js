@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * DOM Utility helpers
  *
  * We collect in this file some helpers to help integrate various DOM
- * functionalities with the odoo framework.  A common theme in these functions
+ * functionalities with the crossnow framework.  A common theme in these functions
  * is the use of the main core.bus, which helps the framework react when
  * something happens in the DOM.
  */
@@ -48,7 +48,7 @@ const dom = Object.assign({}, minimalDom, {
         return $results;
     },
     /**
-     * Renders a button with standard odoo template. This does not use any xml
+     * Renders a button with standard crossnow template. This does not use any xml
      * template to avoid forcing the frontend part to lazy load a xml file for
      * each widget which might want to create a simple button.
      *

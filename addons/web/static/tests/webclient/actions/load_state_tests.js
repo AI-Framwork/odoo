@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -30,7 +30,7 @@ import {
 } from "./../helpers";
 import { errorService } from "@web/core/errors/error_service";
 
-import { Component, onMounted, xml } from "@odoo/owl";
+import { Component, onMounted, xml } from "@crossnow/owl";
 
 function getBreadCrumbTexts(target) {
     return getNodesTextContent(target.querySelectorAll(".breadcrumb-item, .o_breadcrumb .active"));
@@ -199,7 +199,7 @@ QUnit.module("ActionManager", (hooks) => {
             action: "HelloWorldTest",
         });
         await new Promise((r) => setTimeout(r)); // real "hashchange" event is triggered after a setTimeout [1]
-        // [1] https://github.com/odoo/odoo/blob/1882d8f89f760bd1ff8a2bf0ae798939402647a3/addons/web/static/tests/setup.js#L52
+        // [1] https://github.com/crossnow/crossnow/blob/1882d8f89f760bd1ff8a2bf0ae798939402647a3/addons/web/static/tests/setup.js#L52
         await nextTick();
         await nextTick();
         assert.strictEqual(

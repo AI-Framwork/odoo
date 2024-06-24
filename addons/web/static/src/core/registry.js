@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { EventBus } from "@odoo/owl";
+import { EventBus } from "@crossnow/owl";
 
 // -----------------------------------------------------------------------------
 // Errors

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
+from crossnow import models, fields, api
+from crossnow.exceptions import ValidationError
 
 
 # We just create a new model

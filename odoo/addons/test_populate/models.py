@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import models, fields, api
+from crossnow import models, fields, api
 
-from odoo.tools import populate, pycompat
+from crossnow.tools import populate, pycompat
 
 
 class TestPopulateModel(models.Model):

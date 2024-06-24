@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 """ High-level objects for fields. """
 
@@ -41,9 +41,9 @@ from .tools import DEFAULT_SERVER_DATETIME_FORMAT as DATETIME_FORMAT
 from .tools.translate import html_translate, _
 from .tools.mimetypes import guess_mimetype
 
-from odoo import SUPERUSER_ID
-from odoo.exceptions import CacheMiss
-from odoo.osv import expression
+from crossnow import SUPERUSER_ID
+from crossnow.exceptions import CacheMiss
+from crossnow.osv import expression
 
 DATE_LENGTH = len(date.today().strftime(DATE_FORMAT))
 DATETIME_LENGTH = len(datetime.now().strftime(DATETIME_FORMAT))
@@ -189,7 +189,7 @@ class Field(MetaField('DummyField', (object,), {})):
     :param bool store: whether the field is stored in database
         (default:``True``, ``False`` for computed fields)
 
-    :param str group_operator: aggregate function used by :meth:`~odoo.models.Model.read_group`
+    :param str group_operator: aggregate function used by :meth:`~crossnow.models.Model.read_group`
         when grouping on this field.
 
         Supported aggregate functions are:
@@ -539,7 +539,7 @@ class Field(MetaField('DummyField', (object,), {})):
                 warnings.warn(f'Property {self}.readonly should be a boolean ({self.readonly}).')
 
             if self.states:
-                warnings.warn(f'Since Odoo 17, property {self}.states is no longer supported.')
+                warnings.warn(f'Since CrossNow 17, property {self}.states is no longer supported.')
 
             self._setup_done = True
 
@@ -740,7 +740,7 @@ class Field(MetaField('DummyField', (object,), {})):
     @property
     def groupable(self):
         """
-        Return whether the field may be used for grouping in :meth:`~odoo.models.BaseModel.read_group`.
+        Return whether the field may be used for grouping in :meth:`~crossnow.models.BaseModel.read_group`.
         """
         return self.store and self.column_type
 
@@ -1259,7 +1259,7 @@ class Field(MetaField('DummyField', (object,), {})):
         (scalar fields), or as a recordset (relational fields).
 
         This method is meant to be used internally and has very little benefit
-        over a simple call to `~odoo.models.BaseModel.mapped()` on a recordset.
+        over a simple call to `~crossnow.models.BaseModel.mapped()` on a recordset.
         """
         if self.name == 'id':
             # not stored in cache
@@ -1467,7 +1467,7 @@ class Float(Field):
     The precision digits are given by the (optional) ``digits`` attribute.
 
     :param digits: a pair (total, decimal) or a string referencing a
-        :class:`~odoo.addons.base.models.decimal_precision.DecimalPrecision` record name.
+        :class:`~crossnow.addons.base.models.decimal_precision.DecimalPrecision` record name.
     :type digits: tuple(int,int) or str
 
     When a float is a quantity associated with an unit of measure, it is important
@@ -1475,9 +1475,9 @@ class Float(Field):
 
     The Float class provides some static methods for this purpose:
 
-    :func:`~odoo.fields.Float.round()` to round a float with the given precision.
-    :func:`~odoo.fields.Float.is_zero()` to check if a float equals zero at the given precision.
-    :func:`~odoo.fields.Float.compare()` to compare two floats at the given precision.
+    :func:`~crossnow.fields.Float.round()` to round a float with the given precision.
+    :func:`~crossnow.fields.Float.is_zero()` to check if a float equals zero at the given precision.
+    :func:`~crossnow.fields.Float.compare()` to compare two floats at the given precision.
 
     .. admonition:: Example
 
@@ -1559,12 +1559,12 @@ class Float(Field):
 
 class Monetary(Field):
     """ Encapsulates a :class:`float` expressed in a given
-    :class:`res_currency<odoo.addons.base.models.res_currency.Currency>`.
+    :class:`res_currency<crossnow.addons.base.models.res_currency.Currency>`.
 
     The decimal precision and currency symbol are taken from the ``currency_field`` attribute.
 
     :param str currency_field: name of the :class:`Many2one` field
-        holding the :class:`res_currency <odoo.addons.base.models.res_currency.Currency>`
+        holding the :class:`res_currency <crossnow.addons.base.models.res_currency.Currency>`
         this monetary field is expressed in (default: `\'currency_id\'`)
     """
     type = 'monetary'
@@ -1628,7 +1628,7 @@ class Monetary(Field):
         # cache format: float
         value = float(value or 0.0)
         if value and validate:
-            # FIXME @rco-odoo: currency may not be already initialized if it is
+            # FIXME @rco-crossnow: currency may not be already initialized if it is
             # a function or related field!
             # BEWARE: do not prefetch other fields, because 'value' may be in
             # cache, and would be overridden by the value read from database!
@@ -2341,7 +2341,7 @@ class Binary(Field):
 
     def convert_to_column(self, value, record, values=None, validate=True):
         # Binary values may be byte strings (python 2.6 byte array), but
-        # the legacy OpenERP convention is to transfer and store binaries
+        # the legacy CrossNow convention is to transfer and store binaries
         # as base64-encoded strings. The base64 string may be provided as a
         # unicode in some circumstances, hence the str() cast here.
         # This str() coercion will only work for pure ASCII unicode strings,
@@ -2519,7 +2519,7 @@ class Image(Binary):
     :param int max_height: the maximum height of the image (default: ``0``, no limit)
     :param bool verify_resolution: whether the image resolution should be verified
         to ensure it doesn't go over the maximum image resolution (default: ``True``).
-        See :class:`odoo.tools.image.ImageProcess` for maximum image resolution (default: ``50e6``).
+        See :class:`crossnow.tools.image.ImageProcess` for maximum image resolution (default: ``50e6``).
 
     .. note::
 
@@ -2974,7 +2974,7 @@ class Many2one(_Relational):
         accessible from the current model (corresponds to ``_inherits``)
 
     :param bool check_company: Mark the field to be verified in
-        :meth:`~odoo.models.Model._check_company`. Add a default company
+        :meth:`~crossnow.models.Model._check_company`. Add a default company
         domain depending on the field attributes.
     """
     type = 'many2one'
@@ -3287,7 +3287,7 @@ class Json(Field):
 class Properties(Field):
     """ Field that contains a list of properties (aka "sub-field") based on
     a definition defined on a container. Properties are pseudo-fields, acting
-    like Odoo fields but without being independently stored in database.
+    like CrossNow fields but without being independently stored in database.
 
     This field allows a light customization based on a container record. Used
     for relationships such as <project.project> / <project.task>,... New
@@ -3295,7 +3295,7 @@ class Properties(Field):
     database.
 
     The "definition_record" define the field used to find the container of the
-    current record. The container must have a :class:`~odoo.fields.PropertiesDefinition`
+    current record. The container must have a :class:`~crossnow.fields.PropertiesDefinition`
     field "definition_record_field" that contains the properties definition
     (type of each property, default value)...
 
@@ -3850,7 +3850,7 @@ class Properties(Field):
 
 
 class PropertiesDefinition(Field):
-    """ Field used to define the properties definition (see :class:`~odoo.fields.Properties`
+    """ Field used to define the properties definition (see :class:`~crossnow.fields.Properties`
     field). This field is used on the container record to define the structure
     of expected properties on subrecords. It is used to check the properties
     definition. """
@@ -4056,7 +4056,7 @@ class PropertiesDefinition(Field):
 
 class Command(enum.IntEnum):
     """
-    :class:`~odoo.fields.One2many` and :class:`~odoo.fields.Many2many` fields
+    :class:`~crossnow.fields.One2many` and :class:`~crossnow.fields.Many2many` fields
     expect a special command to manipulate the relation they implement.
 
     Internally, each command is a 3-elements tuple where the first element is a
@@ -4091,11 +4091,11 @@ class Command(enum.IntEnum):
         Create new records in the comodel using ``values``, link the created
         records to ``self``.
 
-        In case of a :class:`~odoo.fields.Many2many` relation, one unique
+        In case of a :class:`~crossnow.fields.Many2many` relation, one unique
         new record is created in the comodel such that all records in `self`
         are linked to the new record.
 
-        In case of a :class:`~odoo.fields.One2many` relation, one new record
+        In case of a :class:`~crossnow.fields.One2many` relation, one new record
         is created in the comodel for every record in ``self`` such that every
         record in ``self`` is linked to exactly one of the new records.
 
@@ -4118,7 +4118,7 @@ class Command(enum.IntEnum):
         Remove the related record from the database and remove its relation
         with ``self``.
 
-        In case of a :class:`~odoo.fields.Many2many` relation, removing the
+        In case of a :class:`~crossnow.fields.Many2many` relation, removing the
         record from the database may be prevented if it is still linked to
         other records.
 
@@ -4131,7 +4131,7 @@ class Command(enum.IntEnum):
         """
         Remove the relation between ``self`` and the related record.
 
-        In case of a :class:`~odoo.fields.One2many` relation, the given record
+        In case of a :class:`~crossnow.fields.One2many` relation, the given record
         is deleted from the database if the inverse field is set as
         ``ondelete='cascade'``. Otherwise, the value of the inverse field is
         set to False and the record is kept.
@@ -4693,7 +4693,7 @@ class Many2many(_RelationalMulti):
         handling that field
 
     :param bool check_company: Mark the field to be verified in
-        :meth:`~odoo.models.Model._check_company`. Add a default company
+        :meth:`~crossnow.models.Model._check_company`. Add a default company
         domain depending on the field attributes.
 
     """

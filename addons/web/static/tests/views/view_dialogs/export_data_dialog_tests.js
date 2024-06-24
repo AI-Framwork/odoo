@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import {
     click,
@@ -435,7 +435,7 @@ QUnit.module("ViewDialogs", (hooks) => {
         async function (assert) {
             assert.expect(3);
 
-            patchWithCleanup(odoo, { debug: "1" });
+            patchWithCleanup(crossnow, { debug: "1" });
             await makeView({
                 serverData,
                 type: "list",
@@ -1227,7 +1227,7 @@ QUnit.module("ViewDialogs", (hooks) => {
     });
 
     QUnit.test("Export dialog: search in debug", async function (assert) {
-        patchWithCleanup(odoo, { debug: "1" });
+        patchWithCleanup(crossnow, { debug: "1" });
 
         await makeView({
             serverData,

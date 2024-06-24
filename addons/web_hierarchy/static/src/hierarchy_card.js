@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @crossnow-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 import { Field } from "@web/views/fields/field";
 import { Record } from "@web/model/record";

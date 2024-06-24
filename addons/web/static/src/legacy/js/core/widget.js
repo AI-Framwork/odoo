@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import Class from "@web/legacy/js/core/class";
 import mixins from "@web/legacy/js/core/mixins";

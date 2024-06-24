@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import logging
 import platform
@@ -11,9 +11,9 @@ import subprocess
 import os
 from os.path import join
 
-from odoo.tests.common import TransactionCase
-from odoo import tools
-from odoo.modules import get_modules, get_module_path
+from crossnow.tests.common import TransactionCase
+from crossnow import tools
+from crossnow.modules import get_modules, get_module_path
 
 HERE = os.path.dirname(os.path.realpath(__file__))
 

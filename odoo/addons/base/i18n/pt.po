@@ -1,4 +1,4 @@
-# Translation of Odoo Server.
+# Translation of CrossNow Server.
 # This file contains the translation of the following modules:
 # 	* base
 # 
@@ -6,7 +6,7 @@
 # Carlos Teles, 2023
 # a75f12d3d37ea5bf159c4b3e85eb30e7_0fa6927, 2023
 # Manuela Silva <mmsrs@sky.com>, 2023
-# Wil Odoo, 2023
+# Wil CrossNow, 2023
 # Daniel Reis, 2023
 # Pedro Castro Silva <pedrocs@exo.pt>, 2024
 # Nuno Silva <nuno.silva@arxi.pt>, 2024
@@ -19,12 +19,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: CrossNow Server 17.0+e\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-26 12:42+0000\n"
 "PO-Revision-Date: 2023-10-26 23:09+0000\n"
 "Last-Translator: Maitê Dietze, 2024\n"
-"Language-Team: Portuguese (https://app.transifex.com/odoo/teams/41243/pt/)\n"
+"Language-Team: Portuguese (https://app.transifex.com/crossnow/teams/41243/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -70,7 +70,7 @@ msgid ""
 "Chat, mail gateway and private channel.\n"
 "=======================================\n"
 "\n"
-"Communicate with your colleagues/customers/guest within Odoo.\n"
+"Communicate with your colleagues/customers/guest within CrossNow.\n"
 "\n"
 "Discuss/Chat\n"
 "------------\n"
@@ -81,7 +81,7 @@ msgid ""
 "Mail gateway\n"
 "------------\n"
 "Sending information and documents made simplified. You can send emails\n"
-"from Odoo itself, and that too with great possibilities. For example,\n"
+"from CrossNow itself, and that too with great possibilities. For example,\n"
 "design a beautiful email template for the invoices, and use the same\n"
 "for all your customers, no need to do the same exercise every time.\n"
 "\n"
@@ -97,10 +97,10 @@ msgid ""
 "Retrieve incoming email on POP/IMAP servers.\n"
 "============================================\n"
 "Enter the parameters of your POP/IMAP account(s), and any incoming emails on\n"
-"these accounts will be automatically downloaded into your Odoo system. All\n"
+"these accounts will be automatically downloaded into your CrossNow system. All\n"
 "POP3/IMAP-compatible servers are supported, included those that require an\n"
 "encrypted SSL/TLS connection.\n"
-"This can be used to easily create email-based workflows for many email-enabled Odoo documents, such as:\n"
+"This can be used to easily create email-based workflows for many email-enabled CrossNow documents, such as:\n"
 "----------------------------------------------------------------------------------------------------------\n"
 "    * CRM Leads/Opportunities\n"
 "    * CRM Claims\n"
@@ -110,8 +110,8 @@ msgid ""
 "Just install the relevant application, and you can assign any of these document\n"
 "types (Leads, Project Issues) to your incoming email accounts. New emails will\n"
 "automatically spawn new documents of the chosen type, so it's a snap to create a\n"
-"mailbox-to-Odoo integration. Even better: these documents directly act as mini\n"
-"conversations synchronized by email. You can reply from within Odoo, and the\n"
+"mailbox-to-CrossNow integration. Even better: these documents directly act as mini\n"
+"conversations synchronized by email. You can reply from within CrossNow, and the\n"
 "answers will automatically be collected when they come back, and attached to the\n"
 "same *conversation* document.\n"
 "For more specific needs, you may also assign custom-defined actions\n"
@@ -268,7 +268,7 @@ msgid ""
 "210101 - Proveedores locales\n"
 "\n"
 "**Ocho dígitos** son para las cuentas de tercer orden (las visualizadas\n"
-"en Odoo):\n"
+"en CrossNow):\n"
 "1101- Efectivo y Equivalentes\n"
 "110101- Caja\n"
 "11010101 Caja General\n"
@@ -290,12 +290,12 @@ msgid ""
 "\n"
 "* Fiscal positions '内税' and '外税' have been added to handle special requirements which might arise from POS implementation. [1]  Under normal circumstances, you might not need to use those at all.\n"
 "\n"
-"[1] See https://github.com/odoo/odoo/pull/6470 for detail.\n"
+"[1] See https://github.com/crossnow/crossnow/pull/6470 for detail.\n"
 "\n"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid ""
@@ -1849,7 +1849,7 @@ msgid ""
 "Base Module for Ethiopian Localization\n"
 "======================================\n"
 "\n"
-"This is the latest Ethiopian Odoo localization and consists of:\n"
+"This is the latest Ethiopian CrossNow localization and consists of:\n"
 "    - Chart of Accounts\n"
 "    - VAT tax structure\n"
 "    - Withholding tax structure\n"
@@ -1926,7 +1926,7 @@ msgid ""
 "Avatax Brazil (l10n_br_avatax)\n"
 "------------------------------\n"
 "Add Brazilian tax calculation via Avatax and all necessary fields needed to\n"
-"configure Odoo in order to properly use Avatax and send the needed fiscal\n"
+"configure CrossNow in order to properly use Avatax and send the needed fiscal\n"
 "information to retrieve the correct taxes.\n"
 "\n"
 "Avatax for SOs in Brazil (l10n_br_avatax_sale)\n"
@@ -2013,12 +2013,12 @@ msgid ""
 "\n"
 "Legal\n"
 "-----\n"
-"**The use of pos_blackbox_be sources is only certified on odoo.com SaaS platform\n"
-"for version 17.0** Contact Odoo SA before installing pos_blackbox_be module.\n"
+"**The use of pos_blackbox_be sources is only certified on crossnow.com SaaS platform\n"
+"for version 17.0** Contact CrossNow SA before installing pos_blackbox_be module.\n"
 "\n"
 "An obfuscated and certified version of the pos_blackbox_be may be provided on\n"
 "requests for on-premise installations.\n"
-"No modified version is certified and supported by Odoo SA.\n"
+"No modified version is certified and supported by CrossNow SA.\n"
 msgstr ""
 
 #. module: base
@@ -2253,16 +2253,16 @@ msgid ""
 "===============================\n"
 "\n"
 "Venezuela doesn't have any chart of account by law, but the default\n"
-"proposed in Odoo should comply with some Accepted best practices in Venezuela,\n"
+"proposed in CrossNow should comply with some Accepted best practices in Venezuela,\n"
 "this plan comply with this practices.\n"
 "\n"
 "This module has been tested as base for more of 1000 companies, because\n"
 "it is based in a mixtures of most common software in the Venezuelan\n"
 "market what will allow for sure to accountants feel them first steps with\n"
-"Odoo more comfortable.\n"
+"CrossNow more comfortable.\n"
 "\n"
 "This module doesn't pretend be the total localization for Venezuela,\n"
-"but it will help you to start really quickly with Odoo in this country.\n"
+"but it will help you to start really quickly with CrossNow in this country.\n"
 "\n"
 "This module give you.\n"
 "---------------------\n"
@@ -2339,7 +2339,7 @@ msgid ""
 "    * account.chart.template\n"
 "\n"
 "Everything is in English with Spanish translation. Further translations are welcome,\n"
-"please go to http://translations.launchpad.net/openerp-costa-rica.\n"
+"please go to http://translations.launchpad.net/crossnow-costa-rica.\n"
 msgstr ""
 
 #. module: base
@@ -2860,7 +2860,7 @@ msgid ""
 "ESC/POS Hardware Driver\n"
 "=======================\n"
 "\n"
-"This module allows Odoo to print with ESC/POS compatible printers and\n"
+"This module allows CrossNow to print with ESC/POS compatible printers and\n"
 "to open ESC/POS controlled cashdrawers in the point of sale and other modules\n"
 "that would need such functionality.\n"
 "\n"
@@ -3010,7 +3010,7 @@ msgstr ""
 msgid ""
 "\n"
 "Employment Hero Payroll Integration\n"
-"This Module will synchronise all payrun journals from Employment Hero to Odoo.\n"
+"This Module will synchronise all payrun journals from Employment Hero to CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -3148,22 +3148,22 @@ msgid ""
 "Functional\n"
 "----------\n"
 "\n"
-"Be able to create journals in Odoo to create electronic customer invoices and report then to AFIP (via webservices).\n"
+"Be able to create journals in CrossNow to create electronic customer invoices and report then to AFIP (via webservices).\n"
 "The options available are:\n"
 "\n"
 "    * Electronic Invoice - Web Service\n"
 "    * Export Voucher - Web Service\n"
 "    * Electronic Fiscal Bond - Web Service\n"
 "\n"
-"In the electronic journals if you validate an invoice this one will be validated in both Odoo and AFIP. This validation is\n"
+"In the electronic journals if you validate an invoice this one will be validated in both CrossNow and AFIP. This validation is\n"
 "made at the instant and we recieve and \"approved/approved with observation/rejected\" state from AFIP. If the invoice has\n"
 "been rejected by AFIP will not be post in the system and a pop up message will be shown with both the error detail (reject reasons)\n"
 "we recieve and a HINT about what the problem could be.\n"
 "\n"
 "For auditing and troubleshooting purposes we also add a menu \"Consulit Invoice in AFIP\" that let us to consult invoices previously\n"
-"sent to AFIP and last number used as support for any possible issues on the sequences synchronization between Odoo and AFIP.\n"
+"sent to AFIP and last number used as support for any possible issues on the sequences synchronization between CrossNow and AFIP.\n"
 "\n"
-"    NOTE: From the Journal's form view we are able to force a sync between the odoo sequences to each of the document types in\n"
+"    NOTE: From the Journal's form view we are able to force a sync between the crossnow sequences to each of the document types in\n"
 "    with the last numbers registered in AFIP.\n"
 "\n"
 "From vendor bills, we have added a functionality that can be configured in the accounting settings to be able to verify\n"
@@ -3185,7 +3185,7 @@ msgid ""
 "\n"
 "    1.3. Optionally you can define if you like to be eable to verify vendor bills in AFIP.\n"
 "\n"
-"2. Create Sales journals that will represent each one of your AFIP POS (Available in AFIP Portal) you want to use in Odoo.\n"
+"2. Create Sales journals that will represent each one of your AFIP POS (Available in AFIP Portal) you want to use in CrossNow.\n"
 "\n"
 "    2.1. Use Documents field is set by default please dont change\n"
 "    2.2. Set AFIP POS System for one of the electronic ones.\n"
@@ -3269,7 +3269,7 @@ msgid ""
 "  * Gritti (Monotributo)\n"
 "  * Cerro Castor. IVA Liberado in Zona Franca\n"
 "  * Expresso (Cliente del Exterior)\n"
-"  * Odoo (Proveedor del Exterior)\n"
+"  * CrossNow (Proveedor del Exterior)\n"
 "\n"
 "Highlights:\n"
 "\n"
@@ -3369,14 +3369,14 @@ msgid ""
 "\n"
 "Gamification process\n"
 "====================\n"
-"The Gamification module provides ways to evaluate and motivate the users of Odoo.\n"
+"The Gamification module provides ways to evaluate and motivate the users of CrossNow.\n"
 "\n"
 "The users can be evaluated using goals and numerical objectives to reach.\n"
 "**Goals** are assigned through **challenges** to evaluate and compare members of a team with each others and through time.\n"
 "\n"
 "For non-numerical achievements, **badges** can be granted to users. From a simple \"thank you\" to an exceptional achievement, a badge is an easy way to exprimate gratitude to a user for their good work.\n"
 "\n"
-"Both goals and badges are flexibles and can be adapted to a large range of modules and actions. When installed, this module creates easy goals to help new users to discover Odoo and configure their user profile.\n"
+"Both goals and badges are flexibles and can be adapted to a large range of modules and actions. When installed, this module creates easy goals to help new users to discover CrossNow and configure their user profile.\n"
 msgstr ""
 
 #. module: base
@@ -3453,14 +3453,14 @@ msgstr ""
 msgid ""
 "\n"
 "Generate short links with analytics trackers (UTM) to share your pages through marketing campaigns.\n"
-"Those trackers can be used in Google Analytics to track clicks and visitors, or in Odoo reports to analyze the efficiency of those campaigns in terms of lead generation, related revenues (sales orders), recruitment, etc.\n"
+"Those trackers can be used in Google Analytics to track clicks and visitors, or in CrossNow reports to analyze the efficiency of those campaigns in terms of lead generation, related revenues (sales orders), recruitment, etc.\n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_form_project
 msgid ""
 "\n"
-"Generate tasks in Project app from a form published on your website. This module requires the use of the *Form Builder* module (available in Odoo Enterprise) in order to build the form.\n"
+"Generate tasks in Project app from a form published on your website. This module requires the use of the *Form Builder* module (available in CrossNow Enterprise) in order to build the form.\n"
 msgstr ""
 
 #. module: base
@@ -3491,7 +3491,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_website_generator
 msgid ""
 "\n"
-"Generates a new website in Odoo, with the goal of recreating an external website as close as possible.\n"
+"Generates a new website in CrossNow, with the goal of recreating an external website as close as possible.\n"
 msgstr ""
 
 #. module: base
@@ -3605,14 +3605,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_sale_amazon
 msgid ""
 "\n"
-"Import your Amazon orders in Odoo and synchronize deliveries\n"
+"Import your Amazon orders in CrossNow and synchronize deliveries\n"
 "============================================================\n"
 "\n"
 "Key Features\n"
 "------------\n"
 "* Import orders from multiple accounts and marketplaces.\n"
-"* Orders are matched with Odoo products based on their internal reference (SKU in Amazon).\n"
-"* Deliveries confirmed in Odoo are synchronized in Amazon.\n"
+"* Orders are matched with CrossNow products based on their internal reference (SKU in Amazon).\n"
+"* Deliveries confirmed in CrossNow are synchronized in Amazon.\n"
 "* Support for both Fulfilment by Amazon (FBA) and Fulfilment by Merchant (FBM):\n"
 "    * FBA: A stock location and stock moves allow to monitor your stock in Amazon Fulfilment Centers.\n"
 "    * FBM: Delivery notifications are sent to Amazon for each confirmed picking (partial delivery friendly).\n"
@@ -3678,10 +3678,10 @@ msgid ""
 "\n"
 "Step 1: First you need to create an API username and password in the E-invoice portal.\n"
 "Step 2: Switch to company related to that GST number\n"
-"Step 3: Set that username and password in Odoo (Goto: Invoicing/Accounting -> Configuration -> Settings -> Customer Invoices or find \"E-invoice\" in search bar)\n"
-"Step 4: Repeat steps 1,2,3 for all GSTIN you have in odoo. If you have a multi-company with the same GST number then perform step 1 for the first company only.\n"
+"Step 3: Set that username and password in CrossNow (Goto: Invoicing/Accounting -> Configuration -> Settings -> Customer Invoices or find \"E-invoice\" in search bar)\n"
+"Step 4: Repeat steps 1,2,3 for all GSTIN you have in crossnow. If you have a multi-company with the same GST number then perform step 1 for the first company only.\n"
 "\n"
-"For the creation of API username and password please ref this document: <https://service.odoo.co.in/einvoice_create_api_user>\n"
+"For the creation of API username and password please ref this document: <https://service.crossnow.co.in/einvoice_create_api_user>\n"
 msgstr ""
 
 #. module: base
@@ -3695,8 +3695,8 @@ msgid ""
 "\n"
 "Step 1: First you need to create an API username and password in the E-waybill portal.\n"
 "Step 2: Switch to company related to that GST number\n"
-"Step 3: Set that username and password in Odoo (Goto: Invoicing/Accounting -> Configration -> Settings -> Indian Electronic WayBill or find \"E-waybill\" in search bar)\n"
-"Step 4: Repeat steps 1,2,3 for all GSTIN you have in odoo. If you have a multi-company with the same GST number then perform step 1 for the first company only.\n"
+"Step 3: Set that username and password in CrossNow (Goto: Invoicing/Accounting -> Configration -> Settings -> Indian Electronic WayBill or find \"E-waybill\" in search bar)\n"
+"Step 4: Repeat steps 1,2,3 for all GSTIN you have in crossnow. If you have a multi-company with the same GST number then perform step 1 for the first company only.\n"
 msgstr ""
 
 #. module: base
@@ -3708,11 +3708,11 @@ msgid ""
 "\n"
 "Indian accounting chart and localization.\n"
 "\n"
-"Odoo allows to manage Indian Accounting by providing Two Formats Of Chart of Accounts i.e Indian Chart Of Accounts - Standard and Indian Chart Of Accounts - Schedule VI.\n"
+"CrossNow allows to manage Indian Accounting by providing Two Formats Of Chart of Accounts i.e Indian Chart Of Accounts - Standard and Indian Chart Of Accounts - Schedule VI.\n"
 "\n"
 "Note: The Schedule VI has been revised by MCA and is applicable for all Balance Sheet made after\n"
 "31st March, 2011. The Format has done away with earlier two options of format of Balance\n"
-"Sheet, now only Vertical format has been permitted Which is Supported By Odoo.\n"
+"Sheet, now only Vertical format has been permitted Which is Supported By CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -3762,7 +3762,7 @@ msgid ""
 "\n"
 "Invoicing & Payments\n"
 "====================\n"
-"The specific and easy-to-use Invoicing system in Odoo allows you to keep track of your accounting, even when you are not an accountant. It provides an easy way to follow up on your vendors and customers.\n"
+"The specific and easy-to-use Invoicing system in CrossNow allows you to keep track of your accounting, even when you are not an accountant. It provides an easy way to follow up on your vendors and customers.\n"
 "\n"
 "You could use this simplified accounting in case you work with an (external) account to keep your books, and you still want to keep track of payments. This module also offers you an easy method of registering payments, without having to encode complete abstracts of account.\n"
 msgstr ""
@@ -3774,12 +3774,12 @@ msgid ""
 "IoT Box Homepage\n"
 "================\n"
 "\n"
-"This module overrides Odoo web interface to display a simple\n"
+"This module overrides CrossNow web interface to display a simple\n"
 "Homepage that explains what's the iotbox and shows the status,\n"
 "and where to find documentation.\n"
 "\n"
 "If you activate this module, you won't be able to access the \n"
-"regular Odoo interface anymore.\n"
+"regular CrossNow interface anymore.\n"
 "\n"
 msgstr ""
 
@@ -3913,7 +3913,7 @@ msgid ""
 "This module modifies the mail addon to provide:\n"
 "\n"
 "* Push notifications to registered devices for direct messages, chatter messages and channel.\n"
-"* Redirection to the Android/iOS mobile app when you click on an Odoo URL.\n"
+"* Redirection to the Android/iOS mobile app when you click on an CrossNow URL.\n"
 msgstr ""
 
 #. module: base
@@ -4160,7 +4160,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_mail_group
 msgid ""
 "\n"
-"Manage your mailing lists from Odoo.\n"
+"Manage your mailing lists from CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -4236,12 +4236,12 @@ msgid ""
 "============================================\n"
 "\n"
 "This Chart of account is a minimal proposal to be able to use OoB the\n"
-"accounting feature of Odoo.\n"
+"accounting feature of CrossNow.\n"
 "\n"
 "This doesn't pretend be all the localization for MX it is just the minimal\n"
 "data required to start from 0 in mexican localization.\n"
 "\n"
-"This modules and its content is updated frequently by openerp-mexico team.\n"
+"This modules and its content is updated frequently by crossnow-mexico team.\n"
 "\n"
 "With this module you will have:\n"
 "\n"
@@ -4259,7 +4259,7 @@ msgid ""
 "Module for defining analytic accounting object.\n"
 "===============================================\n"
 "\n"
-"In Odoo, analytic accounts are linked to general accounts but are treated\n"
+"In CrossNow, analytic accounts are linked to general accounts but are treated\n"
 "totally independently. So, you can enter various different analytic operations\n"
 "that have no counterpart in the general financial accounts.\n"
 msgstr ""
@@ -4435,7 +4435,7 @@ msgid ""
 "Statements will also remove those associated statements.\n"
 "\n"
 "Instead of a manual adjustment of the generated Bank Statements, you can also\n"
-"re-import the CODA after updating the OpenERP database with the information that\n"
+"re-import the CODA after updating the CrossNow database with the information that\n"
 "was missing to allow automatic reconciliation.\n"
 "\n"
 "Remark on CODA V1 support:\n"
@@ -4454,7 +4454,7 @@ msgid ""
 "Module to import CSV bank statements.\n"
 "======================================\n"
 "\n"
-"This module allows you to import CSV Files in Odoo: they are parsed and stored in human readable format in\n"
+"This module allows you to import CSV Files in CrossNow: they are parsed and stored in human readable format in\n"
 "Accounting \\ Bank and Cash \\ Bank Statements.\n"
 "\n"
 "Important Note\n"
@@ -4470,7 +4470,7 @@ msgid ""
 "Module to import OFX bank statements.\n"
 "======================================\n"
 "\n"
-"This module allows you to import the machine readable OFX Files in Odoo: they are parsed and stored in human readable format in\n"
+"This module allows you to import the machine readable OFX Files in CrossNow: they are parsed and stored in human readable format in\n"
 "Accounting \\ Bank and Cash \\ Bank Statements.\n"
 "\n"
 "Bank Statements may be generated containing a subset of the OFX information (only those transaction lines that are required for the\n"
@@ -4484,7 +4484,7 @@ msgid ""
 "Module to import QIF bank statements.\n"
 "======================================\n"
 "\n"
-"This module allows you to import the machine readable QIF Files in Odoo: they are parsed and stored in human readable format in\n"
+"This module allows you to import the machine readable QIF Files in CrossNow: they are parsed and stored in human readable format in\n"
 "Accounting \\ Bank and Cash \\ Bank Statements.\n"
 "\n"
 "Important Note\n"
@@ -4552,10 +4552,10 @@ msgstr ""
 #: model:ir.module.module,description:base.module_base_import
 msgid ""
 "\n"
-"New extensible file import for Odoo\n"
+"New extensible file import for CrossNow\n"
 "======================================\n"
 "\n"
-"Re-implement Odoo's file import system:\n"
+"Re-implement CrossNow's file import system:\n"
 "\n"
 "* Server side, the previous system forces most of the logic into the\n"
 "  client which duplicates the effort (between clients), makes the\n"
@@ -4569,7 +4569,7 @@ msgid ""
 "  files) which may be simpler to handle in their work flow or from\n"
 "  their data production sources.\n"
 "\n"
-"* In a module, so that administrators and users of Odoo who do not\n"
+"* In a module, so that administrators and users of CrossNow who do not\n"
 "  need or want an online import can avoid it being available to users.\n"
 msgstr ""
 
@@ -4593,14 +4593,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_sa
 msgid ""
 "\n"
-"Odoo Arabic localization for most Saudi Arabia.\n"
+"CrossNow Arabic localization for most Saudi Arabia.\n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_enterprise
 msgid ""
 "\n"
-"Odoo Enterprise Web Client.\n"
+"CrossNow Enterprise Web Client.\n"
 "===========================\n"
 "\n"
 "This module modifies the web addon to provide Enterprise design and responsiveness.\n"
@@ -4610,12 +4610,12 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web_editor
 msgid ""
 "\n"
-"Odoo Web Editor widget.\n"
+"CrossNow Web Editor widget.\n"
 "==========================\n"
 "\n"
 msgstr ""
 "\n"
-"Odoo - Widget do Editor da Web.\n"
+"CrossNow - Widget do Editor da Web.\n"
 "==============================\n"
 "\n"
 
@@ -4623,7 +4623,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web_gantt
 msgid ""
 "\n"
-"Odoo Web Gantt chart view.\n"
+"CrossNow Web Gantt chart view.\n"
 "=============================\n"
 "\n"
 msgstr ""
@@ -4632,7 +4632,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web_hierarchy
 msgid ""
 "\n"
-"Odoo Web Hierarchy view\n"
+"CrossNow Web Hierarchy view\n"
 "=======================\n"
 "\n"
 "This module adds a new view called to be able to define a view to display\n"
@@ -4643,17 +4643,17 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web
 msgid ""
 "\n"
-"Odoo Web core module.\n"
+"CrossNow Web core module.\n"
 "========================\n"
 "\n"
-"This module provides the core of the Odoo Web Client.\n"
+"This module provides the core of the CrossNow Web Client.\n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_tour
 msgid ""
 "\n"
-"Odoo Web tours.\n"
+"CrossNow Web tours.\n"
 "========================\n"
 "\n"
 msgstr ""
@@ -4904,7 +4904,7 @@ msgid ""
 "Publish your products on eBay\n"
 "=============================\n"
 "\n"
-"The eBay integrator gives you the opportunity to manage your Odoo's products on eBay.\n"
+"The eBay integrator gives you the opportunity to manage your CrossNow's products on eBay.\n"
 "\n"
 "Key Features\n"
 "------------\n"
@@ -4929,7 +4929,7 @@ msgid ""
 "\n"
 "The requirement to send a daily sales book\n"
 "\"Libro de ventas diarias\" (former \"reporte de consumo de folios\" or RCOF) has been eliminated by the authority,\n"
-"effective August 1st 2022. For that reason it has been eliminated from this new version of Odoo.\n"
+"effective August 1st 2022. For that reason it has been eliminated from this new version of CrossNow.\n"
 "\n"
 "Differences between Electronic boletas vs Electronic Invoicing Workflows:\n"
 "=========================================================================\n"
@@ -5222,7 +5222,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_web_studio
 msgid ""
 "\n"
-"Studio - Customize Odoo\n"
+"Studio - Customize CrossNow\n"
 "=======================\n"
 "\n"
 "This addon allows the user to customize most element of the user interface, in a\n"
@@ -5238,7 +5238,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_website_studio
 msgid ""
 "\n"
-"Studio - Customize Odoo\n"
+"Studio - Customize CrossNow\n"
 "=======================\n"
 "\n"
 "This addon allows the user to display all the website forms linked to a certain\n"
@@ -5253,7 +5253,7 @@ msgid ""
 "Swedish Accounting\n"
 "------------------\n"
 "\n"
-"This is the base module to manage the accounting chart for Sweden in Odoo.\n"
+"This is the base module to manage the accounting chart for Sweden in CrossNow.\n"
 "It also includes the invoice OCR payment reference handling.\n"
 msgstr ""
 
@@ -5409,11 +5409,11 @@ msgstr ""
 #: model:ir.module.module,description:base.module_base
 msgid ""
 "\n"
-"The kernel of Odoo, needed for all installation.\n"
+"The kernel of CrossNow, needed for all installation.\n"
 "===================================================\n"
 msgstr ""
 "\n"
-"O kernel do Odoo, necessário para toda a instalação.\n"
+"O kernel do CrossNow, necessário para toda a instalação.\n"
 "===================================================\n"
 
 #. module: base
@@ -5469,7 +5469,7 @@ msgid ""
 "\n"
 "    Storage: automatic sales closings with computation of both period and cumulative totals (daily, monthly, annually)\n"
 "\n"
-"    Access to download the mandatory Certificate of Conformity delivered by Odoo SA (only for Odoo Enterprise users)\n"
+"    Access to download the mandatory Certificate of Conformity delivered by CrossNow SA (only for CrossNow Enterprise users)\n"
 msgstr ""
 
 #. module: base
@@ -5554,7 +5554,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_fi
 msgid ""
 "\n"
-"This is the Odoo module to manage the accounting in Finland.\n"
+"This is the CrossNow module to manage the accounting in Finland.\n"
 "============================================================\n"
 "\n"
 "After installing this module, you'll have access to:\n"
@@ -5578,7 +5578,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_product
 msgid ""
 "\n"
-"This is the base module for managing products and pricelists in Odoo.\n"
+"This is the base module for managing products and pricelists in CrossNow.\n"
 "========================================================================\n"
 "\n"
 "Products support variants, different pricing methods, vendors information,\n"
@@ -5611,7 +5611,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_be
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Belgium in Odoo.\n"
+"This is the base module to manage the accounting chart for Belgium in CrossNow.\n"
 "==============================================================================\n"
 "\n"
 "After installing this module, the Configuration wizard for accounting is launched.\n"
@@ -5644,7 +5644,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_eg
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Egypt in Odoo.\n"
+"This is the base module to manage the accounting chart for Egypt in CrossNow.\n"
 "==============================================================================\n"
 msgstr ""
 
@@ -5652,7 +5652,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_ee
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Estonia in Odoo.\n"
+"This is the base module to manage the accounting chart for Estonia in CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -5711,7 +5711,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_my
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Malaysia in Odoo.\n"
+"This is the base module to manage the accounting chart for Malaysia in CrossNow.\n"
 "==============================================================================\n"
 msgstr ""
 
@@ -5728,14 +5728,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_ie
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Republic of Ireland in Odoo. \n"
+"This is the base module to manage the accounting chart for Republic of Ireland in CrossNow. \n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_tw
 msgid ""
 "\n"
-"This is the base module to manage the accounting chart for Taiwan in Odoo.\n"
+"This is the base module to manage the accounting chart for Taiwan in CrossNow.\n"
 "==============================================================================\n"
 msgstr ""
 
@@ -5743,7 +5743,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_ug
 msgid ""
 "\n"
-"This is the basic Ugandian localisation necessary to run Odoo in UG:\n"
+"This is the basic Ugandian localisation necessary to run CrossNow in UG:\n"
 "================================================================================\n"
 "    - Chart of accounts\n"
 "    - Taxes\n"
@@ -5756,7 +5756,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_id
 msgid ""
 "\n"
-"This is the latest Indonesian Odoo localisation necessary to run Odoo accounting for SMEs with:\n"
+"This is the latest Indonesian CrossNow localisation necessary to run CrossNow accounting for SMEs with:\n"
 "=================================================================================================\n"
 "    - generic Indonesian chart of accounts\n"
 "    - tax structure"
@@ -5766,7 +5766,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_uk
 msgid ""
 "\n"
-"This is the latest UK Odoo localisation necessary to run Odoo accounting for UK SME's with:\n"
+"This is the latest UK CrossNow localisation necessary to run CrossNow accounting for UK SME's with:\n"
 "=================================================================================================\n"
 "    - a CT600-ready chart of accounts\n"
 "    - VAT100-ready tax structure\n"
@@ -5778,7 +5778,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_il
 msgid ""
 "\n"
-"This is the latest basic Israelian localisation necessary to run Odoo in Israel:\n"
+"This is the latest basic Israelian localisation necessary to run CrossNow in Israel:\n"
 "================================================================================\n"
 "\n"
 "This module consists of:\n"
@@ -5791,7 +5791,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_za
 msgid ""
 "\n"
-"This is the latest basic South African localisation necessary to run Odoo in ZA:\n"
+"This is the latest basic South African localisation necessary to run CrossNow in ZA:\n"
 "================================================================================\n"
 "    - a generic chart of accounts\n"
 "    - SARS VAT Ready Structure"
@@ -5802,7 +5802,7 @@ msgstr ""
 msgid ""
 "\n"
 "This is the module to manage the Accounting Chart, VAT structure, Fiscal Position and Tax Mapping.\n"
-"It also adds the Registration Number for Romania in Odoo.\n"
+"It also adds the Registration Number for Romania in CrossNow.\n"
 "================================================================================================================\n"
 "\n"
 "Romanian accounting chart and localization.\n"
@@ -5812,7 +5812,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_ca
 msgid ""
 "\n"
-"This is the module to manage the Canadian accounting chart in Odoo.\n"
+"This is the module to manage the Canadian accounting chart in CrossNow.\n"
 "===========================================================================================\n"
 "\n"
 "Canadian accounting charts and localizations.\n"
@@ -5843,14 +5843,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_pl
 msgid ""
 "\n"
-"This is the module to manage the accounting chart and taxes for Poland in Odoo.\n"
+"This is the module to manage the accounting chart and taxes for Poland in CrossNow.\n"
 "==================================================================================\n"
 "\n"
 "To jest moduł do tworzenia wzorcowego planu kont, podatków, obszarów podatkowych i\n"
 "rejestrów podatkowych. Moduł ustawia też konta do kupna i sprzedaży towarów\n"
 "zakładając, że wszystkie towary są w obrocie hurtowym.\n"
 "\n"
-"Niniejszy moduł jest przeznaczony dla odoo 8.0.\n"
+"Niniejszy moduł jest przeznaczony dla crossnow 8.0.\n"
 "Wewnętrzny numer wersji OpenGLOBE 1.02\n"
 msgstr ""
 
@@ -5858,7 +5858,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_dz
 msgid ""
 "\n"
-"This is the module to manage the accounting chart for Algeria in Odoo.\n"
+"This is the module to manage the accounting chart for Algeria in CrossNow.\n"
 "======================================================================\n"
 "This module applies to companies based in Algeria.\n"
 msgstr ""
@@ -5867,7 +5867,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_fr
 msgid ""
 "\n"
-"This is the module to manage the accounting chart for France in Odoo.\n"
+"This is the module to manage the accounting chart for France in CrossNow.\n"
 "========================================================================\n"
 "\n"
 "This module applies to companies based in France mainland. It doesn't apply to\n"
@@ -5907,7 +5907,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_tn
 msgid ""
 "\n"
-"This is the module to manage the accounting chart for Tunisia in Odoo.\n"
+"This is the module to manage the accounting chart for Tunisia in CrossNow.\n"
 "=======================================================================\n"
 msgstr ""
 
@@ -5915,7 +5915,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_vn
 msgid ""
 "\n"
-"This is the module to manage the accounting chart, bank information for Vietnam in Odoo.\n"
+"This is the module to manage the accounting chart, bank information for Vietnam in CrossNow.\n"
 "========================================================================================\n"
 "\n"
 "- This module applies to companies based in Vietnamese Accounting Standard (VAS)\n"
@@ -6016,10 +6016,10 @@ msgstr ""
 #: model:ir.module.module,description:base.module_account_edi_proxy_client
 msgid ""
 "\n"
-"This module adds generic features to register an Odoo DB on the proxy responsible for receiving data (via requests from web-services).\n"
+"This module adds generic features to register an CrossNow DB on the proxy responsible for receiving data (via requests from web-services).\n"
 "- An edi_proxy_user has a unique identification on a specific proxy type (e.g. l10n_it_edi, peppol) which\n"
 "allows to identify him when receiving a document addressed to him. It is linked to a specific company on a specific\n"
-"Odoo database.\n"
+"CrossNow database.\n"
 "- Encryption features allows to decrypt all the user's data when receiving it from the proxy.\n"
 "- Authentication offers an additionnal level of security to avoid impersonification, in case someone gains to the user's database.\n"
 msgstr ""
@@ -6033,7 +6033,7 @@ msgid ""
 "will add their specific templates and controllers to extend the customer\n"
 "portal.\n"
 "\n"
-"This module contains most code coming from odoo v10 website_portal. Purpose\n"
+"This module contains most code coming from crossnow v10 website_portal. Purpose\n"
 "of this module is to allow the display of a customer portal without having\n"
 "a dependency towards website editing and customization capabilities."
 msgstr ""
@@ -6188,7 +6188,7 @@ msgid ""
 "-----------------\n"
 "This module supports the three most common check formats and will work out of the box with the linked checks from checkdepot.net.\n"
 "\n"
-"View all checks at: https://www.checkdepot.net/checks/laser/Odoo.htm\n"
+"View all checks at: https://www.checkdepot.net/checks/laser/CrossNow.htm\n"
 "\n"
 "You can choose between:\n"
 "\n"
@@ -6449,7 +6449,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_ro_saft
 msgid ""
 "\n"
-"This module enables generating the D.406 declaration from within Odoo.\n"
+"This module enables generating the D.406 declaration from within CrossNow.\n"
 "The D.406 declaration is an XML file in the SAF-T format which Romanian companies\n"
 "must submit monthly or quarterly, depending on their tax reporting period.\n"
 msgstr ""
@@ -6471,7 +6471,7 @@ msgid ""
 "\n"
 "To be elligible for this payment method, a customer must have first\n"
 "returned a mandate to the company, giving his consent to use direct debit.\n"
-"This consent must have been encoded as a 'customer mandate' into Odoo.\n"
+"This consent must have been encoded as a 'customer mandate' into CrossNow.\n"
 "\n"
 "You also need to meet the following requirements in order to properly\n"
 "generate a SDD file:\n"
@@ -6480,7 +6480,7 @@ msgid ""
 "- Your company must have defined a journal to receive SDD payments (again, in 'settings' of accounting module)\n"
 "- Every customer for which you generate a payment must have a valid IBAN account number.\n"
 "\n"
-"Odoo will let you know if any of these requirements are not satisfied.\n"
+"CrossNow will let you know if any of these requirements are not satisfied.\n"
 "\n"
 "Any invoice that gets validated for a customer with a mandate will be\n"
 "automatically set in 'paid' state, and a payment will be generated. An\n"
@@ -6509,7 +6509,7 @@ msgid ""
 "This module gives a framework for SMS text messaging\n"
 "----------------------------------------------------\n"
 "\n"
-"The service is provided by the In App Purchase Odoo platform.\n"
+"The service is provided by the In App Purchase CrossNow platform.\n"
 msgstr ""
 
 #. module: base
@@ -6640,7 +6640,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_test_crm_full
 msgid ""
 "\n"
-"This module is intended to test the main crm flows of Odoo, both frontend and\n"
+"This module is intended to test the main crm flows of CrossNow, both frontend and\n"
 "backend. It notably includes IAP bridges modules to test their impact. "
 msgstr ""
 
@@ -6731,7 +6731,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_iot
 msgid ""
 "\n"
-"This module provides management of your IoT Boxes inside Odoo.\n"
+"This module provides management of your IoT Boxes inside CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -6739,14 +6739,14 @@ msgstr ""
 msgid ""
 "\n"
 "This module provides standard tools (account model, context manager and helpers)\n"
-"to support In-App purchases inside Odoo. "
+"to support In-App purchases inside CrossNow. "
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_mobile
 msgid ""
 "\n"
-"This module provides the core of the Odoo Mobile App.\n"
+"This module provides the core of the CrossNow Mobile App.\n"
 msgstr ""
 
 #. module: base
@@ -6817,10 +6817,10 @@ msgid ""
 "\n"
 "* the factur-x doc (form the FNFE)\n"
 "* the peppol-bis-invoice-3 doc (the github repository: https://github.com/OpenPEPPOL/peppol-bis-invoice-3/tree/master/rules/examples contains examples)\n"
-"* odoo, these files pass all validation tests (using ecosio or the FNFE validator)\n"
+"* crossnow, these files pass all validation tests (using ecosio or the FNFE validator)\n"
 "\n"
 "We test that the external examples are correctly imported (currency, total amount and total tax match).\n"
-"We also test that generating xml from odoo with given parameters gives exactly the same xml as the expected,\n"
+"We also test that generating xml from crossnow with given parameters gives exactly the same xml as the expected,\n"
 "valid ones.\n"
 msgstr ""
 
@@ -6828,7 +6828,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_test_website_slides_full
 msgid ""
 "\n"
-"This module will test the main certification flow of Odoo.\n"
+"This module will test the main certification flow of CrossNow.\n"
 "It will install the e-learning, survey and e-commerce apps and make a complete\n"
 "certification flow including purchase, certification, failure and success.\n"
 msgstr ""
@@ -6837,7 +6837,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_test_event_full
 msgid ""
 "\n"
-"This module will test the main event flows of Odoo, both frontend and backend.\n"
+"This module will test the main event flows of CrossNow, both frontend and backend.\n"
 "It installs sale capabilities, front-end flow, eCommerce, questions and\n"
 "automatic lead generation, full Online support, ...\n"
 msgstr ""
@@ -6846,7 +6846,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_test_main_flows
 msgid ""
 "\n"
-"This module will test the main workflow of Odoo.\n"
+"This module will test the main workflow of CrossNow.\n"
 "It will install some main apps and will try to execute the most important actions.\n"
 msgstr ""
 
@@ -6854,14 +6854,14 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_kz
 msgid ""
 "\n"
-"This provides a base chart of accounts and taxes template for use in Odoo for Kazakhstan.\n"
+"This provides a base chart of accounts and taxes template for use in CrossNow for Kazakhstan.\n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ke
 msgid ""
 "\n"
-"This provides a base chart of accounts and taxes template for use in Odoo.\n"
+"This provides a base chart of accounts and taxes template for use in CrossNow.\n"
 msgstr ""
 
 #. module: base
@@ -6904,7 +6904,7 @@ msgid ""
 "This module will add a link to the Transifex project in the translation view.\n"
 "The purpose of this module is to speed up translations of the main modules.\n"
 "\n"
-"To work, Odoo uses Transifex configuration files `.tx/config` to detect the\n"
+"To work, CrossNow uses Transifex configuration files `.tx/config` to detect the\n"
 "project source. Custom modules will not be translated (as not published on\n"
 "the main Transifex project).\n"
 "\n"
@@ -6934,7 +6934,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_tr
 msgid ""
 "\n"
-"Türkiye için Tek düzen hesap planı şablonu Odoo Modülü.\n"
+"Türkiye için Tek düzen hesap planı şablonu CrossNow Modülü.\n"
 "==========================================================\n"
 "\n"
 "Bu modül kurulduktan sonra, Muhasebe yapılandırma sihirbazı çalışır\n"
@@ -7077,7 +7077,7 @@ msgid ""
 "\n"
 "Vehicle, leasing, insurances, cost\n"
 "==================================\n"
-"With this module, Odoo helps you managing all your vehicles, the\n"
+"With this module, CrossNow helps you managing all your vehicles, the\n"
 "contracts associated to those vehicle as well as services, costs\n"
 "and many other features necessary to the management of your fleet\n"
 "of vehicle(s)\n"
@@ -7190,7 +7190,7 @@ msgid " Let's choose a Point Relais® as shipping address "
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "\"group_by\" value must be a string %(attribute)s=%(value)r"
@@ -7225,7 +7225,7 @@ msgid ""
 "## Merge details\n"
 "\n"
 "The first version of the module was specified in task\n"
-"[2802678](https://www.odoo.com/web#id=2802678&model=project.task) and merged with PR odoo/odoo#95860\n"
+"[2802678](https://www.crossnow.com/web#id=2802678&model=project.task) and merged with PR crossnow/crossnow#95860\n"
 "in `saas-15.5`.\n"
 "\n"
 "## Testing instructions\n"
@@ -7263,8 +7263,8 @@ msgid ""
 "## Merge details\n"
 "\n"
 "The first version of the module was specified in task\n"
-"[2845428](https://www.odoo.com/web#id=2845428&model=project.task) and merged with PR\n"
-"odoo/odoo#98441 in `saas-15.5`.\n"
+"[2845428](https://www.crossnow.com/web#id=2845428&model=project.task) and merged with PR\n"
+"crossnow/crossnow#98441 in `saas-15.5`.\n"
 "\n"
 "## Testing instructions\n"
 "\n"
@@ -7304,8 +7304,8 @@ msgid ""
 "## Merge details\n"
 "\n"
 "The first version of the module was specified in task\n"
-"[2759117](https://www.odoo.com/web#id=2759117&model=project.task) and merged with PR\n"
-"odoo/odoo#84820 in `saas-15.4`.\n"
+"[2759117](https://www.crossnow.com/web#id=2759117&model=project.task) and merged with PR\n"
+"crossnow/crossnow#84820 in `saas-15.4`.\n"
 "\n"
 "## Testing instructions\n"
 "\n"
@@ -7355,8 +7355,8 @@ msgid ""
 "## Merge details\n"
 "\n"
 "The first version of the module was specified in task\n"
-"[2704764](https://www.odoo.com/web#id=2704764&model=project.task) and merged with PR\n"
-"odoo/odoo#83957 in `saas-15.5`.\n"
+"[2704764](https://www.crossnow.com/web#id=2704764&model=project.task) and merged with PR\n"
+"crossnow/crossnow#83957 in `saas-15.5`.\n"
 "\n"
 "## Testing instructions\n"
 "\n"
@@ -7394,9 +7394,9 @@ msgid ""
 "## Module history\n"
 "\n"
 "- The first version of the module was specified in task\n"
-"  [2800823](https://www.odoo.com/web#id=2800823&model=project.task) and merged with PR\n"
-"  odoo/odoo#92848 in `saas-15.5`.\n"
-"- The API was changed to the Recurring Payments API to support tokenization with PR odoo/odoo#143525\n"
+"  [2800823](https://www.crossnow.com/web#id=2800823&model=project.task) and merged with PR\n"
+"  crossnow/crossnow#92848 in `saas-15.5`.\n"
+"- The API was changed to the Recurring Payments API to support tokenization with PR crossnow/crossnow#143525\n"
 "  in `17.0`.\n"
 "\n"
 "## Testing instructions\n"
@@ -7445,8 +7445,8 @@ msgid ""
 "## Merge details\n"
 "\n"
 "The first version of the module was specified in task\n"
-"[2946329](https://www.odoo.com/web#id=2759117&model=project.task) and merged with PR\n"
-"odoo/odoo#141661 in branch `17.0`.\n"
+"[2946329](https://www.crossnow.com/web#id=2759117&model=project.task) and merged with PR\n"
+"crossnow/crossnow#141661 in branch `17.0`.\n"
 "\n"
 "## Testing instructions\n"
 "\n"
@@ -7454,35 +7454,35 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "%(action_name)s is not a valid action on %(model_name)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "%(attribute)r value must be an integer (%(value)s)"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "%(company_currency_name)s per %(rate_currency_name)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "%(method)s on %(model)s is private and cannot be called from a button"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0 code:addons/models.py:0
 #, python-format
 msgid ""
@@ -7492,14 +7492,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "%(rate_currency_name)s per %(company_currency_name)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -7573,14 +7573,14 @@ msgid "%p - Equivalent of either AM or PM.\""
 msgstr "%p - Equivalente a AM ou PM.\""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "%s (Dedicated Outgoing Mail Server):"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_filters.py:0
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/base/models/res_users.py:0
@@ -7591,7 +7591,7 @@ msgid "%s (copy)"
 msgstr "%s (cópia)"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "%s per Unit"
@@ -7619,42 +7619,42 @@ msgid "&amp;nbsp;"
 msgstr "&amp;nbsp;"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "'%s' does not seem to be a number for field '%%(field)s'"
 msgstr "'%s' não parece ser um número para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "'%s' does not seem to be a valid JSON for field '%%(field)s'"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "'%s' does not seem to be a valid date for field '%%(field)s'"
 msgstr "%s' não parece ser uma data válida para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "'%s' does not seem to be a valid datetime for field '%%(field)s'"
 msgstr "'%s' parece não ser uma data válida para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "'%s' does not seem to be an integer for field '%%(field)s'"
 msgstr "'%s' não aparenta ser um número inteiro para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "(Record: %s, User: %s)"
@@ -7681,7 +7681,7 @@ msgid ", required"
 msgstr ", obrigatório"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -7690,7 +7690,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "- %s (%s)"
@@ -7709,7 +7709,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -7717,7 +7717,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -8357,7 +8357,7 @@ msgstr "<u><strong>Vistas</strong></u>"
 #: model:ir.module.module,description:base.module_l10n_mx_edi_landing
 msgid ""
 "==========================================\n"
-"Odoo Mexico Localization for Stock/Landing\n"
+"CrossNow Mexico Localization for Stock/Landing\n"
 "==========================================\n"
 "\n"
 "This module extends the functionality of Mexican localization to support\n"
@@ -8438,7 +8438,7 @@ msgid "A - AGRICULTURE, FORESTRY AND FISHING"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "A <graph> can only contains <field> nodes, found a <%s>"
@@ -8518,7 +8518,7 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_lint
-msgid "A module to test Odoo code with various linters."
+msgid "A module to test CrossNow code with various linters."
 msgstr ""
 
 #. module: base
@@ -8646,7 +8646,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "A valid email is required for find_or_create to work properly."
@@ -8718,7 +8718,7 @@ msgid "API Key Description"
 msgstr "Descrição da Chave da API"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "API Key Ready"
@@ -8743,12 +8743,12 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_users_form_simple_modif
 msgid ""
-"API Keys are used to connect to Odoo from external tools without the need "
+"API Keys are used to connect to CrossNow from external tools without the need "
 "for a password or Two-factor Authentication."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "ASCII characters are required for %s in %s"
@@ -8786,7 +8786,7 @@ msgid "Access Menu"
 msgstr "Menu de Acesso"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.ir_access_act
 #: model:ir.ui.menu,name:base.menu_ir_access_act
@@ -8832,7 +8832,7 @@ msgid "Access to export feature"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/api.py:0 code:addons/api.py:0
 #, python-format
 msgid "Access to unauthorized or invalid companies."
@@ -9048,7 +9048,7 @@ msgid "Action"
 msgstr "Ação"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -9286,14 +9286,14 @@ msgid "Add crm UTM info on social"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Add direction"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Add directional information (not used for digital)"
@@ -9396,7 +9396,7 @@ msgid "Addon for the Self Order App that allows customers to pay by Stripe."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model_terms:ir.ui.view,arch_db:base.contact
 #: model_terms:ir.ui.view,arch_db:base.no_contact
@@ -9425,7 +9425,7 @@ msgid "Address format..."
 msgstr "Formato do endereço..."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Address separator"
@@ -9469,7 +9469,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_voip
 msgid ""
 "Adds a softphone and helpers to make phone calls directly from within your "
-"Odoo database."
+"CrossNow database."
 msgstr ""
 
 #. module: base
@@ -9499,7 +9499,7 @@ msgid ""
 "Adds support for authentication by LDAP server.\n"
 "===============================================\n"
 "This module allows users to login with their LDAP username and password, and\n"
-"will automatically create Odoo users for them on the fly.\n"
+"will automatically create CrossNow users for them on the fly.\n"
 "\n"
 "**Note:** This module only work on servers that have Python's ``python-ldap`` module installed.\n"
 "\n"
@@ -9508,7 +9508,7 @@ msgid ""
 "After installing this module, you need to configure the LDAP parameters in the\n"
 "General Settings menu. Different companies may have different\n"
 "LDAP servers, as long as they have unique usernames (usernames need to be unique\n"
-"in Odoo, even across multiple companies).\n"
+"in CrossNow, even across multiple companies).\n"
 "\n"
 "Anonymous LDAP binding is also supported (for LDAP servers that allow it), by\n"
 "simply keeping the LDAP user and password empty in the LDAP configuration.\n"
@@ -9524,24 +9524,24 @@ msgid ""
 "\n"
 "Security Considerations:\n"
 "------------------------\n"
-"Users' LDAP passwords are never stored in the Odoo database, the LDAP server\n"
+"Users' LDAP passwords are never stored in the CrossNow database, the LDAP server\n"
 "is queried whenever a user needs to be authenticated. No duplication of the\n"
 "password occurs, and passwords are managed in one place only.\n"
 "\n"
-"Odoo does not manage password changes in the LDAP, so any change of password\n"
+"CrossNow does not manage password changes in the LDAP, so any change of password\n"
 "should be conducted by other means in the LDAP directory directly (for LDAP users).\n"
 "\n"
-"It is also possible to have local Odoo users in the database along with\n"
+"It is also possible to have local CrossNow users in the database along with\n"
 "LDAP-authenticated users (the Administrator account is one obvious example).\n"
 "\n"
 "Here is how it works:\n"
 "---------------------\n"
-"    * The system first attempts to authenticate users against the local Odoo\n"
+"    * The system first attempts to authenticate users against the local CrossNow\n"
 "      database;\n"
 "    * if this authentication fails (for example because the user has no local\n"
 "      password), the system then attempts to authenticate against LDAP;\n"
 "\n"
-"As LDAP users have blank passwords by default in the local Odoo database\n"
+"As LDAP users have blank passwords by default in the local CrossNow database\n"
 "(which means no access), the first step always fails and the LDAP server is\n"
 "queried to do the authentication.\n"
 "\n"
@@ -9559,7 +9559,7 @@ msgid ""
 "         assigned as local password for each new LDAP user, effectively setting\n"
 "         a *master password* for these users (until manually changed). You\n"
 "         usually do not want this. One easy way to setup a template user is to\n"
-"         login once with a valid LDAP user, let Odoo create a blank local\n"
+"         login once with a valid LDAP user, let CrossNow create a blank local\n"
 "         user with the same login (and a blank password), then rename this new\n"
 "         user to a username that does not exist in LDAP, and setup its groups\n"
 msgstr ""
@@ -9585,7 +9585,7 @@ msgid "Administrative/Utilities"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0 code:addons/base/models/ir_model.py:0
 #: code:addons/base/models/ir_model.py:0
 #, python-format
@@ -9705,7 +9705,7 @@ msgid "All Child"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 #, python-format
 msgid ""
@@ -9861,7 +9861,7 @@ msgid "Amazon/TaxCloud Bridge"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid ""
@@ -9899,7 +9899,7 @@ msgid "An Irish-American payment provider covering the US and many others."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -9908,7 +9908,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -9938,14 +9938,14 @@ msgstr ""
 "dependências é sempre instalado."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "An email is required for find_or_create to work"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -10000,7 +10000,7 @@ msgid "Anguilla"
 msgstr "Anguilha"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "Another partner already has this barcode"
@@ -10039,7 +10039,7 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #: model:ir.actions.act_window,name:base.action_view_base_module_upgrade
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_upgrade_install
@@ -10307,7 +10307,7 @@ msgid "Associated reports"
 msgstr "Relatórios associados"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "At least one language must be active."
@@ -10330,7 +10330,7 @@ msgid "Attachment"
 msgstr "Anexo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_attachment.py:0
 #, python-format
 msgid "Attachment is not encoded in base64."
@@ -10438,7 +10438,7 @@ msgid "Austrian Standardized Charts & Tax"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -10677,7 +10677,7 @@ msgid "Background Image"
 msgstr "Imagem de Fundo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/translate.py:0
 #, python-format
 msgid "Bad file format: %s"
@@ -10775,7 +10775,7 @@ msgid "Barcode"
 msgstr "Código de Barras"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Barcode %s"
@@ -10807,14 +10807,14 @@ msgid "Barcode for Batch Transfer"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Barcode symbology"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Barcode type, eg: UPCA, EAN13, Code128"
@@ -10854,7 +10854,7 @@ msgid "Base Import Tests: Ensure Flow Robustness"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Base Language 'en_US' can not be deleted."
@@ -10908,12 +10908,12 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_grid
-msgid "Basic 2D Grid view for odoo"
+msgid "Basic 2D Grid view for crossnow"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_cohort
-msgid "Basic Cohort view for odoo"
+msgid "Basic Cohort view for crossnow"
 msgstr ""
 
 #. module: base
@@ -10957,7 +10957,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base.view_view_form
 msgid ""
 "Be aware that editing the architecture of a standard view is not advised, since the changes will be overwritten during future module updates.<br/>\n"
-"                        We recommend applying modifications to standard views through inherited views or customization with Odoo Studio."
+"                        We recommend applying modifications to standard views through inherited views or customization with CrossNow Studio."
 msgstr ""
 
 #. module: base
@@ -11135,7 +11135,7 @@ msgid "Binding View Types"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid ""
@@ -11220,7 +11220,7 @@ msgid "Bouvet Island"
 msgstr "Ilha Bouvet"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #: model:ir.model.fields,field_description:base.field_res_company__child_ids
 #: model_terms:ir.ui.view,arch_db:base.view_company_form
@@ -11504,7 +11504,7 @@ msgid "Burundi"
 msgstr "Burundi"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Button must have a name"
@@ -11516,7 +11516,7 @@ msgid "By"
 msgstr "Por"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
@@ -11629,7 +11629,7 @@ msgid "Cameroon"
 msgstr "Camarões"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid ""
@@ -11639,21 +11639,21 @@ msgstr ""
 "separadamente"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Can not upgrade module %r. It is not installed."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Can only rename one field at a time!"
 msgstr "Só é possível renomear um campo de cada vez!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Can't compare more than two views."
@@ -11718,14 +11718,14 @@ msgid "Cancel Upgrade"
 msgstr "Cancelar Atualização"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/assetsbundle.py:0
 #, python-format
 msgid "Cannot create %r because the template to inherit %r is not found."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid ""
@@ -11734,14 +11734,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Cannot deactivate a language that is currently used by contacts."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Cannot deactivate a language that is currently used by users."
@@ -11749,14 +11749,14 @@ msgstr ""
 "Não é possível desativar um idioma utilizado atualmente pelos utilizadores."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid "Cannot duplicate configuration!"
 msgstr "Não se pode duplicar a configuração!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -11851,7 +11851,7 @@ msgid "Change the way addresses are displayed in reports"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -11866,14 +11866,14 @@ msgstr ""
 " botão \"Descartar\" antes de \"Guardar\" para abortar esta mudança."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Changing the model of a field is forbidden!"
 msgstr "Alterar o modelo de um campo é proibido!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -11884,7 +11884,7 @@ msgstr ""
 "novamente!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Changing to 12-hour clock format instead."
@@ -12238,7 +12238,7 @@ msgid "Comm10E 25  105 x 241 mm, U.S. Common 10 Envelope"
 msgstr "Comm10E 25  105 x 241 mm, U.S. Common 10 Envelope"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Comma"
@@ -12248,7 +12248,7 @@ msgstr "Vírgula"
 #: model:ir.model.fields,help:base.field_ir_mail_server__from_filter
 msgid ""
 "Comma-separated list of addresses or domains for which this server can be used.\n"
-"e.g.: \"notification@odoo.com\" or \"odoo.com\""
+"e.g.: \"notification@crossnow.com\" or \"crossnow.com\""
 msgstr ""
 
 #. module: base
@@ -12307,7 +12307,7 @@ msgid "Companies count"
 msgstr "Contagem de empresas"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid ""
@@ -12316,7 +12316,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_ir_attachment__company_id
 #: model:ir.model.fields,field_description:base.field_ir_default__company_id
@@ -12337,7 +12337,7 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -12416,7 +12416,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid ""
@@ -12469,7 +12469,7 @@ msgid "Compute"
 msgstr "Calcular"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Compute method cannot depend on field 'id'"
@@ -12588,7 +12588,7 @@ msgid "Connect the Web Client to Hardware Peripherals"
 msgstr "Connect the Web Client to Hardware Peripherals"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -12607,7 +12607,7 @@ msgid "Connection Encryption"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -12618,7 +12618,7 @@ msgstr ""
 " %s"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "Connection Test Successful!"
@@ -12716,7 +12716,7 @@ msgid "Contact image"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Contact your administrator to request access if necessary."
@@ -12825,7 +12825,7 @@ msgid "Costa Rica - Accounting"
 msgstr "Costa Rica - Contabilidade"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
@@ -12835,7 +12835,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "Couldn't create contact without email address!"
@@ -13038,16 +13038,16 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_studio
-msgid "Create and customize your Odoo apps"
+msgid "Create and customize your CrossNow apps"
 msgstr ""
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_res_company_form
 msgid ""
-"Create and manage the companies that will be managed by Odoo from here. "
+"Create and manage the companies that will be managed by CrossNow from here. "
 "Shops or subsidiaries can be created and maintained from here."
 msgstr ""
-"Criei e gira as empresas que serão geridas pelo Odoo a partir daqui. Lojas e"
+"Criei e gira as empresas que serão geridas pelo CrossNow a partir daqui. Lojas e"
 " subsidiárias podem aqui ser criadas e mantidas."
 
 #. module: base
@@ -13417,21 +13417,21 @@ msgid "Currency field"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Currency field does not have type many2one"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Currency field is empty and there is no fallback field in the model"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Currency field should have a res.currency relation"
@@ -13443,7 +13443,7 @@ msgid "Currency sign, to be used when printing amounts."
 msgstr "Sinal da moeda, a ser utilizado na impressão de montantes."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Current Arch"
@@ -13636,7 +13636,7 @@ msgid "DLE 26 110 x 220 mm"
 msgstr "DLE 26 110 x 220 mm"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Dash"
@@ -13698,7 +13698,7 @@ msgid "Database Structure"
 msgstr "Estrutura da Base de Dados"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_res_currency__date
 #: model:ir.model.fields,field_description:base.field_res_currency_rate__name
@@ -13716,35 +13716,35 @@ msgid "Date Format"
 msgstr "Formato de Data"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Date format"
 msgstr "Formato da data"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Date to compare with the field value, by default use the current date."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Date unit"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Date unit used for comparison and formatting"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid ""
@@ -13753,7 +13753,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid ""
@@ -13813,7 +13813,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Decimalized number"
@@ -13881,7 +13881,7 @@ msgstr "Relatórios definidos"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_map
-msgid "Defines the map view for odoo enterprise"
+msgid "Defines the map view for crossnow enterprise"
 msgstr ""
 
 #. module: base
@@ -13907,7 +13907,7 @@ msgid "Delete Access"
 msgstr "Acesso de Eliminação"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -14115,7 +14115,7 @@ msgid "Digest Enterprise"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Digital formatting"
@@ -14147,7 +14147,7 @@ msgid "Disable smart shrinking"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid ""
@@ -14304,14 +14304,14 @@ msgid "Display and change your products information on electronic Pricer tags"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display country image"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display currency"
@@ -14335,42 +14335,42 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display only the date"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display only the time"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display phone icons"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display the country image if the field is present on the record"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Display the phone icons even if no_marker is True"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Displayed fields"
@@ -14403,7 +14403,7 @@ msgid "Document management"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Document type:"
@@ -14535,7 +14535,7 @@ msgid "Domain Value"
 msgstr "Valor do Domínio"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -14564,7 +14564,7 @@ msgid "Dominican Republic - Accounting Reports"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Don't display the font awesome marker"
@@ -14603,7 +14603,7 @@ msgid "Dropship and Subcontracting Management"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid ""
@@ -14800,21 +14800,21 @@ msgid "Electronic invoicing for Colombia with Carvajal"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Element %r cannot be located in parent view"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Element '%s' cannot be located in parent view"
 msgstr "O elemento '%s' não foi encontrado na vista ascendente"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_email
 #: model:ir.model.fields,field_description:base.field_res_bank__email
@@ -14921,7 +14921,7 @@ msgid "Employment Hero Australian Payroll"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Empty dependency in %r"
@@ -15091,7 +15091,7 @@ msgid "Error"
 msgstr "Erro"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Error ! You cannot create recursive categories."
@@ -15103,7 +15103,7 @@ msgid "Error message returned when the constraint is violated."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15113,7 +15113,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/translate.py:0
 #, python-format
 msgid ""
@@ -15123,7 +15123,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15133,7 +15133,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15144,7 +15144,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_menu.py:0
 #, python-format
 msgid "Error! You cannot create recursive menus."
@@ -15395,7 +15395,7 @@ msgstr "Relatórios explicitamente associados"
 #: model:ir.module.module,description:base.module_web_unsplash
 msgid ""
 "Explore the free high-resolution image library of Unsplash.com and find "
-"images to use in Odoo. An Unsplash search bar is added to the image library "
+"images to use in CrossNow. An Unsplash search bar is added to the image library "
 "modal."
 msgstr ""
 
@@ -15702,7 +15702,7 @@ msgid ""
 "La structure du fichier FEC généré par ce module a été vérifiée avec le logiciel\n"
 "*Test Compta Demat* version 1_00_05 disponible sur\n"
 "`le site de la direction générale des finances publiques <http://www.economie.gouv.fr/dgfip/outil-test-des-fichiers-des-ecritures-comptables-fec>`\n"
-"en utilisant une base de donnée Odoo réelle.\n"
+"en utilisant une base de donnée CrossNow réelle.\n"
 "\n"
 "Configuration\n"
 "=============\n"
@@ -15734,35 +15734,35 @@ msgid "Field"
 msgstr "Campo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Field \"%(field_name)s\" does not exist in model \"%(model_name)s\""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Field \"Model\" cannot be modified on models."
 msgstr "Campo \"Modelo\" não pode ser modificado em modelos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Field \"Transient Model\" cannot be modified on models."
 msgstr "Campo \"Modelo\" não pode ser modificado em modelos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Field \"Type\" cannot be modified on models."
 msgstr "Campo \"Tipo\" não pode ser modificado em modelos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15770,7 +15770,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15778,14 +15778,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Field %(name)r used in %(use)s must be present in view but is missing."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15793,7 +15793,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -15857,14 +15857,14 @@ msgid "Field Type"
 msgstr "Tipo de Campo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Field `%(name)s` does not exist"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -15879,7 +15879,7 @@ msgid "Field names must be unique per model."
 msgstr "Os nomes dos campos devem ser únicos por modelo."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Field tag must have a \"name\" attribute defined"
@@ -15951,7 +15951,7 @@ msgid "File"
 msgstr "Ficheiro"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_import_language.py:0
 #, python-format
 msgid ""
@@ -15962,7 +15962,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "File Arch"
@@ -16196,10 +16196,10 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.wizard_lang_export
 msgid ""
-"For more details about translating Odoo in your language, please refer to "
+"For more details about translating CrossNow in your language, please refer to "
 "the"
 msgstr ""
-"Para mais informações sobre a tradução do Odoo para o seu idioma, por favor,"
+"Para mais informações sobre a tradução do CrossNow para o seu idioma, por favor,"
 " consulte"
 
 #. module: base
@@ -16217,7 +16217,7 @@ msgid "For relationship fields, the technical name of the target model"
 msgstr "Para campos de relacionamento, o nome técnico do modelo de destino"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 #, python-format
 msgid ""
@@ -16228,21 +16228,21 @@ msgstr ""
 "Você pode reabrir o assistente várias vezes , se necessário."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Forbidden attribute used in arch (%s)."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Forbidden owl directive used in arch (%s)."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Forbidden use of `__comp__` in arch."
@@ -16261,7 +16261,7 @@ msgid "Form"
 msgstr "Formulário"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Format"
@@ -16280,7 +16280,7 @@ msgid "Formatted Email"
 msgstr "Email Formatado"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Formatting: long, short, narrow (not used for digital)"
@@ -16297,7 +16297,7 @@ msgid "Forum on Courses"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -16306,7 +16306,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Found multiple matches for value %r in field %%(field)r (%d matches)"
@@ -16743,14 +16743,14 @@ msgid "Gmail support for incoming / outgoing mail servers"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid "Go to the configuration panel"
 msgstr "Ir para o painel de configuração"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #: code:addons/base/models/res_partner.py:0
 #, python-format
@@ -16875,7 +16875,7 @@ msgid "Group-based"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -16889,7 +16889,7 @@ msgid "Group-specific rules are combined together with a logical OR operator"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.action_res_groups
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_window__groups_id
@@ -17070,7 +17070,7 @@ msgid "Heard Island and McDonald Islands"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Height"
@@ -17085,7 +17085,7 @@ msgstr "Ajuda"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_forum
-msgid "Help Center for helpdesk based on Odoo Forum"
+msgid "Help Center for helpdesk based on CrossNow Forum"
 msgstr ""
 
 #. module: base
@@ -17226,14 +17226,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Hide badges"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Hide seconds"
@@ -17344,7 +17344,7 @@ msgid "Html"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Human Readable"
@@ -17376,7 +17376,7 @@ msgid "I - ACCOMMODATION AND FOOD SERVICE ACTIVITIES"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -17386,7 +17386,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -17395,7 +17395,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -17703,15 +17703,15 @@ msgstr ""
 #: model:ir.model.fields,help:base.field_ir_ui_menu__groups_id
 msgid ""
 "If you have groups, the visibility of this menu will be based on these "
-"groups. If this field is empty, Odoo will compute visibility based on the "
+"groups. If this field is empty, CrossNow will compute visibility based on the "
 "related object's read access."
 msgstr ""
 "Se tem grupos, a visibilidade deste menu será baseada nesses grupos. Se este"
-" campo estiver vazio, o Odoo calculará a visibilidade baseando-se no acesso "
+" campo estiver vazio, o CrossNow calculará a visibilidade baseando-se no acesso "
 "de escrita do objeto relacionado."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid ""
@@ -17788,14 +17788,14 @@ msgid "Image Mixin"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "Image is not encoded in base64."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/image.py:0
 #, python-format
 msgid ""
@@ -17904,7 +17904,7 @@ msgid "Import QIF Bank Statement"
 msgstr "Importar Extrato Bancário QIF"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "Import Template for Customers"
@@ -17970,14 +17970,14 @@ msgid "Include"
 msgstr "Incluir"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Incompatible companies on records:"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -18147,7 +18147,7 @@ msgid "Inherited models"
 msgstr "Modelos herdados"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -18181,7 +18181,7 @@ msgid "Input View"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Install"
@@ -18222,14 +18222,14 @@ msgid "Instant Messaging Bus allow you to send messages to users, in live."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Insufficient fields for Calendar View!"
 msgstr "Campos insuficientes para a Vista Calendário!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -18247,7 +18247,7 @@ msgstr "Inteiro"
 #. module: base
 #: model:ir.module.module,description:base.module_mail_plugin
 msgid ""
-"Integrate Odoo with your mailbox, get information about contacts directly "
+"Integrate CrossNow with your mailbox, get information about contacts directly "
 "inside your mailbox, log content of emails as internal notes"
 msgstr ""
 
@@ -18310,7 +18310,7 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_whatsapp
-msgid "Integrates Odoo with WhatsApp to use WhatsApp messaging service"
+msgid "Integrates CrossNow with WhatsApp to use WhatsApp messaging service"
 msgstr ""
 
 #. module: base
@@ -18397,7 +18397,7 @@ msgid "Introspection report on objects"
 msgstr "Relatório de introspeção em objetos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -18407,7 +18407,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
@@ -18417,35 +18417,35 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Invalid 'group by' parameter"
 msgstr "Parâmetro 'group by' inválido"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Invalid Expression while parsing xpath %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_default.py:0
 #, python-format
 msgid "Invalid JSON format in Default Value field."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Invalid composed field %(definition)s in %(use)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -18455,14 +18455,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Invalid database id '%s' for the field '%%(field)s'"
 msgstr "Id de base de dados '%s' inválido para o campo '%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -18473,21 +18473,21 @@ msgstr ""
 " diretivas permitidas, exibida quando se edita um idioma."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "Invalid domain: %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_default.py:0
 #, python-format
 msgid "Invalid field %s.%s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/assetsbundle.py:0
 #, python-format
 msgid "Invalid inherit mode. Module %r and template name %r"
@@ -18508,14 +18508,14 @@ msgid "Invalid key: QWeb view should have a key"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Invalid mode attribute:"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
@@ -18523,28 +18523,28 @@ msgid "Invalid model name %r in action definition."
 msgstr "Nome de modelo %r inválido na definição da ação."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Invalid position attribute: '%s'"
 msgstr "Atributo posicional inválido: '%s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_sequence.py:0
 #, python-format
 msgid "Invalid prefix or suffix for sequence %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Invalid search criterion"
 msgstr "Critério de Pesquisa Inválido"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -18553,42 +18553,42 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Invalid special '%(value)s' in button"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Invalid specification for moved nodes: %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid "Invalid template user. It seems it has been deleted."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_property.py:0
 #, python-format
 msgid "Invalid type"
 msgstr "Tipo Inválido"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_default.py:0
 #, python-format
 msgid "Invalid value for %s.%s: %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_default.py:0
 #, python-format
 msgid ""
@@ -18597,14 +18597,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Invalid view %(name)s definition in %(file)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Invalid xmlid %(xmlid)s for button of type action."
@@ -18849,7 +18849,7 @@ msgid "Journal Items associated to the contact"
 msgstr "Items do diário associados ao contacto"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Json"
@@ -19021,7 +19021,7 @@ msgid "LGPL Version 3"
 msgstr "LGPL Versão 3"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -19083,7 +19083,7 @@ msgid "Language Name"
 msgstr "Nome do Idioma"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Language code cannot be modified."
@@ -19456,7 +19456,7 @@ msgid "Line"
 msgstr "Linha"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Linebreak"
@@ -19535,7 +19535,7 @@ msgid "Link module between pos_sale and pos_loyalty"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "List of contact fields to display in the widget"
@@ -19641,7 +19641,7 @@ msgid "Log out from all devices"
 msgstr "Sair de todos os dispositivos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Log out from all devices?"
@@ -19677,7 +19677,7 @@ msgid "Logs"
 msgstr "Registos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Long"
@@ -19801,7 +19801,7 @@ msgid "Madam"
 msgstr "Senhora"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "Mail Delivery Failed"
@@ -19860,7 +19860,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -19909,7 +19909,7 @@ msgstr "Manutenção - MRP"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_voip
-msgid "Make and receive phone calls from within Odoo."
+msgid "Make and receive phone calls from within CrossNow."
 msgstr ""
 
 #. module: base
@@ -19970,8 +19970,8 @@ msgid ""
 "Manage Recruitment and Job applications\n"
 "---------------------------------------\n"
 "\n"
-"Publish, promote and organize your job offers with the Odoo\n"
-"<a href=\"https://www.odoo.com/app/recruitment\">Open Source Recruitment Application</a>.\n"
+"Publish, promote and organize your job offers with the CrossNow\n"
+"<a href=\"https://www.crossnow.com/app/recruitment\">Open Source Recruitment Application</a>.\n"
 "\n"
 "Organize your job board, promote your job announces and keep track of\n"
 "application submissions easily. Follow every applicant and build up a database\n"
@@ -20036,14 +20036,14 @@ msgstr ""
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.grant_menu_access
 msgid ""
-"Manage and customize the items available and displayed in your Odoo system "
+"Manage and customize the items available and displayed in your CrossNow system "
 "menu. You can delete an item by clicking on the box at the beginning of each"
 " line and then delete it through the button that appeared. Items can be "
 "assigned to specific groups in order to make them accessible to some users "
 "within the system."
 msgstr ""
 "Gerir e personalizar os items disponíveis e exibidas no menu do sistema "
-"Odoo. Pode excluir um item clicando na caixa no início de cada linha e "
+"CrossNow. Pode excluir um item clicando na caixa no início de cada linha e "
 "depois excluindo-o através do botão que aparece. Itens podem ser atribuídos "
 "a grupos específicos de modo a torná-los acessíveis para alguns utilizadores"
 " dentro do sistema."
@@ -20268,7 +20268,7 @@ msgid "Many2many Operations"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Many2one %s on model %s does not exist!"
@@ -20685,28 +20685,28 @@ msgid "Miss"
 msgstr "Menina"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "Missing SMTP Server"
 msgstr "Falta Servidor SMTP"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Missing required value for the field '%s'"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Missing required value for the field '%s' (%s)"
 msgstr "O campo '%s' tem em falta o valor obrigatório (%s)"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Missing view architecture."
@@ -20718,7 +20718,7 @@ msgid "Mister"
 msgstr "Senhor"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_res_company__mobile
 #: model:ir.model.fields,field_description:base.field_res_partner__mobile
@@ -20768,21 +20768,21 @@ msgid "Model"
 msgstr "Modelo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model %r contains module data and cannot be removed."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model %s does not exist"
 msgstr "O modelo %s não existe"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model %s does not exist!"
@@ -20851,7 +20851,7 @@ msgid "Model name of the object to open in the view window"
 msgstr "O Nome do Modelo do objeto a ser aberto na janela de exibição"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
@@ -20911,7 +20911,7 @@ msgid "Module"
 msgstr "Módulo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/assetsbundle.py:0
 #, python-format
 msgid ""
@@ -20987,7 +20987,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/convert.py:0
 #, python-format
 msgid ""
@@ -21003,7 +21003,7 @@ msgid "Modules"
 msgstr "Módulos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Modules %r and %r are incompatible."
@@ -21172,7 +21172,7 @@ msgid "NPWP"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_name
 #: model:ir.model.fields,field_description:base.field_ir_actions_todo__name
@@ -21216,7 +21216,7 @@ msgid "Name of the Many2one field holding the res.currency"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -21239,7 +21239,7 @@ msgid "Namibia"
 msgstr "Namíbia"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Narrow"
@@ -21306,7 +21306,7 @@ msgid "New Caledonia"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_export_language.py:0
 #, python-format
 msgid "New Language (Empty translation template)"
@@ -21415,7 +21415,7 @@ msgid "No Country Found!"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "No default view of type '%s' could be found!"
@@ -21427,21 +21427,21 @@ msgid "No gap"
 msgstr "Sem lacunas"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "No group currently allows this operation."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "No inverse field %r found for %r"
 msgstr "Não há campo inverso %r encontrado para %r"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid ""
@@ -21452,7 +21452,7 @@ msgstr ""
 "'%%(field)s'"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid ""
@@ -21472,7 +21472,7 @@ msgid "No of Views"
 msgstr "Número de Visualizações"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -21481,7 +21481,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "No spaces allowed in view_mode: %r"
@@ -21493,21 +21493,21 @@ msgid "Non Updatable"
 msgstr "Não Atualizável"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Non-relational field %(field)r in path %(field_path)r in %(use)s)"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Non-relational field %r in dependency %r"
 msgstr "Campo não relacional %r na dependência %r"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Non-relational field name %r in related field %r"
@@ -21533,7 +21533,7 @@ msgid "Norfolk Island"
 msgstr "Ilha Norfolk"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_bank.py:0
 #, python-format
 msgid "Normal"
@@ -21583,19 +21583,19 @@ msgid "Not Installed"
 msgstr "Não instalado"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Not enough access rights on the external ID %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid ""
 "Note: this might be a multi-company issue. Switching company may help - in "
-"Odoo, not in real life!"
+"CrossNow, not in real life!"
 msgstr ""
 
 #. module: base
@@ -21677,7 +21677,7 @@ msgid "Object"
 msgstr "Objeto"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/model.py:0
 #, python-format
 msgid "Object %s doesn't exist"
@@ -21691,12 +21691,12 @@ msgstr "Objeto:"
 #. module: base
 #: model:ir.module.module,description:base.module_website_blog
 msgid ""
-"Odoo Blog\n"
+"CrossNow Blog\n"
 "----------\n"
 "\n"
-"Write, Design, Promote and Engage with <a href=\"https://www.odoo.com/app/blog\">Odoo Blog</a>.\n"
+"Write, Design, Promote and Engage with <a href=\"https://www.crossnow.com/app/blog\">CrossNow Blog</a>.\n"
 "\n"
-"Express yourself with the Odoo enterprise grade blogging platform. Write\n"
+"Express yourself with the CrossNow enterprise grade blogging platform. Write\n"
 "beautiful blog posts, engage with visitors, translate content and moderate\n"
 "social streams.\n"
 "\n"
@@ -21743,17 +21743,17 @@ msgid ""
 "Google Analytics Integration\n"
 "----------------------------\n"
 "\n"
-"Get a clear visibility of your sales funnel. Odoo's Google Analytics trackers\n"
+"Get a clear visibility of your sales funnel. CrossNow's Google Analytics trackers\n"
 "are configured by default to track all kinds of events related to shopping\n"
 "carts, call-to-actions, etc.\n"
 "\n"
-"As Odoo marketing tools (mass mailing, campaigns, etc) are also linked with\n"
+"As CrossNow marketing tools (mass mailing, campaigns, etc) are also linked with\n"
 "Google Analytics, you get a 360° view of your business.\n"
 "\n"
 "SEO Optimized Blog Posts\n"
 "------------------------\n"
 "\n"
-"SEO tools are ready to use, with no configuration required. Odoo suggests\n"
+"SEO tools are ready to use, with no configuration required. CrossNow suggests\n"
 "keywords for your titles according to Google's most searched terms, Google\n"
 "Analytics tracks interests of your visitors, sitemaps are created automatically\n"
 "for quick Google indexing, etc.\n"
@@ -21780,18 +21780,18 @@ msgid ""
 "This lets you organize your publishing process according to your needs.\n"
 "\n"
 "Other access rights are related to business objects (products, people, events,\n"
-"etc) and directly following Odoo's standard access rights management, so you do\n"
+"etc) and directly following CrossNow's standard access rights management, so you do\n"
 "not have to configure things twice.\n"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_crm
 msgid ""
-"Odoo CRM\n"
+"CrossNow CRM\n"
 "--------\n"
 "\n"
-"Boost sales productivity, improve win rates, grow revenue with the Odoo\n"
-"<a href=\"https://www.odoo.com/app/crm\">Open Source CRM</a>.\n"
+"Boost sales productivity, improve win rates, grow revenue with the CrossNow\n"
+"<a href=\"https://www.crossnow.com/app/crm\">Open Source CRM</a>.\n"
 "\n"
 "Manage your sales funnel with no effort. Attract leads, follow-up on phone\n"
 "calls and meetings. Analyse the quality of your leads to make informed\n"
@@ -21830,7 +21830,7 @@ msgid ""
 "company uses Microsoft Outlook or Gmail, no one needs to change the way they\n"
 "work, so everyone stays productive.\n"
 "\n"
-"Route, sort and filter incoming emails automatically. Odoo CRM handles incoming\n"
+"Route, sort and filter incoming emails automatically. CrossNow CRM handles incoming\n"
 "emails and route them to the right opportunities or Sales Team. New leads are\n"
 "created on the fly and interested salespersons are notified automatically.\n"
 "\n"
@@ -21844,7 +21844,7 @@ msgid ""
 "Lead Automation and Marketing Campaigns\n"
 "---------------------------------------\n"
 "\n"
-"Drive performance by automating tasks with Odoo <a href=\"https://www.odoo.com/app/crm\">CRM</a>.\n"
+"Drive performance by automating tasks with CrossNow <a href=\"https://www.crossnow.com/app/crm\">CRM</a>.\n"
 "\n"
 "Use our marketing campaigns to automate lead acquisition, follow ups and\n"
 "promotions. Define automation rules (e.g. ask a salesperson to call, send an\n"
@@ -21888,21 +21888,21 @@ msgstr ""
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__license__oeel-1
-msgid "Odoo Enterprise Edition License v1.0"
-msgstr "Licença Odoo Enterprise Edition v1.0"
+msgid "CrossNow Enterprise Edition License v1.0"
+msgstr "Licença CrossNow Enterprise Edition v1.0"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module__to_buy
-msgid "Odoo Enterprise Module"
+msgid "CrossNow Enterprise Module"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr
 msgid ""
-"Odoo Human Resources\n"
+"CrossNow Human Resources\n"
 "--------------------\n"
 "\n"
-"With Odoo <a href=\"https://www.odoo.com/app/employees\">Human Resources</a>,\n"
+"With CrossNow <a href=\"https://www.crossnow.com/app/employees\">Human Resources</a>,\n"
 "manage the most important asset in your company: People\n"
 "\n"
 "Get all your HR operations managed easily: knowledge sharing, recruitments,\n"
@@ -21922,7 +21922,7 @@ msgid ""
 "Streamline Your Recruitment Process\n"
 "-----------------------------------\n"
 "\n"
-"Index resumes, track applicants, search profiles with <a href=\"https://www.odoo.com/app/employees\">Odoo HR</a>.\n"
+"Index resumes, track applicants, search profiles with <a href=\"https://www.crossnow.com/app/employees\">CrossNow HR</a>.\n"
 "\n"
 "Post job offers and keep track of each application received. Follow applicants\n"
 "in your recruitment process with the smart kanban view.\n"
@@ -21957,7 +21957,7 @@ msgid ""
 "Keep Track of Employee Expenses\n"
 "-------------------------------\n"
 "\n"
-"Get rid of the paper work and follow employee's expenses directly in Odoo.\n"
+"Get rid of the paper work and follow employee's expenses directly in CrossNow.\n"
 "Don't loose time or money by controlling the full flow: expense validation,\n"
 "reimbursement of employees, posting in the accounting and re-invoicing to\n"
 "customers.\n"
@@ -21966,7 +21966,7 @@ msgid ""
 "--------------------------\n"
 "\n"
 "Set-up appraisals plans and/or surveys for your employees and watch their\n"
-"evolution. Define steps for interviews and Odoo will notify managers or\n"
+"evolution. Define steps for interviews and CrossNow will notify managers or\n"
 "subordinates automatically to prepare appraisals. Keep track of the progress of\n"
 "your staff periodically.\n"
 "\n"
@@ -21996,13 +21996,13 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_mrp
 msgid ""
-"Odoo Manufacturing Resource Planning\n"
+"CrossNow Manufacturing Resource Planning\n"
 "------------------------------------\n"
 "\n"
 "Manage Bill of Materials, plan manufacturing orders, track work orders with the\n"
-"Odoo <a href=\"https://www.odoo.com/app/manufacturing\">Open Source MRP</a> app.\n"
+"CrossNow <a href=\"https://www.crossnow.com/app/manufacturing\">Open Source MRP</a> app.\n"
 "\n"
-"Get all your assembly or manufacturing operations managed by Odoo. Schedule\n"
+"Get all your assembly or manufacturing operations managed by CrossNow. Schedule\n"
 "manufacturing orders and work orders automatically. Review the proposed\n"
 "planning with the smart kanban and gantt views. Use the advanced analytics\n"
 "features to detect bottleneck in resources capacities and inventory locations.\n"
@@ -22024,7 +22024,7 @@ msgid ""
 "Get Flexibility In All Operations\n"
 "---------------------------------\n"
 "\n"
-"Edit manually all proposed operations at any level of the progress. With Odoo,\n"
+"Edit manually all proposed operations at any level of the progress. With CrossNow,\n"
 "you will not be frustrated by a rigid system.\n"
 "\n"
 "Schedule Work Orders\n"
@@ -22063,11 +22063,11 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_mass_mailing
 msgid ""
-"Odoo Mass Mailing\n"
+"CrossNow Mass Mailing\n"
 "-----------------\n"
 "\n"
 "Easily send mass mailing to your leads, opportunities or customers\n"
-"with Odoo <a href=\"https://www.odoo.com/app/email-marketing\">Email Marketing</a>. Track\n"
+"with CrossNow <a href=\"https://www.crossnow.com/app/email-marketing\">Email Marketing</a>. Track\n"
 "marketing campaigns performance to improve conversion rates. Design\n"
 "professional emails and reuse templates in a few clicks.\n"
 "\n"
@@ -22083,7 +22083,7 @@ msgid ""
 "Organize Marketing Campaigns\n"
 "----------------------------\n"
 "\n"
-"Design, Send, Track by Campaigns with our <a href=\"https://www.odoo.com/app/email-marketing\">Lead Automation</a> app.\n"
+"Design, Send, Track by Campaigns with our <a href=\"https://www.crossnow.com/app/email-marketing\">Lead Automation</a> app.\n"
 "\n"
 "Get real time statistics on campaigns performance to improve your conversion\n"
 "rate. Track mails sent, received, opened and answered.\n"
@@ -22091,14 +22091,14 @@ msgid ""
 "Easily manage your marketing campaigns, discussion groups, leads and\n"
 "opportunities in one simple and powerful platform.\n"
 "\n"
-"Integrated with Odoo Apps\n"
+"Integrated with CrossNow Apps\n"
 "-------------------------\n"
 "\n"
-"Get access to mass mailing features from every Odoo app to improve the way your\n"
+"Get access to mass mailing features from every CrossNow app to improve the way your\n"
 "users communicate.\n"
 "\n"
-"Send template of emails from Odoo <a href=\"https://www.odoo.com/app/email-marketing\">CRM opportunities</a>, select leads based\n"
-"on marketing segments, send <a href=\"https://www.odoo.com/app/recruitment\">job offers</a> and automate\n"
+"Send template of emails from CrossNow <a href=\"https://www.crossnow.com/app/email-marketing\">CRM opportunities</a>, select leads based\n"
+"on marketing segments, send <a href=\"https://www.crossnow.com/app/recruitment\">job offers</a> and automate\n"
 "answers to applicants, reuse email template in the lead automation marketing\n"
 "campaigns.\n"
 "\n"
@@ -22109,7 +22109,7 @@ msgid ""
 "------------------------\n"
 "\n"
 "Get a clean lead database that improves over the time using the performance of\n"
-"your mails. Odoo handle bounce mails efficiently, flag erroneous leads\n"
+"your mails. CrossNow handle bounce mails efficiently, flag erroneous leads\n"
 "accordingly and gives you statistics on the quality of your leads.\n"
 "\n"
 "One click emails send\n"
@@ -22129,7 +22129,7 @@ msgid ""
 "The chatter feature enables you to communicate faster and more efficiently with\n"
 "your customer. Get documents created automatically (leads, opportunities,\n"
 "tasks, ...) based on answers to your mass mailing campaigns Follow the\n"
-"discussion directly on the business documents within Odoo or via email.\n"
+"discussion directly on the business documents within CrossNow or via email.\n"
 "\n"
 "Get all the negotiations and discussions attached to the right document and\n"
 "relevent managers notified on specific events.\n"
@@ -22153,9 +22153,9 @@ msgid ""
 "company's bottom line.\n"
 "\n"
 "Integrate a contact form in your website easily. Forms submissions create leads\n"
-"automatically in Odoo CRM. Leads can be used in marketing campaigns.\n"
+"automatically in CrossNow CRM. Leads can be used in marketing campaigns.\n"
 "\n"
-"Manage your <a href=\"https://www.odoo.com/app/crm\">sales funnel</a> with no\n"
+"Manage your <a href=\"https://www.crossnow.com/app/crm\">sales funnel</a> with no\n"
 "effort. Attract leads, follow-up on phone calls and meetings. Analyse the\n"
 "quality of your leads to make informed decisions and save time by integrating\n"
 "emails directly into the application.\n"
@@ -22164,31 +22164,31 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_reports
-msgid "Odoo Mexican Localization Reports"
+msgid "CrossNow Mexican Localization Reports"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_xml_polizas
-msgid "Odoo Mexican XML Polizas Export"
+msgid "CrossNow Mexican XML Polizas Export"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_edi_landing
-msgid "Odoo Mexico Localization for Stock/Landing"
+msgid "CrossNow Mexico Localization for Stock/Landing"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_mobile
-msgid "Odoo Mobile Core module"
+msgid "CrossNow Mobile Core module"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_point_of_sale
 msgid ""
-"Odoo Point of Sale\n"
+"CrossNow Point of Sale\n"
 "-----------------------------\n"
 "\n"
-"Odoo's <a href=\"https://www.odoo.com/app/point-of-sale-shop\">Point of Sale</a>\n"
+"CrossNow's <a href=\"https://www.crossnow.com/app/point-of-sale-shop\">Point of Sale</a>\n"
 "introduces a super clean interface with no installation required that runs\n"
 "online and offline on modern hardwares.\n"
 "\n"
@@ -22201,7 +22201,7 @@ msgid ""
 "\n"
 "### In your web browser\n"
 "\n"
-"Odoo's POS is a web application that can run on any device that can display\n"
+"CrossNow's POS is a web application that can run on any device that can display\n"
 "websites with little to no setup required.\n"
 "\n"
 "### Touchscreen or Keyboard?\n"
@@ -22219,7 +22219,7 @@ msgid ""
 "Online and Offline\n"
 "------------------\n"
 "\n"
-"### Odoo's POS stays reliable even if your connection isn't\n"
+"### CrossNow's POS stays reliable even if your connection isn't\n"
 "\n"
 "Deploy new stores with just an internet connection: **no installation, no\n"
 "specific hardware required**. It works with any **iPad, Tablet PC, laptop** or\n"
@@ -22234,7 +22234,7 @@ msgid ""
 "\n"
 "### Simple and beautiful\n"
 "\n"
-"Say goodbye to ugly, outdated POS software and enjoy the Odoo web interface\n"
+"Say goodbye to ugly, outdated POS software and enjoy the CrossNow web interface\n"
 "designed for modern retailer.\n"
 "\n"
 "### Designed for Productivity\n"
@@ -22268,7 +22268,7 @@ msgid ""
 "----------------------------------\n"
 "\n"
 "Produce customer invoices in just a few clicks. Control sales and cash in real\n"
-"time and use Odoo's powerful reporting to make smarter decisions to improve\n"
+"time and use CrossNow's powerful reporting to make smarter decisions to improve\n"
 "your store's efficiency.\n"
 "\n"
 "No more hassle of having to integrate softwares: get all your sales and\n"
@@ -22281,7 +22281,7 @@ msgid ""
 "selected stores. Work on a unified customer base. No complex interface is\n"
 "required to pilot a global strategy amongst all your stores.\n"
 "\n"
-"With Odoo as a backend, you have a system proven to be perfectly suitable for\n"
+"With CrossNow as a backend, you have a system proven to be perfectly suitable for\n"
 "small stores or large multinationals.\n"
 "\n"
 "Know your customers - in store and out\n"
@@ -22291,24 +22291,24 @@ msgid ""
 "channels to develop accurate customer profile and communicate with shoppers as\n"
 "they make buying decisions, in store or online.\n"
 "\n"
-"With Odoo, you get a 360° customer view, including cross-channel sales,\n"
+"With CrossNow, you get a 360° customer view, including cross-channel sales,\n"
 "interaction history, profiles, and more.\n"
 "\n"
 msgstr ""
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module__license__opl-1
-msgid "Odoo Proprietary License v1.0"
-msgstr "Licença Proprietário do Odoo v1.0"
+msgid "CrossNow Proprietary License v1.0"
+msgstr "Licença Proprietário do CrossNow v1.0"
 
 #. module: base
 #: model:ir.module.module,description:base.module_purchase
 msgid ""
-"Odoo Supply Chain\n"
+"CrossNow Supply Chain\n"
 "-----------------\n"
 "\n"
-"Automate requisition-to-pay, control invoicing with the Odoo\n"
-"<a href=\"https://www.odoo.com/app/purchase\">Open Source Supply Chain</a>.\n"
+"Automate requisition-to-pay, control invoicing with the CrossNow\n"
+"<a href=\"https://www.crossnow.com/app/purchase\">Open Source Supply Chain</a>.\n"
 "\n"
 "Automate procurement propositions, launch request for quotations, track\n"
 "purchase orders, manage vendors' information, control products reception and\n"
@@ -22345,7 +22345,7 @@ msgid ""
 "\n"
 "Use the costing method that reflects your business: standard price, average\n"
 "price, fifo or lifo. Get your accounting entries and the right inventory\n"
-"valuation in real-time; Odoo manages everything for you, transparently.\n"
+"valuation in real-time; CrossNow manages everything for you, transparently.\n"
 "\n"
 "Import Vendor Pricelists\n"
 "--------------------------\n"
@@ -22372,11 +22372,11 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_website
 msgid ""
-"Odoo Website Builder\n"
+"CrossNow Website Builder\n"
 "--------------------\n"
 "\n"
-"Get an awesome and <a href=\"https://www.odoo.com/app/website\">free website</a>,\n"
-"easily customizable with the Odoo <a href=\"https://www.odoo.com/app/website\">website builder</a>.\n"
+"Get an awesome and <a href=\"https://www.crossnow.com/app/website\">free website</a>,\n"
+"easily customizable with the CrossNow <a href=\"https://www.crossnow.com/app/website\">website builder</a>.\n"
 "\n"
 "Create enterprise grade website with our super easy builder. Use finely\n"
 "designed building blocks and edit everything inline.\n"
@@ -22387,7 +22387,7 @@ msgid ""
 "Edit Anything Inline\n"
 "--------------------\n"
 "\n"
-"Create beautiful websites with no technical knowledge. Odoo's unique *'edit\n"
+"Create beautiful websites with no technical knowledge. CrossNow's unique *'edit\n"
 "inline'* approach makes website creation surprisingly easy. No more complex\n"
 "backend; just click anywhere to change any content.\n"
 "\n"
@@ -22397,7 +22397,7 @@ msgid ""
 "Awesome. Astonishingly Beautiful.\n"
 "---------------------------------\n"
 "\n"
-"Odoo's building blocks allow to design modern websites that are not possible\n"
+"CrossNow's building blocks allow to design modern websites that are not possible\n"
 "with traditional WYSIWYG page editors.\n"
 "\n"
 "Whether it's for products descriptions, blogs or static pages, you don't need\n"
@@ -22411,7 +22411,7 @@ msgid ""
 "call-to-actions, jobs announces, events, customer references, blogs, etc.\n"
 "\n"
 "Traditional eCommerce and CMS have poorly designed backends as it's not their\n"
-"core focus. With the Odoo integration, you benefit from the best management\n"
+"core focus. With the CrossNow integration, you benefit from the best management\n"
 "software to follow-up on your orders, your jobs applicants, your leads, etc.\n"
 "\n"
 "A Great Mobile Experience\n"
@@ -22435,7 +22435,7 @@ msgid ""
 "Multi-Languages Made Easy\n"
 "-------------------------\n"
 "\n"
-"Get your website translated in multiple languages with no effort. Odoo proposes\n"
+"Get your website translated in multiple languages with no effort. CrossNow proposes\n"
 "and propagates translations automatically across pages, following what you edit\n"
 "on the master page.\n"
 "\n"
@@ -22447,7 +22447,7 @@ msgid ""
 "[bootstrap](http://getbootstrap.com/) CSS.\n"
 "\n"
 "Customize every page on the fly with the integrated template editor. Distribute\n"
-"your work easily as an Odoo module.\n"
+"your work easily as an CrossNow module.\n"
 "\n"
 "Fluid Grid Layouting\n"
 "--------------------\n"
@@ -22468,7 +22468,7 @@ msgid ""
 "Test new color scheme easily; you can change your theme at any time in just a\n"
 "click.\n"
 "\n"
-"Integrated With Odoo Apps\n"
+"Integrated With CrossNow Apps\n"
 "-------------------------\n"
 "\n"
 "### e-Commerce\n"
@@ -22488,18 +22488,18 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_whatsapp
-msgid "Odoo WhatsApp Integration"
+msgid "CrossNow WhatsApp Integration"
 msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_sale
 msgid ""
-"Odoo e-Commerce\n"
+"CrossNow e-Commerce\n"
 "---------------\n"
 "\n"
 "### Optimize sales with an awesome online store.\n"
 "\n"
-"Odoo is an <a href=\"https://www.odoo.com/app/ecommerce\">Open Source eCommerce</a>\n"
+"CrossNow is an <a href=\"https://www.crossnow.com/app/ecommerce\">Open Source eCommerce</a>\n"
 "unlike anything you have ever seen before. Get an awesome catalog of products\n"
 "and great product description pages.\n"
 "\n"
@@ -22509,7 +22509,7 @@ msgid ""
 "Create Awesome Product Pages\n"
 "----------------------------\n"
 "\n"
-"Odoo's unique *'edit inline'* and building blocks approach makes product pages\n"
+"CrossNow's unique *'edit inline'* and building blocks approach makes product pages\n"
 "creation surprisingly easy. \"Want to change the price of a product? or put it\n"
 "in bold? Want to add a banner for a specific product?\" just click and change.\n"
 "What you see is what you get. Really.\n"
@@ -22523,7 +22523,7 @@ msgid ""
 "The built-in cross-selling feature helps you offer extra products related to\n"
 "what the shopper put in his cart. (e.g. accessories)\n"
 "\n"
-"Odoo's upselling algorythm allows you to show visitors similar but more\n"
+"CrossNow's upselling algorythm allows you to show visitors similar but more\n"
 "expensive products than the one in view, with incentives.\n"
 "\n"
 "The inline editing feature allows you to easily change a price, launch a\n"
@@ -22532,17 +22532,17 @@ msgid ""
 "A Clean Google Analytics Integration\n"
 "------------------------------------\n"
 "\n"
-"Get a clear visibility of your sales funnel. Odoo's Google Analytics trackers\n"
+"Get a clear visibility of your sales funnel. CrossNow's Google Analytics trackers\n"
 "are configured by default to track all kind of events related to shopping\n"
 "carts, call-to-actions, etc.\n"
 "\n"
-"As Odoo marketing tools (mass mailing, campaigns, etc) are also linked with\n"
+"As CrossNow marketing tools (mass mailing, campaigns, etc) are also linked with\n"
 "Google Analytics, you get a complete view of your business.\n"
 "\n"
 "Target New Markets\n"
 "------------------\n"
 "\n"
-"Get your website translated in multiple languages with no effort. Odoo proposes\n"
+"Get your website translated in multiple languages with no effort. CrossNow proposes\n"
 "and propagates translations automatically across pages.\n"
 "\n"
 "Our translation \"on demand\" features allows you to benefit from professional\n"
@@ -22562,7 +22562,7 @@ msgid ""
 "Acquire New Customers\n"
 "---------------------\n"
 "\n"
-"SEO tools are ready to use, with no configuration required. Odoo suggests\n"
+"SEO tools are ready to use, with no configuration required. CrossNow suggests\n"
 "keywords according to Google most searched terms, Google Analytics tracks your\n"
 "shopping cart events, sitemap are created automatically for Google indexation,\n"
 "etc.\n"
@@ -22573,7 +22573,7 @@ msgid ""
 "Leverage Social Media\n"
 "---------------------\n"
 "\n"
-"Create new landing pages easily with the Odoo inline editing feature. Send\n"
+"Create new landing pages easily with the CrossNow inline editing feature. Send\n"
 "visitors of your different marketing campaigns to specific landing pages to\n"
 "optimize conversions.\n"
 "\n"
@@ -22588,13 +22588,13 @@ msgid ""
 "geolocalisation feature), define specific pricelists, launch a loyalty program\n"
 "(offer specific discounts to your best customers or resellers), etc.\n"
 "\n"
-"Benefit from the power of Odoo, in your online store: a powerfull tax engine,\n"
+"Benefit from the power of CrossNow, in your online store: a powerfull tax engine,\n"
 "flexible pricing structures, a real inventory management solution, a reseller\n"
 "interface, support for products with different behaviours; physical goods,\n"
 "events, services, variants and options, etc.\n"
 "\n"
 "You don't need to interface with your warehouse, sales or accounting software.\n"
-"Everything is integrated with Odoo. No pain, real time.\n"
+"Everything is integrated with CrossNow. No pain, real time.\n"
 "\n"
 "A Clean Checkout Process\n"
 "------------------------\n"
@@ -22652,45 +22652,45 @@ msgstr ""
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_customer_form
-msgid "Odoo helps you easily track all activities related to a customer."
+msgid "CrossNow helps you easily track all activities related to a customer."
 msgstr ""
-"O Odoo ajuda você a rastrear facilmente todas as atividades relacionadas a "
+"O CrossNow ajuda você a rastrear facilmente todas as atividades relacionadas a "
 "um cliente."
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_supplier_form
-msgid "Odoo helps you easily track all activities related to a vendor."
+msgid "CrossNow helps you easily track all activities related to a vendor."
 msgstr ""
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_form
-msgid "Odoo helps you track all activities related to your contacts."
+msgid "CrossNow helps you track all activities related to your contacts."
 msgstr ""
-"Odoo ajuda-o a seguir todas as atividades relacionadas com os seus contatos."
+"CrossNow ajuda-o a seguir todas as atividades relacionadas com os seus contatos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
-"Odoo is currently processing a scheduled action.\n"
+"CrossNow is currently processing a scheduled action.\n"
 "Module operations are not possible at this time, please try again later or contact your system administrator."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions_report.py:0
 #, python-format
-msgid "Odoo is unable to merge the generated PDFs."
+msgid "CrossNow is unable to merge the generated PDFs."
 msgstr ""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_sequence__padding
 msgid ""
-"Odoo will automatically adds some '0' on the left of the 'Next Number' to "
+"CrossNow will automatically adds some '0' on the left of the 'Next Number' to "
 "get the required padding size."
 msgstr ""
-"Odoo adiciona automaticamente alguns \"0\" à esquerda do 'Próximo Número' "
+"CrossNow adiciona automaticamente alguns \"0\" à esquerda do 'Próximo Número' "
 "para obter o nº  de algarismos indicado."
 
 #. module: base
@@ -22757,7 +22757,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -22768,7 +22768,7 @@ msgstr ""
 "novamente após refrescamento."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -22782,7 +22782,7 @@ msgid "One user should only have one user settings."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -22831,21 +22831,21 @@ msgid "Online Task Submission"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid "Only administrators can change the settings"
 msgstr "Apenas os administradores podem alterar as definições"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_attachment.py:0
 #, python-format
 msgid "Only administrators can execute this action."
 msgstr "Somente os administradores podem executar esta ação."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "Only admins can upload SVG files."
@@ -22866,7 +22866,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Only internal users can create API keys"
@@ -22883,7 +22883,7 @@ msgid "Only one value can be defined for each given usage!"
 msgstr "Só pode ser definido um valor para cada utilização dada!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -22928,7 +22928,7 @@ msgid "Open a Window"
 msgstr "Abrir uma Janela"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Operation:"
@@ -22984,7 +22984,7 @@ msgid "Optional password for SMTP authentication"
 msgstr "Senha opcional para autenticação SMTP"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Optional timezone name"
@@ -23022,7 +23022,7 @@ msgid ""
 "\n"
 "Add a talk proposal form on your events to allow visitors to submit talks and speakers. Organize the validation process of every talk, and schedule easily.\n"
 "\n"
-"Odoo's unique frontend and backend integration makes organization and publication so easy. Easily design beautiful speaker biographies and talks description.\n"
+"CrossNow's unique frontend and backend integration makes organization and publication so easy. Easily design beautiful speaker biographies and talks description.\n"
 "\n"
 "Agenda and List of Talks\n"
 "------------------------\n"
@@ -23038,7 +23038,7 @@ msgid ""
 "\n"
 "Add sponsors to your events and publish sponsors per level (e.g. bronze, silver, gold) on the bottom of every page of the event.\n"
 "\n"
-"Sell sponsorship packages online through the Odoo eCommerce for a full sales cycle integration.\n"
+"Sell sponsorship packages online through the CrossNow eCommerce for a full sales cycle integration.\n"
 "\n"
 "Communicate Efficiently\n"
 "-----------------------\n"
@@ -23056,7 +23056,7 @@ msgid ""
 "\n"
 "### Schedule, Promote, Sell, Organize\n"
 "\n"
-"Organize, promote and sell events online. Whether you organize meetings, conferences, trainings or webinars, Odoo gives you all the features you need to manage your events.\n"
+"Organize, promote and sell events online. Whether you organize meetings, conferences, trainings or webinars, CrossNow gives you all the features you need to manage your events.\n"
 "\n"
 "Create Awesome Event Pages\n"
 "--------------------------\n"
@@ -23065,7 +23065,7 @@ msgid ""
 "\n"
 "Create beautiful event pages by drag & droping well designed *'Building Blocks'*. Publish event photos, speakers, schedule, etc.\n"
 "\n"
-"Odoo's unique *'edit inline'* approach makes website creation surprisingly easy. \"Want to introduce a speaker? to change the price of a ticket? to update a banner? promote sponsors?\" just click and change.\n"
+"CrossNow's unique *'edit inline'* approach makes website creation surprisingly easy. \"Want to introduce a speaker? to change the price of a ticket? to update a banner? promote sponsors?\" just click and change.\n"
 "\n"
 "Sell Tickets Online\n"
 "-------------------\n"
@@ -23081,9 +23081,9 @@ msgid ""
 "\n"
 "### Control your sales funnel with Google Analytics\n"
 "\n"
-"Get a clear visibility of your sales funnel. Odoo's Google Analytics trackers are configured by default to track all kind of events related to shopping carts, call-to-actions, etc.\n"
+"Get a clear visibility of your sales funnel. CrossNow's Google Analytics trackers are configured by default to track all kind of events related to shopping carts, call-to-actions, etc.\n"
 "\n"
-"As Odoo marketing tools (mass mailing, campaigns, etc) are also linked with Google Analytics, you get a full view of your business.\n"
+"As CrossNow marketing tools (mass mailing, campaigns, etc) are also linked with Google Analytics, you get a full view of your business.\n"
 "\n"
 "Promote Events Efficiently\n"
 "--------------------------\n"
@@ -23095,7 +23095,7 @@ msgid ""
 "Designer-Friendly Themes\n"
 "------------------------\n"
 "\n"
-"### Designers love working on Odoo\n"
+"### Designers love working on CrossNow\n"
 "\n"
 "Themes are awesome and easy to design. You don't need to develop to create new pages, themes or building blocks. We use a clean HTML structure, a [bootstrap](http://getbootstrap.com/) CSS and our modularity allows to distribute your themes easily.\n"
 "\n"
@@ -23106,7 +23106,7 @@ msgid ""
 "\n"
 "### SEO tools at your finger tips\n"
 "\n"
-"SEO tools are ready to use, with no configuration required. Odoo suggests keywords according to Google most searched terms, Google Analytics tracks your shopping cart events and sitemap are created automatically.\n"
+"SEO tools are ready to use, with no configuration required. CrossNow suggests keywords according to Google most searched terms, Google Analytics tracks your shopping cart events and sitemap are created automatically.\n"
 "\n"
 "We even do structured content automatically to promote your events and products efficiently in Google.\n"
 "\n"
@@ -23115,7 +23115,7 @@ msgid ""
 "\n"
 "### Optimize: from Ads to Conversions\n"
 "\n"
-"Create new landing pages easily with the Odoo inline editing feature. Send visitors of your different marketing campaigns to event landing pages to optimize conversions.\n"
+"Create new landing pages easily with the CrossNow inline editing feature. Send visitors of your different marketing campaigns to event landing pages to optimize conversions.\n"
 "\n"
 "And Much More...\n"
 "----------------\n"
@@ -23189,7 +23189,7 @@ msgid "Original View"
 msgstr "Vista Original"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Original currency"
@@ -23201,7 +23201,7 @@ msgid "Oswald"
 msgstr "Oswald"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #: code:addons/base/models/res_users.py:0
 #: model_terms:ir.ui.view,arch_db:base.user_groups_view
@@ -23455,7 +23455,7 @@ msgid "POS Viva Wallet"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Page direct ancestor must be notebook"
@@ -23679,7 +23679,7 @@ msgid "Partners Geolocation"
 msgstr "Geolocalização de Parceiros"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "Partners: %(category)s"
@@ -23735,7 +23735,7 @@ msgid "Path to the field to update, e.g. 'partner_id.name'"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Pattern to format"
@@ -23978,7 +23978,7 @@ msgid "Philippines - Accounting Reports"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_res_bank__phone
 #: model:ir.model.fields,field_description:base.field_res_company__phone
@@ -24052,7 +24052,7 @@ msgid "Planning integration with holidays"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -24070,7 +24070,7 @@ msgstr ""
 " dados numa base de dados com dados de demonstração."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -24088,7 +24088,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -24205,10 +24205,10 @@ msgstr ""
 #: model:res.groups,comment:base.group_portal
 msgid ""
 "Portal members have specific access rights (such as record rules and restricted menus).\n"
-"                They usually do not belong to the usual Odoo groups."
+"                They usually do not belong to the usual CrossNow groups."
 msgstr ""
 "Os membros do «Portal» têm permissões de acesso específicas (tais como regras de registos e menus restritos).\n"
-"                Eles não pertencem geralmente aos grupos habituais do Odoo."
+"                Eles não pertencem geralmente aos grupos habituais do CrossNow."
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__report_paperformat__orientation__portrait
@@ -24247,7 +24247,7 @@ msgid "PostgreSQL table name implementing a many2many relation."
 msgstr "Nome da tabela PostgreSQL que implementa uma relação many2many."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Precision Digits"
@@ -24290,7 +24290,7 @@ msgid "Preview pdf src"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Previous Arch"
@@ -24360,7 +24360,7 @@ msgid "Private Address Form"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Private methods (such as %s) cannot be called remotely."
@@ -24468,7 +24468,7 @@ msgid "Profiling is currently disabled."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_profile.py:0
 #, python-format
 msgid ""
@@ -24550,7 +24550,7 @@ msgid ""
 "### Infinitely flexible. Incredibly easy to use.\n"
 "\n"
 "\n"
-"Odoo's collaborative and realtime <a href=\"https://www.odoo.com/app/project\">open source project management</a>\n"
+"CrossNow's collaborative and realtime <a href=\"https://www.crossnow.com/app/project\">open source project management</a>\n"
 "helps your team get work done. Keep track of everything, from the big picture\n"
 "to the minute details, from the customer contract to the billing.\n"
 "\n"
@@ -24732,7 +24732,7 @@ msgid "Properties"
 msgstr "Propriedades"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0 code:addons/base/models/ir_model.py:0
 #: code:addons/base/models/ir_model.py:0 code:addons/base/models/ir_model.py:0
 #, python-format
@@ -24773,10 +24773,10 @@ msgstr ""
 #: model:res.groups,comment:base.group_public
 msgid ""
 "Public users have specific access rights (such as record rules and restricted menus).\n"
-"                They usually do not belong to the usual Odoo groups."
+"                They usually do not belong to the usual CrossNow groups."
 msgstr ""
 "Utilizadores públicos têm permissões de acesso específicas (tais como regras de registos e menus restritos).\n"
-"Não pertencem geralmente, aos grupos Odoo habituais."
+"Não pertencem geralmente, aos grupos CrossNow habituais."
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_blog
@@ -25197,7 +25197,7 @@ msgid "Record Rule"
 msgstr "Regra de Registo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.action_rule
 #: model:ir.model.fields,field_description:base.field_ir_model__rule_ids
@@ -25212,7 +25212,7 @@ msgid "Record Rules"
 msgstr "Regras de Registos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_cron.py:0
 #, python-format
 msgid ""
@@ -25221,7 +25221,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid "Record does not exist or has been deleted."
@@ -25244,7 +25244,7 @@ msgid "Record to Create"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Records:"
@@ -25282,21 +25282,21 @@ msgid "Recruitment tracking on appointments"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Recursion Detected."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Recursion error in modules dependencies!"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "Recursion found in child server actions"
@@ -25311,7 +25311,7 @@ msgid "Reference"
 msgstr "Referência"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Reference date"
@@ -25349,14 +25349,14 @@ msgid "Related field"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Related field %r does not have comodel %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Related field %r does not have type %r"
@@ -25609,7 +25609,7 @@ msgid "Reset to file version (hard reset)."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Resolve other errors first"
@@ -25733,14 +25733,14 @@ msgid "Rounding Factor"
 msgstr "Fator de Arredondamento"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Rounding precision"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Rounding unit"
@@ -25762,7 +25762,7 @@ msgid "Rules"
 msgstr "Regras"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "Rules can not be applied on the Record Rules model."
@@ -25913,7 +25913,7 @@ msgid "SSL Private Key"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "SSL certificate is missing for %s."
@@ -25925,7 +25925,7 @@ msgid "SSL certificate used for authentication"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "SSL private key is missing for %s."
@@ -26421,14 +26421,14 @@ msgid "Search modules"
 msgstr "Pesquisar módulos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Search tag can only contain one search panel"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Searchpanel item with select multi cannot have a domain."
@@ -26445,25 +26445,25 @@ msgid "Security"
 msgstr "Segurança"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Security Control"
 msgstr "Controlo de Segurança"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "See all possible values"
 msgstr "Ver todos os valores possíveis"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/common.py:0
 #, python-format
-msgid "See http://openerp.com"
-msgstr "Ver http://openerp.com"
+msgid "See http://crossnow.com"
+msgstr "Ver http://crossnow.com"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_report_paperformat__format
@@ -26485,12 +26485,12 @@ msgstr ""
 msgid ""
 "Select the list of fields used to search for\n"
 "                            duplicated records. If you select several fields,\n"
-"                            Odoo will propose you to merge only those having\n"
+"                            CrossNow will propose you to merge only those having\n"
 "                            all these fields in common. (not one of the fields)."
 msgstr ""
 "Selecione a lista de campos usados ​​para procurar\n"
 "                            registros duplicados. Se você selecionar vários campos ,\n"
-"                            Odoo vai propor que você funda apenas aqueles que têm\n"
+"                            CrossNow vai propor que você funda apenas aqueles que têm\n"
 "                            todos esses campos em comum. ( não um dos campos ) ."
 
 #. module: base
@@ -26512,7 +26512,7 @@ msgstr ""
 "                                Pode remover contactos desta lista para evitar fundi-los."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields.selection,name:base.selection__base_partner_merge_automatic_wizard__state__selection
 #: model:ir.model.fields.selection,name:base.selection__ir_property__type__selection
@@ -26735,7 +26735,7 @@ msgid "Separator Format"
 msgstr "Formato do Separador"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Separator use to split the address from the display_name."
@@ -26833,7 +26833,7 @@ msgid "Server action"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -26894,7 +26894,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Setting empty passwords is not allowed for security reasons!"
@@ -26962,7 +26962,7 @@ msgid "Shopper's Wishlist"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Short"
@@ -27046,7 +27046,7 @@ msgid "Simple Discounts in the Point of Sale "
 msgstr "Descontos Simples no Ponto de Venda "
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -27055,7 +27055,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -27119,7 +27119,7 @@ msgid "Skip these contacts"
 msgstr "Ignorar estes contactos"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Slash"
@@ -27259,7 +27259,7 @@ msgid "Sometimes called BIC or Swift."
 msgstr "Às vezes chamado de BIC ou Swift."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_attachment.py:0
 #: code:addons/base/models/ir_attachment.py:0
 #: code:addons/base/models/ir_attachment.py:0
@@ -27268,7 +27268,7 @@ msgid "Sorry, you are not allowed to access this document."
 msgstr "Infelizmente não está autorizado a aceder a este documento."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_attachment.py:0
 #, python-format
 msgid "Sorry, you are not allowed to write on this document"
@@ -27310,7 +27310,7 @@ msgid "South Sudan"
 msgstr "Sudão do Sul"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Space"
@@ -27746,7 +27746,7 @@ msgid "Step"
 msgstr "Incremento"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_sequence.py:0
 #: code:addons/base/models/ir_sequence.py:0
 #, python-format
@@ -28274,7 +28274,7 @@ msgid "Technical module: Matrix Implementation"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/assetsbundle.py:0
 #, python-format
 msgid "Template %r already exists in module %r"
@@ -28286,7 +28286,7 @@ msgid "Template Name"
 msgstr "Nome do Modelo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/assetsbundle.py:0
 #: code:addons/base/models/assetsbundle.py:0
 #, python-format
@@ -28528,21 +28528,21 @@ msgid "Thailand - Accounting Reports"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "The \"%s\" action cannot be selected as home action."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "The \"App Switcher\" action cannot be selected as home action."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid "The %s of a subsidiary must be the same as it's root company."
@@ -28578,7 +28578,7 @@ msgstr ""
 "como 106,500 (considerando ',' como separador dos milhares)."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -28613,7 +28613,7 @@ msgid "The active field allows you to hide the category without removing it."
 msgstr "O campo ativo permite-lhe ocultar a categoria sem a remover."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_attachment.py:0
 #, python-format
 msgid "The attachment collides with an existing file."
@@ -28640,7 +28640,7 @@ msgid "The combination Account Number/Partner must be unique."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid ""
@@ -28649,7 +28649,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid "The company hierarchy cannot be changed."
@@ -28664,11 +28664,11 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:base.act_ir_actions_todo_form
 msgid ""
 "The configuration wizards are used to help you configure a new instance of "
-"Odoo. They are launched during the installation of new modules, but you can "
+"CrossNow. They are launched during the installation of new modules, but you can "
 "choose to restart some wizards manually from this menu."
 msgstr ""
 "Os assistentes de configuração são usados para o ajudar a configurar uma "
-"nova instância do Odoo. São iniciados durante a instalação de novos módulos,"
+"nova instância do CrossNow. São iniciados durante a instalação de novos módulos,"
 " mas pode optar por reiniciar alguns deles manualmente a partir deste menu."
 
 #. module: base
@@ -28707,7 +28707,7 @@ msgid "The demonstration data of"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "The field '%s' cannot be removed because the field '%s' depends on it."
@@ -28752,7 +28752,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -28761,7 +28761,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/fields.py:0
 #, python-format
 msgid ""
@@ -28772,14 +28772,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "The following languages are not activated: %(missing_names)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_module_upgrade.py:0
 #, python-format
 msgid "The following modules are not installed or unknown: %s"
@@ -28791,14 +28791,14 @@ msgid "The following variables can be used:"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "The group %(name)r defined in view does not exist!"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "The hour must be between 0 and 23"
@@ -28811,7 +28811,7 @@ msgid "The internal user in charge of this contact."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_language_install.py:0
 #, python-format
 msgid ""
@@ -28821,7 +28821,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -28830,7 +28830,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_country.py:0
 #, python-format
 msgid "The layout contains an invalid format key"
@@ -28842,7 +28842,7 @@ msgid "The list of models that extends the current model."
 msgstr "A lista de modelos que extendem o modelo corrente."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -28860,7 +28860,7 @@ msgstr ""
 "filtro aplica-se a todos os menus deste modelo."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -28869,7 +28869,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -28880,7 +28880,7 @@ msgstr ""
 "undescores e pontos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "The model name must start with 'x_'."
@@ -28892,14 +28892,14 @@ msgid "The model this field belongs to"
 msgstr "O modelo ao qual pertence este campo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "The modes in view_mode must not be duplicated: %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid ""
@@ -28913,7 +28913,7 @@ msgid "The name of the country must be unique!"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "The name of the group can not start with \"-\""
@@ -28940,14 +28940,14 @@ msgid "The name of the record to create"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "The new password and its confirmation must be identical."
 msgstr "A nova palavra-passe e a sua confirmação devem ser idênticas."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid ""
@@ -28966,7 +28966,7 @@ msgid "The next step depends on the file format:"
 msgstr "O próximo passo depende do tipo de ficheiro:"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "The ondelete policy %r is not valid for field %r"
@@ -28979,7 +28979,7 @@ msgid "The only predefined variables are"
 msgstr "As únicas variáveis predefinidas são"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/model.py:0
 #, python-format
 msgid ""
@@ -28992,14 +28992,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/model.py:0 code:addons/model.py:0
 #, python-format
 msgid "The operation cannot be completed: %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/model.py:0
 #, python-format
 msgid ""
@@ -29021,7 +29021,7 @@ msgstr ""
 "lista de trigémeos. por exemplo: [('color','=','red')]"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid ""
@@ -29046,7 +29046,7 @@ msgid "The payment engine used by payment provider modules."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/decimal_precision.py:0
 #, python-format
 msgid ""
@@ -29069,7 +29069,7 @@ msgstr ""
 "prioridade e 10 a menor."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
@@ -29096,7 +29096,7 @@ msgstr ""
 "A taxa de câmbio da moeda relativamente à moeda cuja taxa de câmbio é 1."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -29118,7 +29118,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions_report.py:0
 #, python-format
 msgid ""
@@ -29128,7 +29128,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -29142,7 +29142,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid ""
@@ -29156,14 +29156,14 @@ msgid "The rounding factor must be greater than 0!"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "The server \"%s\" cannot be used because it is archived."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -29172,7 +29172,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -29180,14 +29180,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "The server refused the test connection with error %(repl)s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -29200,7 +29200,7 @@ msgid "The state code."
 msgstr "O código do estado."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "The table %r if used for other, possibly incompatible fields."
@@ -29221,7 +29221,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "The user cannot have more than one user types."
@@ -29237,14 +29237,14 @@ msgstr ""
 "filtro é público e disponível para todos os utilizadores."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "The value (%s) passed should be positive"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -29253,14 +29253,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "The value send to monetary field is not a number."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -29286,7 +29286,7 @@ msgid "There are no more contacts to merge for this request"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_filters.py:0
 #, python-format
 msgid ""
@@ -29319,14 +29319,14 @@ msgid "This Window"
 msgstr "Esta Janela"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "This column contains module data and cannot be removed!"
 msgstr "Esta coluna contém dados do módulo e não pode ser removida!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "This currency is set on a company and therefore cannot be deactivated."
@@ -29364,14 +29364,14 @@ msgstr ""
 "                                                                         Útil para fazer um (soft) reset de uma vista estragada."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/image.py:0 code:addons/image.py:0 code:addons/image.py:0
 #, python-format
 msgid "This file could not be decoded as an image file."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/image.py:0
 #, python-format
 msgid "This file is not a webp file."
@@ -29401,7 +29401,7 @@ msgstr ""
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_din5008
-msgid "This is the base module that defines the DIN 5008 standard in Odoo."
+msgid "This is the base module that defines the DIN 5008 standard in CrossNow."
 msgstr ""
 
 #. module: base
@@ -29448,13 +29448,13 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_no
 msgid ""
-"This is the module to manage the accounting chart for Norway in Odoo.\n"
+"This is the module to manage the accounting chart for Norway in CrossNow.\n"
 "\n"
-"Updated for Odoo 9 by Bringsvor Consulting AS <www.bringsvor.com>\n"
+"Updated for CrossNow 9 by Bringsvor Consulting AS <www.bringsvor.com>\n"
 msgstr ""
-"This is the module to manage the accounting chart for Norway in Odoo.\n"
+"This is the module to manage the accounting chart for Norway in CrossNow.\n"
 "\n"
-"Updated for Odoo 9 by Bringsvor Consulting AS <www.bringsvor.com>\n"
+"Updated for CrossNow 9 by Bringsvor Consulting AS <www.bringsvor.com>\n"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_ph
@@ -29467,7 +29467,7 @@ msgid "This is your company's currency."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "This method can only be accessed over HTTP"
@@ -29506,7 +29506,7 @@ msgstr ""
 #: model:ir.module.module,description:base.module_l10n_be_codabox_bridge_wizard
 msgid ""
 "This module allows Accounting Firms to connect to CodaBox\n"
-"and automatically import CODA and SODA statements for their clients in Odoo.\n"
+"and automatically import CODA and SODA statements for their clients in CrossNow.\n"
 "The connection must be done by the Accounting Firm.\n"
 msgstr ""
 
@@ -29707,7 +29707,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_whatsapp
 msgid ""
-"This module integrates Odoo with WhatsApp to use WhatsApp messaging service"
+"This module integrates CrossNow with WhatsApp to use WhatsApp messaging service"
 msgstr ""
 
 #. module: base
@@ -29767,7 +29767,7 @@ msgid "This module will trigger the uninstallation of below modules."
 msgstr "Este módulo irá despoletar a desinstalação  dos seguintes módulos."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -29776,7 +29776,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Those modules cannot be uninstalled: %s"
@@ -29972,7 +29972,7 @@ msgid "Tonga"
 msgstr "Tonga"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "Too many login failures, please wait a bit before trying again."
@@ -30096,7 +30096,7 @@ msgid "Translations"
 msgstr "Traduções"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -30116,7 +30116,7 @@ msgid "Tree"
 msgstr "Árvore"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Tree child can only have one of %(tags)s tag (not %(wrong_tag)s)"
@@ -30390,7 +30390,7 @@ msgid "Uganda - Accounting"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid ""
@@ -30410,7 +30410,7 @@ msgid "Ukraine - Accounting"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -30420,21 +30420,21 @@ msgstr ""
 "propriedade predefinida"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions_report.py:0
 #, python-format
 msgid "Unable to find Wkhtmltopdf on this system. The PDF can not be created."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Unable to import field type '%s'  "
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -30445,7 +30445,7 @@ msgstr ""
 "foi satisfeita: %s"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -30454,7 +30454,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -30465,7 +30465,7 @@ msgstr ""
 "satisfeita: %s"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -30481,7 +30481,7 @@ msgid "Uncategorized"
 msgstr "Sem categoria"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #: model_terms:ir.ui.view,arch_db:base.module_form
 #: model_terms:ir.ui.view,arch_db:base.module_view_kanban
@@ -30491,7 +30491,7 @@ msgid "Uninstall"
 msgstr "Desinstalar"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_uninstall
 #, python-format
@@ -30513,7 +30513,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "Unit per %s"
@@ -30570,7 +30570,7 @@ msgid "Units of measure"
 msgstr "Unidades de medida"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/model.py:0 model:ir.model,name:base.model__unknown
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module_dependency__state__unknown
 #: model:ir.model.fields.selection,name:base.selection__ir_module_module_exclusion__state__unknown
@@ -30579,84 +30579,84 @@ msgid "Unknown"
 msgstr "Desconhecido"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Unknown database error: '%s'"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Unknown database identifier '%s'"
 msgstr "Identificador de base de dados '%s' desconhecido"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "Unknown error during import:"
 msgstr "Erro desconhecido durante a importação:"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Unknown field \"%(field)s\" in \"group_by\" value in %(attribute)s=%(value)r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Unknown field \"%(model)s.%(field)s\" in %(use)s)"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Unknown field %r in dependency %r"
 msgstr "Campo desconhecido %r na dependência %r"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Unknown field name %r in currency_field"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Unknown field name %r in related field %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Unknown model name '%s' in Related Model"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Unknown sub-field %r"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Unknown value '%s' for boolean field '%%(field)s'"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/translate.py:0
 #, python-format
 msgid ""
@@ -30664,7 +30664,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Unsearchable field %(field)r in path %(field_path)r in %(use)s)"
@@ -30764,7 +30764,7 @@ msgid "Usage"
 msgstr "Utilização"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Use '1' for yes and '0' for no"
@@ -30807,14 +30807,14 @@ msgid "Use barcode scanners to process logistics operations"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Use comma"
 msgstr "Usar vírgula"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Use comma instead of the <br> tag to display the address"
@@ -30872,7 +30872,7 @@ msgstr ""
 "Uma medalha recebida é exibida no perfil do utilizador.\n"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -30880,7 +30880,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
@@ -31019,7 +31019,7 @@ msgid "User-friendly PoS interface for shops and restaurants"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "User:"
@@ -31032,7 +31032,7 @@ msgid "Username"
 msgstr "Nome de utilizador"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.action_res_users
 #: model:ir.model.fields,field_description:base.field_change_password_wizard__user_ids
@@ -31090,7 +31090,7 @@ msgid "Uses Default Logo"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "Using 24-hour clock format with AM/PM can cause issues."
@@ -31102,7 +31102,7 @@ msgid "Uzbekistan"
 msgstr "Uzbequistão"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: code:addons/base/models/ir_qweb_fields.py:0
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__group_by_vat
@@ -31156,7 +31156,7 @@ msgid "Value"
 msgstr "Valor"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "Value '%s' not found in selection field '%%(field)s'"
@@ -31250,7 +31250,7 @@ msgid "Version 3.0 of the delivery guide (Complemento XML Carta de Porte)."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Vertical bar"
@@ -31275,14 +31275,14 @@ msgid "View"
 msgstr "Ver"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "View '%(name)s' accessible only to groups %(groups)s "
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "View '%(name)s' is private"
@@ -31353,10 +31353,10 @@ msgstr "Vistas"
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_ui_view
 msgid ""
-"Views allows you to personalize each view of Odoo. You can add new fields, "
+"Views allows you to personalize each view of CrossNow. You can add new fields, "
 "move fields, rename them or delete the ones that you do not need."
 msgstr ""
-"As Vistas permitem-lhe personalizar cada vista do Odoo. Pode adicionar "
+"As Vistas permitem-lhe personalizar cada vista do CrossNow. Pode adicionar "
 "campos, mover campos, renomeá-los or eliminar os que já não são necessários."
 " rename them or delete the ones that you do not need."
 
@@ -31444,7 +31444,7 @@ msgid "Warn user in case of products merging"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #: code:addons/base/models/ir_model.py:0 code:addons/base/models/ir_model.py:0
 #: code:addons/base/models/ir_model.py:0
@@ -31454,7 +31454,7 @@ msgid "Warning"
 msgstr "Aviso"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/decimal_precision.py:0
 #: code:addons/base/models/res_currency.py:0
 #, python-format
@@ -31462,7 +31462,7 @@ msgid "Warning for %s"
 msgstr "Aviso para %s"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_config.py:0
 #, python-format
 msgid "Warning!"
@@ -31863,7 +31863,7 @@ msgid "Wholesale/Retail"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Width"
@@ -31888,7 +31888,7 @@ msgid "Wizards to be Launched"
 msgstr "Configuradores a serem Iniciados"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions_report.py:0
 #, python-format
 msgid ""
@@ -31897,7 +31897,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions_report.py:0
 #, python-format
 msgid "Wkhtmltopdf failed (error code: %s). Message: %s"
@@ -31954,7 +31954,7 @@ msgid "Worksheet template when planning an intervention"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "Wow, your webhook call failed with a really unusual error: %s"
@@ -32026,7 +32026,7 @@ msgid "You are inviting a new user."
 msgstr "Está a convidar um novo utilizador."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -32035,7 +32035,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -32044,7 +32044,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -32053,7 +32053,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid ""
@@ -32062,14 +32062,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "You are trying to install incompatible modules in category %r:%s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -32091,7 +32091,7 @@ msgstr ""
 "hiperligação da Internet para o seu ficheiro."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "You can not create recursive tags."
@@ -32103,7 +32103,7 @@ msgid "You can not have two users with the same login!"
 msgstr "Você não pode ter dois utilizadores com o mesmo login!"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -32111,18 +32111,18 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
 "You can not remove the admin user as it is used internally for resources "
-"created by Odoo (updates, module installation, ...)"
+"created by CrossNow (updates, module installation, ...)"
 msgstr ""
 "Não pode remover o utilizador admin porque ele é usado internamente para "
 "recursos criados pelo sistema (atualizações, instalação de módulos, ...)"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/report_paperformat.py:0
 #, python-format
 msgid ""
@@ -32131,14 +32131,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "You cannot activate the superuser."
 msgstr "Não é possível ativar o superuser."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -32150,7 +32150,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -32161,16 +32161,16 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
-"You cannot archive the language in which Odoo was setup as it is used by "
+"You cannot archive the language in which CrossNow was setup as it is used by "
 "automated processes."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -32179,7 +32179,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -32188,21 +32188,21 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "You cannot create recursive Partner hierarchies."
 msgstr "Erro! Não pode criar hierarquias de parceiro repetidas."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "You cannot create recursive inherited views."
 msgstr "Não pode criar vistas herdadas recursivas."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "You cannot deactivate the user you're currently logged in as."
@@ -32210,14 +32210,14 @@ msgstr ""
 "Não pode desativar o utilizador que utilizou para iniciar esta sessão."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "You cannot delete a group linked with a settings field."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -32229,7 +32229,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid ""
@@ -32240,14 +32240,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_config_parameter.py:0
 #, python-format
 msgid "You cannot delete the %s record."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid ""
@@ -32256,7 +32256,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid ""
@@ -32267,21 +32267,21 @@ msgstr ""
 "Por favor, desative-o primeiro."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "You cannot delete the language which is the user's preferred language."
 msgstr "Não pode eliminar o idioma que é o idioma preferido do utilizador."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 #, python-format
 msgid "You cannot merge a contact with one of his parent."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 #, python-format
 msgid ""
@@ -32290,14 +32290,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_config_parameter.py:0
 #, python-format
 msgid "You cannot rename config parameters with keys %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -32307,14 +32307,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "You don't have enough access rights to run this action."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid ""
@@ -32322,7 +32322,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/wizard/base_partner_merge.py:0
 #, python-format
 msgid "You have to specify a filter for your selection."
@@ -32334,7 +32334,7 @@ msgid "You should try other search criteria."
 msgstr "Devia tentar outros critérios de pesquisa."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -32343,7 +32343,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid ""
@@ -32363,17 +32363,17 @@ msgstr ""
 "recém-criado no menu Definições / Utilizadores."
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
-"Your Odoo Server does not support SMTP-over-SSL. You could use STARTTLS "
+"Your CrossNow Server does not support SMTP-over-SSL. You could use STARTTLS "
 "instead. If SSL is needed, an upgrade to Python 2.6 on the server-side "
 "should do the trick."
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid ""
@@ -32432,21 +32432,21 @@ msgid "active"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "allowed for groups %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "always forbidden"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_currency.py:0
 #, python-format
 msgid "and"
@@ -32488,14 +32488,14 @@ msgid "choose"
 msgstr "escolher"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "create"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "database id"
@@ -32512,7 +32512,7 @@ msgid "datetime"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "day"
@@ -32642,7 +32642,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:base.view_company_form
 #: model_terms:ir.ui.view,arch_db:base.view_partner_address_form
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form
-msgid "e.g. https://www.odoo.com"
+msgid "e.g. https://www.crossnow.com"
 msgstr ""
 
 #. module: base
@@ -32697,14 +32697,14 @@ msgid "expenses"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "external id"
 msgstr "id externo"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "false"
@@ -32724,14 +32724,14 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/models.py:0
 #, python-format
 msgid "forbidden for groups %s"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/res_lang.py:0
 #, python-format
 msgid "format() must be given exactly one %char format specifier"
@@ -32750,7 +32750,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "hour"
@@ -32812,7 +32812,7 @@ msgid "many2many"
 msgstr "many2many"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "many2many fields cannot be evaluated by reference"
@@ -32829,7 +32829,7 @@ msgid "many2one_reference"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "minute"
@@ -32846,21 +32846,21 @@ msgid "monetary"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "month"
 msgstr "mês"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "name"
 msgstr "nome"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "no"
@@ -32924,7 +32924,7 @@ msgid "properties_definition"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "read"
@@ -32942,7 +32942,7 @@ msgid "sales"
 msgstr "vendas"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "second"
@@ -33079,14 +33079,14 @@ msgid "title"
 msgstr "título"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "true"
 msgstr "verdadeiro"
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "unlink"
@@ -33113,28 +33113,28 @@ msgid "website helpdesk sale loyalty"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "week"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "write"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "year"
 msgstr ""
 
 #. module: base
-#. odoo-python
+#. crossnow-python
 #: code:addons/base/models/ir_fields.py:0
 #, python-format
 msgid "yes"

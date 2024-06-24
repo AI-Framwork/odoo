@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import collections
 import textwrap
 import unittest
@@ -8,13 +8,13 @@ from unittest.mock import patch
 
 import psycopg2
 
-from odoo.addons.base.tests.common import SavepointCaseWithUserDemo
-from odoo.fields import Date
-from odoo.models import BaseModel
-from odoo.tests.common import BaseCase, TransactionCase
-from odoo.tools import mute_logger
-from odoo.osv import expression
-from odoo import Command
+from crossnow.addons.base.tests.common import SavepointCaseWithUserDemo
+from crossnow.fields import Date
+from crossnow.models import BaseModel
+from crossnow.tests.common import BaseCase, TransactionCase
+from crossnow.tools import mute_logger
+from crossnow.osv import expression
+from crossnow import Command
 
 
 class TestExpression(SavepointCaseWithUserDemo):
@@ -169,7 +169,7 @@ class TestExpression(SavepointCaseWithUserDemo):
         self.assertEqual(len(cats), 0)
 
         # test hierarchical search in m2m with 'False' value
-        with self.assertLogs('odoo.osv.expression'):
+        with self.assertLogs('crossnow.osv.expression'):
             cats = self._search(Category, [('id', 'child_of', False)])
         self.assertEqual(len(cats), 0)
 
@@ -198,11 +198,11 @@ class TestExpression(SavepointCaseWithUserDemo):
         self.assertEqual(len(cats), 0)
 
         # test hierarchical search in m2m with 'False' value
-        with self.assertLogs('odoo.osv.expression'):
+        with self.assertLogs('crossnow.osv.expression'):
             cats = self._search(Category, [('id', 'parent_of', False)])
         self.assertEqual(len(cats), 0)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     def test_10_hierarchy_access(self):
         Partner = self.env['res.partner'].with_user(self.user_demo)
         top = Partner.create({'name': 'Top'})
@@ -377,7 +377,7 @@ class TestExpression(SavepointCaseWithUserDemo):
         # more intuitive that the union returns all the records, and that
         # a domain like ('parent_id', 'not in', [0]) will return all
         # the records. For instance, if you perform a search for the companies
-        # that don't have OpenERP has a parent company, you expect to find,
+        # that don't have CrossNow has a parent company, you expect to find,
         # among others, the companies that don't have parent company.
         #
 
@@ -745,7 +745,7 @@ class TestExpression(SavepointCaseWithUserDemo):
         ])
         self.assertEqual(nicostratus.parent_path, f'{helen.id}/{nicostratus.id}/')
 
-        with patch('odoo.osv.expression.get_unaccent_wrapper') as w:
+        with patch('crossnow.osv.expression.get_unaccent_wrapper') as w:
             w().side_effect = lambda x: x
             rs = Model.search([('parent_path', 'like', f'{helen.id}/%')], order='id asc')
             self.assertEqual(rs, helen | hermione | nicostratus)
@@ -825,7 +825,7 @@ class TestExpression(SavepointCaseWithUserDemo):
         self.assertNotIn(record, Model.search([('color', 'not ilike', '4')]))
 
         # =like and =ilike don't work on non-character fields
-        with mute_logger('odoo.sql_db'), self.assertRaises(psycopg2.Error):
+        with mute_logger('crossnow.sql_db'), self.assertRaises(psycopg2.Error):
             Model.search([('name', '=', 'X'), ('color', '=like', 4)])
         with self.assertRaises(ValueError):
             Model.search([('name', '=', 'X'), ('color', '=like', '4%')])
@@ -847,7 +847,7 @@ class TestExpression(SavepointCaseWithUserDemo):
         all_countries = self._search(Country, [])
         self.assertEqual(countries, all_countries)
 
-    @mute_logger('odoo.sql_db')
+    @mute_logger('crossnow.sql_db')
     def test_invalid(self):
         """ verify that invalid expressions are refused, even for magic fields """
         Country = self.env['res.country']
@@ -877,10 +877,10 @@ class TestExpression(SavepointCaseWithUserDemo):
         # testing for many2many field with category office and active=False
         Partner = self.env['res.partner']
         vals = {
-            'name': 'OpenERP Test',
+            'name': 'CrossNow Test',
             'active': False,
             'category_id': [Command.set([self.partner_category.id])],
-            'child_ids': [Command.create({'name': 'address of OpenERP Test', 'country_id': self.ref("base.be")})],
+            'child_ids': [Command.create({'name': 'address of CrossNow Test', 'country_id': self.ref("base.be")})],
         }
         Partner.create(vals)
         partner = self._search(Partner, [('category_id', 'ilike', 'sellers'), ('active', '=', False)], [('active', '=', False)])
@@ -1292,7 +1292,7 @@ class TestQueries(TransactionCase):
         ''']):
             Model.search_count([('id', '=', 1)])
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     def test_access_rules(self):
         Model = self.env['res.users'].with_user(self.env.ref('base.user_admin'))
         self.env['ir.rule'].search([]).unlink()

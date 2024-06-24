@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import ast
 import itertools
 import os
 
 from . import lint_case
-from odoo.tools.misc import file_open
+from crossnow.tools.misc import file_open
 
 class L10nChecker(lint_case.NodeVisitor):
     def matches_tagged(self, node):

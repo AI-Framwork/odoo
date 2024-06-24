@@ -1,8 +1,8 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { ActionDialog } from "./action_dialog";
 
-import { Component, xml, onWillDestroy } from "@odoo/owl";
+import { Component, xml, onWillDestroy } from "@crossnow/owl";
 
 // -----------------------------------------------------------------------------
 // ActionContainer (Component)

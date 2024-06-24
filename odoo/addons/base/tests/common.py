@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import threading
 
 from contextlib import contextmanager
 from unittest.mock import patch, Mock
 
-from odoo.tests.common import TransactionCase, HttpCase
-from odoo import Command
+from crossnow.tests.common import TransactionCase, HttpCase
+from crossnow import Command
 
 DISABLED_MAIL_CONTEXT = {
     'tracking_disable': True,

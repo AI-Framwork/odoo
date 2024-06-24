@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { localization } from "@web/core/l10n/localization";
 

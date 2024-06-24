@@ -1,5 +1,5 @@
-/** @odoo-module */
-import { Component } from "@odoo/owl";
+/** @crossnow-module */
+import { Component } from "@crossnow/owl";
 import { sortBy } from "@web/core/utils/arrays";
 
 class Group extends Component {

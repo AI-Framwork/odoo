@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { reactive, toRaw } from "@odoo/owl";
+import { reactive, toRaw } from "@crossnow/owl";
 
 const {
     DateTime,

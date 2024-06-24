@@ -2,7 +2,7 @@ import logging
 import sys
 import os
 
-import odoo
+import crossnow
 
 from .command import Command, main
 

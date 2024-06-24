@@ -1,4 +1,4 @@
-/** @odoo-modules */
+/** @crossnow-modules */
 
 import { registry } from "@web/core/registry";
 

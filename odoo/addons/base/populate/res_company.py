@@ -1,8 +1,8 @@
 import collections
 import logging
 
-from odoo import models, Command
-from odoo.tools import populate
+from crossnow import models, Command
+from crossnow.tools import populate
 
 _logger = logging.getLogger(__name__)
 

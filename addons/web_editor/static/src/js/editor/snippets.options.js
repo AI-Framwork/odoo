@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { attachComponent } from "@web/legacy/utils";
 import { MediaDialog } from "@web_editor/components/media_dialog/media_dialog";
@@ -31,7 +31,7 @@ import {
     isGif,
     getDataURLBinarySize,
 } from "@web_editor/js/editor/image_processing";
-import * as OdooEditorLib from "@web_editor/js/editor/odoo-editor/src/OdooEditor";
+import * as OdooEditorLib from "@web_editor/js/editor/crossnow-editor/src/OdooEditor";
 import { pick } from "@web/core/utils/objects";
 import { _t } from "@web/core/l10n/translation";
 import {
@@ -7137,7 +7137,7 @@ registry.ImageTools = ImageHandlerOption.extend({
         // smaller screens. So we suggest the width of the current image unless
         // it is smaller than the size of the container on the md breapoint
         // (which is where our bootstrap columns fallback to full container
-        // width since we only use col-lg-* in Odoo).
+        // width since we only use col-lg-* in CrossNow).
         } else if (img.closest('.container, .o_container_small')) {
             const mdContainerMaxWidth = parseFloat(computedStyles.getPropertyValue('--o-md-container-max-width')) || 720;
             const mdContainerInnerWidth = mdContainerMaxWidth - gutterWidth;

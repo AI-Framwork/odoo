@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import base64
 import json
 import mimetypes
 
-from odoo import http
-from odoo.exceptions import AccessError
-from odoo.http import request
-from odoo.tools import ustr, file_open
+from crossnow import http
+from crossnow.exceptions import AccessError
+from crossnow.http import request
+from crossnow.tools import ustr, file_open
 
 
 class WebManifest(http.Controller):
@@ -45,7 +45,7 @@ class WebManifest(http.Controller):
         Using this metadata, user agents can provide developers with means to create user
         experiences that are more comparable to that of a native application.
         """
-        web_app_name = request.env['ir.config_parameter'].sudo().get_param('web.web_app_name', 'Odoo')
+        web_app_name = request.env['ir.config_parameter'].sudo().get_param('web.web_app_name', 'CrossNow')
         manifest = {
             'name': web_app_name,
             'scope': '/web',
@@ -57,7 +57,7 @@ class WebManifest(http.Controller):
         }
         icon_sizes = ['192x192', '512x512']
         manifest['icons'] = [{
-            'src': '/web/static/img/odoo-icon-%s.png' % size,
+            'src': '/web/static/img/crossnow-icon-%s.png' % size,
             'sizes': size,
             'type': 'image/png',
         } for size in icon_sizes]
@@ -87,7 +87,7 @@ class WebManifest(http.Controller):
             return body
 
     def _icon_path(self):
-        return 'web/static/img/odoo-icon-192x192.png'
+        return 'web/static/img/crossnow-icon-192x192.png'
 
     @http.route('/web/offline', type='http', auth='public', methods=['GET'])
     def offline(self):

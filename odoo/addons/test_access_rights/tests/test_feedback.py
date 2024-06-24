@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from unittest.mock import Mock
 
-import odoo
-from odoo import SUPERUSER_ID, Command
-from odoo.exceptions import AccessError
-from odoo.tests import TransactionCase
-from odoo.tools.misc import mute_logger
+import crossnow
+from crossnow import SUPERUSER_ID, Command
+from crossnow.exceptions import AccessError
+from crossnow.tests import TransactionCase
+from crossnow.tools.misc import mute_logger
 
 
 class Feedback(TransactionCase):
@@ -173,8 +173,8 @@ class TestIRRuleFeedback(Feedback):
         }).with_user(cls.user)
 
     def debug_mode(self):
-        odoo.http._request_stack.push(Mock(db=self.env.cr.dbname, env=self.env, debug=True))
-        self.addCleanup(odoo.http._request_stack.pop)
+        crossnow.http._request_stack.push(Mock(db=self.env.cr.dbname, env=self.env, debug=True))
+        self.addCleanup(crossnow.http._request_stack.pop)
         self.env.flush_all()
         self.env.invalidate_all()
 
@@ -343,7 +343,7 @@ Sorry, %s (id=%s) doesn't have 'write' access to:
 Blame the following rules:
 - rule 0
 
-Note: this might be a multi-company issue. Switching company may help - in Odoo, not in real life!
+Note: this might be a multi-company issue. Switching company may help - in CrossNow, not in real life!
 
 If you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies."""
         % (self.user.name, self.user.id, self.record._description, self.record.display_name, self.record._name, self.record.id))
@@ -377,7 +377,7 @@ Sorry, %s (id=%s) doesn't have 'read' access to:
 Blame the following rules:
 - rule 0
 
-Note: this might be a multi-company issue. Switching company may help - in Odoo, not in real life!
+Note: this might be a multi-company issue. Switching company may help - in CrossNow, not in real life!
 
 If you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies."""
         % (self.user.name, self.user.id, child_record._description, child_record.display_name, child_record._name, child_record.id))
@@ -402,7 +402,7 @@ Sorry, %s (id=%s) doesn't have 'read' access to:
 Blame the following rules:
 - rule 0
 
-Note: this might be a multi-company issue. Switching company may help - in Odoo, not in real life!
+Note: this might be a multi-company issue. Switching company may help - in CrossNow, not in real life!
 
 If you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies."""
         % (self.user.name, self.user.id, self.record._description, self.record.display_name, self.record._name, self.record.id, self.record.sudo().company_id.display_name))
@@ -427,7 +427,7 @@ class TestFieldGroupFeedback(Feedback):
             'some_id': cls.record.id,
         }).with_user(cls.user)
 
-    @mute_logger('odoo.models')
+    @mute_logger('crossnow.models')
     def test_read(self):
         self.env.ref('base.group_no_one').write(
             {'users': [Command.link(self.user.id)]})
@@ -460,7 +460,7 @@ Fields:
 - forbidden3 (always forbidden)""" % self.user.id
         )
 
-    @mute_logger('odoo.models')
+    @mute_logger('crossnow.models')
     def test_write(self):
         self.env.ref('base.group_no_one').write(
             {'users': [Command.link(self.user.id)]})
@@ -481,7 +481,7 @@ Fields:
     % self.user.id
         )
 
-    @mute_logger('odoo.models')
+    @mute_logger('crossnow.models')
     def test_check_field_access_rights_domain(self):
         with self.assertRaises(AccessError):
             self.record.search([('forbidden3', '=like', 'blu%')])
@@ -495,7 +495,7 @@ Fields:
         with self.assertRaises(AccessError):
             self.inherits_record.search([('forbidden3', '=like', 'blu%')])
 
-    @mute_logger('odoo.models')
+    @mute_logger('crossnow.models')
     def test_check_field_access_rights_order(self):
         self.record.search([], order='val')
 
@@ -508,7 +508,7 @@ Fields:
         with self.assertRaises(AccessError):
             self.record.search([], order='val DESC,    forbidden3       DESC')
 
-    @mute_logger('odoo.models')
+    @mute_logger('crossnow.models')
     def test_check_field_access_rights_read_group(self):
         self.record._read_group([], ['val'], [])
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 
 """
@@ -51,7 +51,7 @@ import psycopg2
 import psycopg2.extensions
 from psycopg2.extras import Json
 
-import odoo
+import crossnow
 from . import SUPERUSER_ID
 from . import api
 from . import tools
@@ -205,8 +205,8 @@ class MetaModel(api.Meta):
             # determine '_module'
             if '_module' not in attrs:
                 module = attrs['__module__']
-                assert module.startswith('odoo.addons.'), \
-                    f"Invalid import of {module}.{name}, it should start with 'odoo.addons'."
+                assert module.startswith('crossnow.addons.'), \
+                    f"Invalid import of {module}.{name}, it should start with 'crossnow.addons'."
                 attrs['_module'] = module.split('.')[2]
 
             # determine model '_name' and normalize '_inherits'
@@ -501,9 +501,9 @@ def is_registry_class(cls):
 
 
 class BaseModel(metaclass=MetaModel):
-    """Base class for Odoo models.
+    """Base class for CrossNow models.
 
-    Odoo models are created by inheriting one of the following:
+    CrossNow models are created by inheriting one of the following:
 
     *   :class:`Model` for regular database-persisted models
 
@@ -526,20 +526,20 @@ class BaseModel(metaclass=MetaModel):
     record.
 
     To create a class that should not be instantiated,
-    the :attr:`~odoo.models.BaseModel._register` attribute may be set to False.
+    the :attr:`~crossnow.models.BaseModel._register` attribute may be set to False.
     """
     __slots__ = ['env', '_ids', '_prefetch_ids']
 
     _auto = False
     """Whether a database table should be created.
-    If set to ``False``, override :meth:`~odoo.models.BaseModel.init`
+    If set to ``False``, override :meth:`~crossnow.models.BaseModel.init`
     to create the database table.
 
     Automatically defaults to `True` for :class:`Model` and
     :class:`TransientModel`, `False` for :class:`AbstractModel`.
 
     .. tip:: To create a model without any table, inherit
-            from :class:`~odoo.models.AbstractModel`.
+            from :class:`~crossnow.models.AbstractModel`.
     """
     _register = False           #: registry visibility
     _abstract = True
@@ -555,7 +555,7 @@ class BaseModel(metaclass=MetaModel):
 
     _name = None                #: the model name (in dot-notation, module namespace)
     _description = None         #: the model's informal name
-    _module = None              #: the model's module (in the Odoo sense)
+    _module = None              #: the model's module (in the CrossNow sense)
     _custom = False             #: should be True for custom models only
 
     _inherit = ()
@@ -584,7 +584,7 @@ class BaseModel(metaclass=MetaModel):
     .. warning::
 
       if multiple fields with the same name are defined in the
-      :attr:`~odoo.models.Model._inherits`-ed models, the inherited field will
+      :attr:`~crossnow.models.Model._inherits`-ed models, the inherited field will
       correspond to the last one (in the inherits list order).
     """
     _table = None               #: SQL table name used by model if :attr:`_auto`
@@ -1181,7 +1181,7 @@ class BaseModel(metaclass=MetaModel):
             if field_path[0] in (None, 'id', '.id'):
                 continue
             model_fields = self._fields
-            if isinstance(model_fields[field_path[0]], odoo.fields.Many2one):
+            if isinstance(model_fields[field_path[0]], crossnow.fields.Many2one):
                 # this only applies for toplevel m2o (?) fields
                 if field_path[0] in (self.env.context.get('name_create_enabled_fieds') or {}):
                     creatable_models.add(model_fields[field_path[0]].comodel_name)
@@ -1189,7 +1189,7 @@ class BaseModel(metaclass=MetaModel):
                 if field_name in (None, 'id', '.id'):
                     break
 
-                if isinstance(model_fields[field_name], odoo.fields.One2many):
+                if isinstance(model_fields[field_name], crossnow.fields.One2many):
                     comodel = model_fields[field_name].comodel_name
                     creatable_models.add(comodel)
                     model_fields = self.env[comodel]._fields
@@ -1307,7 +1307,7 @@ class BaseModel(metaclass=MetaModel):
         }
 
     def _add_fake_fields(self, fields):
-        from odoo.fields import Char, Integer
+        from crossnow.fields import Char, Integer
         fields[None] = Char('rec_name')
         fields['id'] = Char('External ID')
         fields['.id'] = Integer('Database ID')
@@ -1540,7 +1540,7 @@ class BaseModel(metaclass=MetaModel):
             not preceded by ``!`` and is not member of any of the groups
             preceded by ``!``
         """
-        from odoo.http import request
+        from crossnow.http import request
         user = self.env.user
 
         has_groups = []
@@ -1651,8 +1651,8 @@ class BaseModel(metaclass=MetaModel):
 
         The `display_name` field is a textual representation of the record.
         This method can be overridden to change the representation.  If needed,
-        it can be made field-dependent using :attr:`~odoo.api.depends` and
-        context-dependent using :attr:`~odoo.api.depends_context`.
+        it can be made field-dependent using :attr:`~crossnow.api.depends` and
+        context-dependent using :attr:`~crossnow.api.depends_context`.
         """
         if self._rec_name:
             convert = self._fields[self._rec_name].convert_to_display_name
@@ -2377,14 +2377,14 @@ class BaseModel(metaclass=MetaModel):
         # assumption: existing data is sorted by field 'groupby_name'
         existing_from, existing_to = existing[0], existing[-1]
         if fill_from:
-            fill_from = odoo.fields.Datetime.to_datetime(fill_from) if isinstance(fill_from, datetime.datetime) else odoo.fields.Date.to_date(fill_from)
+            fill_from = crossnow.fields.Datetime.to_datetime(fill_from) if isinstance(fill_from, datetime.datetime) else crossnow.fields.Date.to_date(fill_from)
             fill_from = date_utils.start_of(fill_from, granularity) - datetime.timedelta(days=days_offset)
             if tz:
                 fill_from = tz.localize(fill_from)
         elif existing_from:
             fill_from = existing_from
         if fill_to:
-            fill_to = odoo.fields.Datetime.to_datetime(fill_to) if isinstance(fill_to, datetime.datetime) else odoo.fields.Date.to_date(fill_to)
+            fill_to = crossnow.fields.Datetime.to_datetime(fill_to) if isinstance(fill_to, datetime.datetime) else crossnow.fields.Date.to_date(fill_to)
             fill_to = date_utils.start_of(fill_to, granularity) - datetime.timedelta(days=days_offset)
             if tz:
                 fill_to = tz.localize(fill_to)
@@ -4017,9 +4017,9 @@ class BaseModel(metaclass=MetaModel):
         :param list fnames: names of relational fields to check
         :raises UserError: if the `company_id` of the value of any field is not
             in `[False, self.company_id]` (or `self` if
-            :class:`~odoo.addons.base.models.res_company`).
+            :class:`~crossnow.addons.base.models.res_company`).
 
-        For :class:`~odoo.addons.base.models.res_users` relational fields,
+        For :class:`~crossnow.addons.base.models.res_users` relational fields,
         verifies record company is in `company_ids` fields.
 
         User with main company A, having access to company A and B, could be
@@ -4179,7 +4179,7 @@ class BaseModel(metaclass=MetaModel):
         self.check_access_rights('unlink')
         self.check_access_rule('unlink')
 
-        from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+        from crossnow.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
         for func in self._ondelete_methods:
             # func._ondelete is True if it should be called during uninstallation
             if func._ondelete or not self._context.get(MODULE_UNINSTALL_FLAG):
@@ -4276,36 +4276,36 @@ class BaseModel(metaclass=MetaModel):
         :raise ValidationError: if invalid values are specified for selection fields
         :raise UserError: if a loop would be created in a hierarchy of objects a result of the operation (such as setting an object as its own parent)
 
-        * For numeric fields (:class:`~odoo.fields.Integer`,
-          :class:`~odoo.fields.Float`) the value should be of the
+        * For numeric fields (:class:`~crossnow.fields.Integer`,
+          :class:`~crossnow.fields.Float`) the value should be of the
           corresponding type
-        * For :class:`~odoo.fields.Boolean`, the value should be a
+        * For :class:`~crossnow.fields.Boolean`, the value should be a
           :class:`python:bool`
-        * For :class:`~odoo.fields.Selection`, the value should match the
+        * For :class:`~crossnow.fields.Selection`, the value should match the
           selection values (generally :class:`python:str`, sometimes
           :class:`python:int`)
-        * For :class:`~odoo.fields.Many2one`, the value should be the
+        * For :class:`~crossnow.fields.Many2one`, the value should be the
           database identifier of the record to set
-        * The expected value of a :class:`~odoo.fields.One2many` or
-          :class:`~odoo.fields.Many2many` relational field is a list of
-          :class:`~odoo.fields.Command` that manipulate the relation the
+        * The expected value of a :class:`~crossnow.fields.One2many` or
+          :class:`~crossnow.fields.Many2many` relational field is a list of
+          :class:`~crossnow.fields.Command` that manipulate the relation the
           implement. There are a total of 7 commands:
-          :meth:`~odoo.fields.Command.create`,
-          :meth:`~odoo.fields.Command.update`,
-          :meth:`~odoo.fields.Command.delete`,
-          :meth:`~odoo.fields.Command.unlink`,
-          :meth:`~odoo.fields.Command.link`,
-          :meth:`~odoo.fields.Command.clear`, and
-          :meth:`~odoo.fields.Command.set`.
-        * For :class:`~odoo.fields.Date` and `~odoo.fields.Datetime`,
+          :meth:`~crossnow.fields.Command.create`,
+          :meth:`~crossnow.fields.Command.update`,
+          :meth:`~crossnow.fields.Command.delete`,
+          :meth:`~crossnow.fields.Command.unlink`,
+          :meth:`~crossnow.fields.Command.link`,
+          :meth:`~crossnow.fields.Command.clear`, and
+          :meth:`~crossnow.fields.Command.set`.
+        * For :class:`~crossnow.fields.Date` and `~crossnow.fields.Datetime`,
           the value should be either a date(time), or a string.
 
           .. warning::
 
             If a string is provided for Date(time) fields,
             it must be UTC-only and formatted according to
-            :const:`odoo.tools.misc.DEFAULT_SERVER_DATE_FORMAT` and
-            :const:`odoo.tools.misc.DEFAULT_SERVER_DATETIME_FORMAT`
+            :const:`crossnow.tools.misc.DEFAULT_SERVER_DATE_FORMAT` and
+            :const:`crossnow.tools.misc.DEFAULT_SERVER_DATETIME_FORMAT`
 
         * Other non-relational fields use a string for value
         """
@@ -5088,7 +5088,7 @@ class BaseModel(metaclass=MetaModel):
     # TODO: ameliorer avec NULL
     @api.model
     def _where_calc(self, domain, active_test=True):
-        """Computes the WHERE clause needed to implement an OpenERP domain.
+        """Computes the WHERE clause needed to implement an CrossNow domain.
 
         :param list domain: the domain to compute
         :param bool active_test: whether the default filtering of records with
@@ -5841,7 +5841,7 @@ class BaseModel(metaclass=MetaModel):
     def ensure_one(self):
         """Verify that the current recordset holds a single record.
 
-        :raise odoo.exceptions.ValueError: ``len(self) != 1``
+        :raise crossnow.exceptions.ValueError: ``len(self) != 1``
         """
         try:
             # unpack to ensure there is only one value is faster than len when true and
@@ -5855,7 +5855,7 @@ class BaseModel(metaclass=MetaModel):
         """Return a new version of this recordset attached to the provided environment.
 
         :param env:
-        :type env: :class:`~odoo.api.Environment`
+        :type env: :class:`~crossnow.api.Environment`
 
         .. note::
             The returned recordset has the same prefetch object as ``self``.
@@ -5910,7 +5910,7 @@ class BaseModel(metaclass=MetaModel):
             result.env.companies = self.env.companies | company
 
         :param company: main company of the new environment.
-        :type company: :class:`~odoo.addons.base.models.res_company` or int
+        :type company: :class:`~crossnow.addons.base.models.res_company` or int
 
         .. warning::
 
@@ -6965,7 +6965,7 @@ class BaseModel(metaclass=MetaModel):
                     # values.update(dict())
                     yield values
 
-        See :mod:`odoo.tools.populate` for population tools and applications.
+        See :mod:`crossnow.tools.populate` for population tools and applications.
 
         :returns: list of pairs(field_name, factory) where `factory` is a generator function.
         :rtype: list(tuple(str, generator))
@@ -7083,9 +7083,9 @@ class RecordCache(MutableMapping):
 AbstractModel = BaseModel
 
 class Model(AbstractModel):
-    """ Main super-class for regular database-persisted Odoo models.
+    """ Main super-class for regular database-persisted CrossNow models.
 
-    Odoo models are created by inheriting from this class::
+    CrossNow models are created by inheriting from this class::
 
         class user(Model):
             ...

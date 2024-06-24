@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { BinaryField, binaryField } from "@web/views/fields/binary/binary_field";

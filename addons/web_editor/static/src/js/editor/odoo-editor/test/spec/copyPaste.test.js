@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import {
     BasicEditor,
@@ -39,7 +39,7 @@ describe('Copy', () => {
         });
     });
     describe('range not collapsed', async () => {
-        it('should copy a selection as text/plain, text/html and text/odoo-editor', async () => {
+        it('should copy a selection as text/plain, text/html and text/crossnow-editor', async () => {
             await testEditor(BasicEditor, {
                 contentBefore: '<p>a[bcd]e</p>',
                 stepFunction: async editor => {
@@ -47,7 +47,7 @@ describe('Copy', () => {
                     await triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('bcd');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p>bcd</p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p>bcd</p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p>bcd</p>');
                 },
             });
             await testEditor(BasicEditor, {
@@ -57,7 +57,7 @@ describe('Copy', () => {
                     await triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('abc\nefg');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p>abc<br>efg</p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p>abc<br>efg</p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p>abc<br>efg</p>');
                 },
             });
             await testEditor(BasicEditor, {
@@ -67,7 +67,7 @@ describe('Copy', () => {
                     await triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('a');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<table><tbody><tr><td><ul><li>a</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<table><tbody><tr><td><ul><li>a</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<table><tbody><tr><td><ul><li>a</li><li>b</li><li>c</li></ul></td><td><br></td></tr></tbody></table>');
                 },
             });
         });
@@ -79,7 +79,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('Test Test');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p><span style="font-size: 16px;">Test</span> <span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">Test</font></span></p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p><span style="font-size: 16px;">Test</span> <span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">Test</font></span></p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p><span style="font-size: 16px;">Test</span> <span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">Test</font></span></p>');
                 },
             });
             await testEditor(BasicEditor, {
@@ -89,7 +89,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('there');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p><strong><em><u><font class="text-o-color-1">there</font></u></em></strong></p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p><strong><em><u><font class="text-o-color-1">there</font></u></em></strong></p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p><strong><em><u><font class="text-o-color-1">there</font></u></em></strong></p>');
                 },
             });
         });
@@ -101,7 +101,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('First');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('First');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('First');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('First');
                 },
             });
             await testEditor(BasicEditor, {
@@ -111,7 +111,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('List');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('List');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('List');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('List');
                 },
             });
             await testEditor(BasicEditor, {
@@ -121,7 +121,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('First');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">First</font></span>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">First</font></span>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<span style="font-size: 48px;"><font style="color: rgb(255, 0, 0);">First</font></span>');
                 },
             });
         })
@@ -133,7 +133,7 @@ describe('Copy', () => {
                     triggerEvent(editor.editable, 'copy', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('First\nSecond');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<ul><li>First</li><li>Second</li></ul>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<ul><li>First</li><li>Second</li></ul>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<ul><li>First</li><li>Second</li></ul>');
                 },
             });
         });
@@ -164,7 +164,7 @@ describe('Cut', () => {
         });
     });
     describe('range not collapsed', async () => {
-        it('should cut a selection as text/plain, text/html and text/odoo-editor', async () => {
+        it('should cut a selection as text/plain, text/html and text/crossnow-editor', async () => {
             await testEditor(BasicEditor, {
                 contentBefore: '<p>a[bcd]e</p>',
                 stepFunction: async editor => {
@@ -172,7 +172,7 @@ describe('Cut', () => {
                     await triggerEvent(editor.editable, 'cut', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('bcd');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p>bcd</p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p>bcd</p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p>bcd</p>');
                 },
                 contentAfter: '<p>a[]e</p>',
             });
@@ -183,7 +183,7 @@ describe('Cut', () => {
                     await triggerEvent(editor.editable, 'cut', { clipboardData });
                     window.chai.expect(clipboardData.getData('text/plain')).to.be.equal('abc\nefg');
                     window.chai.expect(clipboardData.getData('text/html')).to.be.equal('<p>abc<br>efg</p>');
-                    window.chai.expect(clipboardData.getData('text/odoo-editor')).to.be.equal('<p>abc<br>efg</p>');
+                    window.chai.expect(clipboardData.getData('text/crossnow-editor')).to.be.equal('<p>abc<br>efg</p>');
                 },
                 contentAfter: '<p>[]<br></p>',
             });
@@ -1677,9 +1677,9 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p>xy<a href="#" oe-zws-empty-inline="">\u200B[]</a>z</p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'http://odoo.com');
+                        await pasteText(editor, 'http://crossnow.com');
                     },
-                    contentAfter: '<p>xy<a href="http://odoo.com">http://odoo.com</a>[]z</p>',
+                    contentAfter: '<p>xy<a href="http://crossnow.com">http://crossnow.com</a>[]z</p>',
                 });
                 const imageUrl = 'https://download.odoocdn.com/icons/website/static/description/icon.png';
                 await testEditor(BasicEditor, {
@@ -1711,16 +1711,16 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[]\u200B</a></p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'abc www.odoo.com xyz');
+                        await pasteText(editor, 'abc www.crossnow.com xyz');
                     },
-                    contentAfter: '<p>abc <a href="http://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                    contentAfter: '<p>abc <a href="http://www.crossnow.com">www.crossnow.com</a> xyz[]</p>',
                 });
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[]\u200B</a></p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'odoo.com\ngoogle.com');
+                        await pasteText(editor, 'crossnow.com\ngoogle.com');
                     },
-                    contentAfter: '<p style="margin-bottom: 0px;"><a href="http://odoo.com">odoo.com</a></p>' +
+                    contentAfter: '<p style="margin-bottom: 0px;"><a href="http://crossnow.com">crossnow.com</a></p>' +
                                   '<p><a href="http://google.com">google.com</a>[]<br></p>'
                 });
             });
@@ -1728,13 +1728,13 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[]\u200B</a></p>',
                     stepFunction: async editor => {
-                        await pasteHtml(editor, '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>');
+                        await pasteHtml(editor, '<a href="www.crossnow.com">crossnow.com</a><br><a href="www.google.com">google.com</a>');
                     },
-                    contentAfter: '<p><a href="www.odoo.com">odoo.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
+                    contentAfter: '<p><a href="www.crossnow.com">crossnow.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
                 });
             });
             it('should paste and transform URL among text', async () => {
-                const url = 'https://www.odoo.com';
+                const url = 'https://www.crossnow.com';
                 const imgUrl = 'https://download.odoocdn.com/icons/website/static/description/icon.png';
                 const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
                 await testEditor(BasicEditor, {
@@ -1766,7 +1766,7 @@ describe('Paste', () => {
                 });
             });
             it('should paste and transform multiple URLs', async () => {
-                const url = 'https://www.odoo.com';
+                const url = 'https://www.crossnow.com';
                 const imgUrl = 'https://download.odoocdn.com/icons/website/static/description/icon.png';
                 const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
                 await testEditor(BasicEditor, {
@@ -1838,7 +1838,7 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p>[abc]</p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'www.odoo.com');
+                        await pasteText(editor, 'www.crossnow.com');
                         editor.historyUndo();
                     },
                     contentAfter: '<p>[abc]</p>',
@@ -1846,7 +1846,7 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p>[abc]</p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'def www.odoo.com xyz');
+                        await pasteText(editor, 'def www.crossnow.com xyz');
                         editor.historyUndo();
                     },
                     contentAfter: '<p>[abc]</p>',
@@ -1856,14 +1856,14 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p>[abc]</p>',
                     stepFunction: async editor => {
-                        await pasteHtml(editor, '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>');
+                        await pasteHtml(editor, '<a href="www.crossnow.com">crossnow.com</a><br><a href="www.google.com">google.com</a>');
                         editor.historyUndo();
                     },
                     contentAfter: '<p>[abc]</p>',
                 });
             });
             it('should paste and transform URLs among text or multiple URLs', async () => {
-                const url = 'https://www.odoo.com';
+                const url = 'https://www.crossnow.com';
                 const imgUrl = 'https://download.odoocdn.com/icons/website/static/description/icon.png';
                 const videoUrl = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
                 await testEditor(BasicEditor, {
@@ -1925,16 +1925,16 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[xyz]</a></p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'www.odoo.com');
+                        await pasteText(editor, 'www.crossnow.com');
                     },
-                    contentAfter: '<p><a href="http://www.odoo.com">www.odoo.com</a>[]</p>',
+                    contentAfter: '<p><a href="http://www.crossnow.com">www.crossnow.com</a>[]</p>',
                 });
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[xyz]</a></p>',
                     stepFunction: async editor => {
-                        await pasteText(editor, 'abc www.odoo.com xyz');
+                        await pasteText(editor, 'abc www.crossnow.com xyz');
                     },
-                    contentAfter: '<p>abc <a href="http://www.odoo.com">www.odoo.com</a> xyz[]</p>',
+                    contentAfter: '<p>abc <a href="http://www.crossnow.com">www.crossnow.com</a> xyz[]</p>',
                 });
                 const imageUrl = 'https://download.odoocdn.com/icons/website/static/description/icon.png';
                 await testEditor(BasicEditor, {
@@ -1965,9 +1965,9 @@ describe('Paste', () => {
                 await testEditor(BasicEditor, {
                     contentBefore: '<p><a href="#">[xyz]</a></p>',
                     stepFunction: async editor => {
-                        await pasteHtml(editor, '<a href="www.odoo.com">odoo.com</a><br><a href="www.google.com">google.com</a>');
+                        await pasteHtml(editor, '<a href="www.crossnow.com">crossnow.com</a><br><a href="www.google.com">google.com</a>');
                     },
-                    contentAfter: '<p><a href="www.odoo.com">odoo.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
+                    contentAfter: '<p><a href="www.crossnow.com">crossnow.com</a></p><p><a href="www.google.com">google.com</a>[]</p>',
                 });
             });
         });
@@ -2346,7 +2346,7 @@ describe('Paste', () => {
             });
         });
     });
-    describe('Odoo editor own html', () => {
+    describe('CrossNow editor own html', () => {
         it('should paste html as is', async () => {
             await testEditor(BasicEditor, {
                 contentBefore: '<p>a[]b</p>',
@@ -2367,7 +2367,7 @@ describe('Paste', () => {
         });
     });
     describe('editable in iframe', () => {
-        it('should paste odoo-editor html', async () => {
+        it('should paste crossnow-editor html', async () => {
             // Setup
             const testContainer = document.querySelector('#editor-test-container');
             const iframe = document.createElement('iframe');
@@ -2380,7 +2380,7 @@ describe('Paste', () => {
             // Action: paste
             setSelection(editable.querySelector('p'), 0);
             const clipboardData = new DataTransfer();
-            clipboardData.setData('text/odoo-editor', '<p>text<b>bold text</b>more text</p>');
+            clipboardData.setData('text/crossnow-editor', '<p>text<b>bold text</b>more text</p>');
             await triggerEvent(editor.editable, 'paste', { clipboardData });
 
             // Clean-up

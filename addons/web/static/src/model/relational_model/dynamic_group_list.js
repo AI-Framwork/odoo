@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @crossnow-module */
 //@ts-check
 
 import { Domain } from "@web/core/domain";

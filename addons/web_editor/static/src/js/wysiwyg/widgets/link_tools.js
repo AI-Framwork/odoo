@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Link } from "./link";
 import { ColorPalette } from '@web_editor/js/wysiwyg/widgets/color_palette';
@@ -8,7 +8,7 @@ import {
     onMounted,
     onWillUnmount,
     useState,
-} from "@odoo/owl";
+} from "@crossnow/owl";
 import { normalizeCSSColor } from '@web/core/utils/colors';
 
 /**

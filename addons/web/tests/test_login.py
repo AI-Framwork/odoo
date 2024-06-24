@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo import http
-from odoo.tests.common import get_db_name, HOST, HttpCase, new_test_user, Opener
+from crossnow import http
+from crossnow.tests.common import get_db_name, HOST, HttpCase, new_test_user, Opener
 
 
 class TestWebLoginCommon(HttpCase):

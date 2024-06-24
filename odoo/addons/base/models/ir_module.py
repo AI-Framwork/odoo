@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import base64
 import warnings
 from collections import defaultdict, OrderedDict
@@ -23,16 +23,16 @@ from docutils.writers.html4css1 import Writer
 import lxml.html
 import psycopg2
 
-import odoo
-from odoo import api, fields, models, modules, tools, _
-from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
-from odoo.exceptions import AccessDenied, UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools.parse_version import parse_version
-from odoo.tools.misc import topological_sort, get_flag
-from odoo.tools.translate import TranslationImporter, get_po_paths
-from odoo.http import request
-from odoo.modules import get_module_path
+import crossnow
+from crossnow import api, fields, models, modules, tools, _
+from crossnow.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+from crossnow.exceptions import AccessDenied, UserError, ValidationError
+from crossnow.osv import expression
+from crossnow.tools.parse_version import parse_version
+from crossnow.tools.misc import topological_sort, get_flag
+from crossnow.tools.translate import TranslationImporter, get_po_paths
+from crossnow.http import request
+from crossnow.modules import get_module_path
 
 _logger = logging.getLogger(__name__)
 
@@ -177,7 +177,7 @@ class Module(models.Model):
                     if doc.startswith(XML_DECLARATION):
                         warnings.warn(
                             f"XML declarations in HTML module descriptions are "
-                            f"deprecated since Odoo 17, {module.name} can just "
+                            f"deprecated since CrossNow 17, {module.name} can just "
                             f"have a UTF8 description with not need for a "
                             f"declaration.",
                             category=DeprecationWarning,
@@ -188,7 +188,7 @@ class Module(models.Model):
                         except UnicodeDecodeError:
                             warnings.warn(
                                 f"Non-UTF8 module descriptions are deprecated "
-                                f"since Odoo 17 ({module.name}'s description "
+                                f"since CrossNow 17 ({module.name}'s description "
                                 f"is not utf-8)",
                                 category=DeprecationWarning,
                             )
@@ -305,8 +305,8 @@ class Module(models.Model):
         ('AGPL-3', 'Affero GPL-3'),
         ('LGPL-3', 'LGPL Version 3'),
         ('Other OSI approved licence', 'Other OSI Approved License'),
-        ('OEEL-1', 'Odoo Enterprise Edition License v1.0'),
-        ('OPL-1', 'Odoo Proprietary License v1.0'),
+        ('OEEL-1', 'CrossNow Enterprise Edition License v1.0'),
+        ('OPL-1', 'CrossNow Proprietary License v1.0'),
         ('Other proprietary', 'Other Proprietary')
     ], string='License', default='LGPL-3', readonly=True)
     menus_by_module = fields.Text(string='Menus', compute='_get_views', store=True)
@@ -316,7 +316,7 @@ class Module(models.Model):
     icon = fields.Char('Icon URL')
     icon_image = fields.Binary(string='Icon', compute='_get_icon_image')
     icon_flag = fields.Char(string='Flag', compute='_get_icon_image')
-    to_buy = fields.Boolean('Odoo Enterprise Module', default=False)
+    to_buy = fields.Boolean('CrossNow Enterprise Module', default=False)
     has_iap = fields.Boolean(compute='_compute_has_iap')
 
     _sql_constraints = [
@@ -581,7 +581,7 @@ class Module(models.Model):
             # during execution, the lock won't be released until timeout.
             self._cr.execute("SELECT * FROM ir_cron FOR UPDATE NOWAIT")
         except psycopg2.OperationalError:
-            raise UserError(_("Odoo is currently processing a scheduled action.\n"
+            raise UserError(_("CrossNow is currently processing a scheduled action.\n"
                               "Module operations are not possible at this time, "
                               "please try again later or contact your system administrator."))
         function(self)
@@ -620,7 +620,7 @@ class Module(models.Model):
 
     @assert_log_admin_access
     def button_uninstall(self):
-        un_installable_modules = set(odoo.conf.server_wide_modules) & set(self.mapped('name'))
+        un_installable_modules = set(crossnow.conf.server_wide_modules) & set(self.mapped('name'))
         if un_installable_modules:
             raise UserError(_("Those modules cannot be uninstalled: %s", ', '.join(un_installable_modules)))
         if any(state not in ('installed', 'to upgrade') for state in self.mapped('state')):

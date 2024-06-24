@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { useEffect } from "@odoo/owl";
+import { useEffect } from "@crossnow/owl";
 import { browser } from "../browser/browser";
 
 /**

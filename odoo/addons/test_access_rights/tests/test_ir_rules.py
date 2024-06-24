@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tests.common import TransactionCase
-from odoo.tools import mute_logger
-from odoo import Command
+from crossnow.exceptions import AccessError, ValidationError
+from crossnow.tests.common import TransactionCase
+from crossnow.tools import mute_logger
+from crossnow import Command
 
 
 class TestRules(TransactionCase):
@@ -32,7 +32,7 @@ class TestRules(TransactionCase):
             'domain_force': "[('categ_id', 'in', user.env['test_access_right.obj_categ'].search([]).ids)]"
         })
 
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('crossnow.addons.base.models.ir_rule')
     def test_basic_access(self):
         env = self.env(user=self.env.ref('base.public_user'))
         allowed = self.allowed.with_env(env)
@@ -46,7 +46,7 @@ class TestRules(TransactionCase):
         with self.assertRaises(AccessError):
             self.assertEqual(forbidden.val, -1)
 
-    @mute_logger('odoo.addons.base.models.ir_rule')
+    @mute_logger('crossnow.addons.base.models.ir_rule')
     def test_group_rule(self):
         env = self.env(user=self.env.ref('base.public_user'))
         allowed = self.allowed.with_env(env)

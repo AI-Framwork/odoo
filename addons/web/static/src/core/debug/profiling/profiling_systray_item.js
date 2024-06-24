@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @crossnow-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 class ProfilingSystrayItem extends Component {}
 ProfilingSystrayItem.template = "web.ProfilingSystrayItem";

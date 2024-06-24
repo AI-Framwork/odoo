@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import json
 
-from odoo.exceptions import UserError
-from odoo.http import Controller, request, Response, route
+from crossnow.exceptions import UserError
+from crossnow.http import Controller, request, Response, route
 
 class Profiling(Controller):
 

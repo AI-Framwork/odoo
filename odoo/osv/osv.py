@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 def __getattr__(name):
     # pylint: disable=import-outside-toplevel
@@ -17,7 +17,7 @@ def __getattr__(name):
         else AbstractModel
 
     warnings.warn(
-        f"Since 17.0: odoo.osv.osv.{name} is deprecated, use {target.__module__}.{target.__name__}",
+        f"Since 17.0: crossnow.osv.osv.{name} is deprecated, use {target.__module__}.{target.__name__}",
         category=DeprecationWarning,
         stacklevel=2
     )

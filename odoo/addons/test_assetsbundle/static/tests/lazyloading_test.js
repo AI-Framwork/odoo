@@ -1,10 +1,10 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { loadBundle, LazyComponent } from "@web/core/assets";
 import { registerCleanup } from "@web/../tests/helpers/cleanup";
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 import { getFixture, patchWithCleanup } from "@web/../tests/helpers/utils";
-import { Component, App, xml } from "@odoo/owl";
+import { Component, App, xml } from "@crossnow/owl";
 
 QUnit.module("utils", () => {
     QUnit.module("Assets");

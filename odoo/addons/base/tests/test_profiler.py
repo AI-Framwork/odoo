@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import time
 
-from odoo.exceptions import AccessError
-from odoo.tests.common import BaseCase, TransactionCase, tagged, new_test_user
-from odoo.tools import profiler
-from odoo.tools.profiler import Profiler, ExecutionContext
-from odoo.tools.speedscope import Speedscope
+from crossnow.exceptions import AccessError
+from crossnow.tests.common import BaseCase, TransactionCase, tagged, new_test_user
+from crossnow.tools import profiler
+from crossnow.tools.profiler import Profiler, ExecutionContext
+from crossnow.tools.speedscope import Speedscope
 
 
 @tagged('post_install', '-at_install', 'profiling')

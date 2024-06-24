@@ -1,6 +1,6 @@
-/** @odoo-module */
+/** @crossnow-module */
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { DROPDOWN } from "@web/core/dropdown/dropdown";
 
 export class KanbanDropdownMenuWrapper extends Component {

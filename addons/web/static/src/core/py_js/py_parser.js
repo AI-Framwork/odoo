@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { binaryOperators, comparators } from "./py_tokenizer";
 

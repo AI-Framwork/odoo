@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { makeServerError } from "@web/../tests/helpers/mock_server";
 import { makeFakeUserService } from "@web/../tests/helpers/mock_services";
@@ -26,7 +26,7 @@ import {
 } from "../../helpers/utils";
 import { createWebClient, doAction, getActionManagerServerData, loadState } from "./../helpers";
 
-import { onMounted } from "@odoo/owl";
+import { onMounted } from "@crossnow/owl";
 let serverData;
 let target;
 const serviceRegistry = registry.category("services");
@@ -1355,7 +1355,7 @@ QUnit.module("ActionManager", (hooks) => {
     });
 
     QUnit.test("flags field of ir.actions.act_window is used", async function (assert) {
-        // more info about flags field : https://github.com/odoo/odoo/commit/c9b133813b250e89f1f61816b0eabfb9bee2009d
+        // more info about flags field : https://github.com/crossnow/crossnow/commit/c9b133813b250e89f1f61816b0eabfb9bee2009d
         assert.expect(6);
         serverData.actions[44] = {
             id: 33,
@@ -2022,7 +2022,7 @@ QUnit.module("ActionManager", (hooks) => {
         assert.expect(2);
 
         registry.category("debug").category("view").add("editView", editView);
-        patchWithCleanup(odoo, { debug: "1" });
+        patchWithCleanup(crossnow, { debug: "1" });
         const mockRPC = async (route) => {
             if (route.includes("check_access_rights")) {
                 return true;
@@ -2113,7 +2113,7 @@ QUnit.module("ActionManager", (hooks) => {
         serviceRegistry.add("error", errorService);
         registry
             .category("error_dialogs")
-            .add("odoo.exceptions.ValidationError", WarningDialogWait);
+            .add("crossnow.exceptions.ValidationError", WarningDialogWait);
 
         const mockRPC = (route, args) => {
             if (args.method === "onchange" && args.model === "partner") {
@@ -2170,11 +2170,11 @@ QUnit.module("ActionManager", (hooks) => {
         const webClient = await createWebClient({ serverData });
         await doAction(webClient, 3); // list view
         const titleService = webClient.env.services.title;
-        assert.strictEqual(titleService.current, '{"zopenerp":"Odoo","action":"Partners"}');
+        assert.strictEqual(titleService.current, '{"zopenerp":"CrossNow","action":"Partners"}');
         await click(target.querySelector(".o_data_row .o_data_cell"));
-        assert.strictEqual(titleService.current, '{"zopenerp":"Odoo","action":"First record"}');
+        assert.strictEqual(titleService.current, '{"zopenerp":"CrossNow","action":"First record"}');
         await click(target.querySelector(".o_pager_next"));
-        assert.strictEqual(titleService.current, '{"zopenerp":"Odoo","action":"Second record"}');
+        assert.strictEqual(titleService.current, '{"zopenerp":"CrossNow","action":"Second record"}');
     });
 
     QUnit.test("action part of title is updated when an action is mounted", async (assert) => {
@@ -2187,7 +2187,7 @@ QUnit.module("ActionManager", (hooks) => {
         const webClient = await createWebClient({ serverData });
         await doAction(webClient, 3);
         const titleService = webClient.env.services.title;
-        assert.strictEqual(titleService.current, '{"zopenerp":"Odoo","action":"Partners"}');
+        assert.strictEqual(titleService.current, '{"zopenerp":"CrossNow","action":"Partners"}');
     });
 
     QUnit.test("action group_by of type string", async function (assert) {
@@ -2383,7 +2383,7 @@ QUnit.module("ActionManager", (hooks) => {
         serviceRegistry.add("error", errorService);
         registry
             .category("error_dialogs")
-            .add("odoo.exceptions.ValidationError", WarningDialogWait);
+            .add("crossnow.exceptions.ValidationError", WarningDialogWait);
 
         const mockRPC = (route, args) => {
             if (args.method === "web_search_read" && args.model === "partner") {

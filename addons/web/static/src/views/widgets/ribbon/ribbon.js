@@ -1,9 +1,9 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { registry } from "@web/core/registry";
 import { standardWidgetProps } from "../standard_widget_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 /**
  * This widget adds a ribbon on the top right side of the form

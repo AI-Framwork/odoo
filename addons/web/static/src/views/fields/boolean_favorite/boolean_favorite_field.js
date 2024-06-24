@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { archParseBoolean } from "@web/views/utils";
 import { standardFieldProps } from "../standard_field_props";
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class BooleanFavoriteField extends Component {
     static template = "web.BooleanFavoriteField";

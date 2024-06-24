@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 """
 Web_editor-context rendering needs to add some metadata to rendered and allow to edit fields,
 as well as render a few fields differently.
 
-Also, adds methods to convert values back to Odoo models.
+Also, adds methods to convert values back to CrossNow models.
 """
 
 import babel
@@ -23,13 +23,13 @@ from lxml import etree, html
 from PIL import Image as I
 from werkzeug import urls
 
-import odoo.modules
+import crossnow.modules
 
-from odoo import _, api, models, fields
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import ustr, posix_to_ldml, pycompat
-from odoo.tools import html_escape as escape
-from odoo.tools.misc import file_open, get_lang, babel_locale_parse
+from crossnow import _, api, models, fields
+from crossnow.exceptions import UserError, ValidationError
+from crossnow.tools import ustr, posix_to_ldml, pycompat
+from crossnow.tools import html_escape as escape
+from crossnow.tools.misc import file_open, get_lang, babel_locale_parse
 
 REMOTE_CONNECTION_TIMEOUT = 2.5
 

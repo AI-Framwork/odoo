@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { omit, pick, shallowEqual } from "@web/core/utils/objects";
 

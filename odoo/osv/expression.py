@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 """ Domain expression processing
 
@@ -29,7 +29,7 @@ an infix notation, and the available operators, and possible left and
 right operands differ with those of the previous level. Here is a
 possible term::
 
-    ('company_id.name', '=', 'OpenERP')
+    ('company_id.name', '=', 'CrossNow')
 
 The left and right operand don't have the same possible values. The
 left operand is field name (related to the model for which the domain
@@ -42,10 +42,10 @@ operator can be used, and thus the right operand should be a list.
 
 Note: the non-uniform syntax could have been more uniform, but this
 would hide an important limitation of the domain syntax. Say that the
-term representation was ['=', 'company_id.name', 'OpenERP']. Used in a
+term representation was ['=', 'company_id.name', 'CrossNow']. Used in a
 complete domain, this would look like::
 
-    ['!', ['=', 'company_id.name', 'OpenERP']]
+    ['!', ['=', 'company_id.name', 'CrossNow']]
 
 and you would be tempted to believe something like this would be
 possible::
@@ -58,7 +58,7 @@ take a recursive form: a domain is not a valid second-level operand.
 
 Unaccent - Accent-insensitive search
 
-OpenERP will use the SQL function 'unaccent' when available for the
+CrossNow will use the SQL function 'unaccent' when available for the
 'ilike' and 'not ilike' operators, and enabled in the configuration.
 Normally the 'unaccent' function is obtained from `the PostgreSQL
 'unaccent' contrib module
@@ -109,7 +109,7 @@ You can check unaccent is working:
 
     > psql9 <database> -c"select unaccent('hélène')"
 
-Finally, to instruct OpenERP to really use the unaccent function, you have to
+Finally, to instruct CrossNow to really use the unaccent function, you have to
 start the server specifying the ``--unaccent`` flag.
 
 """
@@ -123,9 +123,9 @@ from datetime import date, datetime, time
 
 import psycopg2.sql
 
-import odoo.modules
-from odoo.models import BaseModel, check_property_field_value_name
-from odoo.tools import (
+import crossnow.modules
+from crossnow.models import BaseModel, check_property_field_value_name
+from crossnow.tools import (
     pycompat, pattern_to_translated_trigram_pattern, value_to_translated_trigram_pattern,
     Query, SQL,
 )
@@ -753,7 +753,7 @@ def _unaccent_wrapper(x):
     return 'unaccent({})'.format(x)
 
 def get_unaccent_wrapper(cr):
-    if odoo.registry(cr.dbname).has_unaccent:
+    if crossnow.registry(cr.dbname).has_unaccent:
         return _unaccent_wrapper
     return lambda x: x
 

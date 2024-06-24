@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "../registry";
 
-import { EventBus, reactive } from "@odoo/owl";
+import { EventBus, reactive } from "@crossnow/owl";
 
 export const fileUploadService = {
     dependencies: ["notification"],
@@ -41,7 +41,7 @@ export const fileUploadService = {
             const xhr = this.createXhr();
             xhr.open("POST", route);
             const formData = new FormData();
-            formData.append("csrf_token", odoo.csrf_token);
+            formData.append("csrf_token", crossnow.csrf_token);
             for (const file of files) {
                 formData.append("ufile", file);
             }

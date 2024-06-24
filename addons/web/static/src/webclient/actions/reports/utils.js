@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { _t } from "@web/core/l10n/translation";
 import { download } from "@web/core/network/download";
@@ -48,7 +48,7 @@ function getWKHTMLTOPDF_MESSAGES(status) {
                 "You should upgrade your version of Wkhtmltopdf to at least 0.12.0 in order to get a correct display of headers and footers as well as support for table-breaking between pages."
             ) + link,
         workers: _t(
-            "You need to start Odoo with at least two workers to print a pdf version of the reports."
+            "You need to start CrossNow with at least two workers to print a pdf version of the reports."
         ),
     };
     return _status[status];

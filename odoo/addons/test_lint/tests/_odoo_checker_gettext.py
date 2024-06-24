@@ -8,20 +8,20 @@ except ImportError:
     from pylint.checkers.utils import check_messages as only_required_for_messages
 
 def parse_version(s):
-    # can't use odoo.tools.parse_version because pythonpath is screwed from
+    # can't use crossnow.tools.parse_version because pythonpath is screwed from
     # inside pylint on runbot
     return [s.rjust(3, '0') for s in s.split('.')]
 
 class OdooBaseChecker(BaseChecker):
     if parse_version(pylint.__version__) < parse_version('2.14.0'):
         __implements__ = pylint.interfaces.IAstroidChecker
-    name = 'odoo'
+    name = 'crossnow'
 
     msgs = {
         'E8502': (
             'Bad usage of _, _lt function.',
             'gettext-variable',
-            'See https://www.odoo.com/documentation/17.0/developer/misc/i18n/translations.html#variables'
+            'See https://www.crossnow.com/documentation/17.0/developer/misc/i18n/translations.html#variables'
         )
     }
 

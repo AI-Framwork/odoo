@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { session } from "@web/session";
@@ -36,7 +36,7 @@ import { _t } from "@web/core/l10n/translation";
 
 const serviceRegistry = registry.category("services");
 
-import { markup } from "@odoo/owl";
+import { markup } from "@crossnow/owl";
 
 /**
  * Helper function that returns, given a pivot instance, the values of the

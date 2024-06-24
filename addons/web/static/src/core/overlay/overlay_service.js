@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { reactive } from "@odoo/owl";
+import { reactive } from "@crossnow/owl";
 import { registry } from "../registry";
 import { OverlayContainer } from "./overlay_container";
 

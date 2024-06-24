@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
@@ -14,7 +14,7 @@ import {
 } from "./../helpers";
 import { listView } from "@web/views/list/list_view";
 import { companyService } from "@web/webclient/company_service";
-import { onWillStart } from "@odoo/owl";
+import { onWillStart } from "@crossnow/owl";
 import { GraphModel } from "@web/views/graph/graph_model";
 import { switchView } from "../../search/helpers";
 
@@ -207,7 +207,7 @@ QUnit.module("ActionManager", (hooks) => {
     });
 
     QUnit.test("document's title is updated when an action is executed", async function (assert) {
-        const defaultTitle = { zopenerp: "Odoo" };
+        const defaultTitle = { zopenerp: "CrossNow" };
         const webClient = await createWebClient({ serverData });
         await nextTick();
         let currentTitle = webClient.env.services.title.getParts();

@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { useHotkey } from "../hotkeys/hotkey_hook";
 import { DateTimePicker } from "./datetime_picker";
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import base64
 import datetime
@@ -8,11 +8,11 @@ import logging
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError
-from odoo.http import request
-from odoo.tools.profiler import make_session
-from odoo.tools.speedscope import Speedscope
+from crossnow import fields, models, api, _
+from crossnow.exceptions import UserError
+from crossnow.http import request
+from crossnow.tools.profiler import make_session
+from crossnow.tools.speedscope import Speedscope
 
 _logger = logging.getLogger(__name__)
 

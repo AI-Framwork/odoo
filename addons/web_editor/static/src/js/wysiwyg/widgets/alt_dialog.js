@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, useRef, onMounted } from "@odoo/owl";
+import { Component, useRef, onMounted } from "@crossnow/owl";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class AltDialog extends Component {

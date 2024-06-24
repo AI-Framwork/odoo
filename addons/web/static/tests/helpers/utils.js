@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { templates } from "@web/core/assets";
 import { browser } from "@web/core/browser/browser";
@@ -23,7 +23,7 @@ import {
     onWillUnmount,
     onWillUpdateProps,
     useComponent,
-} from "@odoo/owl";
+} from "@crossnow/owl";
 
 /**
  * @typedef {keyof HTMLElementEventMap | keyof WindowEventMap} EventType

@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import {
     URL_REGEX,
@@ -383,9 +383,9 @@ describe('Link', () => {
                     contentBefore: '<p>a<a href="https://google.com">google.com[]</a></p>',
                     stepFunction: async editor => {
                         await insertLineBreak(editor);
-                        await insertText(editor, 'odoo.com')
+                        await insertText(editor, 'crossnow.com')
                     },
-                    contentAfter: '<p>a<a href="https://google.com">google.com</a><br>odoo.com[]</p>',
+                    contentAfter: '<p>a<a href="https://google.com">google.com</a><br>crossnow.com[]</p>',
                 });
             });
         });

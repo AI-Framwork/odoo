@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import base64
 import binascii
@@ -16,17 +16,17 @@ import uuid
 from collections import defaultdict
 from PIL import Image
 
-from odoo import api, fields, models, SUPERUSER_ID, tools, _
-from odoo.exceptions import AccessError, ValidationError, UserError
-from odoo.tools import config, human_size, ImageProcess, str2bool, consteq
-from odoo.tools.mimetypes import guess_mimetype
-from odoo.osv import expression
+from crossnow import api, fields, models, SUPERUSER_ID, tools, _
+from crossnow.exceptions import AccessError, ValidationError, UserError
+from crossnow.tools import config, human_size, ImageProcess, str2bool, consteq
+from crossnow.tools.mimetypes import guess_mimetype
+from crossnow.osv import expression
 
 _logger = logging.getLogger(__name__)
 
 
 class IrAttachment(models.Model):
-    """Attachments are used to link binary files or url to any openerp document.
+    """Attachments are used to link binary files or url to any crossnow document.
 
     External attachment storage
     ---------------------------

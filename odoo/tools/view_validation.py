@@ -7,8 +7,8 @@ import os
 import re
 
 from lxml import etree
-from odoo import tools
-from odoo.osv.expression import DOMAIN_OPERATORS
+from crossnow import tools
+from crossnow.osv.expression import DOMAIN_OPERATORS
 
 _logger = logging.getLogger(__name__)
 

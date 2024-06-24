@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { Transition } from "@web/core/transition";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@crossnow/owl";
 
 /**
  * Loading Indicator

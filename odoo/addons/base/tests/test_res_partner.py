@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from contextlib import contextmanager
 from unittest.mock import patch
 
-from odoo import Command
-from odoo.addons.base.models.res_partner import Partner
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.exceptions import AccessError, RedirectWarning, UserError, ValidationError
-from odoo.tests import Form
-from odoo.tests.common import tagged, TransactionCase
+from crossnow import Command
+from crossnow.addons.base.models.res_partner import Partner
+from crossnow.addons.base.tests.common import TransactionCaseWithUserDemo
+from crossnow.exceptions import AccessError, RedirectWarning, UserError, ValidationError
+from crossnow.tests import Form
+from crossnow.tests.common import tagged, TransactionCase
 
 # samples use effective TLDs from the Mozilla public suffix
 # list at http://publicsuffix.org
@@ -60,7 +60,7 @@ class TestPartner(TransactionCaseWithUserDemo):
     def test_archive_internal_partners(self):
         test_partner = self.env['res.partner'].create({'name':'test partner'})
         test_user = self.env['res.users'].create({
-                                'login': 'test@odoo.com',
+                                'login': 'test@crossnow.com',
                                 'partner_id': test_partner.id,
                                 })
         # Cannot archive the partner

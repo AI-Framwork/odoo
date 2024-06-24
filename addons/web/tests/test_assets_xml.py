@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import random
 import re
@@ -8,15 +8,15 @@ from datetime import datetime
 from lxml import etree
 import logging
 
-import odoo
-from odoo.tests.common import BaseCase, HttpCase, tagged
-from odoo.tools import topological_sort
-from odoo.addons.base.models.assetsbundle import AssetsBundle, WebAsset
+import crossnow
+from crossnow.tests.common import BaseCase, HttpCase, tagged
+from crossnow.tools import topological_sort
+from crossnow.addons.base.models.assetsbundle import AssetsBundle, WebAsset
 
 
 _logger = logging.getLogger(__name__)
 
-class TestStaticInheritanceCommon(odoo.tests.TransactionCase):
+class TestStaticInheritanceCommon(crossnow.tests.TransactionCase):
     def setUp(self):
         super().setUp()
 

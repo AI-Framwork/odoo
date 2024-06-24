@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { omit } from "../utils/objects";
 import { useDateTimePicker } from "./datetime_hook";
 import { DateTimePicker } from "./datetime_picker";

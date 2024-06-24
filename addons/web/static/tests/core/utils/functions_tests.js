@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { memoize, uniqueId } from "@web/core/utils/functions";
 import { patchWithCleanup } from "../../helpers/utils";

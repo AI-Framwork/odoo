@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { reactive } from "@odoo/owl";
+import { reactive } from "@crossnow/owl";
 import { browser } from "@web/core/browser/browser";
 import {
     isDisplayStandalone,

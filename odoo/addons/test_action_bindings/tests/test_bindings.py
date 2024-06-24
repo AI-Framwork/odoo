@@ -1,4 +1,4 @@
-from odoo.tests import common
+from crossnow.tests import common
 
 class TestActionBindings(common.TransactionCase):
 

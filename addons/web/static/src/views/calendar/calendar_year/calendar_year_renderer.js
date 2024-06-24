@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { localization } from "@web/core/l10n/localization";
 import { useDebounced } from "@web/core/utils/timing";
@@ -7,7 +7,7 @@ import { useCalendarPopover, useFullCalendar } from "../hooks";
 import { CalendarYearPopover } from "./calendar_year_popover";
 import { getWeekNumber } from "../utils";
 
-import { Component, useEffect, useRef } from "@odoo/owl";
+import { Component, useEffect, useRef } from "@crossnow/owl";
 
 export class CalendarYearRenderer extends Component {
     setup() {

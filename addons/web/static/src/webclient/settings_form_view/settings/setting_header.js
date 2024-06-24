@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Setting } from "@web/views/form/setting/setting";
 

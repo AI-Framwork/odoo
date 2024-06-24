@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from collections import defaultdict
 from lxml import etree
 import logging
 
-from odoo import exceptions, Command
-from odoo.tests.common import Form, TransactionCase, tagged
+from crossnow import exceptions, Command
+from crossnow.tests.common import Form, TransactionCase, tagged
 
 _logger = logging.getLogger(__name__)
 

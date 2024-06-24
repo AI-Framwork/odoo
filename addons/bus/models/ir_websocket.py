@@ -1,6 +1,6 @@
-from odoo import models
-from odoo.http import request, SessionExpiredException
-from odoo.service import security
+from crossnow import models
+from crossnow.http import request, SessionExpiredException
+from crossnow.service import security
 from ..models.bus import dispatch
 from ..websocket import wsrequest
 

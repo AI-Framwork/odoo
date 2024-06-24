@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import email.message
 import email.policy
 
 from unittest.mock import patch
 
-from odoo import tools
-from odoo.addons.base.tests import test_mail_examples
-from odoo.addons.base.tests.common import MockSmtplibCase
-from odoo.tests import tagged, users
-from odoo.tests.common import TransactionCase
-from odoo.tools import mute_logger
-from odoo.tools import config
+from crossnow import tools
+from crossnow.addons.base.tests import test_mail_examples
+from crossnow.addons.base.tests.common import MockSmtplibCase
+from crossnow.tests import tagged, users
+from crossnow.tests.common import TransactionCase
+from crossnow.tools import mute_logger
+from crossnow.tools import config
 
 
 class _FakeSMTP:
@@ -195,10 +195,10 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
         for email, from_filter in tests:
             self.assertFalse(self.env['ir.mail_server']._match_from_filter(email, from_filter))
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     def test_mail_server_priorities(self):
         """ Test if we choose the right mail server to send an email. Simulates
-        simple Odoo DB so we have to spoof the FROM otherwise we cannot send
+        simple CrossNow DB so we have to spoof the FROM otherwise we cannot send
         any email. """
         for email_from, (expected_mail_server, expected_email_from) in zip(
             [
@@ -217,7 +217,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
                 self.assertEqual(mail_server, expected_mail_server)
                 self.assertEqual(mail_from, expected_email_from)
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     def test_mail_server_send_email(self):
         """ Test main 'send_email' usage: check mail_server choice based on from
         filters, encapsulation, spoofing. """
@@ -287,7 +287,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
                 from_filter=False,
             )
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_mail_server')
+    @mute_logger('crossnow.models.unlink', 'crossnow.addons.base.models.ir_mail_server')
     def test_mail_server_send_email_context_force(self):
         """ Allow to force notifications_email / bounce_address from context
         to allow higher-level apps to send values until end of mail stack
@@ -331,7 +331,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
             from_filter='random.domain',
         )
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     def test_mail_server_send_email_IDNA(self):
         """ Test that the mail from / recipient envelop are encoded using IDNA """
         with self.mock_smtplib_connection():
@@ -346,22 +346,22 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
             from_filter=False,
         )
 
-    @mute_logger('odoo.models.unlink', 'odoo.addons.base.models.ir_mail_server')
+    @mute_logger('crossnow.models.unlink', 'crossnow.addons.base.models.ir_mail_server')
     @patch.dict(config.options, {
         "from_filter": "dummy@example.com, test.mycompany.com, dummy2@example.com",
         "smtp_server": "example.com",
     })
     def test_mail_server_config_bin(self):
-        """ Test the configuration provided in the odoo-bin arguments. This config
+        """ Test the configuration provided in the crossnow-bin arguments. This config
         is used when no mail server exists. Test with and without giving a
         pre-configured SMTP session, should not impact results.
 
         Also check "mail.default.from_filter" parameter usage that should overwrite
-        odoo-bin argument "--from-filter".
+        crossnow-bin argument "--from-filter".
         """
         IrMailServer = self.env['ir.mail_server']
 
-        # Remove all mail server so we will use the odoo-bin arguments
+        # Remove all mail server so we will use the crossnow-bin arguments
         IrMailServer.search([]).unlink()
         self.assertFalse(IrMailServer.search([]))
 
@@ -405,7 +405,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
                         from_filter="dummy@example.com, test.mycompany.com, dummy2@example.com",
                     )
 
-        # for from_filter in ICP, overwrite the one from odoo-bin
+        # for from_filter in ICP, overwrite the one from crossnow-bin
         self.env['ir.config_parameter'].sudo().set_param('mail.default.from_filter', 'icp.example.com')
 
         # Use an email in the domain of the config parameter "mail.default.from_filter"
@@ -419,11 +419,11 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
             from_filter='icp.example.com',
         )
 
-    @mute_logger('odoo.models.unlink')
+    @mute_logger('crossnow.models.unlink')
     @patch.dict(config.options, {'from_filter': 'fake.com', 'smtp_server': 'cli_example.com'})
     def test_mail_server_config_cli(self):
         """ Test the mail server configuration when the "smtp_authentication" is
-        "cli". It should take the configuration from the odoo-bin argument. The
+        "cli". It should take the configuration from the crossnow-bin argument. The
         "from_filter" of the mail server should overwrite the one set in the CLI
         arguments.
         """
@@ -441,7 +441,7 @@ class TestIrMailServer(TransactionCase, MockSmtplibCase):
 
         for mail_from, (expected_smtp_from, expected_msg_from, expected_mail_server) in zip(
             [
-                # check that the CLI server take the configuration in the odoo-bin argument
+                # check that the CLI server take the configuration in the crossnow-bin argument
                 # except the from_filter which is taken on the mail server
                 'test@cli_example.com',
                 # other mail servers still work

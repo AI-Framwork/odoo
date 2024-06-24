@@ -7,11 +7,11 @@ from datetime import date, datetime
 from collections import defaultdict
 from markupsafe import Markup
 
-import odoo
-from odoo.http import Controller, route, dispatch_rpc, request, Response
-from odoo.fields import Date, Datetime, Command
-from odoo.tools import lazy, ustr
-from odoo.tools.misc import frozendict
+import crossnow
+from crossnow.http import Controller, route, dispatch_rpc, request, Response
+from crossnow.fields import Date, Datetime, Command
+from crossnow.tools import lazy, ustr
+from crossnow.tools.misc import frozendict
 
 # ==========================================================
 # XML-RPC helpers
@@ -19,7 +19,7 @@ from odoo.tools.misc import frozendict
 
 # XML-RPC fault codes. Some care must be taken when changing these: the
 # constants are also defined client-side and must remain in sync.
-# User code must use the exceptions defined in ``odoo.exceptions`` (not
+# User code must use the exceptions defined in ``crossnow.exceptions`` (not
 # create directly ``xmlrpc.client.Fault`` objects).
 RPC_FAULT_CODE_CLIENT_ERROR = 1 # indistinguishable from app. error.
 RPC_FAULT_CODE_APPLICATION_ERROR = 1
@@ -32,13 +32,13 @@ CONTROL_CHARACTERS = dict.fromkeys(set(range(32)) - {9, 10, 13})
 
 
 def xmlrpc_handle_exception_int(e):
-    if isinstance(e, odoo.exceptions.RedirectWarning):
+    if isinstance(e, crossnow.exceptions.RedirectWarning):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_WARNING, str(e))
-    elif isinstance(e, odoo.exceptions.AccessError):
+    elif isinstance(e, crossnow.exceptions.AccessError):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_ACCESS_ERROR, str(e))
-    elif isinstance(e, odoo.exceptions.AccessDenied):
+    elif isinstance(e, crossnow.exceptions.AccessDenied):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_ACCESS_DENIED, str(e))
-    elif isinstance(e, odoo.exceptions.UserError):
+    elif isinstance(e, crossnow.exceptions.UserError):
         fault = xmlrpc.client.Fault(RPC_FAULT_CODE_WARNING, str(e))
     else:
         info = sys.exc_info()
@@ -49,21 +49,21 @@ def xmlrpc_handle_exception_int(e):
 
 
 def xmlrpc_handle_exception_string(e):
-    if isinstance(e, odoo.exceptions.RedirectWarning):
+    if isinstance(e, crossnow.exceptions.RedirectWarning):
         fault = xmlrpc.client.Fault('warning -- Warning\n\n' + str(e), '')
-    elif isinstance(e, odoo.exceptions.MissingError):
+    elif isinstance(e, crossnow.exceptions.MissingError):
         fault = xmlrpc.client.Fault('warning -- MissingError\n\n' + str(e), '')
-    elif isinstance(e, odoo.exceptions.AccessError):
+    elif isinstance(e, crossnow.exceptions.AccessError):
         fault = xmlrpc.client.Fault('warning -- AccessError\n\n' + str(e), '')
-    elif isinstance(e, odoo.exceptions.AccessDenied):
+    elif isinstance(e, crossnow.exceptions.AccessDenied):
         fault = xmlrpc.client.Fault('AccessDenied', str(e))
-    elif isinstance(e, odoo.exceptions.UserError):
+    elif isinstance(e, crossnow.exceptions.UserError):
         fault = xmlrpc.client.Fault('warning -- UserError\n\n' + str(e), '')
     #InternalError
     else:
         info = sys.exc_info()
         formatted_info = "".join(traceback.format_exception(*info))
-        fault = xmlrpc.client.Fault(odoo.tools.exception_to_unicode(e), formatted_info)
+        fault = xmlrpc.client.Fault(crossnow.tools.exception_to_unicode(e), formatted_info)
 
     return xmlrpc.client.dumps(fault, allow_none=None, encoding=None)
 
@@ -76,7 +76,7 @@ class OdooMarshaller(xmlrpc.client.Marshaller):
         self.dump_struct(value, write)
 
     # By default, in xmlrpc, bytes are converted to xmlrpc.client.Binary object.
-    # Historically, odoo is sending binary as base64 string.
+    # Historically, crossnow is sending binary as base64 string.
     # In python 3, base64.b64{de,en}code() methods now works on bytes.
     # Convert them to str to have a consistent behavior between python 2 and python 3.
     def dump_bytes(self, value, write):
@@ -151,5 +151,5 @@ class RPC(Controller):
 
     @route('/jsonrpc', type='json', auth="none", save_session=False)
     def jsonrpc(self, service, method, args):
-        """ Method used by client APIs to contact OpenERP. """
+        """ Method used by client APIs to contact CrossNow. """
         return dispatch_rpc(service, method, args)

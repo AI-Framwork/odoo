@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, onPatched, useState } from "@odoo/owl";
+import { Component, onPatched, useState } from "@crossnow/owl";
 
 export const ACCORDION = Symbol("Accordion");
 export class AccordionItem extends Component {

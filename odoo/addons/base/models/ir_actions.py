@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo import api, fields, models, tools, _, Command
-from odoo.exceptions import MissingError, ValidationError, AccessError, UserError
-from odoo.tools import frozendict
-from odoo.tools.safe_eval import safe_eval, test_python_expr
-from odoo.tools.float_utils import float_compare
-from odoo.http import request
+import crossnow
+from crossnow import api, fields, models, tools, _, Command
+from crossnow.exceptions import MissingError, ValidationError, AccessError, UserError
+from crossnow.tools import frozendict
+from crossnow.tools.safe_eval import safe_eval, test_python_expr
+from crossnow.tools.float_utils import float_compare
+from crossnow.http import request
 import base64
 from collections import defaultdict
 from functools import partial, reduce
@@ -435,7 +435,7 @@ class IrActionsServer(models.Model):
     action rules, of manually, by adding the action in the 'More' contextual
     menu.
 
-    Since Odoo 8.0 a button 'Create Menu Action' button is available on the
+    Since CrossNow 8.0 a button 'Create Menu Action' button is available on the
     action form view. It creates an entry in the More menu of the base model.
     This allows to create server actions and run them in mass mode easily through
     the interface.
@@ -874,7 +874,7 @@ class IrActionsServer(models.Model):
             'env': self.env,
             'model': model,
             # Exceptions
-            'UserError': odoo.exceptions.UserError,
+            'UserError': crossnow.exceptions.UserError,
             # record
             'record': record,
             'records': records,

@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, useState, useEffect, useRef } from "@odoo/owl";
+import { Component, useState, useEffect, useRef } from "@crossnow/owl";
 
 export class SettingsApp extends Component {
     setup() {

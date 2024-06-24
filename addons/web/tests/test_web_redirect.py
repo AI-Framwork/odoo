@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from werkzeug.urls import url_parse
 
-from odoo.tests.common import HttpCase
+from crossnow.tests.common import HttpCase
 
 
 class TestWebRedirect(HttpCase):

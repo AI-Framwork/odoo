@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import ast
 import collections.abc
@@ -14,11 +14,11 @@ import sys
 import warnings
 from os.path import join as opj, normpath
 
-import odoo
-import odoo.tools as tools
-import odoo.release as release
-from odoo.tools import pycompat
-from odoo.tools.misc import file_path
+import crossnow
+import crossnow.tools as tools
+import crossnow.release as release
+from crossnow.tools import pycompat
+from crossnow.tools.misc import file_path
 
 
 MANIFEST_NAMES = ('__manifest__.py', '__openerp__.py')
@@ -29,7 +29,7 @@ _DEFAULT_MANIFEST = {
     'application': False,
     'bootstrap': False,  # web
     'assets': {},
-    'author': 'Odoo S.A.',
+    'author': 'CrossNow S.A.',
     'auto_install': False,
     'category': 'Uncategorized',
     'configurator_snippets': {},  # website themes
@@ -66,10 +66,10 @@ _logger = logging.getLogger(__name__)
 
 
 class UpgradeHook(object):
-    """Makes the legacy `migrations` package being `odoo.upgrade`"""
+    """Makes the legacy `migrations` package being `crossnow.upgrade`"""
 
     def find_spec(self, fullname, path=None, target=None):
-        if re.match(r"^odoo\.addons\.base\.maintenance\.migrations\b", fullname):
+        if re.match(r"^crossnow\.addons\.base\.maintenance\.migrations\b", fullname):
             # We can't trigger a DeprecationWarning in this case.
             # In order to be cross-versions, the multi-versions upgrade scripts (0.0.0 scripts),
             # the tests, and the common files (utility functions) still needs to import from the
@@ -79,7 +79,7 @@ class UpgradeHook(object):
     def load_module(self, name):
         assert name not in sys.modules
 
-        canonical_upgrade = name.replace("odoo.addons.base.maintenance.migrations", "odoo.upgrade")
+        canonical_upgrade = name.replace("crossnow.addons.base.maintenance.migrations", "crossnow.upgrade")
 
         if canonical_upgrade in sys.modules:
             mod = sys.modules[canonical_upgrade]
@@ -93,41 +93,41 @@ class UpgradeHook(object):
 
 def initialize_sys_path():
     """
-    Setup the addons path ``odoo.addons.__path__`` with various defaults
+    Setup the addons path ``crossnow.addons.__path__`` with various defaults
     and explicit directories.
     """
-    # hook odoo.addons on data dir
+    # hook crossnow.addons on data dir
     dd = os.path.normcase(tools.config.addons_data_dir)
-    if os.access(dd, os.R_OK) and dd not in odoo.addons.__path__:
-        odoo.addons.__path__.append(dd)
+    if os.access(dd, os.R_OK) and dd not in crossnow.addons.__path__:
+        crossnow.addons.__path__.append(dd)
 
-    # hook odoo.addons on addons paths
+    # hook crossnow.addons on addons paths
     for ad in tools.config['addons_path'].split(','):
         ad = os.path.normcase(os.path.abspath(tools.ustr(ad.strip())))
-        if ad not in odoo.addons.__path__:
-            odoo.addons.__path__.append(ad)
+        if ad not in crossnow.addons.__path__:
+            crossnow.addons.__path__.append(ad)
 
-    # hook odoo.addons on base module path
+    # hook crossnow.addons on base module path
     base_path = os.path.normcase(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'addons')))
-    if base_path not in odoo.addons.__path__ and os.path.isdir(base_path):
-        odoo.addons.__path__.append(base_path)
+    if base_path not in crossnow.addons.__path__ and os.path.isdir(base_path):
+        crossnow.addons.__path__.append(base_path)
 
-    # hook odoo.upgrade on upgrade-path
-    from odoo import upgrade
+    # hook crossnow.upgrade on upgrade-path
+    from crossnow import upgrade
     legacy_upgrade_path = os.path.join(base_path, 'base', 'maintenance', 'migrations')
     for up in (tools.config['upgrade_path'] or legacy_upgrade_path).split(','):
         up = os.path.normcase(os.path.abspath(tools.ustr(up.strip())))
         if os.path.isdir(up) and up not in upgrade.__path__:
             upgrade.__path__.append(up)
 
-    # create decrecated module alias from odoo.addons.base.maintenance.migrations to odoo.upgrade
-    spec = importlib.machinery.ModuleSpec("odoo.addons.base.maintenance", None, is_package=True)
+    # create decrecated module alias from crossnow.addons.base.maintenance.migrations to crossnow.upgrade
+    spec = importlib.machinery.ModuleSpec("crossnow.addons.base.maintenance", None, is_package=True)
     maintenance_pkg = importlib.util.module_from_spec(spec)
     maintenance_pkg.migrations = upgrade
-    sys.modules["odoo.addons.base.maintenance"] = maintenance_pkg
-    sys.modules["odoo.addons.base.maintenance.migrations"] = upgrade
+    sys.modules["crossnow.addons.base.maintenance"] = maintenance_pkg
+    sys.modules["crossnow.addons.base.maintenance.migrations"] = upgrade
 
-    # hook deprecated module alias from openerp to odoo and "crm"-like to odoo.addons
+    # hook deprecated module alias from crossnow to crossnow and "crm"-like to crossnow.addons
     if not getattr(initialize_sys_path, 'called', False): # only initialize once
         sys.meta_path.insert(0, UpgradeHook())
         initialize_sys_path.called = True
@@ -143,7 +143,7 @@ def get_module_path(module, downloaded=False, display_warning=True):
     """
     if re.search(r"[\/\\]", module):
         return False
-    for adp in odoo.addons.__path__:
+    for adp in crossnow.addons.__path__:
         files = [opj(adp, module, manifest) for manifest in MANIFEST_NAMES] +\
                 [opj(adp, module + '.zip')]
         if any(os.path.exists(f) for f in files):
@@ -171,7 +171,7 @@ def get_module_filetree(module, dir='.'):
     if dir.startswith('..') or (dir and dir[0] == '/'):
         raise Exception('Cannot access file outside the module')
 
-    files = odoo.tools.osutil.listdir(path, True)
+    files = crossnow.tools.osutil.listdir(path, True)
 
     tree = {}
     for f in files:
@@ -227,7 +227,7 @@ def get_resource_from_path(path):
     :return: tuple(module_name, relative_path, os_relative_path) if possible, else None
     """
     resource = False
-    sorted_paths = sorted(odoo.addons.__path__, key=len, reverse=True)
+    sorted_paths = sorted(crossnow.addons.__path__, key=len, reverse=True)
     for adpath in sorted_paths:
         # force trailing separator
         adpath = os.path.join(adpath, "")
@@ -379,7 +379,7 @@ def load_information_from_description_file(module, mod_path=None):
     return get_manifest(module, mod_path)
 
 def load_openerp_module(module_name):
-    """ Load an OpenERP module, if not already loaded.
+    """ Load an CrossNow module, if not already loaded.
 
     This loads the module and register all of its models, thanks to either
     the MetaModel metaclass, or the explicit instantiation of the model.
@@ -387,7 +387,7 @@ def load_openerp_module(module_name):
     when there is no model to register).
     """
 
-    qualname = f'odoo.addons.{module_name}'
+    qualname = f'crossnow.addons.{module_name}'
     if qualname in sys.modules:
         return
 
@@ -426,7 +426,7 @@ def get_modules():
         ]
 
     plist = []
-    for ad in odoo.addons.__path__:
+    for ad in crossnow.addons.__path__:
         if not os.path.exists(ad):
             _logger.warning("addons path does not exist: %s", ad)
             continue

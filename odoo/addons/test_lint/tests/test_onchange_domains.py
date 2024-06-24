@@ -3,7 +3,7 @@ import itertools
 import os
 
 from . import lint_case
-from odoo.tools.misc import file_open
+from crossnow.tools.misc import file_open
 
 class OnchangeChecker(lint_case.NodeVisitor):
     def matches_onchange(self, node):
@@ -31,7 +31,7 @@ class TestOnchangeDomains(lint_case.LintCase):
     """
     def test_forbid_domains_in_onchanges(self):
         """ Dynamic domains (returning a domain from an onchange) are deprecated
-        and should not be used in "standard" Odoo anymore
+        and should not be used in "standard" CrossNow anymore
         """
         checker = OnchangeChecker()
         rs = []

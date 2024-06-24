@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 #
 # test cases for new-style fields
@@ -12,13 +12,13 @@ from PIL import Image
 from unittest.mock import patch
 import psycopg2
 
-from odoo import models, fields, Command
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.exceptions import AccessError, MissingError, UserError, ValidationError
-from odoo.tests import common
-from odoo.tools import mute_logger, float_repr
-from odoo.tools.date_utils import add, subtract, start_of, end_of
-from odoo.tools.image import image_data_uri
+from crossnow import models, fields, Command
+from crossnow.addons.base.tests.common import TransactionCaseWithUserDemo
+from crossnow.exceptions import AccessError, MissingError, UserError, ValidationError
+from crossnow.tests import common
+from crossnow.tools import mute_logger, float_repr
+from crossnow.tools.date_utils import add, subtract, start_of, end_of
+from crossnow.tools.image import image_data_uri
 
 
 class TestFields(TransactionCaseWithUserDemo):
@@ -234,7 +234,7 @@ class TestFields(TransactionCaseWithUserDemo):
             sum(invalid_transitive_depends in get_trigger_tree([field]).root for field in fields.values()), 1
         )
 
-    @mute_logger('odoo.fields')
+    @mute_logger('crossnow.fields')
     def test_10_computed_stored_x_name(self):
         # create a custom model with two fields
         self.env["ir.model"].create({
@@ -2224,7 +2224,7 @@ class TestFields(TransactionCaseWithUserDemo):
         # the patches on new_group.user_ids should not have changed group.user_ids
         self.assertEqual(group.user_ids, user0)
 
-    @mute_logger('odoo.addons.base.models.ir_model')
+    @mute_logger('crossnow.addons.base.models.ir_model')
     def test_41_new_related(self):
         """ test the behavior of related fields starting on new records. """
         # make discussions unreadable for demo user
@@ -2249,7 +2249,7 @@ class TestFields(TransactionCaseWithUserDemo):
         # with self.assertRaises(AccessError):
         #     message.discussion.name
 
-    @mute_logger('odoo.addons.base.models.ir_model')
+    @mute_logger('crossnow.addons.base.models.ir_model')
     def test_42_new_related(self):
         """ test the behavior of related fields traversing new records. """
         # make discussions unreadable for demo user
@@ -2475,7 +2475,7 @@ class TestFields(TransactionCaseWithUserDemo):
         self.assertFalse(message1.label)
 
     def test_85_binary_guess_zip(self):
-        from odoo.addons.base.tests.test_mimetypes import ZIP
+        from crossnow.addons.base.tests.test_mimetypes import ZIP
         # Regular ZIP files can be uploaded by non-admin users
         self.env['test_new_api.binary_svg'].with_user(self.user_demo).create({
             'name': 'Test without attachment',
@@ -2483,7 +2483,7 @@ class TestFields(TransactionCaseWithUserDemo):
         })
 
     def test_86_text_base64_guess_svg(self):
-        from odoo.addons.base.tests.test_mimetypes import SVG
+        from crossnow.addons.base.tests.test_mimetypes import SVG
         with self.assertRaises(UserError) as e:
             self.env['test_new_api.binary_svg'].with_user(self.user_demo).create({
                 'name': 'Test without attachment',
@@ -2492,7 +2492,7 @@ class TestFields(TransactionCaseWithUserDemo):
         self.assertEqual(e.exception.args[0], 'Only admins can upload SVG files.')
 
     def test_90_binary_svg(self):
-        from odoo.addons.base.tests.test_mimetypes import SVG
+        from crossnow.addons.base.tests.test_mimetypes import SVG
         # This should work without problems
         self.env['test_new_api.binary_svg'].create({
             'name': 'Test without attachment',
@@ -2508,7 +2508,7 @@ class TestFields(TransactionCaseWithUserDemo):
             })
 
     def test_91_binary_svg_attachment(self):
-        from odoo.addons.base.tests.test_mimetypes import SVG
+        from crossnow.addons.base.tests.test_mimetypes import SVG
         # This doesn't neuter SVG with admin
         record = self.env['test_new_api.binary_svg'].create({
             'name': 'Test without attachment',
@@ -2535,7 +2535,7 @@ class TestFields(TransactionCaseWithUserDemo):
         self.assertEqual(attachment.mimetype, 'text/plain')
 
     def test_92_binary_self_avatar_svg(self):
-        from odoo.addons.base.tests.test_mimetypes import SVG
+        from crossnow.addons.base.tests.test_mimetypes import SVG
         demo_user = self.user_demo
         # User demo changes his own avatar
         demo_user.with_user(demo_user).image_1920 = SVG
@@ -3062,7 +3062,7 @@ class TestX2many(common.TransactionCase):
             'a_restricted_b_ids': [Command.set(record_b.ids)],
         })
         with self.assertRaises(psycopg2.IntegrityError):
-            with mute_logger('odoo.sql_db'), self.cr.savepoint():
+            with mute_logger('crossnow.sql_db'), self.cr.savepoint():
                 record_a.unlink()
         # Test B is still cascade.
         record_b.unlink()
@@ -3076,7 +3076,7 @@ class TestX2many(common.TransactionCase):
             'b_restricted_b_ids': [Command.set(record_b.ids)],
         })
         with self.assertRaises(psycopg2.IntegrityError):
-            with mute_logger('odoo.sql_db'), self.cr.savepoint():
+            with mute_logger('crossnow.sql_db'), self.cr.savepoint():
                 record_b.unlink()
         # Test A is still cascade.
         record_a.unlink()
@@ -3327,7 +3327,7 @@ class TestX2many(common.TransactionCase):
         })
         self.assertTrue(field.unlink())
 
-    @mute_logger('odoo.addons.base.models.ir_model')
+    @mute_logger('crossnow.addons.base.models.ir_model')
     @common.users('portal')
     def test_sudo_commands(self):
         """Test manipulating a x2many field using Commands with `sudo` or with another user (`with_user`)
@@ -3582,7 +3582,7 @@ class TestHtmlField(common.TransactionCase):
         new_record.invalidate_recordset()
         new_record.with_user(internal_user).comment5
 
-    @patch('odoo.fields.html_sanitize', return_value='<p>comment</p>')
+    @patch('crossnow.fields.html_sanitize', return_value='<p>comment</p>')
     def test_onchange_sanitize(self, patch):
         self.assertTrue(self.registry['test_new_api.mixed'].comment2.sanitize)
 
@@ -4113,7 +4113,7 @@ class TestSelectionOndelete(common.TransactionCase):
         self._unlink_option(self.MODEL_REQUIRED, 'foo')
         self.assertEqual(rec.my_selection, 'foo')
 
-    @mute_logger('odoo.addons.base.models.ir_model')
+    @mute_logger('crossnow.addons.base.models.ir_model')
     def test_write_override_selection(self):
         # test that on override to write that raises an error does not prevent the ondelete
         # policy from executing and cleaning up what needs to be cleaned up
@@ -4220,11 +4220,11 @@ class TestFieldParametersValidation(common.TransactionCase):
         Foo._build_model(self.registry, self.env.cr)
         self.addCleanup(self.registry.__delitem__, Foo._name)
 
-        with self.assertLogs('odoo.fields', level='WARNING') as cm:
+        with self.assertLogs('crossnow.fields', level='WARNING') as cm:
             self.registry.setup_models(self.env.cr)
 
         self.assertTrue(cm.output[0].startswith(
-            "WARNING:odoo.fields:Field test_new_api.field_parameter_validation.name: "
+            "WARNING:crossnow.fields:Field test_new_api.field_parameter_validation.name: "
             "unknown parameter 'invalid_parameter'"
         ))
 
@@ -4773,7 +4773,7 @@ class TestUnlinkConstraints(common.TransactionCase):
         cls.deletable_foo = MODEL.create({'foo': 'formaggio'})
         cls.undeletable_foo = MODEL.create({'foo': 'prosciutto'})
 
-        from odoo.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
+        from crossnow.addons.base.models.ir_model import MODULE_UNINSTALL_FLAG
         uninstall = {MODULE_UNINSTALL_FLAG: True}
         cls.undeletable_bar_uninstall = cls.undeletable_bar.with_context(**uninstall)
         cls.undeletable_foo_uninstall = cls.undeletable_foo.with_context(**uninstall)

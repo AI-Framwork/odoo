@@ -1,4 +1,4 @@
-from odoo.tests.common import HttpCase
+from crossnow.tests.common import HttpCase
 
 class LoadMenusTests(HttpCase):
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import collections
 import unittest
@@ -7,10 +7,10 @@ import unittest
 from lxml import etree as ET
 from lxml.builder import E
 
-import odoo
-from odoo.tests import common
-from odoo.tools.convert import convert_file, xml_import, _eval_xml
-from odoo.tools.misc import file_path
+import crossnow
+from crossnow.tests import common
+from crossnow.tools.convert import convert_file, xml_import, _eval_xml
+from crossnow.tools.misc import file_path
 
 Field = E.field
 Value = E.value

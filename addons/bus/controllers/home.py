@@ -1,9 +1,9 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import ipaddress
 
-from odoo import _, SUPERUSER_ID
-from odoo.http import request
-from odoo.addons.web.controllers.home import Home as WebHome
+from crossnow import _, SUPERUSER_ID
+from crossnow.http import request
+from crossnow.addons.web.controllers.home import Home as WebHome
 
 
 def _admin_password_warn(uid):

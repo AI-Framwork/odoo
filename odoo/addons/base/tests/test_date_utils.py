@@ -1,8 +1,8 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 from datetime import date
 
-from odoo.tests import BaseCase
-from odoo.tools.date_utils import get_fiscal_year
+from crossnow.tests import BaseCase
+from crossnow.tools.date_utils import get_fiscal_year
 
 
 class TestDateUtils(BaseCase):

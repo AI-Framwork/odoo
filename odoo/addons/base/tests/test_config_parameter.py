@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.models.ir_config_parameter import _default_parameters
-from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+from crossnow.addons.base.models.ir_config_parameter import _default_parameters
+from crossnow.exceptions import ValidationError
+from crossnow.tests.common import TransactionCase
 
 
 class TestIrConfigParameter(TransactionCase):

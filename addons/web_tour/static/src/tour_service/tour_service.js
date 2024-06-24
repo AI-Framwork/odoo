@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { EventBus, markup, whenReady, reactive } from "@odoo/owl";
+import { EventBus, markup, whenReady, reactive } from "@crossnow/owl";
 import { browser } from "@web/core/browser/browser";
 import { _t } from "@web/core/l10n/translation";
 import { MacroEngine } from "@web/core/macro";
@@ -398,8 +398,8 @@ export const tourService = {
             }
         }
 
-        odoo.startTour = startTour;
-        odoo.isTourReady = (tourName) => tours[tourName].wait_for.then(() => true);
+        crossnow.startTour = startTour;
+        crossnow.isTourReady = (tourName) => tours[tourName].wait_for.then(() => true);
 
         return {
             bus,

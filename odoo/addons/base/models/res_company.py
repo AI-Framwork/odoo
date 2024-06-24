@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import base64
 import logging
 import warnings
 
-from odoo import api, fields, models, tools, _, Command, SUPERUSER_ID
-from odoo.exceptions import ValidationError, UserError
-from odoo.tools import html2plaintext, file_open, ormcache
+from crossnow import api, fields, models, tools, _, Command, SUPERUSER_ID
+from crossnow.exceptions import ValidationError, UserError
+from crossnow.tools import html2plaintext, file_open, ormcache
 
 _logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.exceptions import ValidationError
-from odoo.tests.common import TransactionCase
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
+from crossnow.exceptions import ValidationError
+from crossnow.tests.common import TransactionCase
 
 class TestModuleCategory(TransactionCase):
 

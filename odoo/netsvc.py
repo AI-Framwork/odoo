@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import contextlib
 import logging
 import logging.handlers
@@ -48,7 +48,7 @@ class PostgreSQLHandler(logging.Handler):
         dbname = tools.config['log_db'] if tools.config['log_db'] and tools.config['log_db'] != '%d' else ct_db
         if not dbname:
             return
-        with contextlib.suppress(Exception), tools.mute_logger('odoo.sql_db'), sql_db.db_connect(dbname, allow_uri=True).cursor() as cr:
+        with contextlib.suppress(Exception), tools.mute_logger('crossnow.sql_db'), sql_db.db_connect(dbname, allow_uri=True).cursor() as cr:
             # preclude risks of deadlocks
             cr.execute("SET LOCAL statement_timeout = 1000")
             msg = tools.ustr(record.msg)
@@ -142,7 +142,7 @@ def init_logger():
     if sys.version_info[:2] == (3, 9):
         # recordsets are both sequence and set so trigger warning despite no issue
         # Only applies to 3.9 as it was fixed in 3.10 see https://bugs.python.org/issue42470
-        warnings.filterwarnings('ignore', r'^Sampling from a set', category=DeprecationWarning, module='odoo')
+        warnings.filterwarnings('ignore', r'^Sampling from a set', category=DeprecationWarning, module='crossnow')
     # https://github.com/urllib3/urllib3/issues/2680
     warnings.filterwarnings('ignore', r'^\'urllib3.contrib.pyopenssl\' module is deprecated.+', category=DeprecationWarning)
     # ofxparse use an html parser to parse ofx xml files and triggers a warning since bs4 4.11.0
@@ -166,7 +166,7 @@ def init_logger():
     # rsjmin triggers this with Python 3.10+ (that warning comes from the C code and has no `module`)
     warnings.filterwarnings('ignore', r'^PyUnicode_FromUnicode\(NULL, size\) is deprecated', category=DeprecationWarning)
     # the SVG guesser thing always compares str and bytes, ignore it
-    warnings.filterwarnings('ignore', category=BytesWarning, module='odoo.tools.image')
+    warnings.filterwarnings('ignore', category=BytesWarning, module='crossnow.tools.image')
     # reportlab does a bunch of bytes/str mixing in a hashmap
     warnings.filterwarnings('ignore', category=BytesWarning, module='reportlab.platypus.paraparser')
 
@@ -207,7 +207,7 @@ def init_logger():
         except Exception:
             sys.stderr.write("ERROR: couldn't create the logfile directory. Logging to the standard output.\n")
 
-    # Check that handler.stream has a fileno() method: when running OpenERP
+    # Check that handler.stream has a fileno() method: when running CrossNow
     # behind Apache with mod_wsgi, handler.stream will have type mod_wsgi.Log,
     # which has no fileno() method. (mod_wsgi.Log is what is being bound to
     # sys.stderr when the logging.StreamHandler is being constructed above.)
@@ -254,20 +254,20 @@ def init_logger():
 
 
 DEFAULT_LOG_CONFIGURATION = [
-    'odoo.http.rpc.request:INFO',
-    'odoo.http.rpc.response:INFO',
+    'crossnow.http.rpc.request:INFO',
+    'crossnow.http.rpc.response:INFO',
     ':INFO',
 ]
 PSEUDOCONFIG_MAPPER = {
-    'debug_rpc_answer': ['odoo:DEBUG', 'odoo.sql_db:INFO', 'odoo.http.rpc:DEBUG'],
-    'debug_rpc': ['odoo:DEBUG', 'odoo.sql_db:INFO', 'odoo.http.rpc.request:DEBUG'],
-    'debug': ['odoo:DEBUG', 'odoo.sql_db:INFO'],
-    'debug_sql': ['odoo.sql_db:DEBUG'],
+    'debug_rpc_answer': ['crossnow:DEBUG', 'crossnow.sql_db:INFO', 'crossnow.http.rpc:DEBUG'],
+    'debug_rpc': ['crossnow:DEBUG', 'crossnow.sql_db:INFO', 'crossnow.http.rpc.request:DEBUG'],
+    'debug': ['crossnow:DEBUG', 'crossnow.sql_db:INFO'],
+    'debug_sql': ['crossnow.sql_db:DEBUG'],
     'info': [],
-    'runbot': ['odoo:RUNBOT', 'werkzeug:WARNING'],
-    'warn': ['odoo:WARNING', 'werkzeug:WARNING'],
-    'error': ['odoo:ERROR', 'werkzeug:ERROR'],
-    'critical': ['odoo:CRITICAL', 'werkzeug:CRITICAL'],
+    'runbot': ['crossnow:RUNBOT', 'werkzeug:WARNING'],
+    'warn': ['crossnow:WARNING', 'werkzeug:WARNING'],
+    'error': ['crossnow:ERROR', 'werkzeug:ERROR'],
+    'critical': ['crossnow:CRITICAL', 'werkzeug:CRITICAL'],
 }
 
 logging.RUNBOT = 25

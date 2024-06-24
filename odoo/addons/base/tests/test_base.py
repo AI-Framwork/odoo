@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import ast
 
 from textwrap import dedent
 
-from odoo import Command
-from odoo.tests.common import TransactionCase, BaseCase
-from odoo.tools import mute_logger
-from odoo.tools.safe_eval import safe_eval, const_eval, expr_eval
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from crossnow import Command
+from crossnow.tests.common import TransactionCase, BaseCase
+from crossnow.tools import mute_logger
+from crossnow.tools.safe_eval import safe_eval, const_eval, expr_eval
+from crossnow.addons.base.tests.common import TransactionCaseWithUserDemo
 
 
 class TestSafeEval(BaseCase):
@@ -77,7 +77,7 @@ class TestSafeEval(BaseCase):
         with self.assertRaises(ValueError):
            ast.literal_eval('{"a": True.__class__}')
 
-    @mute_logger('odoo.tools.safe_eval')
+    @mute_logger('crossnow.tools.safe_eval')
     def test_05_safe_eval_forbiddon(self):
         """ Try forbidden expressions in safe_eval to verify they are not allowed"""
         # no forbidden builtin expression
@@ -86,7 +86,7 @@ class TestSafeEval(BaseCase):
 
         # no forbidden opcodes
         with self.assertRaises(ValueError):
-            safe_eval("import odoo", mode="exec")
+            safe_eval("import crossnow", mode="exec")
 
         # no dunder
         with self.assertRaises(NameError):

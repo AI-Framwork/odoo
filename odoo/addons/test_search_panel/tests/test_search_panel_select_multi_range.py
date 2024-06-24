@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-import odoo.tests
+import crossnow.tests
 import json
 
 SEARCH_PANEL_ERROR = {'error_msg': "Too many items to display.", }
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestSelectRangeMulti(odoo.tests.TransactionCase):
+@crossnow.tests.tagged('post_install', '-at_install')
+class TestSelectRangeMulti(crossnow.tests.TransactionCase):
 
     def setUp(self):
         super().setUp()

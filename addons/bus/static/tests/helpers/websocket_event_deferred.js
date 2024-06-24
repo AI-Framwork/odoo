@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @crossnow-module */
 
 import { patchWebsocketWorkerWithCleanup } from "@bus/../tests/helpers/mock_websocket";
 

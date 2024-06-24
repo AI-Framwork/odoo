@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 from markupsafe import Markup
 from datetime import datetime, timedelta
 from urllib.parse import urlparse
 
-from odoo import api, fields, models, tools, SUPERUSER_ID, _
-from odoo.exceptions import UserError, AccessError
-from odoo.tools.safe_eval import safe_eval, time
-from odoo.tools.misc import find_in_path, format_datetime, ustr
-from odoo.tools import check_barcode_encoding, config, is_html_empty, parse_version, split_every
-from odoo.http import request
-from odoo.osv.expression import NEGATIVE_TERM_OPERATORS, FALSE_DOMAIN
+from crossnow import api, fields, models, tools, SUPERUSER_ID, _
+from crossnow.exceptions import UserError, AccessError
+from crossnow.tools.safe_eval import safe_eval, time
+from crossnow.tools.misc import find_in_path, format_datetime, ustr
+from crossnow.tools import check_barcode_encoding, config, is_html_empty, parse_version, split_every
+from crossnow.http import request
+from crossnow.osv.expression import NEGATIVE_TERM_OPERATORS, FALSE_DOMAIN
 
 import io
 import logging
@@ -43,7 +43,7 @@ _logger = logging.getLogger(__name__)
 # A lock occurs when the user wants to print a report having multiple barcode while the server is
 # started in threaded-mode. The reason is that reportlab has to build a cache of the T1 fonts
 # before rendering a barcode (done in a C extension) and this part is not thread safe. We attempt
-# here to init the T1 fonts cache at the start-up of Odoo so that rendering of barcode in multiple
+# here to init the T1 fonts cache at the start-up of CrossNow so that rendering of barcode in multiple
 # thread does not lock the server.
 try:
     createBarcodeDrawing('Code128', value='foo', format='png', width=100, height=100, humanReadable=1).asString('png')
@@ -74,7 +74,7 @@ def _split_table(tree, max_rows):
             prev.addnext(sibling)
             prev = sibling
 
-# Check the presence of Wkhtmltopdf and return its version at Odoo start-up
+# Check the presence of Wkhtmltopdf and return its version at CrossNow start-up
 wkhtmltopdf_state = 'install'
 wkhtmltopdf_dpi_zoom_ratio = False
 try:
@@ -98,7 +98,7 @@ else:
             wkhtmltopdf_dpi_zoom_ratio = True
 
         if config['workers'] == 1:
-            _logger.info('You need to start Odoo with at least two workers to print a pdf version of the reports.')
+            _logger.info('You need to start CrossNow with at least two workers to print a pdf version of the reports.')
             wkhtmltopdf_state = 'workers'
     else:
         _logger.info('Wkhtmltopdf seems to be broken.')
@@ -680,7 +680,7 @@ class IrActionsReport(models.Model):
                 reader = PdfFileReader(stream)
                 writer.appendPagesFromReader(reader)
             except (PdfReadError, TypeError, NotImplementedError, ValueError):
-                raise UserError(_("Odoo is unable to merge the generated PDFs."))
+                raise UserError(_("CrossNow is unable to merge the generated PDFs."))
         result_stream = io.BytesIO()
         streams.append(result_stream)
         writer.write(result_stream)

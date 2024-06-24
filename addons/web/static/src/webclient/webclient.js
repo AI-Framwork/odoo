@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { DebugMenu } from "@web/core/debug/debug_menu";
@@ -9,7 +9,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { ActionContainer } from "./actions/action_container";
 import { NavBar } from "./navbar/navbar";
 
-import { Component, onMounted, onWillStart, useExternalListener, useState } from "@odoo/owl";
+import { Component, onMounted, onWillStart, useExternalListener, useState } from "@crossnow/owl";
 
 export class WebClient extends Component {
     setup() {
@@ -32,7 +32,7 @@ export class WebClient extends Component {
         this.state = useState({
             fullscreen: false,
         });
-        this.title.setParts({ zopenerp: "Odoo" }); // zopenerp is easy to grep
+        this.title.setParts({ zopenerp: "CrossNow" }); // zopenerp is easy to grep
         useBus(this.env.bus, "ROUTE_CHANGE", this.loadRouterState);
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", ({ detail: mode }) => {
             if (mode !== "new") {

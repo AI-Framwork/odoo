@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import populate
+from crossnow import models
+from crossnow.tools import populate
 
 
 class Filter(models.Model):

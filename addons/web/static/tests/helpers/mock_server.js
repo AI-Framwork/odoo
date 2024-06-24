@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { assets } from "@web/core/assets";
 import { browser } from "@web/core/browser/browser";
@@ -110,9 +110,9 @@ function makeLogger(prefix, title) {
 export function makeServerError({ code, context, description, message, subType, type } = {}) {
     return makeErrorFromResponse({
         code: code || 200,
-        message: message || "Odoo Server Error",
+        message: message || "CrossNow Server Error",
         data: {
-            name: `odoo.exceptions.${type || "UserError"}`,
+            name: `crossnow.exceptions.${type || "UserError"}`,
             debug: "traceback",
             arguments: [],
             context: context || {},

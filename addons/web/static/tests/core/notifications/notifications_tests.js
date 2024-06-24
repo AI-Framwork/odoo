@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { browser } from "@web/core/browser/browser";
 import { notificationService } from "@web/core/notifications/notification_service";
@@ -14,7 +14,7 @@ import {
     triggerEvent,
 } from "../../helpers/utils";
 
-import { markup } from "@odoo/owl";
+import { markup } from "@crossnow/owl";
 
 let target;
 const serviceRegistry = registry.category("services");

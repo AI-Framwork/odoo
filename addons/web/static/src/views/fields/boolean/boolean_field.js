@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@crossnow/owl";
 import { CheckBox } from "@web/core/checkbox/checkbox";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";

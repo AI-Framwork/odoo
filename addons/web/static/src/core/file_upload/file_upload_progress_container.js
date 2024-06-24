@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 
 export class FileUploadProgressContainer extends Component {}
 FileUploadProgressContainer.template = "web.FileUploadProgressContainer";

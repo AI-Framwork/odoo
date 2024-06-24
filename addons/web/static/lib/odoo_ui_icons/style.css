@@ -25,7 +25,7 @@
 .oi-text-break:before { content: '\e801'; }
 .oi-text-inline:before { content: '\e802'; }
 .oi-voip:before { content: '\e803'; }
-.oi-odoo:before { content: '\e806'; }
+.oi-crossnow:before { content: '\e806'; }
 .oi-search:before { content: '\e808'; }
 .oi-group:before { content: '\e80a'; }
 .oi-settings-adjust:before { content: '\e80c'; }

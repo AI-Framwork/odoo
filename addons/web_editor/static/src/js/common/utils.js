@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import {SIZES, MEDIAS_BREAKPOINTS} from "@web/core/ui/ui_service";
 import {
@@ -396,7 +396,7 @@ function _backgroundImagePartsToCss(parts) {
  * @returns {boolean}
  */
 function _isColorGradient(value) {
-    // FIXME duplicated in odoo-editor/utils.js
+    // FIXME duplicated in crossnow-editor/utils.js
     return value && value.includes('-gradient(');
 }
 /**

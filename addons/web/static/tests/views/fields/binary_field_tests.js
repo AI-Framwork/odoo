@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registerCleanup } from "@web/../tests/helpers/cleanup";
 import { makeServerError } from "@web/../tests/helpers/mock_server";
@@ -302,7 +302,7 @@ QUnit.module("Fields", (hooks) => {
 
     QUnit.test("icons are displayed exactly once", async (assert) => {
         assert.expect(3);
-        patchWithCleanup(odoo, { debug: true });
+        patchWithCleanup(crossnow, { debug: true });
         await makeView({
             serverData,
             type: "form",

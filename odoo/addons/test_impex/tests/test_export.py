@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import itertools
 import pstats
 from cProfile import Profile
 
-from odoo import fields, Command
-from odoo.tests import common
+from crossnow import fields, Command
+from crossnow.tests import common
 
 
 class CreatorCase(common.TransactionCase):

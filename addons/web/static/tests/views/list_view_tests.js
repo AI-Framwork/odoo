@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, markup, onRendered, onWillStart, xml } from "@odoo/owl";
+import { Component, markup, onRendered, onWillStart, xml } from "@crossnow/owl";
 import { browser } from "@web/core/browser/browser";
 import { Domain } from "@web/core/domain";
 import { currencies } from "@web/core/currency";
@@ -6026,7 +6026,7 @@ QUnit.module("Views", (hooks) => {
                 arch: '<tree><field name="foo"/></tree>',
                 mockRPC(route, args) {
                     if (args.method === "unlink") {
-                        return Promise.reject({ message: "Odoo Server Error" });
+                        return Promise.reject({ message: "CrossNow Server Error" });
                     }
                 },
             });
@@ -7566,7 +7566,7 @@ QUnit.module("Views", (hooks) => {
     });
 
     QUnit.test("display a tooltip on a field", async function (assert) {
-        patchWithCleanup(odoo, {
+        patchWithCleanup(crossnow, {
             debug: false,
         });
 
@@ -7589,7 +7589,7 @@ QUnit.module("Views", (hooks) => {
             "should not have rendered a tooltip"
         );
 
-        patchWithCleanup(odoo, {
+        patchWithCleanup(crossnow, {
             debug: true,
         });
 

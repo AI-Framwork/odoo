@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import dom from '@web/legacy/js/core/dom';
 import publicWidget from '@web/legacy/js/public/public_widget';

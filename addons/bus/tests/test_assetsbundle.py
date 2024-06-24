@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-import odoo.tests
-from odoo.osv import expression
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
+import crossnow.tests
+from crossnow.osv import expression
 
 
-@odoo.tests.tagged('post_install', '-at_install', 'assets_bundle')
-class BusWebTests(odoo.tests.HttpCase):
+@crossnow.tests.tagged('post_install', '-at_install', 'assets_bundle')
+class BusWebTests(crossnow.tests.HttpCase):
 
     def test_bundle_sends_bus(self):
         """

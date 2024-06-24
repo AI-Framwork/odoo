@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * Converts RGB color components to HSL components.

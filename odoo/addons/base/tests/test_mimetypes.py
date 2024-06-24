@@ -6,8 +6,8 @@ try:
 except ImportError:
     magic = None
 
-from odoo.tests.common import BaseCase
-from odoo.tools.mimetypes import get_extension, guess_mimetype
+from crossnow.tests.common import BaseCase
+from crossnow.tools.mimetypes import get_extension, guess_mimetype
 
 PNG = b'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC'
 GIF = b"R0lGODdhAQABAIAAAP///////ywAAAAAAQABAAACAkQBADs="
@@ -44,7 +44,7 @@ XML = b"""<?xml version='1.0' encoding='utf-8'?>
       <NbOfTxs>0</NbOfTxs>
       <CtrlSum>0.0</CtrlSum>
       <InitgPty>
-        <Nm>Odoo S.A.</Nm>
+        <Nm>CrossNow S.A.</Nm>
         <Id>
           <OrgId>
             <Othr>
@@ -63,7 +63,7 @@ class test_guess_mimetype(BaseCase):
 
     def test_default_mimetype_empty(self):
         mimetype = guess_mimetype(b'')
-        # odoo implementation returns application/octet-stream by default
+        # crossnow implementation returns application/octet-stream by default
         # if available, python-magic returns application/x-empty
         self.assertIn(mimetype, ('application/octet-stream', 'application/x-empty'))
 
@@ -104,7 +104,7 @@ class test_guess_mimetype(BaseCase):
 
         mimetype = guess_mimetype(NAMESPACED_SVG, default='test')
         self.assertTrue(mimetype.startswith('image/svg'))
-        # Tests that whitespace padded SVG are not detected as SVG in odoo implementation
+        # Tests that whitespace padded SVG are not detected as SVG in crossnow implementation
         if not magic:
             mimetype = guess_mimetype(b"   " + content, default='test')
             self.assertNotIn("svg", mimetype)

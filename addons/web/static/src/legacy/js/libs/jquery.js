@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * The jquery library extensions and fixes should be done here to avoid patching
@@ -90,7 +90,7 @@ $.fn.extend({
         return o;
     },
     /**
-     * Makes DOM elements bounce the way Odoo decided it.
+     * Makes DOM elements bounce the way CrossNow decided it.
      *
      * @param {string} [extraClass]
      */

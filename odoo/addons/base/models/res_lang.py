@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import ast
 import json
@@ -8,8 +8,8 @@ import logging
 import re
 from operator import itemgetter
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import UserError, ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -189,7 +189,7 @@ class Lang(models.Model):
     def install_lang(self):
         """
 
-        This method is called from odoo/addons/base/data/res_lang_data.xml to load
+        This method is called from crossnow/addons/base/data/res_lang_data.xml to load
         some language and set it as the default for every partners. The
         language is set via tools.config by the '_initialize_db' method on the
         'db' object. This is a fragile solution and something else should be
@@ -298,7 +298,7 @@ class Lang(models.Model):
             if self.env['res.partner'].with_context(active_test=True).search_count([('lang', 'in', lang_codes)], limit=1):
                 raise UserError(_("Cannot deactivate a language that is currently used by contacts."))
             if self.env['res.users'].with_context(active_test=False).search_count([('lang', 'in', lang_codes)], limit=1):
-                raise UserError(_("You cannot archive the language in which Odoo was setup as it is used by automated processes."))
+                raise UserError(_("You cannot archive the language in which CrossNow was setup as it is used by automated processes."))
             # delete linked ir.default specifying default partner's language
             self.env['ir.default'].discard_values('res.partner', 'lang', lang_codes)
 

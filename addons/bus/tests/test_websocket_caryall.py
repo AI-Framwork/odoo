@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import gc
 import json
@@ -14,8 +14,8 @@ try:
 except ImportError:
     pass
 
-from odoo.api import Environment
-from odoo.tests import common, new_test_user
+from crossnow.api import Environment
+from crossnow.tests import common, new_test_user
 from .common import WebsocketCase
 from .. import websocket as websocket_module
 from ..models.bus import dispatch
@@ -232,7 +232,7 @@ class TestWebsocketCaryall(WebsocketCase):
 
     def test_no_cursor_when_no_callback_for_lifecycle_event(self):
         with patch.object(Websocket, '_Websocket__event_callbacks', defaultdict(set)):
-            with patch('odoo.addons.bus.websocket.acquire_cursor') as mock:
+            with patch('crossnow.addons.bus.websocket.acquire_cursor') as mock:
                 self.websocket_connect()
                 self.assertFalse(mock.called)
 

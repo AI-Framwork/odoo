@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { ancestors } from '@web_editor/js/common/wysiwyg_utils';
-import { closestElement } from "@web_editor/js/editor/odoo-editor/src/utils/utils";
+import { closestElement } from "@web_editor/js/editor/crossnow-editor/src/utils/utils";
 
 export class QWebPlugin {
     constructor(options = {}) {

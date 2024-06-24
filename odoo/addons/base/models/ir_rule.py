@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import logging
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import AccessError, ValidationError
-from odoo.osv import expression
-from odoo.tools import config
-from odoo.tools.safe_eval import safe_eval, time
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import AccessError, ValidationError
+from crossnow.osv import expression
+from crossnow.tools import config
+from crossnow.tools.safe_eval import safe_eval, time
 
 _logger = logging.getLogger(__name__)
 class IrRule(models.Model):
@@ -192,9 +192,9 @@ class IrRule(models.Model):
     def write(self, vals):
         res = super(IrRule, self).write(vals)
         # DLE P33: tests
-        # - odoo/addons/test_access_rights/tests/test_feedback.py
-        # - odoo/addons/test_access_rights/tests/test_ir_rules.py
-        # - odoo/addons/base/tests/test_orm.py (/home/dle/src/odoo/master-nochange-fp/odoo/addons/base/tests/test_orm.py)
+        # - crossnow/addons/test_access_rights/tests/test_feedback.py
+        # - crossnow/addons/test_access_rights/tests/test_ir_rules.py
+        # - crossnow/addons/base/tests/test_orm.py (/home/dle/src/crossnow/master-nochange-fp/crossnow/addons/base/tests/test_orm.py)
         self.env.flush_all()
         self.env.registry.clear_cache()
         return res
@@ -244,7 +244,7 @@ class IrRule(models.Model):
         failing_rules = _("Blame the following rules:\n%s", rules_description)
 
         if company_related:
-            failing_rules += "\n\n" + _('Note: this might be a multi-company issue. Switching company may help - in Odoo, not in real life!')
+            failing_rules += "\n\n" + _('Note: this might be a multi-company issue. Switching company may help - in CrossNow, not in real life!')
 
         # clean up the cache of records prefetched with display_name above
         records_sudo.invalidate_recordset()

@@ -4,8 +4,8 @@ import re
 
 from collections.abc import Iterable
 
-from odoo import api, fields, models, _
-from odoo.osv import expression
+from crossnow import api, fields, models, _
+from crossnow.osv import expression
 
 def sanitize_account_number(acc_number):
     if acc_number:

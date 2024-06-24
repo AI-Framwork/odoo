@@ -1,4 +1,4 @@
-from odoo.tests.common import TransactionCase
+from crossnow.tests.common import TransactionCase
 
 
 class TestTransactionEnvs(TransactionCase):

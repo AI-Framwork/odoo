@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from collections import deque
 import io
 import json
 
-from odoo import http, _
-from odoo.http import content_disposition, request
-from odoo.tools import ustr, osutil
-from odoo.tools.misc import xlsxwriter
+from crossnow import http, _
+from crossnow.http import content_disposition, request
+from crossnow.tools import ustr, osutil
+from crossnow.tools.misc import xlsxwriter
 
 
 class TableExporter(http.Controller):

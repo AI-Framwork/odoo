@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests.common import BaseCase, TransactionCase
-from odoo.tools import Query
+from crossnow.tests.common import BaseCase, TransactionCase
+from crossnow.tools import Query
 
 
 class QueryTestCase(BaseCase):

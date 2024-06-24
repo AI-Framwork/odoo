@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { debounce } from "@bus/workers/websocket_worker_utils";
 

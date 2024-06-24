@@ -11,8 +11,8 @@ from pathlib import Path
 from unittest.mock import patch
 from socket import getaddrinfo  # keep a reference on the non-patched function
 
-from odoo.exceptions import UserError
-from odoo.tools import file_path, mute_logger
+from crossnow.exceptions import UserError
+from crossnow.tools import file_path, mute_logger
 from .common import TransactionCaseWithUserDemo
 
 try:
@@ -60,9 +60,9 @@ class Certificate:
 @unittest.skipUnless(aiosmtpd, "aiosmtpd couldn't be imported")
 @unittest.skipUnless(_openssl, "openssl not found in path")
 # fail fast for timeout errors
-@patch('odoo.addons.base.models.ir_mail_server.SMTP_TIMEOUT', .1)
+@patch('crossnow.addons.base.models.ir_mail_server.SMTP_TIMEOUT', .1)
 # prevent the CLI from interfering with the tests
-@patch.dict('odoo.tools.config.options', {'smtp_server': ''})
+@patch.dict('crossnow.tools.config.options', {'smtp_server': ''})
 class TestIrMailServerSMTPD(TransactionCaseWithUserDemo):
     @classmethod
     def setUpClass(cls):
@@ -99,7 +99,7 @@ class TestIrMailServerSMTPD(TransactionCaseWithUserDemo):
                 return True
         logging.getLogger('mail.log').addFilter(CustomFilter())
 
-        # decrease aiosmtpd verbosity, odoo INFO = aiosmtpd WARNING
+        # decrease aiosmtpd verbosity, crossnow INFO = aiosmtpd WARNING
         logging.getLogger('mail.log').setLevel(_logger.getEffectiveLevel() + 10)
 
         # Get various TLS keys and certificates. CA was used to sign
@@ -144,7 +144,7 @@ class TestIrMailServerSMTPD(TransactionCaseWithUserDemo):
 
         # fix runbot, docker uses a single ipv4 stack but it gives ::1
         # when resolving "localhost" (so stupid), use the following to
-        # force aiosmtpd/odoo to bind/connect to a fixed ipv4 OR ipv6
+        # force aiosmtpd/crossnow to bind/connect to a fixed ipv4 OR ipv6
         # address.
         family, _, cls.port = _find_free_local_address()
         cls.localhost = getaddrinfo('localhost', cls.port, family)
@@ -374,7 +374,7 @@ class TestIrMailServerSMTPD(TransactionCaseWithUserDemo):
     def test_man_in_the_middle_matrix(self):
         """
         Simulate that a pirate was successful at intercepting the live
-        traffic in between the Odoo server and the legitimate SMTP
+        traffic in between the CrossNow server and the legitimate SMTP
         server.
         """
         mail_server = self.env['ir.mail_server'].create({

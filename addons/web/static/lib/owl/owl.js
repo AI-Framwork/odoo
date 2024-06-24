@@ -1489,7 +1489,7 @@
             }
             moveBeforeVNode(other, afterNode) {
                 if (other) {
-                    // check this with @ged-odoo for use in foreach
+                    // check this with @ged-crossnow for use in foreach
                     afterNode = other.firstNode() || afterNode;
                 }
                 this.child.moveBeforeVNode(other ? other.child : null, afterNode);
@@ -5636,7 +5636,7 @@
         return `Owl is running in 'dev' mode.
 
 This is not suitable for production use.
-See https://github.com/odoo/owl/blob/${hash}/doc/reference/app.md#configuration for more information.`;
+See https://github.com/crossnow/owl/blob/${hash}/doc/reference/app.md#configuration for more information.`;
     };
     const apps = new Set();
     window.__OWL_DEVTOOLS__ || (window.__OWL_DEVTOOLS__ = { apps, Fiber, RootFiber, toRaw, reactive });
@@ -6017,7 +6017,7 @@ See https://github.com/odoo/owl/blob/${hash}/doc/reference/app.md#configuration 
 
     __info__.date = '2024-06-17T13:31:12.099Z';
     __info__.hash = 'e7f405c';
-    __info__.url = 'https://github.com/odoo/owl';
+    __info__.url = 'https://github.com/crossnow/owl';
 
 
 })(this.owl = this.owl || {});

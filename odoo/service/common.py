@@ -2,17 +2,17 @@
 
 import logging
 
-import odoo.release
-import odoo.tools
-from odoo.exceptions import AccessDenied
-from odoo.tools.translate import _
+import crossnow.release
+import crossnow.tools
+from crossnow.exceptions import AccessDenied
+from crossnow.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
 RPC_VERSION_1 = {
-        'server_version': odoo.release.version,
-        'server_version_info': odoo.release.version_info,
-        'server_serie': odoo.release.serie,
+        'server_version': crossnow.release.version,
+        'server_version_info': crossnow.release.version_info,
+        'server_serie': crossnow.release.serie,
         'protocol_version': 1,
 }
 
@@ -22,7 +22,7 @@ def exp_login(db, login, password):
 def exp_authenticate(db, login, password, user_agent_env):
     if not user_agent_env:
         user_agent_env = {}
-    res_users = odoo.registry(db)['res.users']
+    res_users = crossnow.registry(db)['res.users']
     try:
         return res_users.authenticate(db, login, password, {**user_agent_env, 'interactive': False})
     except AccessDenied:
@@ -32,21 +32,21 @@ def exp_version():
     return RPC_VERSION_1
 
 def exp_about(extended=False):
-    """Return information about the OpenERP Server.
+    """Return information about the CrossNow Server.
 
     @param extended: if True then return version info
     @return string if extended is False else tuple
     """
 
-    info = _('See http://openerp.com')
+    info = _('See http://crossnow.com')
 
     if extended:
-        return info, odoo.release.version
+        return info, crossnow.release.version
     return info
 
 def exp_set_loglevel(loglevel, logger=None):
     # TODO Previously, the level was set on the now deprecated
-    # `odoo.netsvc.Logger` class.
+    # `crossnow.netsvc.Logger` class.
     return True
 
 def dispatch(method, params):

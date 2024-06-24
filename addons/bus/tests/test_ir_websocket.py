@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import common
+from crossnow.tests import common
 
 
 class TestIrWebsocket(common.HttpCase):
@@ -9,5 +9,5 @@ class TestIrWebsocket(common.HttpCase):
             self.env['ir.websocket']._subscribe({
                 'inactivity_period': 1000,
                 'last': 0,
-                'channels': [('odoo', 'discuss.channel', 5)],
+                'channels': [('crossnow', 'discuss.channel', 5)],
             })

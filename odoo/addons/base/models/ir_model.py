@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import itertools
 import logging
 import random
@@ -14,11 +14,11 @@ from psycopg2 import sql
 from psycopg2.extras import Json
 from psycopg2.sql import Identifier, SQL, Placeholder
 
-from odoo import api, fields, models, tools, _, _lt, Command
-from odoo.exceptions import AccessError, UserError, ValidationError
-from odoo.osv import expression
-from odoo.tools import pycompat, unique, OrderedSet
-from odoo.tools.safe_eval import safe_eval, datetime, dateutil, time
+from crossnow import api, fields, models, tools, _, _lt, Command
+from crossnow.exceptions import AccessError, UserError, ValidationError
+from crossnow.osv import expression
+from crossnow.tools import pycompat, unique, OrderedSet
+from crossnow.tools.safe_eval import safe_eval, datetime, dateutil, time
 
 _logger = logging.getLogger(__name__)
 
@@ -330,7 +330,7 @@ class IrModel(models.Model):
         res = super(IrModel, self).unlink()
 
         # Reload registry for normal unlink only. For module uninstall, the
-        # reload is done independently in odoo.modules.loading.
+        # reload is done independently in crossnow.modules.loading.
         if not self._context.get(MODULE_UNINSTALL_FLAG):
             # setup models; this automatically removes model from registry
             self.env.flush_all()
@@ -1643,7 +1643,7 @@ class IrModelSelection(models.Model):
         result = super().unlink()
 
         # Reload registry for normal unlink only. For module uninstall, the
-        # reload is done independently in odoo.modules.loading.
+        # reload is done independently in crossnow.modules.loading.
         if not self._context.get(MODULE_UNINSTALL_FLAG):
             # setup models; this re-initializes model in registry
             self.env.flush_all()
@@ -1727,7 +1727,7 @@ class IrModelSelection(models.Model):
 
 class IrModelConstraint(models.Model):
     """
-    This model tracks PostgreSQL foreign keys and constraints used by Odoo
+    This model tracks PostgreSQL foreign keys and constraints used by CrossNow
     models.
     """
     _name = 'ir.model.constraint'
@@ -1880,7 +1880,7 @@ class IrModelConstraint(models.Model):
 
 class IrModelRelation(models.Model):
     """
-    This model tracks PostgreSQL tables used to implement Odoo many2many
+    This model tracks PostgreSQL tables used to implement CrossNow many2many
     relations.
     """
     _name = 'ir.model.relation'
@@ -2110,7 +2110,7 @@ class IrModelData(models.Model):
            * allows easy data integration with third-party systems,
              making import/export/sync of data possible, as records
              can be uniquely identified across multiple systems
-           * allows tracking the origin of data installed by Odoo
+           * allows tracking the origin of data installed by CrossNow
              modules themselves, thus making it possible to later
              update them seamlessly.
     """

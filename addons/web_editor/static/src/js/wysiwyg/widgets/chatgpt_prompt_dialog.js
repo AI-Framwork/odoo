@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { ChatGPTDialog } from '@web_editor/js/wysiwyg/widgets/chatgpt_dialog';
-import { useState, useEffect, useRef } from "@odoo/owl";
+import { useState, useEffect, useRef } from "@crossnow/owl";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { session } from "@web/session";
 import { browser } from "@web/core/browser/browser";

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from odoo.models import MetaModel
-from odoo.tests import common
-from odoo.addons.base.models.ir_model import model_xmlid, field_xmlid, selection_xmlid
+from crossnow.models import MetaModel
+from crossnow.tests import common
+from crossnow.addons.base.models.ir_model import model_xmlid, field_xmlid, selection_xmlid
 
 
 def get_model_name(cls):

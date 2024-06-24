@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@crossnow/owl";
 import { clearRegistryWithCleanup, makeTestEnv } from "@web/../tests/helpers/mock_env";
 import { makeFakeLocalizationService } from "@web/../tests/helpers/mock_services";
 import {

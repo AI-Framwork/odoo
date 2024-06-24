@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-""" OpenERP core library."""
+""" CrossNow core library."""
 
 
 #----------------------------------------------------------
-# odoo must be a namespace package for odoo.addons to become one too
+# crossnow must be a namespace package for crossnow.addons to become one too
 # https://packaging.python.org/guides/packaging-namespace-packages/
 #----------------------------------------------------------
 import pkgutil
@@ -17,7 +17,7 @@ __path__ = [
 
 import sys
 MIN_PY_VERSION = (3, 10)
-assert sys.version_info > MIN_PY_VERSION, f"Outdated python version detected, Odoo requires Python >= {'.'.join(map(str, MIN_PY_VERSION))} to run."
+assert sys.version_info > MIN_PY_VERSION, f"Outdated python version detected, CrossNow requires Python >= {'.'.join(map(str, MIN_PY_VERSION))} to run."
 
 #----------------------------------------------------------
 # Running mode flags (gevent, prefork)
@@ -35,7 +35,7 @@ if len(sys.argv) > 1 and sys.argv[1] == 'gevent':
         """A wait callback useful to allow gevent to work with Psycopg."""
         # Copyright (C) 2010-2012 Daniele Varrazzo <daniele.varrazzo@gmail.com>
         # This function is borrowed from psycogreen module which is licensed
-        # under the BSD license (see in odoo/debian/copyright)
+        # under the BSD license (see in crossnow/debian/copyright)
         while 1:
             state = conn.poll()
             if state == psycopg2.extensions.POLL_OK:
@@ -60,7 +60,7 @@ multi_process = False
 #----------------------------------------------------------
 # libc UTC hack
 #----------------------------------------------------------
-# Make sure the OpenERP server runs in UTC.
+# Make sure the CrossNow server runs in UTC.
 import os
 os.environ['TZ'] = 'UTC' # Set the timezone
 import time
@@ -145,8 +145,8 @@ from . import tools
 from . import models
 from . import fields
 from . import api
-from odoo.tools.translate import _, _lt
-from odoo.fields import Command
+from crossnow.tools.translate import _, _lt
+from crossnow.fields import Command
 
 #----------------------------------------------------------
 # Other imports, which may require stuff from above

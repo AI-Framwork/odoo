@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Domain } from "@web/core/domain";
 import { evaluateExpr, evaluateBooleanExpr } from "@web/core/py_js/py";
@@ -8,7 +8,7 @@ import { getFieldContext } from "@web/model/relational_model/utils";
 import { archParseBoolean, getClassNameFromDecoration, X2M_TYPES } from "@web/views/utils";
 import { getTooltipInfo } from "./field_tooltip";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@crossnow/owl";
 
 const isSmall = utils.isSmall;
 
@@ -237,7 +237,7 @@ export class Field extends Component {
                 field: this.props.record.fields[this.props.name],
                 fieldInfo: this.props.fieldInfo || {},
             });
-            if (Boolean(odoo.debug) || (tooltip && JSON.parse(tooltip).field.help)) {
+            if (Boolean(crossnow.debug) || (tooltip && JSON.parse(tooltip).field.help)) {
                 return tooltip;
             }
         }

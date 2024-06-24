@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import json
 from io import StringIO
@@ -6,14 +6,14 @@ from socket import gethostbyname
 from unittest.mock import patch
 from urllib.parse import urlparse
 
-import odoo
-from odoo.http import root, content_disposition
-from odoo.tests import tagged
-from odoo.tests.common import HOST, new_test_user, get_db_name, BaseCase
-from odoo.tools import config, file_path, parse_version
-from odoo.addons.test_http.controllers import CT_JSON
+import crossnow
+from crossnow.http import root, content_disposition
+from crossnow.tests import tagged
+from crossnow.tests.common import HOST, new_test_user, get_db_name, BaseCase
+from crossnow.tools import config, file_path, parse_version
+from crossnow.addons.test_http.controllers import CT_JSON
 
-from odoo.addons.test_http.utils import TEST_IP
+from crossnow.addons.test_http.utils import TEST_IP
 from .test_common import TestHttpBase
 
 try:
@@ -36,10 +36,10 @@ class TestHttpMisc(TestHttpBase):
         self.assertIn(res.status_code, awaited_codes)
 
     def test_misc1_reverse_proxy(self):
-        # client <-> reverse-proxy <-> odoo
+        # client <-> reverse-proxy <-> crossnow
         client_ip = '127.0.0.16'
         reverseproxy_ip = gethostbyname(HOST)
-        host = 'mycompany.odoo.com'
+        host = 'mycompany.crossnow.com'
 
         headers = {
             'Host': '',
@@ -64,8 +64,8 @@ class TestHttpMisc(TestHttpBase):
 
     def test_misc2_local_redirect(self):
         def local_redirect(path):
-            fake_req = odoo.tools.misc.DotDict(db=False)
-            return odoo.http.Request.redirect(fake_req, path, local=True).headers['Location']
+            fake_req = crossnow.tools.misc.DotDict(db=False)
+            return crossnow.http.Request.redirect(fake_req, path, local=True).headers['Location']
         self.assertEqual(local_redirect('https://www.example.com/hello?a=b'), '/hello?a=b')
         self.assertEqual(local_redirect('/hello?a=b'), '/hello?a=b')
         self.assertEqual(local_redirect('hello?a=b'), '/hello?a=b')
@@ -79,14 +79,14 @@ class TestHttpMisc(TestHttpBase):
 
         # Valid URLs
         self.assertEqual(root.get_static_file(f'/{uri}'), path, "Valid file")
-        self.assertEqual(root.get_static_file(f'odoo.com/{uri}', host='odoo.com'), path, "Valid file with valid host")
-        self.assertEqual(root.get_static_file(f'http://odoo.com/{uri}', host='odoo.com'), path, "Valid file with valid host")
+        self.assertEqual(root.get_static_file(f'crossnow.com/{uri}', host='crossnow.com'), path, "Valid file with valid host")
+        self.assertEqual(root.get_static_file(f'http://crossnow.com/{uri}', host='crossnow.com'), path, "Valid file with valid host")
 
         # Invalid URLs
         self.assertIsNone(root.get_static_file('/test_http/i-dont-exist'), "File doesn't exist")
         self.assertIsNone(root.get_static_file('/test_http/__manifest__.py'), "File is not static")
-        self.assertIsNone(root.get_static_file(f'odoo.com/{uri}'), "No host allowed")
-        self.assertIsNone(root.get_static_file(f'http://odoo.com/{uri}'), "No host allowed")
+        self.assertIsNone(root.get_static_file(f'crossnow.com/{uri}'), "No host allowed")
+        self.assertIsNone(root.get_static_file(f'http://crossnow.com/{uri}'), "No host allowed")
 
     def test_misc4_rpc_qweb(self):
         jack = new_test_user(self.env, 'jackoneill', context={'lang': 'en_US'})
@@ -124,10 +124,10 @@ class TestHttpMisc(TestHttpBase):
         headers = {
             'Host': '',
             'X-Forwarded-For': TEST_IP,
-            'X-Forwarded-Host': 'odoo.com',
+            'X-Forwarded-Host': 'crossnow.com',
             'X-Forwarded-Proto': 'https'
         }
-        with patch.dict(odoo.tools.config.options, {'proxy_mode': True}):
+        with patch.dict(crossnow.tools.config.options, {'proxy_mode': True}):
             res = self.nodb_url_open('/test_http/geoip', headers=headers)
             res.raise_for_status()
             self.assertEqual(res.json(), {
@@ -141,7 +141,7 @@ class TestHttpMisc(TestHttpBase):
             })
 
     def test_misc6_upload_file_retry(self):
-        from odoo.addons.test_http import controllers  # pylint: disable=C0415
+        from crossnow.addons.test_http import controllers  # pylint: disable=C0415
 
         with patch.object(controllers, "should_fail", True), StringIO("Hello world!") as file:
             res = self.url_open("/test_http/upload_file", files={"ufile": file}, timeout=None)
@@ -210,7 +210,7 @@ class TestHttpEnsureDb(TestHttpBase):
         res.raise_for_status()
         self.assertEqual(res.status_code, 302)
         self.assertEqual(urlparse(res.headers.get('Location', '')).path, '/test_http/ensure_db')
-        self.assertEqual(odoo.http.root.session_store.get(res.cookies['session_id']).db, 'db0')
+        self.assertEqual(crossnow.http.root.session_store.get(res.cookies['session_id']).db, 'db0')
 
         # follow the redirection
         res = self.multidb_url_open('/test_http/ensure_db')
@@ -221,7 +221,7 @@ class TestHttpEnsureDb(TestHttpBase):
     def test_ensure_db2_use_session_db(self):
         session = self.authenticate(None, None)
         session.db = 'db0'
-        odoo.http.root.session_store.save(session)
+        crossnow.http.root.session_store.save(session)
 
         res = self.multidb_url_open('/test_http/ensure_db')
         res.raise_for_status()
@@ -231,14 +231,14 @@ class TestHttpEnsureDb(TestHttpBase):
     def test_ensure_db3_change_db(self):
         session = self.authenticate(None, None)
         session.db = 'db0'
-        odoo.http.root.session_store.save(session)
+        crossnow.http.root.session_store.save(session)
 
         res = self.multidb_url_open('/test_http/ensure_db?db=db1')
         res.raise_for_status()
         self.assertEqual(res.status_code, 302)
         self.assertEqual(urlparse(res.headers.get('Location', '')).path, '/test_http/ensure_db')
 
-        new_session = odoo.http.root.session_store.get(res.cookies['session_id'])
+        new_session = crossnow.http.root.session_store.get(res.cookies['session_id'])
         self.assertNotEqual(session.sid, new_session.sid)
         self.assertEqual(new_session.db, 'db1')
         self.assertEqual(new_session.uid, None)
@@ -257,7 +257,7 @@ class TestHttpEnsureDb(TestHttpBase):
         res.raise_for_status()
         self.assertEqual(res.status_code, 302)
         self.assertEqual(urlparse(res.headers.get('Location', '')).path, '/test_http/ensure_db')
-        self.assertEqual(odoo.http.root.session_store.get(res.cookies['session_id']).db, 'basededonnée1')
+        self.assertEqual(crossnow.http.root.session_store.get(res.cookies['session_id']).db, 'basededonnée1')
 
         # follow the redirection
         res = self.multidb_url_open('/test_http/ensure_db')

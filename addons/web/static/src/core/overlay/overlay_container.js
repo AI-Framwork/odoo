@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { sortBy } from "../utils/arrays";
 import { ErrorHandler } from "../utils/components";
 

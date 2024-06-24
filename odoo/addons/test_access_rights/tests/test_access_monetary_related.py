@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
+from crossnow.addons.base.tests.common import TransactionCaseWithUserDemo
 
 
 class TestMonetaryAccess(TransactionCaseWithUserDemo):

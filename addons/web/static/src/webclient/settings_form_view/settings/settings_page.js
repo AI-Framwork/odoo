@@ -1,7 +1,7 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 import { ActionSwiper } from "@web/core/action_swiper/action_swiper";
 
-import { Component, useState, useRef, useEffect } from "@odoo/owl";
+import { Component, useState, useRef, useEffect } from "@crossnow/owl";
 
 export class SettingsPage extends Component {
     setup() {

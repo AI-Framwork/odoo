@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { MacroEngine } from "@web/core/macro";
 import { getFixture, mockTimeout } from "../helpers/utils";
 
-import { Component, xml, useState, mount } from "@odoo/owl";
+import { Component, xml, useState, mount } from "@crossnow/owl";
 
 let target, engine, mock;
 

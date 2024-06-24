@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import re
 from contextlib import suppress
 
-import odoo.tests
-from odoo.tools.misc import file_open
+import crossnow.tests
+from crossnow.tools.misc import file_open
 
 RE_ONLY = re.compile(r'QUnit\.(only|debug)\(')
 
@@ -24,10 +24,10 @@ def qunit_error_checker(message):
     return True  # in other cases, always stop (missing dependency, ...)
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class WebSuite(odoo.tests.HttpCase):
+@crossnow.tests.tagged('post_install', '-at_install')
+class WebSuite(crossnow.tests.HttpCase):
 
-    @odoo.tests.no_retry
+    @crossnow.tests.no_retry
     def test_js(self):
         # webclient desktop test suite
         self.browser_js('/web/tests?mod=web', "", "", login='admin', timeout=1800, error_checker=qunit_error_checker)
@@ -56,8 +56,8 @@ class WebSuite(odoo.tests.HttpCase):
                         self.fail("`QUnit.only()` or `QUnit.debug()` used in file %r" % asset['url'])
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class MobileWebSuite(odoo.tests.HttpCase):
+@crossnow.tests.tagged('post_install', '-at_install')
+class MobileWebSuite(crossnow.tests.HttpCase):
     browser_size = '375x667'
     touch_enabled = True
 

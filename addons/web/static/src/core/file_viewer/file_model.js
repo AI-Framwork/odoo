@@ -1,4 +1,4 @@
-/* @odoo-module */
+/* @crossnow-module */
 
 import { url } from "@web/core/utils/urls";
 

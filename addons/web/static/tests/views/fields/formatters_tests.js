@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { markup } from "@odoo/owl";
+import { markup } from "@crossnow/owl";
 import { defaultLocalization } from "@web/../tests/helpers/mock_services";
 import { patchWithCleanup } from "@web/../tests/helpers/utils";
 import { currencies } from "@web/core/currency";

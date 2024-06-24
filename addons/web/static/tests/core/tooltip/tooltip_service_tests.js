@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { App, Component, useState, xml } from "@odoo/owl";
+import { App, Component, useState, xml } from "@crossnow/owl";
 import { templates } from "@web/core/assets";
 import { browser } from "@web/core/browser/browser";
 import { hotkeyService } from "@web/core/hotkeys/hotkey_service";

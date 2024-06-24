@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { App, Component, useState, xml } from "@odoo/owl";
+import { App, Component, useState, xml } from "@crossnow/owl";
 import { templates } from "@web/core/assets";
 import { _t } from "@web/core/l10n/translation";
 

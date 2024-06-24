@@ -1,14 +1,14 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo import Command
-from odoo.tools import mute_logger
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
+from crossnow import Command
+from crossnow.tools import mute_logger
 
 import logging
-import odoo.tests
+import crossnow.tests
 
 _logger = logging.getLogger(__name__)
 
 
-class BaseTestUi(odoo.tests.HttpCase):
+class BaseTestUi(crossnow.tests.HttpCase):
 
     def main_flow_tour(self):
         # Enable Make to Order
@@ -72,12 +72,12 @@ class BaseTestUi(odoo.tests.HttpCase):
 
         self.start_tour("/web", 'main_flow_tour', login="admin", timeout=180)
 
-@odoo.tests.tagged('post_install', '-at_install')
+@crossnow.tests.tagged('post_install', '-at_install')
 class TestUi(BaseTestUi):
 
     def test_01_main_flow_tour(self):
         # TODO: Adapt to work without demo data
-        if not odoo.tests.loaded_demo_data(self.env):
+        if not crossnow.tests.loaded_demo_data(self.env):
             _logger.warning("This test relies on demo data. To be rewritten independently of demo data for accurate and reliable results.")
             return
         self.main_flow_tour()
@@ -110,11 +110,11 @@ class TestUi(BaseTestUi):
         })
 
         current_companies = "%s-%s" % (company1.id, company2.id)
-        with mute_logger("odoo.http"):
+        with mute_logger("crossnow.http"):
             self.start_tour(f"/web#action={act_window.id}&cids={current_companies}", "test_company_switch_access_error", login="admin")
 
 
-@odoo.tests.tagged('post_install', '-at_install')
+@crossnow.tests.tagged('post_install', '-at_install')
 class TestUiMobile(BaseTestUi):
 
     browser_size = '375x667'
@@ -122,7 +122,7 @@ class TestUiMobile(BaseTestUi):
 
     def test_01_main_flow_tour_mobile(self):
         # TODO: Adapt to work without demo data
-        if not odoo.tests.loaded_demo_data(self.env):
+        if not crossnow.tests.loaded_demo_data(self.env):
             _logger.warning("This test relies on demo data. To be rewritten independently of demo data for accurate and reliable results.")
             return
         self.main_flow_tour()

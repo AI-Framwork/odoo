@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 /**
  * Get the closest horizontally scrollable for a given element.

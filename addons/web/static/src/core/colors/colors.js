@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * Lists of colors that contrast well with each other to be used in various

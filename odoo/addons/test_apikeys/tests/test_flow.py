@@ -1,10 +1,10 @@
 import logging
 import json
 
-from odoo import api
-from odoo.tests import tagged, get_db_name, loaded_demo_data
-from odoo.addons.base.tests.common import HttpCaseWithUserDemo
-from odoo.addons.auth_totp.tests.test_totp import TestTOTPMixin
+from crossnow import api
+from crossnow.tests import tagged, get_db_name, loaded_demo_data
+from crossnow.addons.base.tests.common import HttpCaseWithUserDemo
+from crossnow.addons.auth_totp.tests.test_totp import TestTOTPMixin
 
 _logger = logging.getLogger(__name__)
 

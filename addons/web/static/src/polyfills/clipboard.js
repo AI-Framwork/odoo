@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 class ClipboardItemImpl {
     constructor(items, options = {}) {

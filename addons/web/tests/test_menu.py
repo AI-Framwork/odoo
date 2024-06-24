@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-from odoo.tests.common import BaseCase
-from odoo.addons.web.controllers.utils import fix_view_modes
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
+from crossnow.tests.common import BaseCase
+from crossnow.addons.web.controllers.utils import fix_view_modes
 
 
 class ActionMungerTest(BaseCase):

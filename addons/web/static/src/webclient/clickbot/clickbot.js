@@ -1,11 +1,11 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 /**
  * The purpose of this test is to click on every installed App and then open each
  * view. On each view, click on each filter.
  */
 
-import { App } from "@odoo/owl";
+import { App } from "@crossnow/owl";
 import { browser } from "@web/core/browser/browser";
 
 const MOUSE_EVENTS = ["mouseover", "mouseenter", "mousedown", "mouseup", "click"];
@@ -42,7 +42,7 @@ let testedModals;
  * This should be done only once.
  */
 function setup() {
-    env = odoo.__WOWL_DEBUG__.root.env;
+    env = crossnow.__WOWL_DEBUG__.root.env;
     env.bus.addEventListener("ACTION_MANAGER:UI-UPDATED", uiUpdate);
     env.bus.addEventListener("RPC:REQUEST", onRPCRequest);
     env.bus.addEventListener("RPC:RESPONSE", onRPCResponse);
@@ -57,7 +57,7 @@ function setup() {
     appIndex = 0;
     menuIndex = 0;
     subMenuIndex = 0;
-    isEnterprise = odoo.info && odoo.info.isEnterprise;
+    isEnterprise = crossnow.info && crossnow.info.isEnterprise;
 }
 
 function onRPCRequest({ detail }) {
@@ -457,7 +457,7 @@ async function testApp(element) {
 async function _clickEverywhere(xmlId) {
     setup();
     console.log("Starting ClickEverywhere test");
-    console.log(`Odoo flavor: ${isEnterprise ? "Enterprise" : "Community"}`);
+    console.log(`CrossNow flavor: ${isEnterprise ? "Enterprise" : "Community"}`);
     const startTime = performance.now();
     try {
         let app;

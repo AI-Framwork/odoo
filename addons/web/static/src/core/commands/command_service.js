@@ -1,9 +1,9 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { registry } from "@web/core/registry";
 import { CommandPalette } from "./command_palette";
 
-import { Component, EventBus } from "@odoo/owl";
+import { Component, EventBus } from "@crossnow/owl";
 
 /**
  * @typedef {import("./command_palette").CommandPaletteConfig} CommandPaletteConfig

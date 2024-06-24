@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, useState, useRef, onWillUpdateProps, useEffect } from "@odoo/owl";
+import { Component, useState, useRef, onWillUpdateProps, useEffect } from "@crossnow/owl";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { _t } from "@web/core/l10n/translation";

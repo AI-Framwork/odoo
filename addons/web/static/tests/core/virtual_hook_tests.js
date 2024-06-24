@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, useRef, xml } from "@odoo/owl";
+import { Component, useRef, xml } from "@crossnow/owl";
 import { useVirtual } from "@web/core/virtual_hook";
 import { getFixture, mount, patchWithCleanup, triggerEvent } from "../helpers/utils";
 

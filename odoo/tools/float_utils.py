@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from __future__ import print_function
 import builtins
@@ -70,7 +70,7 @@ def float_round(value, precision_digits=None, precision_rounding=None, rounding_
     # To correct this, we add a very small epsilon value, scaled to the
     # the order of magnitude of the value, to tip the tie-break in the right
     # direction.
-    # Credit: discussion with OpenERP community members on bug 882036
+    # Credit: discussion with CrossNow community members on bug 882036
 
     normalized_value = value / rounding_factor # normalize
     sign = math.copysign(1.0, normalized_value)

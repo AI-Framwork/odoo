@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @crossnow-module */
 
 import { OdooEditor } from '../../src/OdooEditor.js';
 import {

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { evalPartialContext, makeContext } from "@web/core/context";
 

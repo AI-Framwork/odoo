@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { onMounted, useComponent, useEffect, useExternalListener } from "@odoo/owl";
+import { onMounted, useComponent, useEffect, useExternalListener } from "@crossnow/owl";
 
 export const scrollSymbol = Symbol("scroll");
 

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import './commands/deleteBackward.js';
 import './commands/deleteForward.js';
@@ -168,10 +168,10 @@ export const CLIPBOARD_WHITELISTS = {
         'table-bordered',
         /^padding-/,
         /^shadow/,
-        // Odoo colors
+        // CrossNow colors
         /^text-o-/,
         /^bg-o-/,
-        // Odoo lists
+        // CrossNow lists
         'o_checked',
         'o_checklist',
         'oe-nested',
@@ -271,7 +271,7 @@ export class OdooEditor extends EventTarget {
                 showResponsiveFontSizesBadges: false,
                 showExtendedTextStylesOptions: false,
                 // TODO probably move `getCSSVariableValue` and
-                // `convertNumericToUnit` as odoo-editor utils to avoid this
+                // `convertNumericToUnit` as crossnow-editor utils to avoid this
                 getCSSVariableValue: () => null,
                 convertNumericToUnit: x => x,
             },
@@ -336,7 +336,7 @@ export class OdooEditor extends EventTarget {
         editable.oid = 'root';
         this._idToNodeMap.set(1, editable);
         this.editable = editable;
-        this.editable.classList.add("odoo-editor-editable");
+        this.editable.classList.add("crossnow-editor-editable");
         if (this.options.toSanitize) {
             sanitize(editable);
             this.options.onPostSanitize(editable);
@@ -3906,7 +3906,7 @@ export class OdooEditor extends EventTarget {
         const odooText = selection.toString();
         clipboardEvent.clipboardData.setData('text/plain', odooText);
         clipboardEvent.clipboardData.setData('text/html', odooHtml);
-        clipboardEvent.clipboardData.setData('text/odoo-editor', odooHtml);
+        clipboardEvent.clipboardData.setData('text/crossnow-editor', odooHtml);
     }
     /**
      * @private
@@ -4264,7 +4264,7 @@ export class OdooEditor extends EventTarget {
         let currentNode = closestElement(selection.anchorNode);
         while (
             !currentNode.classList.contains('o_editable') &&
-            !currentNode.classList.contains('odoo-editor-editable') &&
+            !currentNode.classList.contains('crossnow-editor-editable') &&
             !selectionInBlockRoot
             ) {
             selectionInBlockRoot = isBlock(currentNode);
@@ -4890,7 +4890,7 @@ export class OdooEditor extends EventTarget {
         }
         ev.preventDefault();
         const files = getImageFiles(ev.clipboardData);
-        const odooEditorHtml = ev.clipboardData.getData('text/odoo-editor');
+        const odooEditorHtml = ev.clipboardData.getData('text/crossnow-editor');
         const clipboardHtml = ev.clipboardData.getData('text/html');
         const targetSupportsHtmlContent = isHtmlContentSupported(sel.anchorNode);
         // Replace entire link if its label is fully selected.

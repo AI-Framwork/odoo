@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-import odoo
-from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+import crossnow
+from crossnow import api, fields, models, _
+from crossnow.exceptions import UserError
 
 
 class BaseModuleUpgrade(models.TransientModel):
@@ -65,7 +65,7 @@ class BaseModuleUpgrade(models.TransientModel):
 
         # terminate transaction before re-creating cursor below
         self._cr.commit()
-        odoo.modules.registry.Registry.new(self._cr.dbname, update_module=True)
+        crossnow.modules.registry.Registry.new(self._cr.dbname, update_module=True)
         self._cr.reset()
 
         return {'type': 'ir.actions.act_window_close'}

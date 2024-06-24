@@ -11,11 +11,11 @@ import threading
 import time
 from psycopg2 import InterfaceError, sql
 
-import odoo
-from odoo import api, fields, models
-from odoo.service.server import CommonServer
-from odoo.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
-from odoo.tools import date_utils
+import crossnow
+from crossnow import api, fields, models
+from crossnow.service.server import CommonServer
+from crossnow.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT
+from crossnow.tools import date_utils
 
 _logger = logging.getLogger(__name__)
 
@@ -118,7 +118,7 @@ class ImBus(models.Model):
             # nothing to fetch, and the websocket will return no notification.
             @self.env.cr.postcommit.add
             def notify():
-                with odoo.sql_db.db_connect('postgres').cursor() as cr:
+                with crossnow.sql_db.db_connect('postgres').cursor() as cr:
                     query = sql.SQL("SELECT {}('imbus', %s)").format(sql.Identifier(ODOO_NOTIFY_FUNCTION))
                     payloads = get_notify_payloads(list(channels))
                     if len(payloads) > 1:
@@ -200,7 +200,7 @@ class ImDispatch(threading.Thread):
     def loop(self):
         """ Dispatch postgres notifications to the relevant websockets """
         _logger.info("Bus.loop listen imbus on db postgres")
-        with odoo.sql_db.db_connect('postgres').cursor() as cr, \
+        with crossnow.sql_db.db_connect('postgres').cursor() as cr, \
              selectors.DefaultSelector() as sel:
             cr.execute("listen imbus")
             cr.commit()

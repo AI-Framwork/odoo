@@ -12,11 +12,11 @@ from markupsafe import Markup, escape
 from PIL import Image
 from lxml import etree, html
 
-from odoo import api, fields, models, _, _lt, tools
-from odoo.tools import posix_to_ldml, float_utils, format_date, format_duration, pycompat
-from odoo.tools.mail import safe_attrs
-from odoo.tools.misc import get_lang, babel_locale_parse
-from odoo.tools.mimetypes import guess_mimetype
+from crossnow import api, fields, models, _, _lt, tools
+from crossnow.tools import posix_to_ldml, float_utils, format_date, format_duration, pycompat
+from crossnow.tools.mail import safe_attrs
+from crossnow.tools.misc import get_lang, babel_locale_parse
+from crossnow.tools.mimetypes import guess_mimetype
 
 _logger = logging.getLogger(__name__)
 

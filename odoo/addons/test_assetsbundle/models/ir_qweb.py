@@ -1,5 +1,5 @@
-from odoo import models
-from odoo.tools import config
+from crossnow import models
+from crossnow.tools import config
 init = config['init']
 
 

@@ -1,4 +1,4 @@
-from odoo import models, fields
+from crossnow import models, fields
 
 class ModelMultiCompany(models.Model):
     _name = "test.model_multicompany"

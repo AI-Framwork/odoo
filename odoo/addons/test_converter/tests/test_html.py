@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import base64
 import datetime
 import os
 import re
 
-from odoo.tests import common
-from odoo.tools import html_escape as e
-from odoo.tools.misc import file_open
+from crossnow.tests import common
+from crossnow.tools import html_escape as e
+from crossnow.tools.misc import file_open
 
 directory = os.path.dirname(__file__)
 

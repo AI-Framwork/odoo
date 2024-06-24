@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import logging
 import os
-import odoo
+import crossnow
 
 from . import lint_case
 
@@ -21,13 +21,13 @@ class TestConflictMarkers(lint_case.LintCase):
             self.assertFalse(any(m in content for m in MARKERS), 'Conflict markers found in %s' % fullpath_name)
 
     def test_conflict_markers(self):
-        """ Test that there are no conflict markers left in Odoo files """
+        """ Test that there are no conflict markers left in CrossNow files """
 
         counter = 0
 
-        odoo_path = os.path.abspath(os.path.dirname(odoo.__file__))
-        paths = odoo.addons.__path__ + [odoo_path]
-        paths.remove(os.path.join(odoo_path, 'addons'))  # avoid checking odoo/addons twice
+        odoo_path = os.path.abspath(os.path.dirname(crossnow.__file__))
+        paths = crossnow.addons.__path__ + [odoo_path]
+        paths.remove(os.path.join(odoo_path, 'addons'))  # avoid checking crossnow/addons twice
 
         for p in paths:
             for dp, _, file_names in os.walk(p):

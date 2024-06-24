@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import functools
 
-from odoo.tests.common import BaseCase
-from odoo.tools import frozendict, lazy
-from odoo import Command
+from crossnow.tests.common import BaseCase
+from crossnow.tools import frozendict, lazy
+from crossnow import Command
 
 
 class TestFrozendict(BaseCase):

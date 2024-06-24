@@ -1,4 +1,4 @@
-<odoo>
+<crossnow>
     <data>
         <template id="tmpl_galaxy">
             <p><t t-out="galaxy.name"/></p>
@@ -22,4 +22,4 @@
             </dl>
         </template>
     </data>
-</odoo>
+</crossnow>

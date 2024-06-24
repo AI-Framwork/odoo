@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { registry } from "@web/core/registry";
 import { standardFieldProps } from "../standard_field_props";
 

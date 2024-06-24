@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { sortBy, groupBy } from "@web/core/utils/arrays";
@@ -587,7 +587,7 @@ export class GraphModel extends Model {
             const { fieldName, interval } = gb;
             const { sortable, type, store } = fields[fieldName];
             if (
-                // many2many is groupable precisely when it is stored (cf. groupable in odoo/fields.py)
+                // many2many is groupable precisely when it is stored (cf. groupable in crossnow/fields.py)
                 (type === "many2many" ? !store : !sortable) ||
                 ["id", "__count"].includes(fieldName) ||
                 !GROUPABLE_TYPES.includes(type)

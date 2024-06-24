@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { isMobileOS } from "@web/core/browser/feature_detection";
 

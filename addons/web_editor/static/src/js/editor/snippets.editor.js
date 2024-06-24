@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Mutex } from "@web/core/utils/concurrency";
 import { clamp } from "@web/core/utils/numbers";
@@ -11,7 +11,7 @@ import options from "@web_editor/js/editor/snippets.options";
 import weUtils from "@web_editor/js/common/utils";
 import * as gridUtils from "@web_editor/js/common/grid_layout_utils";
 import { escape } from "@web/core/utils/strings";
-import { closestElement, isUnremovable } from "@web_editor/js/editor/odoo-editor/src/utils/utils";
+import { closestElement, isUnremovable } from "@web_editor/js/editor/crossnow-editor/src/utils/utils";
 import { debounce, throttleForAnimation } from "@web/core/utils/timing";
 import { uniqueId } from "@web/core/utils/functions";
 import { sortBy, unique } from "@web/core/utils/arrays";
@@ -22,7 +22,7 @@ import {
     Component,
     markup,
     xml,
-} from "@odoo/owl";
+} from "@crossnow/owl";
 import { LinkTools } from '@web_editor/js/wysiwyg/widgets/link_tools';
 import { touching, closest } from "@web/core/utils/ui";
 import { _t } from "@web/core/l10n/translation";

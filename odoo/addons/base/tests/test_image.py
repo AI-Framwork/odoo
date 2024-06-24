@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import base64
 import io
@@ -7,9 +7,9 @@ import binascii
 
 from PIL import Image, ImageDraw, PngImagePlugin
 
-from odoo import tools
-from odoo.exceptions import UserError
-from odoo.tests.common import TransactionCase
+from crossnow import tools
+from crossnow.exceptions import UserError
+from crossnow.tests.common import TransactionCase
 
 
 def img_open(data):

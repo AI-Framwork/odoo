@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import re
 import logging
-from odoo import api, fields, models, tools
-from odoo.osv import expression
-from odoo.exceptions import UserError
+from crossnow import api, fields, models, tools
+from crossnow.osv import expression
+from crossnow.exceptions import UserError
 from psycopg2 import IntegrityError
-from odoo.tools.translate import _
+from crossnow.tools.translate import _
 _logger = logging.getLogger(__name__)
 
 

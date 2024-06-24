@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { click, editInput, getFixture, makeDeferred, mockSendBeacon, nextTick, patchWithCleanup } from "@web/../tests/helpers/utils";
 import { createWebClient, doAction } from "@web/../tests/webclient/helpers";
@@ -7,14 +7,14 @@ import { FileSelectorControlPanel } from "@web_editor/components/media_dialog/fi
 import { FormController } from '@web/views/form/form_controller';
 import { HtmlField } from "@web_editor/js/backend/html_field";
 import { MediaDialog } from "@web_editor/components/media_dialog/media_dialog";
-import { parseHTML, setSelection } from "@web_editor/js/editor/odoo-editor/src/utils/utils";
-import { onRendered, useEffect } from "@odoo/owl";
+import { parseHTML, setSelection } from "@web_editor/js/editor/crossnow-editor/src/utils/utils";
+import { onRendered, useEffect } from "@crossnow/owl";
 import { registry } from "@web/core/registry";
 import { COLOR_PICKER_TEMPLATE, wysiwygData } from "@web_editor/../tests/test_utils";
-import { OdooEditor } from '@web_editor/js/editor/odoo-editor/src/OdooEditor';
+import { OdooEditor } from '@web_editor/js/editor/crossnow-editor/src/OdooEditor';
 import { uploadService } from "@web_editor/components/upload_progress_toast/upload_service";
 import { Wysiwyg } from "@web_editor/js/wysiwyg/wysiwyg";
-import { insertText } from '@web_editor/js/editor/odoo-editor/test/utils';
+import { insertText } from '@web_editor/js/editor/crossnow-editor/test/utils';
 
 async function iframeReady(iframe) {
     const iframeLoadPromise = makeDeferred();
@@ -90,13 +90,13 @@ QUnit.module("WebEditor.HtmlField", ({ beforeEach }) => {
         });
         await wysiwygPromise;
 
-        assert.containsOnce(target, ".odoo-editor-editable p:contains(first)");
+        assert.containsOnce(target, ".crossnow-editor-editable p:contains(first)");
 
         // click on the pager to switch to the next record
         await click(target.querySelector(".o_pager_next"));
 
-        assert.containsOnce(target, ".odoo-editor-editable p:contains(second)");
-        const paragraph = target.querySelector(".odoo-editor-editable p");
+        assert.containsOnce(target, ".crossnow-editor-editable p:contains(second)");
+        const paragraph = target.querySelector(".crossnow-editor-editable p");
         setSelection(paragraph, 0, paragraph, 0);
 
         wysiwyg.openMediaDialog();
@@ -757,7 +757,7 @@ QUnit.module("WebEditor.HtmlField", ({ beforeEach }) => {
         assert.ok(!img.classList.contains('o_b64_image_to_save'));
     });
 
-    QUnit.module('Odoo fields synchronisation');
+    QUnit.module('CrossNow fields synchronisation');
 
     QUnit.test("Synchronise fields when editing.", async (assert) => {
         serverData.models.partner.records = [{
@@ -980,7 +980,7 @@ QUnit.module("WebEditor.HtmlField", ({ beforeEach }) => {
             mockRPC: mockRPC,
         });
 
-        const editable = document.querySelector(".odoo-editor-editable");
+        const editable = document.querySelector(".crossnow-editor-editable");
         const p = editable.firstElementChild;
         Wysiwyg.setRange(p);
 

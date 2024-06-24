@@ -55,12 +55,12 @@ try:
 except ImportError:
     setproctitle = lambda x: None
 
-import odoo
-from odoo.modules import get_modules
-from odoo.modules.registry import Registry
-from odoo.release import nt_service_name
-from odoo.tools import config
-from odoo.tools import stripped_sys_argv, dumpstacks, log_ormcache_stats
+import crossnow
+from crossnow.modules import get_modules
+from crossnow.modules.registry import Registry
+from crossnow.release import nt_service_name
+from crossnow.tools import config
+from crossnow.tools import stripped_sys_argv, dumpstacks, log_ormcache_stats
 
 _logger = logging.getLogger(__name__)
 
@@ -126,7 +126,7 @@ class RequestHandler(werkzeug.serving.WSGIRequestHandler):
         # flag the current thread as handling a http request
         super(RequestHandler, self).setup()
         me = threading.current_thread()
-        me.name = 'odoo.service.http.request.%s' % (me.ident,)
+        me.name = 'crossnow.service.http.request.%s' % (me.ident,)
 
     def make_environ(self):
         environ = super().make_environ()
@@ -218,7 +218,7 @@ class ThreadedWSGIServerReloadable(LoggingBaseWSGIServerMixIn, werkzeug.serving.
     # TODO: Remove this method as soon as either of the revision
     # - python/cpython@8b1f52b5a93403acd7d112cd1c1bc716b31a418a for Python 3.6,
     # - python/cpython@908082451382b8b3ba09ebba638db660edbf5d8e for Python 3.7,
-    # is included in all Python 3 releases installed on all operating systems supported by Odoo.
+    # is included in all Python 3 releases installed on all operating systems supported by CrossNow.
     # These revisions are included in Python from releases 3.6.8 and Python 3.7.2 respectively.
     def _handle_request_noblock(self):
         """
@@ -259,7 +259,7 @@ class FSWatcherBase(object):
             except SyntaxError:
                 _logger.error('autoreload: python code change detected, SyntaxError in %s', path)
             else:
-                if not getattr(odoo, 'phoenix', False):
+                if not getattr(crossnow, 'phoenix', False):
                     _logger.info('autoreload: python code updated, autoreload activated')
                     restart()
                     return True
@@ -268,7 +268,7 @@ class FSWatcherBase(object):
 class FSWatcherWatchdog(FSWatcherBase):
     def __init__(self):
         self.observer = Observer()
-        for path in odoo.addons.__path__:
+        for path in crossnow.addons.__path__:
             _logger.info('Watching addons folder %s', path)
             self.observer.schedule(self, path, recursive=True)
 
@@ -294,7 +294,7 @@ class FSWatcherInotify(FSWatcherBase):
         inotify.adapters._LOGGER.setLevel(logging.ERROR)
         # recreate a list as InotifyTrees' __init__ deletes the list's items
         paths_to_watch = []
-        for path in odoo.addons.__path__:
+        for path in crossnow.addons.__path__:
             paths_to_watch.append(path)
             _logger.info('Watching addons folder %s', path)
         self.watcher = InotifyTrees(paths_to_watch, mask=INOTIFY_LISTEN_EVENTS, block_duration_s=.5)
@@ -321,7 +321,7 @@ class FSWatcherInotify(FSWatcherBase):
 
     def start(self):
         self.started = True
-        self.thread = threading.Thread(target=self.run, name="odoo.service.autoreload.watcher")
+        self.thread = threading.Thread(target=self.run, name="crossnow.service.autoreload.watcher")
         self.thread.daemon = True
         self.thread.start()
 
@@ -410,7 +410,7 @@ class ThreadedServer(CommonServer):
             os._exit(0)
         elif sig == signal.SIGHUP:
             # restart on kill -HUP
-            odoo.phoenix = True
+            crossnow.phoenix = True
             self.quit_signals_received += 1
             # interrupt run() to start shutdown
             raise KeyboardInterrupt()
@@ -461,8 +461,8 @@ class ThreadedServer(CommonServer):
         # just a bit prevents they all poll the database at the exact
         # same time. This is known as the thundering herd effect.
 
-        from odoo.addons.base.models.ir_cron import ir_cron
-        conn = odoo.sql_db.db_connect('postgres')
+        from crossnow.addons.base.models.ir_cron import ir_cron
+        conn = crossnow.sql_db.db_connect('postgres')
         with conn.cursor() as cr:
             pg_conn = cr._cnx
             # LISTEN / NOTIFY doesn't work in recovery mode
@@ -479,7 +479,7 @@ class ThreadedServer(CommonServer):
                 time.sleep(number / 100)
                 pg_conn.poll()
 
-                registries = odoo.modules.registry.Registry.registries
+                registries = crossnow.modules.registry.Registry.registries
                 _logger.debug('cron%d polling for jobs', number)
                 for db_name, registry in registries.d.items():
                     if registry.ready:
@@ -503,10 +503,10 @@ class ThreadedServer(CommonServer):
         # to prevent time.strptime AttributeError within the thread.
         # See: http://bugs.python.org/issue7980
         datetime.datetime.strptime('2012-01-01', '%Y-%m-%d')
-        for i in range(odoo.tools.config['max_cron_threads']):
+        for i in range(crossnow.tools.config['max_cron_threads']):
             def target():
                 self.cron_thread(i)
-            t = threading.Thread(target=target, name="odoo.service.cron.cron%d" % i)
+            t = threading.Thread(target=target, name="crossnow.service.cron.cron%d" % i)
             t.daemon = True
             t.type = 'cron'
             t.start()
@@ -517,7 +517,7 @@ class ThreadedServer(CommonServer):
         self.httpd.serve_forever()
 
     def http_spawn(self):
-        t = threading.Thread(target=self.http_thread, name="odoo.service.httpd")
+        t = threading.Thread(target=self.http_thread, name="crossnow.service.httpd")
         t.daemon = True
         t.start()
 
@@ -544,7 +544,7 @@ class ThreadedServer(CommonServer):
     def stop(self):
         """ Shutdown the WSGI server. Wait for non daemon threads.
         """
-        if getattr(odoo, 'phoenix', None):
+        if getattr(crossnow, 'phoenix', None):
             _logger.info("Initiating server reload")
         else:
             _logger.info("Initiating shutdown")
@@ -574,7 +574,7 @@ class ThreadedServer(CommonServer):
                     thread.join(0.05)
                     time.sleep(0.05)
 
-        odoo.sql_db.close_all()
+        crossnow.sql_db.close_all()
 
         _logger.debug('--')
         logging.shutdown()
@@ -591,7 +591,7 @@ class ThreadedServer(CommonServer):
 
         if stop:
             if config['test_enable']:
-                logger = odoo.tests.result._logger
+                logger = crossnow.tests.result._logger
                 with Registry.registries._lock:
                     for db, registry in Registry.registries.d.items():
                         report = registry._assertion_report
@@ -846,7 +846,7 @@ class PreforkServer(CommonServer):
                 raise KeyboardInterrupt
             elif sig == signal.SIGHUP:
                 # restart on kill -HUP
-                odoo.phoenix = True
+                crossnow.phoenix = True
                 raise KeyboardInterrupt
             elif sig == signal.SIGQUIT:
                 # dump stacks on kill -3
@@ -977,7 +977,7 @@ class PreforkServer(CommonServer):
             return rc
 
         # Empty the cursor pool, we dont want them to be shared among forked workers.
-        odoo.sql_db.close_all()
+        crossnow.sql_db.close_all()
 
         _logger.debug("Multiprocess starting")
         while 1:
@@ -1015,7 +1015,7 @@ class Worker(object):
         self.request_count = 0
 
     def setproctitle(self, title=""):
-        setproctitle('odoo: %s %s %s' % (self.__class__.__name__, self.pid, title))
+        setproctitle('crossnow: %s %s %s' % (self.__class__.__name__, self.pid, title))
 
     def close(self):
         os.close(self.watchdog_pipe[0])
@@ -1104,7 +1104,7 @@ class Worker(object):
             t.join()
             _logger.info("Worker (%s) exiting. request_count: %s, registry count: %s.",
                          self.pid, self.request_count,
-                         len(odoo.modules.registry.Registry.registries))
+                         len(crossnow.modules.registry.Registry.registries))
             self.stop()
         except Exception:
             _logger.exception("Worker (%s) Exception occurred, exiting...", self.pid)
@@ -1202,7 +1202,7 @@ class WorkerCron(Worker):
         if config['db_name']:
             db_names = config['db_name'].split(',')
         else:
-            db_names = odoo.service.db.list_dbs(True)
+            db_names = crossnow.service.db.list_dbs(True)
         return db_names
 
     def process_work(self):
@@ -1213,12 +1213,12 @@ class WorkerCron(Worker):
             db_name = db_names[self.db_index]
             self.setproctitle(db_name)
 
-            from odoo.addons import base
+            from crossnow.addons import base
             base.models.ir_cron.ir_cron._process_jobs(db_name)
 
             # dont keep cursors in multi database mode
             if len(db_names) > 1:
-                odoo.sql_db.close_db(db_name)
+                crossnow.sql_db.close_db(db_name)
 
             self.request_count += 1
             if self.request_count >= self.request_max and self.request_max < len(db_names):
@@ -1234,7 +1234,7 @@ class WorkerCron(Worker):
         if self.multi.socket:
             self.multi.socket.close()
 
-        dbconn = odoo.sql_db.db_connect('postgres')
+        dbconn = crossnow.sql_db.db_connect('postgres')
         self.dbcursor = dbconn.cursor()
         # LISTEN / NOTIFY doesn't work in recovery mode
         self.dbcursor.execute("SELECT pg_is_in_recovery()")
@@ -1256,21 +1256,21 @@ class WorkerCron(Worker):
 server = None
 
 def load_server_wide_modules():
-    server_wide_modules = {'base', 'web'} | set(odoo.conf.server_wide_modules)
+    server_wide_modules = {'base', 'web'} | set(crossnow.conf.server_wide_modules)
     for m in server_wide_modules:
         try:
-            odoo.modules.module.load_openerp_module(m)
+            crossnow.modules.module.load_openerp_module(m)
         except Exception:
             msg = ''
             if m == 'web':
                 msg = """
-The `web` module is provided by the addons found in the `openerp-web` project.
+The `web` module is provided by the addons found in the `crossnow-web` project.
 Maybe you forgot to add those addons in your addons_path configuration."""
             _logger.exception('Failed to load server-wide module `%s`.%s', m, msg)
 
 def _reexec(updated_modules=None):
-    """reexecute openerp-server process with (nearly) the same arguments"""
-    if odoo.tools.osutil.is_running_as_nt_service():
+    """reexecute crossnow-server process with (nearly) the same arguments"""
+    if crossnow.tools.osutil.is_running_as_nt_service():
         subprocess.call('net stop {0} && net start {0}'.format(nt_service_name), shell=True)
     exe = os.path.basename(sys.executable)
     args = stripped_sys_argv()
@@ -1283,7 +1283,7 @@ def _reexec(updated_modules=None):
 
 def load_test_file_py(registry, test_file):
     # pylint: disable=import-outside-toplevel
-    from odoo.tests.suite import OdooSuite
+    from crossnow.tests.suite import OdooSuite
     threading.current_thread().testing = True
     try:
         test_path, _ = os.path.splitext(os.path.abspath(test_file))
@@ -1326,7 +1326,7 @@ def preload_registries(dbnames):
             # run post-install tests
             if config['test_enable']:
                 t0 = time.time()
-                t0_sql = odoo.sql_db.sql_counter
+                t0_sql = crossnow.sql_db.sql_counter
                 module_names = (registry.updated_modules if update_module else
                                 sorted(registry._init_modules))
                 _logger.info("Starting post tests")
@@ -1334,14 +1334,14 @@ def preload_registries(dbnames):
                 post_install_suite = loader.make_suite(module_names, 'post_install')
                 if post_install_suite.has_http_case():
                     with registry.cursor() as cr:
-                        env = odoo.api.Environment(cr, odoo.SUPERUSER_ID, {})
+                        env = crossnow.api.Environment(cr, crossnow.SUPERUSER_ID, {})
                         env['ir.qweb']._pregenerate_assets_bundles()
                 result = loader.run_suite(post_install_suite)
                 registry._assertion_report.update(result)
                 _logger.info("%d post-tests in %.2fs, %s queries",
                              registry._assertion_report.testsRun - tests_before,
                              time.time() - t0,
-                             odoo.sql_db.sql_counter - t0_sql)
+                             crossnow.sql_db.sql_counter - t0_sql)
 
                 registry._assertion_report.log_stats()
             if not registry._assertion_report.wasSuccessful():
@@ -1352,19 +1352,19 @@ def preload_registries(dbnames):
     return rc
 
 def start(preload=None, stop=False):
-    """ Start the odoo http server and cron processor.
+    """ Start the crossnow http server and cron processor.
     """
     global server
 
     load_server_wide_modules()
 
-    if odoo.evented:
-        server = GeventServer(odoo.http.root)
+    if crossnow.evented:
+        server = GeventServer(crossnow.http.root)
     elif config['workers']:
         if config['test_enable'] or config['test_file']:
             _logger.warning("Unit testing in workers mode could fail; use --workers 0.")
 
-        server = PreforkServer(odoo.http.root)
+        server = PreforkServer(crossnow.http.root)
 
         # Workaround for Python issue24291, fixed in 3.6 (see Python issue26721)
         if sys.version_info[:2] == (3,5):
@@ -1377,7 +1377,7 @@ def start(preload=None, stop=False):
             # would be using malloc() concurrently [2].
             # Due to the python's GIL, this optimization have no effect on multithreaded python programs.
             # Unfortunately, a downside of creating one arena per cpu core is the increase of virtual memory
-            # which Odoo is based upon in order to limit the memory usage for threaded workers.
+            # which CrossNow is based upon in order to limit the memory usage for threaded workers.
             # On 32bit systems the default size of an arena is 512K while on 64bit systems it's 64M [3],
             # hence a threaded worker will quickly reach it's default memory soft limit upon concurrent requests.
             # We therefore set the maximum arenas allowed to 2 unless the MALLOC_ARENA_MAX env variable is set.
@@ -1393,10 +1393,10 @@ def start(preload=None, stop=False):
                 assert libc.mallopt(ctypes.c_int(M_ARENA_MAX), ctypes.c_int(2))
             except Exception:
                 _logger.warning("Could not set ARENA_MAX through mallopt()")
-        server = ThreadedServer(odoo.http.root)
+        server = ThreadedServer(crossnow.http.root)
 
     watcher = None
-    if 'reload' in config['dev_mode'] and not odoo.evented:
+    if 'reload' in config['dev_mode'] and not crossnow.evented:
         if inotify:
             watcher = FSWatcherInotify()
             watcher.start()
@@ -1415,7 +1415,7 @@ def start(preload=None, stop=False):
     if watcher:
         watcher.stop()
     # like the legend of the phoenix, all ends with beginnings
-    if getattr(odoo, 'phoenix', False):
+    if getattr(crossnow, 'phoenix', False):
         _reexec()
 
     return rc if rc else 0

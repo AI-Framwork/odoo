@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 import json
 import logging
 
@@ -6,12 +6,12 @@ import werkzeug
 from psycopg2.errorcodes import SERIALIZATION_FAILURE
 from psycopg2 import OperationalError
 
-from odoo import http
-from odoo.exceptions import AccessError, UserError
-from odoo.http import request
-from odoo.tools import replace_exceptions
+from crossnow import http
+from crossnow.exceptions import AccessError, UserError
+from crossnow.http import request
+from crossnow.tools import replace_exceptions
 
-from odoo.addons.web.controllers.utils import ensure_db
+from crossnow.addons.web.controllers.utils import ensure_db
 
 _logger = logging.getLogger(__name__)
 

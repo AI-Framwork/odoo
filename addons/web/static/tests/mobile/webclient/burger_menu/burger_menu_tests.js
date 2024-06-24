@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 import { click, nextTick } from "@web/../tests/helpers/utils";
 import {
     createWebClient,

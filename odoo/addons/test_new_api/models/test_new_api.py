@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import logging
 
-from odoo.tools.float_utils import float_round
+from crossnow.tools.float_utils import float_round
 _logger = logging.getLogger('precompute_setter')
 
-from odoo import models, fields, api, _, Command
-from odoo.exceptions import AccessError, ValidationError
-from odoo.tools.translate import html_translate
+from crossnow import models, fields, api, _, Command
+from crossnow.exceptions import AccessError, ValidationError
+from crossnow.tools.translate import html_translate
 
 
 class Category(models.Model):
@@ -1872,7 +1872,7 @@ class EmptyChar(models.Model):
 
 class Team(models.Model):
     _name = 'test_new_api.team'
-    _description = 'Odoo Team'
+    _description = 'CrossNow Team'
 
     name = fields.Char()
     parent_id = fields.Many2one('test_new_api.team')
@@ -1881,7 +1881,7 @@ class Team(models.Model):
 
 class TeamMember(models.Model):
     _name = 'test_new_api.team.member'
-    _description = 'Odoo Developer'
+    _description = 'CrossNow Developer'
 
     name = fields.Char('Name')
     team_id = fields.Many2one('test_new_api.team')

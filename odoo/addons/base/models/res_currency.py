@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import logging
 import math
 
 from lxml import etree
 
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import UserError, ValidationError
-from odoo.tools import parse_date
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import UserError, ValidationError
+from crossnow.tools import parse_date
 
 _logger = logging.getLogger(__name__)
 

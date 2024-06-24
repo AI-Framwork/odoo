@@ -1,4 +1,4 @@
-odoo.define("@odoo/owl", [], function () {
+crossnow.define("@crossnow/owl", [], function () {
     "use strict";
 
     return owl;

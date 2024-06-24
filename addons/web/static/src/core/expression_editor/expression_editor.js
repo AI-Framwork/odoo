@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps } from "@crossnow/owl";
 import { getExpressionDisplayedOperators } from "@web/core/expression_editor/expression_editor_operator_editor";
 import {
     condition,

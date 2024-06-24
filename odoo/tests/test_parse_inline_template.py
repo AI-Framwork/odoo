@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import BaseCase
-from odoo.tools.rendering_tools import parse_inline_template
+from crossnow.tests import BaseCase
+from crossnow.tools.rendering_tools import parse_inline_template
 
 class TestParseInlineTemplate(BaseCase):
     def test_no_expression(self):

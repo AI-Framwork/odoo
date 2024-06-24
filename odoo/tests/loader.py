@@ -16,7 +16,7 @@ from .result import OdooTestResult
 def get_test_modules(module):
     """ Return a list of module for the addons potentially containing tests to
     feed unittest.TestLoader.loadTestsFromModule() """
-    results = _get_tests_modules(importlib.util.find_spec(f'odoo.addons.{module}'))
+    results = _get_tests_modules(importlib.util.find_spec(f'crossnow.addons.{module}'))
     results += list(_get_upgrade_test_modules(module))
 
     return results
@@ -37,9 +37,9 @@ def _get_tests_modules(mod):
 
 def _get_upgrade_test_modules(module):
     upgrade_modules = (
-        f"odoo.upgrade.{module}",
-        f"odoo.addons.{module}.migrations",
-        f"odoo.addons.{module}.upgrades",
+        f"crossnow.upgrade.{module}",
+        f"crossnow.addons.{module}.migrations",
+        f"crossnow.addons.{module}.upgrades",
     )
     for module_name in upgrade_modules:
         if not importlib.util.find_spec(module_name):

@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import datetime
 import functools
@@ -11,14 +11,14 @@ from collections import OrderedDict
 
 from werkzeug.exceptions import InternalServerError
 
-import odoo
-import odoo.modules.registry
-from odoo import http
-from odoo.exceptions import UserError
-from odoo.http import content_disposition, request
-from odoo.tools import lazy_property, osutil, pycompat
-from odoo.tools.misc import xlsxwriter
-from odoo.tools.translate import _
+import crossnow
+import crossnow.modules.registry
+from crossnow import http
+from crossnow.exceptions import UserError
+from crossnow.http import content_disposition, request
+from crossnow.tools import lazy_property, osutil, pycompat
+from crossnow.tools.misc import xlsxwriter
+from crossnow.tools.translate import _
 
 
 _logger = logging.getLogger(__name__)
@@ -324,7 +324,7 @@ class Export(http.Controller):
             fields['id'] = parent_field
 
         fields_sequence = sorted(fields.items(),
-            key=lambda field: odoo.tools.ustr(field[1].get('string', '').lower()))
+            key=lambda field: crossnow.tools.ustr(field[1].get('string', '').lower()))
 
         records = []
         for field_name, field in fields_sequence:
@@ -452,7 +452,7 @@ class ExportFormat(object):
         return f"{model_description} ({base})"
 
     def from_data(self, fields, rows):
-        """ Conversion method from Odoo's export data to whatever the
+        """ Conversion method from CrossNow's export data to whatever the
         current export class outputs
 
         :params list fields: a list of fields to export
@@ -517,7 +517,7 @@ class CSVExport(ExportFormat, http.Controller):
             _logger.exception("Exception during request handling.")
             payload = json.dumps({
                 'code': 200,
-                'message': "Odoo Server Error",
+                'message': "CrossNow Server Error",
                 'data': http.serialize_exception(exc)
             })
             raise InternalServerError(payload) from exc
@@ -561,7 +561,7 @@ class ExcelExport(ExportFormat, http.Controller):
             _logger.exception("Exception during request handling.")
             payload = json.dumps({
                 'code': 200,
-                'message': "Odoo Server Error",
+                'message': "CrossNow Server Error",
                 'data': http.serialize_exception(exc)
             })
             raise InternalServerError(payload) from exc

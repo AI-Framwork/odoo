@@ -1,7 +1,7 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.exceptions import UserError
-from odoo.tests import TransactionCase, tagged
+from crossnow.exceptions import UserError
+from crossnow.tests import TransactionCase, tagged
 
 
 @tagged('-at_install', 'post_install')

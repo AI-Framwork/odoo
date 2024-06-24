@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { usePopover } from "@web/core/popover/popover_hook";
 import { popoverService } from "@web/core/popover/popover_service";
@@ -6,7 +6,7 @@ import { registry } from "@web/core/registry";
 import { clearRegistryWithCleanup, makeTestEnv } from "../../helpers/mock_env";
 import { click, destroy, getFixture, mount, nextTick } from "../../helpers/utils";
 
-import { Component, xml } from "@odoo/owl";
+import { Component, xml } from "@crossnow/owl";
 import { hotkeyService } from "@web/core/hotkeys/hotkey_service";
 import { makeFakeLocalizationService } from "../../helpers/mock_services";
 

@@ -1,6 +1,6 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.tests import TransactionCase
+from crossnow.tests import TransactionCase
 
 
 class TestResUsers(TransactionCase):

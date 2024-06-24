@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import {applyModifications, cropperDataFields, activateCropper, loadImage, loadImageInfo} from "@web_editor/js/editor/image_processing";
 import { _t } from "@web/core/l10n/translation";
@@ -10,7 +10,7 @@ import {
     onWillDestroy,
     onWillUpdateProps,
     markup,
-} from "@odoo/owl";
+} from "@crossnow/owl";
 import { useService } from "@web/core/utils/hooks";
 import dom from "@web/legacy/js/core/dom";
 
@@ -138,7 +138,7 @@ export class ImageCrop extends Component {
 
         if (this.uncroppable) {
             this.notification.add(
-                markup(_t("This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in Odoo.")),
+                markup(_t("This type of image is not supported for cropping.<br/>If you want to crop it, please first download it from the original source and upload it in CrossNow.")),
                 {
                     title: _t("This image is an external image"),
                     type: 'warning',

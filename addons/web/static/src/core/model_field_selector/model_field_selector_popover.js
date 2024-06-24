@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component, onWillStart, useEffect, useRef, useState } from "@odoo/owl";
+import { Component, onWillStart, useEffect, useRef, useState } from "@crossnow/owl";
 import { debounce } from "@web/core/utils/timing";
 import { fuzzyLookup } from "@web/core/utils/search";
 import { KeepLast } from "@web/core/utils/concurrency";

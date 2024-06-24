@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 import { UNREMOVABLE_ROLLBACK_CODE } from '../utils/constants.js';
 import {
     findNode,

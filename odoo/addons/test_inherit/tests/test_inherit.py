@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
-from odoo.addons.base.tests.common import TransactionCaseWithUserDemo
-from odoo.tests import common
+from crossnow.addons.base.tests.common import TransactionCaseWithUserDemo
+from crossnow.tests import common
 
 class test_inherits(common.TransactionCase):
 
@@ -22,7 +22,7 @@ class test_inherits(common.TransactionCase):
         # This test checks if the new added column of a parent model
         # is accessible from the child model. This test has been written
         # to verify the purpose of the inheritance computing of the class
-        # in the openerp.osv.orm._build_model.
+        # in the crossnow.osv.orm._build_model.
         mother = self.env['test.inherit.mother']
         daughter = self.env['test.inherit.daughter']
 

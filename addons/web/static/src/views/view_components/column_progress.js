@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { Component } from "@odoo/owl";
+import { Component } from "@crossnow/owl";
 import { AnimatedNumber } from "./animated_number";
 
 export class ColumnProgress extends Component {

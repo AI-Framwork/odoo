@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo>
+<crossnow>
     <data noupdate="1">
 
         <record id="partner_demo" model="res.partner">
@@ -89,4 +89,4 @@
             <field name="users" eval="[Command.link(ref('demo_user0'))]"/>
         </record>
     </data>
-</odoo>
+</crossnow>

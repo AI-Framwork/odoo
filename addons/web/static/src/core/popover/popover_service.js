@@ -1,6 +1,6 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
-import { markRaw } from "@odoo/owl";
+import { markRaw } from "@crossnow/owl";
 import { registry } from "../registry";
 import { POPOVER_SYMBOL, PopoverController } from "./popover_controller";
 
@@ -24,7 +24,7 @@ export const popoverService = {
          * Signals the manager to add a popover.
          *
          * @param {HTMLElement} target
-         * @param {typeof import("@odoo/owl").Component} component
+         * @param {typeof import("@crossnow/owl").Component} component
          * @param {object} props
          * @param {PopoverServiceAddOptions} [options]
          * @returns {() => void}

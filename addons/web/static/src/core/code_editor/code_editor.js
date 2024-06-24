@@ -1,5 +1,5 @@
-/** @odoo-module */
-import { Component, onWillDestroy, onWillStart, useEffect, useRef } from "@odoo/owl";
+/** @crossnow-module */
+import { Component, onWillDestroy, onWillStart, useEffect, useRef } from "@crossnow/owl";
 import { loadBundle } from "@web/core/assets";
 import { useDebounced } from "@web/core/utils/timing";
 

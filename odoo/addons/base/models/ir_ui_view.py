@@ -1,4 +1,4 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 import ast
 import collections
@@ -17,19 +17,19 @@ from lxml import etree
 from lxml.etree import LxmlError
 from lxml.builder import E
 
-import odoo
-from odoo import api, fields, models, tools, _
-from odoo.exceptions import ValidationError, AccessError, UserError
-from odoo.http import request
-from odoo.modules.module import get_resource_from_path
-from odoo.tools import config, ConstantMapping, get_diff, pycompat, apply_inheritance_specs, locate_node, str2bool
-from odoo.tools import safe_eval, lazy, lazy_property, frozendict
-from odoo.tools.convert import _fix_multiple_roots
-from odoo.tools.misc import file_path
-from odoo.tools.translate import xml_translate, TRANSLATED_ATTRS
-from odoo.tools.view_validation import valid_view, get_domain_value_names, get_expression_field_names, get_dict_asts
-from odoo.models import check_method_name
-from odoo.osv.expression import expression
+import crossnow
+from crossnow import api, fields, models, tools, _
+from crossnow.exceptions import ValidationError, AccessError, UserError
+from crossnow.http import request
+from crossnow.modules.module import get_resource_from_path
+from crossnow.tools import config, ConstantMapping, get_diff, pycompat, apply_inheritance_specs, locate_node, str2bool
+from crossnow.tools import safe_eval, lazy, lazy_property, frozendict
+from crossnow.tools.convert import _fix_multiple_roots
+from crossnow.tools.misc import file_path
+from crossnow.tools.translate import xml_translate, TRANSLATED_ATTRS
+from crossnow.tools.view_validation import valid_view, get_domain_value_names, get_expression_field_names, get_dict_asts
+from crossnow.models import check_method_name
+from crossnow.osv.expression import expression
 
 _logger = logging.getLogger(__name__)
 
@@ -68,7 +68,7 @@ def att_names(name):
 
 @lazy
 def keep_query():
-    mod = odoo.addons.base.models.ir_qweb
+    mod = crossnow.addons.base.models.ir_qweb
     warnings.warn(f"keep_query has been moved to {mod}", DeprecationWarning)
     return mod.keep_query
 

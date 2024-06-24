@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { Cache } from "@web/core/utils/cache";
 import { makeDeferred, nextTick } from "../helpers/utils";

@@ -1,4 +1,4 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import dom from "@web/legacy/js/core/dom";
 import Widget from "@web/legacy/js/core/widget";
@@ -26,7 +26,7 @@ var Dialog = Widget.extend({
     /**
      * @param {Widget} parent
      * @param {Object} [options]
-     * @param {string} [options.title=Odoo]
+     * @param {string} [options.title=CrossNow]
      * @param {string} [options.subtitle]
      * @param {string} [options.size=large] - 'extra-large', 'large', 'medium'
      *        or 'small'
@@ -72,7 +72,7 @@ var Dialog = Widget.extend({
             this._opened = this.opened(this.on_attach_callback);
         }
         options = Object.assign({
-            title: _t('Odoo'), subtitle: '',
+            title: _t('CrossNow'), subtitle: '',
             size: 'large',
             fullscreen: false,
             dialogClass: '',

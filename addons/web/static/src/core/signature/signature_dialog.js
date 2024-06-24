@@ -1,10 +1,10 @@
-/** @odoo-module **/
+/** @crossnow-module **/
 
 import { _t } from "@web/core/l10n/translation";
 import { Dialog } from "@web/core/dialog/dialog";
 import { NameAndSignature } from "./name_and_signature";
 
-import { Component, useState } from "@odoo/owl";
+import { Component, useState } from "@crossnow/owl";
 
 export class SignatureDialog extends Component {
     setup() {

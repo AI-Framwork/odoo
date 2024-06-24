@@ -1,10 +1,10 @@
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Part of CrossNow. See LICENSE file for full copyright and licensing details.
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import Command, fields
-from odoo.exceptions import AccessError
-from odoo.tests.common import TransactionCase, new_test_user
+from crossnow import Command, fields
+from crossnow.exceptions import AccessError
+from crossnow.tests.common import TransactionCase, new_test_user
 
 
 class TestUnityRead(TransactionCase):

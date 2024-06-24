@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import io
 
-import odoo.tests
-from odoo.tools.translate import TranslationImporter
+import crossnow.tests
+from crossnow.tools.translate import TranslationImporter
 
 
-@odoo.tests.tagged('post_install', '-at_install')
-class TestRelatedTranslation(odoo.tests.TransactionCase):
+@crossnow.tests.tagged('post_install', '-at_install')
+class TestRelatedTranslation(crossnow.tests.TransactionCase):
 
     @classmethod
     def setUpClass(cls):
